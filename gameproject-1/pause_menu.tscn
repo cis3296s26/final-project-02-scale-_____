@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://tvmfnjn35yt8"]
+
+[ext_resource type="Script" uid="uid://d2do35b88pbgk" path="res://pause.gd" id="1_hdmo1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwcfo"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wyi4u"]
+bg_color = Color(0.13, 0.13, 0.13, 1)
+shadow_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05uyy"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="PauseMenu" type="Control" unique_id=358881738]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hdmo1")
+
+[node name="Panel" type="Panel" parent="." unique_id=534646245]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nwcfo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1345042613]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -281.0
+offset_top = -113.0
+offset_right = 281.0
+offset_bottom = 113.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="Resume" type="Button" parent="VBoxContainer" unique_id=558084604]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(18.892157, 16.258114, 10.9900255, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_wyi4u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_05uyy")
+text = "Resume"
+
+[node name="Main Menu" type="Button" parent="VBoxContainer" unique_id=2094449159]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(18.892157, 16.258114, 10.9900255, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_wyi4u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_05uyy")
+text = "Main Menu"
+
+[connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
