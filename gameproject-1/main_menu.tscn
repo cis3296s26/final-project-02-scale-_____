@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://csinkgb4vsn8k"]
+
+[ext_resource type="Script" uid="uid://xbhmboffhejg" path="res://main_menu.gd" id="1_06t4h"]
+
+[sub_resource type="Theme" id="Theme_06t4h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vrkn"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="MainMenu" type="Control" unique_id=2104954581]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.99773103, 0.99753875)
+script = ExtResource("1_06t4h")
+
+[node name="Container" type="Panel" parent="." unique_id=2144341206]
+layout_mode = 0
+offset_left = 140.3183
+offset_top = 72.177635
+offset_right = 233.3183
+offset_bottom = 235.17764
+scale = Vector2(4.9714985, 3.283983)
+theme = SubResource("Theme_06t4h")
+theme_override_styles/panel = SubResource("StyleBoxFlat_7vrkn")
+
+[node name="Title" type="Label" parent="Container" unique_id=1912752119]
+layout_mode = 0
+offset_right = 93.0
+offset_bottom = 23.0
+text = "Scale:____"
+horizontal_alignment = 1
+
+[node name="NewGame" type="Button" parent="Container" unique_id=1828048319]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 93.0
+offset_bottom = 58.0
+text = "New Game"
+
+[node name="Continue" type="Button" parent="Container" unique_id=1827562518]
+layout_mode = 0
+offset_top = 62.0
+offset_right = 93.0
+offset_bottom = 93.0
+text = "Continue"
+
+[node name="Options" type="Button" parent="Container" unique_id=287005373]
+layout_mode = 0
+offset_top = 97.0
+offset_right = 93.0
+offset_bottom = 128.0
+text = "Options"
+
+[node name="Quit" type="Button" parent="Container" unique_id=2105139026]
+layout_mode = 0
+offset_top = 132.0
+offset_right = 93.0
+offset_bottom = 163.0
+text = "Quit"
+
+[connection signal="pressed" from="Container/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Container/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Container/Options" to="." method="_on_options_pressed"]
