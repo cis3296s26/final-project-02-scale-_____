@@ -1,28 +1,16 @@
-# Project Name
-Put here a short paragraph describing your project. 
-Adding an screenshot or a mockup of your application in action would be nice.  
+This is an adventure platformer game developed with the Godot engine.
+How to Run in Godot:
+1. Download or clone the repository
+2. Open Godot Engine
+3. Import > select project
+4. Click Run Project
 
-![This is a screenshot.](images.png)
-# How to run
-Provide here instructions on how to use your application.   
-- Download the latest binary from the Release section on the right on GitHub.  
-- On the command line uncompress using
-```
-tar -xzf  
-```
-- On the command line run with
-```
-./hello
-```
-- You will see Hello World! on your terminal. 
+How to Build:
+1. Check that export templates are downloaded. Editor > Manage Export Template
+2. Project > Export
+Add preset for your operating system
+3. Set export path
+4. Click export project
+5. Run the file
 
-# How to contribute
 Follow this project board to know the latest status of the project: https://github.com/orgs/cis3296s26/projects/36  
-
-### How to build
-- Use this github repository: ... 
-- Specify what branch to use for a more stable release or for cutting edge development.  
-- Use InteliJ 11
-- Specify additional library to download if needed 
-- What file and target to compile and run. 
-- What is expected to happen when the app start. 
