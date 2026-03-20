@@ -1,5 +1,7 @@
-res://scripts/killzone.gd
-res://scripts/EnemyScripts/killzone.gd
-res://scenes/EnemyCharacter/killzone.tscn
-res://scenes/EnemyCharacter/EnemyV1.tscn
-res://scripts/EnemyScripts/LavaAnt.gd
+res://scenes/platform.tscn
+res://pause.gd
+res://Player/Player_Script/test_player.gd
+res://main_menu.gd
+res://pause_menu.tscn
+res://main.tscn
+res://main_menu.tscn
