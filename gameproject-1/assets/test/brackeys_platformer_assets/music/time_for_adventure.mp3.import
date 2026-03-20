@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://6t2k8roe1mqq"
-path="res://.godot/imported/time_for_adventure.mp3-2cad360874028802e5f100ee0ac8f7e2.mp3str"
+path="res://.godot/imported/time_for_adventure.mp3-16bf0d7a36620c135140c4fe25f6c117.mp3str"
 
 [deps]
 
-source_file="res://Assets/test/brackeys_platformer_assets/music/time_for_adventure.mp3"
-dest_files=["res://.godot/imported/time_for_adventure.mp3-2cad360874028802e5f100ee0ac8f7e2.mp3str"]
+source_file="res://assets/test/brackeys_platformer_assets/music/time_for_adventure.mp3"
+dest_files=["res://.godot/imported/time_for_adventure.mp3-16bf0d7a36620c135140c4fe25f6c117.mp3str"]
 
 [params]
 
