@@ -1,0 +1,48 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1773954613
+icon.svg::CompressedTexture2D::822653193914807282::1773418548::1773418578::1::::<><><>0<>0<>95e354c2323f1500a8f6057edb08b387<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://assets/::1773954595
+::res://assets/EnemySprites/::1773954595
+::res://assets/EnemySprites/basic asset pack/::1773954595
+::res://assets/EnemySprites/basic asset pack/Basic Vermin Animations/::1773954595
+::res://assets/EnemySprites/basic asset pack/Basic Vermin Animations/Acid Ant/::1773954595
+AcidAnt.png::CompressedTexture2D::8510125247503674636::1773952774::1773954589::1::::<><><>0<>0<>d90dd3d98f9f629e34a4c42e397a0854<>res://.godot/imported/AcidAnt.png-17afaeab771cb6ed344c249c4f6a27be.ctex::
+::res://assets/EnemySprites/basic asset pack/Basic Vermin Animations/Bloated Bedbug/::1773954595
+BloatedBedbug.png::CompressedTexture2D::5687771957623588876::1773952774::1773954589::1::::<><><>0<>0<>ff8289054c6e6eab53e79cfceb585523<>res://.godot/imported/BloatedBedbug.png-4bc5330c9584f254bbe79040c3400264.ctex::
+::res://assets/EnemySprites/basic asset pack/Basic Vermin Animations/Dung Beetle/::1773954595
+DungBeetle.png::CompressedTexture2D::5197505184982395755::1773952774::1773954589::1::::<><><>0<>0<>222f7e796bde098535ac8d394cd2b008<>res://.godot/imported/DungBeetle.png-3e55bc71b49753599b1b2973f0c4d6f2.ctex::
+::res://assets/EnemySprites/basic asset pack/Basic Vermin Animations/Engorged Tick/::1773954595
+EngorgedTick.png::CompressedTexture2D::6187485494181248553::1773952774::1773954589::1::::<><><>0<>0<>d2c322ed9c3a7237474fe2c0a12027cf<>res://.godot/imported/EngorgedTick.png-1e6560f166c95c2600698d53030243d0.ctex::
+::res://assets/EnemySprites/basic asset pack/Basic Vermin Animations/Famished Tick/::1773954595
+FamishedTick.png::CompressedTexture2D::4387039195865652360::1773952774::1773954589::1::::<><><>0<>0<>9861bc6efa03e60a45f7e3db580b3063<>res://.godot/imported/FamishedTick.png-ab0f754647a714137a55aaf038fbb43a.ctex::
+::res://assets/EnemySprites/basic asset pack/Basic Vermin Animations/Foraging Maggot/::1773954595
+ForagingMaggot.png::CompressedTexture2D::3079685318119881245::1773952774::1773954589::1::::<><><>0<>0<>8ae31d0322d6b434ffc955e2f48b6624<>res://.godot/imported/ForagingMaggot.png-abad8087709114da89081e0244455163.ctex::
+::res://assets/EnemySprites/basic asset pack/Basic Vermin Animations/Infected Mouse/::1773954595
+InfectedMouse.png::CompressedTexture2D::2106014867123592587::1773952774::1773954589::1::::<><><>0<>0<>dc224fc94f09f64aec920acaf580a87b<>res://.godot/imported/InfectedMouse.png-81da09354d57daae13a671420bf48d36.ctex::
+::res://assets/EnemySprites/basic asset pack/Basic Vermin Animations/Lava Ant/::1773954595
+LavaAnt.png::CompressedTexture2D::3013355579087132789::1773952774::1773954589::1::::<><><>0<>0<>e79f78c40acc4db93994f00636cbbe60<>res://.godot/imported/LavaAnt.png-913f6b50e852ab1322695ad8fe06e2d7.ctex::
+::res://assets/EnemySprites/basic asset pack/Basic Vermin Animations/Mawing Beaver/::1773954595
+MawingBeaver.png::CompressedTexture2D::2357008316670551651::1773952774::1773954589::1::::<><><>0<>0<>8abb0ed88a82784797b02dbc83b5f104<>res://.godot/imported/MawingBeaver.png-c32797d07a12fc42c019f0310fd287eb.ctex::
+::res://assets/EnemySprites/basic asset pack/Basic Vermin Animations/Plague Bat/::1773954595
+PlagueBat.png::CompressedTexture2D::9014455340236078484::1773952774::1773954589::1::::<><><>0<>0<>35170b5e1d1bfa815f8870c83c5d08a3<>res://.godot/imported/PlagueBat.png-a57e77424199e5ca2a232f1ad82cc256.ctex::
+::res://assets/EnemySprites/basic asset pack/Basic Vermin Animations/Rhino Beetle/::1773954595
+RhinoBeetle.png::CompressedTexture2D::2438257846285764963::1773952774::1773954589::1::::<><><>0<>0<>04b42a003ad89cb39a975afa437cc4e6<>res://.godot/imported/RhinoBeetle.png-a363bf1a02d75aca34b2364eb35ab9db.ctex::
+::res://assets/EnemySprites/basic asset pack/Basic Vermin Animations/Soldier Ant/::1773954595
+SoldierAnt.png::CompressedTexture2D::7190691099148291837::1773952774::1773954589::1::::<><><>0<>0<>7f846d010b1d812eafb724eb68facf5c<>res://.godot/imported/SoldierAnt.png-9ea7382caab379e7824b3ac9519af614.ctex::
+::res://assets/EnemySprites/basic asset pack/Basic Vermin Animations/Swooping Bat/::1773954591
+SwoopingBat.png::CompressedTexture2D::5105672779440586018::1773952774::1773954589::1::::<><><>0<>0<>4ca06c621c4d3a0833a69bef0dad95f4<>res://.godot/imported/SwoopingBat.png-a0ecff17b9ec88cb12f35a9ab77cebf8.ctex::
+::res://assets/EnemySprites/basic asset pack/Basic Vermin Animations/Tainted Cockroach/::1773954595
+TaintedCockroach.png::CompressedTexture2D::6247971241884831688::1773952774::1773954589::1::::<><><>0<>0<>78b86bfd35db24a1f803e80e758cb6cf<>res://.godot/imported/TaintedCockroach.png-667d24c49f7ccce3fa89f59c7408da86.ctex::
+::res://assets/EnemySprites/basic asset pack/Basic Vermin Animations/Tunneling Mole/::1773954595
+TunnelingMole.png::CompressedTexture2D::3298795601583983291::1773952774::1773954589::1::::<><><>0<>0<>adb5b81de6e90330121e0ec5ab8a5bf7<>res://.godot/imported/TunnelingMole.png-4c4754bec6b60ada538bacdb3da68639.ctex::
+::res://assets/EnemySprites/basic asset pack/Basic Vermin Sprites/::1773954595
+Basic Vermin 1x.png::CompressedTexture2D::3906352122593502971::1773952774::1773954589::1::::<><><>0<>0<>83bcf87eae3c33a9e60d563da0e1ddfe<>res://.godot/imported/Basic Vermin 1x.png-e22caaef3ec1a0b8d077626d29defec0.ctex::
+Basic Vermin 2x.png::CompressedTexture2D::399744622203423679::1773952774::1773954589::1::::<><><>0<>0<>61b21cc3b0ccff1b5661d9016026d05b<>res://.godot/imported/Basic Vermin 2x.png-92f4b5c1e95ec23eb52f00374d05bcc4.ctex::
+Basic Vermin 4x.png::CompressedTexture2D::6048719973935122646::1773952774::1773954589::1::::<><><>0<>0<>edbde5fb4581c90746d5ca83caf84332<>res://.godot/imported/Basic Vermin 4x.png-bdbd2a17e8e7ef353150573181f1bb2a.ctex::
+::res://scenes/::1773954595
+::res://scenes/EnemyCharacter/::1773954595
+EnemyV1.tscn::PackedScene::7511965277569014200::1773954589::0::1::::<><><>0<>0<><>::uid://bi6xr5hbshg2p::::res://assets/EnemySprites/basic asset pack/Basic Vermin Animations/Lava Ant/LavaAnt.png
+killzone.tscn::PackedScene::7889324522071393493::1773954019::0::1::::<><><>0<>0<><>::
+::res://scripts/::1773954476
+::res://scripts/EnemyScripts/::0
+killzone.gd::GDScript::2222086862563583673::1773954473::0::1::::<>Area2D<><>0<>0<><>::
