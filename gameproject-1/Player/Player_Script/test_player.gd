@@ -47,3 +47,9 @@ func basic_movement(delta: float) -> void:
 		velocity.x = direction * speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
+
+func _input(event):
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_ESCAPE:
+			#Go to pause menu if Esc key pressed
+			get_tree().change_scene_to_file("res://pause_menu.tscn");
