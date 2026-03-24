@@ -15,15 +15,15 @@ func _physics_process(delta: float) -> void:
 
 func handle_animations() -> void:
 	if is_on_floor():
-		if velocity:
-			animatedSprite.play("run")
-		else:
-			animatedSprite.play("idle")
+		# if velocity:
+			# animatedSprite.play("run")
+		# else:
+			animatedSprite.play("owl_idle")
 	else:
 		if velocity.y < 0:
-			animatedSprite.play("jump")
-		else:
-			animatedSprite.play("fall")
+			animatedSprite.play("owl_still")
+		# else:
+		#	animatedSprite.play("fall")
 
 func handle_direction() -> void:
 	if velocity.x < 0:
