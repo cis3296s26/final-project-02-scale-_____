@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-@export var speed = 300.0
+@export var speed = 275.0
 @export var jump_velocity = -400.0
 
 @onready var animatedSprite = $AnimatedSprite2D
@@ -15,15 +15,16 @@ func _physics_process(delta: float) -> void:
 
 func handle_animations() -> void:
 	if is_on_floor():
-		# if velocity:
-			# animatedSprite.play("run")
-		# else:
+		if velocity.x:
+			animatedSprite.play("owl_run")
+		else:
 			animatedSprite.play("owl_idle")
 	else:
 		if velocity.y < 0:
-			animatedSprite.play("owl_still")
-		# else:
-		#	animatedSprite.play("fall")
+			animatedSprite.play("owl_jump")
+		else:
+			if animatedSprite.animation != "owl_fall":
+				animatedSprite.play("owl_fall")
 
 func handle_direction() -> void:
 	if velocity.x < 0:
@@ -34,7 +35,11 @@ func handle_direction() -> void:
 func basic_movement(delta: float) -> void:
 		# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		var gravity = get_gravity()
+		if velocity.y > 0:
+			# If falling, slower fall to glide
+			gravity *= 0.30
+		velocity += gravity * delta
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
