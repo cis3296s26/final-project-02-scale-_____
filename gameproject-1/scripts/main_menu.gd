@@ -6,7 +6,7 @@ func _ready():
 	# Disable Continue if there is no save
 	var has_save = false
 	# $Container/Continue.disabled = not SaveManager.has_save
-	$Container/Continue.disabled = true
+	# $Container/Continue.disabled = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

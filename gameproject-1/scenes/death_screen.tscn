@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://cd0tyfx6uxd1n"]
+
+[ext_resource type="Script" uid="uid://gtatu2ee4m6u" path="res://scripts/death_screen.gd" id="1_mqh5l"]
+[ext_resource type="Script" uid="uid://xbhmboffhejg" path="res://scripts/main_menu.gd" id="2_dwo6e"]
+
+[sub_resource type="GDScript" id="GDScript_dwo6e"]
+
+[node name="DeathScreen" type="Control" unique_id=1672939841]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(6.2066083, 4.6907554)
+script = ExtResource("1_mqh5l")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=151266382]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(4.6275167, 3.438706)
+color = Color(0.15686275, 0, 0, 0.7058824)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1300174372]
+light_mask = 7
+visibility_layer = 7
+layout_mode = 0
+offset_left = 39.8709
+offset_top = 16.303085
+offset_right = 135.8709
+offset_bottom = 109.303085
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1671619707]
+layout_mode = 2
+text = "YOU DIED"
+horizontal_alignment = 1
+
+[node name="Respawn" type="Button" parent="VBoxContainer" unique_id=1639437795]
+layout_mode = 2
+text = "Respawn"
+icon_alignment = 1
+script = SubResource("GDScript_dwo6e")
+
+[node name="Main Menu" type="Button" parent="VBoxContainer" unique_id=488765729]
+layout_mode = 2
+text = "Main Menu"
+script = ExtResource("2_dwo6e")
+
+[connection signal="pressed" from="VBoxContainer/Respawn" to="." method="_on_respawn_pressed"]
+[connection signal="pressed" from="VBoxContainer/Respawn" to="VBoxContainer/Respawn" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
