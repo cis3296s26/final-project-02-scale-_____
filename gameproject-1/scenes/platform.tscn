@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d30iq1mq7lcnp"]
 
 [ext_resource type="Texture2D" uid="uid://d00shr4svncs1" path="res://assets/sprites/platforms.png" id="1_ba0x2"]
-[ext_resource type="PackedScene" uid="uid://b68qhr4464r35" path="res://coin.tscn" id="2_nlgqw"]
+[ext_resource type="PackedScene" uid="uid://b68qhr4464r35" path="res://scenes/coin.tscn" id="2_nlgqw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlgqw"]
 size = Vector2(32, 8)
