@@ -1,4 +1,4 @@
-<img width="1528" height="1494" alt="image" src="https://github.com/user-attachments/assets/f60ce88a-038d-4d24-bdcb-41401d9edf14" /><img width="1528" height="1494" alt="image" src="https://github.com/user-attachments/assets/f60ce88a-038d-4d24-bdcb-41401d9edf14" />This is an adventure platformer game developed with the Godot engine.
+This is an adventure platformer game developed with the Godot engine.
 How to Run the game:
 1. Download the .exe file
 2. Download the .pck file and make sure this file and .exe are together
