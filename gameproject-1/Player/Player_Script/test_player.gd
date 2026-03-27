@@ -27,9 +27,13 @@ var can_take_damage = true
 
 @onready var heart_bar = $"../HeartBar"
 
+var coin_count = 0
+@onready var coin_label = get_node_or_null("../HeartBar/UIRoot/CoinLabel")
+
 func _ready() -> void:
 	current_health = max_health
 	update_hearts()
+	update_coin_label()
 
 # runs at launch
 func _physics_process(delta: float) -> void:
@@ -179,3 +183,11 @@ func _unhandled_input(event):
 
 func _on_attack_area_entered(area: Area2D) -> void:
 	print("Damage")
+
+func add_coin() -> void:
+	coin_count += 1
+	update_coin_label()
+
+func update_coin_label() -> void:
+	if coin_label:
+		coin_label.text = str(coin_count)

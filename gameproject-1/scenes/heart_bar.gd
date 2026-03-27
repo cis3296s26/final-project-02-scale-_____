@@ -11,3 +11,6 @@ func update_hearts(current_health: int) -> void:
 		heart2.visible = current_health >= 2
 	if heart3:
 		heart3.visible = current_health >= 3
+
+func _ready():
+	visible = true
