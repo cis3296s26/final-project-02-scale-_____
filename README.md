@@ -1,7 +1,6 @@
 This is an adventure platformer game developed with the Godot engine.
 How to Run the game:
-1. Download the sourcefile
-2. Extract the file
+1. Download the exe file
 3. Run the exefile
 
 How to Run in Godot:
