@@ -1,12 +1,6 @@
-ColorRect
-Button
-Label
-VBoxContainer
-CenterContainer
-Control
-Timer
 CollisionShape2D
 Area2D
+Timer
 Camera2D
 RayCast2D
 AnimatedSprite2D
