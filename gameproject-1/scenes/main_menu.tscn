@@ -4,8 +4,7 @@
 
 [sub_resource type="Theme" id="Theme_06t4h"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vrkn"]
-bg_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l6cm7"]
 
 [node name="MainMenu" type="Control" unique_id=2104954581]
 layout_mode = 3
@@ -18,8 +17,15 @@ offset_right = -1.0
 offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.99773103, 0.99753875)
+scale = Vector2(2.391052, 2.4263575)
 script = ExtResource("1_06t4h")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1889036628]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(32.141502, 17.841785)
+color = Color(0.6156863, 0.13333334, 0.20784314, 1)
 
 [node name="Container" type="Panel" parent="." unique_id=2144341206]
 layout_mode = 0
@@ -29,7 +35,7 @@ offset_right = 94.0022
 offset_bottom = 158.99013
 scale = Vector2(12.409634, 3.9909446)
 theme = SubResource("Theme_06t4h")
-theme_override_styles/panel = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/panel = SubResource("StyleBoxTexture_l6cm7")
 
 [node name="Title" type="Label" parent="Container" unique_id=1912752119]
 layout_mode = 0
@@ -43,34 +49,37 @@ horizontal_alignment = 1
 
 [node name="NewGame" type="Button" parent="Container" unique_id=1828048319]
 layout_mode = 0
-offset_top = 27.0
-offset_right = 93.0
-offset_bottom = 58.0
+offset_left = 38.767593
+offset_top = 52.008198
+offset_right = 131.76761
+offset_bottom = 83.008194
 scale = Vector2(0.24853016, 0.7843576)
 text = "New Game"
 
 [node name="Continue" type="Button" parent="Container" unique_id=1827562518]
 layout_mode = 0
-offset_top = 52.497765
-offset_right = 93.00001
-offset_bottom = 83.497765
+offset_left = 38.767597
+offset_top = 81.863884
+offset_right = 131.76761
+offset_bottom = 112.863884
 scale = Vector2(0.24920829, 0.7828693)
 text = "Continue"
 
 [node name="Options" type="Button" parent="Container" unique_id=287005373]
 layout_mode = 0
-offset_top = 76.862755
-offset_right = 93.00001
-offset_bottom = 107.862755
+offset_left = 38.767597
+offset_top = 111.71957
+offset_right = 131.76761
+offset_bottom = 142.71957
 scale = Vector2(0.24822803, 0.7298098)
 text = "Options"
 
 [node name="Quit" type="Button" parent="Container" unique_id=2105139026]
 layout_mode = 0
-offset_left = 0.16153765
-offset_top = 98.7159
-offset_right = 93.16154
-offset_bottom = 129.7159
+offset_left = 38.767593
+offset_top = 141.57527
+offset_right = 131.7676
+offset_bottom = 172.57527
 scale = Vector2(0.24642202, 0.6673232)
 text = "Quit"
 
