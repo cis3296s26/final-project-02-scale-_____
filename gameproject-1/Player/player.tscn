@@ -274,6 +274,7 @@ libraries/ = SubResource("AnimationLibrary_x3vf3")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1294178394]
 
 [node name="PauseMenu" parent="CanvasLayer" unique_id=358881738 instance=ExtResource("7_vtle1")]
+visible = false
 
 [connection signal="area_entered" from="AnimatedSprite2D/Attack" to="." method="_on_attack_area_entered"]
 [connection signal="timeout" from="DashDurationTimer" to="." method="_on_dash_duration_timer_timeout"]

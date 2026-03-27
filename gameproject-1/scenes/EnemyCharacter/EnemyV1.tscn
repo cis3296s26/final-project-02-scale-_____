@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bi6xr5hbshg2p" path="res://assets/EnemySprites/basic asset pack/Basic Vermin Animations/Lava Ant/LavaAnt.png" id="1_25d5u"]
 [ext_resource type="Script" uid="uid://bhlqb2w0bekmu" path="res://scripts/EnemyScripts/LavaAnt.gd" id="1_rfqu3"]
-[ext_resource type="PackedScene" uid="uid://dknwa0x42eftl" path="res://scenes/EnemyCharacter/KillZone.tscn" id="2_mmxyl"]
+[ext_resource type="PackedScene" path="res://scenes/killzone.tscn" id="2_mmxyl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nla4n"]
 atlas = ExtResource("1_25d5u")
