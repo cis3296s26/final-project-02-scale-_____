@@ -324,6 +324,8 @@ offset = Vector2(-16, -16)
 shape = SubResource("RectangleShape2D_w6hf4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1364029089]
+visible = false
 
 [node name="PauseMenu" parent="CanvasLayer" unique_id=358881738 instance=ExtResource("8_8lipi")]
 process_mode = 3
+visible = false
