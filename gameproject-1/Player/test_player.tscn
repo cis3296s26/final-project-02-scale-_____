@@ -306,14 +306,16 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w6hf4"]
 size = Vector2(6, 8)
 
-[node name="Player" type="CharacterBody2D" unique_id=127306071]
+[node name="Player" type="CharacterBody2D" unique_id=127306071 groups=["player"]]
 scale = Vector2(4, 4)
 script = ExtResource("1_w6hf4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1586020943]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_x8e5g")
-animation = &"owl_fall"
+animation = &"owl_hit"
+frame = 3
+frame_progress = 1.0
 centered = false
 offset = Vector2(-16, -16)
 

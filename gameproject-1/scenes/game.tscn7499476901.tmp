@@ -233,5 +233,5 @@ position = Vector2(8, -39)
 position = Vector2(0, 3.25)
 position_smoothing_enabled = true
 
-[node name="enemy_jan" parent="." unique_id=1325987047 instance=ExtResource("4_p57ef")]
-position = Vector2(366, -9)
+[node name="EnemyJan" parent="." unique_id=1782737620 instance=ExtResource("4_p57ef")]
+position = Vector2(396, -11)
