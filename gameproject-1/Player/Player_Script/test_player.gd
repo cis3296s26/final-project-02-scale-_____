@@ -1,12 +1,19 @@
 extends CharacterBody2D
 
-
 @export var speed = 275.0
 @export var jump_velocity = -400.0
 
-@onready var animatedSprite = $AnimatedSprite2D
+@export var max_health = 3
+var current_health = 3
+var can_take_damage = true
 
-# runs at launch
+@onready var animatedSprite = $AnimatedSprite2D
+@onready var heart_bar = $"../HeartBar"
+
+func _ready() -> void:
+	current_health = max_health
+	update_hearts()
+
 func _physics_process(delta: float) -> void:
 	basic_movement(delta)
 	handle_animations()
@@ -33,20 +40,15 @@ func handle_direction() -> void:
 		animatedSprite.flip_h = false
 
 func basic_movement(delta: float) -> void:
-		# Add the gravity.
 	if not is_on_floor():
 		var gravity = get_gravity()
 		if velocity.y > 0:
-			# If falling, slower fall to glide
 			gravity *= 0.30
 		velocity += gravity * delta
 
-	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_velocity
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * speed
@@ -56,5 +58,32 @@ func basic_movement(delta: float) -> void:
 func _input(event):
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_ESCAPE:
-			#Go to pause menu if Esc key pressed
-			get_tree().change_scene_to_file("res://pause_menu.tscn");
+			get_tree().change_scene_to_file("res://pause_menu.tscn")
+
+func take_damage(amount: int) -> void:
+	if not can_take_damage:
+		return
+
+	current_health -= amount
+
+	if current_health < 0:
+		current_health = 0
+
+	update_hearts()
+
+	# flash red effect
+	animatedSprite.modulate = Color(1, 0.3, 0.3)
+	await get_tree().create_timer(0.15).timeout
+	animatedSprite.modulate = Color(1, 1, 1)
+
+	if current_health == 0:
+		get_tree().change_scene_to_file("res://scenes/death_screen.tscn")
+		return
+
+	can_take_damage = false
+	await get_tree().create_timer(1.0).timeout
+	can_take_damage = true
+
+func update_hearts() -> void:
+	if heart_bar:
+		heart_bar.update_hearts(current_health)

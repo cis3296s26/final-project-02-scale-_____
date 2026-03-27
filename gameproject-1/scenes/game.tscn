@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ocyoc1083cuv" path="res://Player/test_player.tscn" id="4_iywne"]
 [ext_resource type="PackedScene" uid="uid://d30iq1mq7lcnp" path="res://scenes/platform.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://68r8k6qparxw" path="res://scenes/void.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://cpsgpg6xxfbat" path="res://scenes/heart_bar.tscn" id="6_p57ef"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
 texture = ExtResource("3_lnu2h")
@@ -209,6 +210,9 @@ _data = {
 &"move": SubResource("Animation_iywne")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p57ef"]
+size = Vector2(17, 10)
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
 
 [node name="Game" type="Node2D" unique_id=1469360423]
@@ -232,6 +236,12 @@ autoplay = &"move"
 [node name="LavaAnt" parent="." unique_id=1148217433 instance=ExtResource("3_lbhrr")]
 position = Vector2(347, 9)
 
+[node name="Area2D" type="Area2D" parent="LavaAnt" unique_id=55619231]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LavaAnt/Area2D" unique_id=1241669465]
+position = Vector2(-0.5, 3)
+shape = SubResource("RectangleShape2D_p57ef")
+
 [node name="Player" parent="." unique_id=127306071 instance=ExtResource("4_iywne")]
 position = Vector2(8, -39)
 
@@ -244,3 +254,7 @@ position = Vector2(-3, 81)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=93502605]
 shape = SubResource("WorldBoundaryShape2D_p57ef")
+
+[node name="HeartBar" parent="." unique_id=1223501361 instance=ExtResource("6_p57ef")]
+
+[connection signal="body_entered" from="LavaAnt/Area2D" to="LavaAnt" method="_on_area_2d_body_entered"]
