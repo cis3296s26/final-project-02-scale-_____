@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://dknwa0x42eftl"]
 
-[ext_resource type="Script" path="res://scripts/killzone.gd" id="1_gm3fw"]
+[ext_resource type="Script" uid="uid://nk4nmnicwcvy" path="res://scripts/killzone.gd" id="1_gm3fw"]
 
-[node name="Area2D" type="Area2D" unique_id=1321303783]
-collision_mask = 2
+[node name="node2" type="Area2D" unique_id=1321303783]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_gm3fw")
 
 [node name="Timer" type="Timer" parent="." unique_id=347799197]
