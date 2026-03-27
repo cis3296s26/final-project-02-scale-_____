@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d30iq1mq7lcnp" path="res://scenes/platform.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://68r8k6qparxw" path="res://scenes/void.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://cpsgpg6xxfbat" path="res://scenes/heart_bar.tscn" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://cuhyldks1lip8" path="res://scenes/EnemyCharacter/enemy_jan.tscn" id="8_gee14"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
 texture = ExtResource("3_lnu2h")
@@ -270,5 +271,8 @@ position = Vector2(-183, 71)
 shape = SubResource("WorldBoundaryShape2D_u5sy4")
 
 [node name="HeartBar" parent="." unique_id=1223501361 instance=ExtResource("6_p57ef")]
+
+[node name="enemy_jan" parent="." unique_id=1325987047 instance=ExtResource("8_gee14")]
+position = Vector2(-82, -2)
 
 [connection signal="body_entered" from="LavaAnt/Area2D" to="LavaAnt" method="_on_area_2d_body_entered"]

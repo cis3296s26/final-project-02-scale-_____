@@ -19,7 +19,13 @@ var attack_timer: float = 0.0
 
 func _physics_process(delta):
 	if player == null:
-		return
+		player = get_tree().get_first_node_in_group("player")
+		
+	if player == null:
+		anim.play("jan_idle")
+		velocity.x = 0
+		move_and_slide()
+		return #
 	
 	var distance = global_position.distance_to(player.global_position)
 	
