@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cpsgpg6xxfbat"]
+
+[ext_resource type="Texture2D" uid="uid://bpn58mhdm2yvy" path="res://assets/pixel heart.png" id="1_hm6s1"]
+[ext_resource type="Script" uid="uid://d1fnkwwqr1ltt" path="res://scenes/heart_bar.gd" id="1_otjmu"]
+
+[node name="HeartBar" type="CanvasLayer" unique_id=1223501361]
+scale = Vector2(0.2, 0.2)
+transform = Transform2D(0.2, 0, 0, 0.2, 0, 0)
+script = ExtResource("1_otjmu")
+
+[node name="UIRoot" type="Control" parent="." unique_id=1031175774]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 60.0
+scale = Vector2(0.1, 0.1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UIRoot" unique_id=570403350]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 4540.0
+offset_bottom = 1520.0
+theme_override_constants/separation = 10
+
+[node name="Heart1" type="TextureRect" parent="UIRoot/HBoxContainer" unique_id=2012302803]
+layout_mode = 2
+texture = ExtResource("1_hm6s1")
+
+[node name="Heart2" type="TextureRect" parent="UIRoot/HBoxContainer" unique_id=835116018]
+layout_mode = 2
+texture = ExtResource("1_hm6s1")
+
+[node name="Heart3" type="TextureRect" parent="UIRoot/HBoxContainer" unique_id=593284398]
+layout_mode = 2
+texture = ExtResource("1_hm6s1")

@@ -19,3 +19,7 @@ func _process(delta: float) -> void:
 		animated_sprite.flip_h = false
 	
 	position.x += direction * SPEED * delta
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.has_method("take_damage"):
+		body.take_damage(1)
