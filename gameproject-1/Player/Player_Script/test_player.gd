@@ -21,6 +21,15 @@ var motion_previous = Vector2()
 
 var hit_the_ground = false
 
+@export var max_health = 3
+var current_health = 3
+var can_take_damage = true
+
+@onready var heart_bar = $"../HeartBar"
+
+func _ready() -> void:
+	current_health = max_health
+	update_hearts()
 
 # runs at launch
 func _physics_process(delta: float) -> void:
@@ -50,7 +59,6 @@ func handle_animations() -> void:
 			animatedSprite.play("owl_fall")
 
 func handle_scaling():
-	# Default targets (Normal size)
 	var target_scale_x = 1.0
 	var target_scale_y = 1.0
 
@@ -127,10 +135,47 @@ func _on_dash_duration_timer_timeout() -> void:
 func _on_dash_cooldown_timer_timeout() -> void:
 	can_dash = true
 
-func _input(event):
-	if event.is_action_pressed("ui_cancel"):
-		#Go to pause menu if Esc key pressed
-		get_tree().change_scene_to_file("res://pause_menu.tscn")
+func take_damage(amount: int) -> void:
+	if not can_take_damage:
+		return
+
+	current_health -= amount
+
+	if current_health < 0:
+		current_health = 0
+
+	update_hearts()
+
+	# flash red effect
+	animatedSprite.modulate = Color(1, 0.3, 0.3)
+	await get_tree().create_timer(0.15).timeout
+	animatedSprite.modulate = Color(1, 1, 1)
+
+	if current_health == 0:
+		get_tree().change_scene_to_file("res://scenes/death_screen.tscn")
+		return
+
+	can_take_damage = false
+	await get_tree().create_timer(1.0).timeout
+	can_take_damage = true
+
+func update_hearts() -> void:
+	if heart_bar:
+		heart_bar.update_hearts(current_health)
+
+@onready var pause_menu = $CanvasLayer/PauseMenu
+
+func _unhandled_input(event):
+	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
+		if pause_menu.visible:
+			# Resume
+			get_tree().paused = false
+			pause_menu.visible = false
+		else:
+			# Pause
+			get_tree().paused = true
+			#Go to pause menu if Esc key pressed
+			pause_menu.visible = true
 
 func _on_attack_area_entered(area: Area2D) -> void:
 	print("Damage")

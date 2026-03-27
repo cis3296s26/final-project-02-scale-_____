@@ -1,8 +1,8 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1774585574
+::res://::1774586406
 export_presets.cfg::TextFile::-1::1774583702::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::822653193914807282::1773416912::1773416927::1::::<><><>0<>0<>95e354c2323f1500a8f6057edb08b387<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-::res://assets/::1774584965
+::res://assets/::1774586381
 pixel heart.png::CompressedTexture2D::3467971331295484026::1774584965::1774584965::1::::<><><>0<>0<>3c0041ea2568bb23dc7893bed31a4684<>res://.godot/imported/pixel heart.png-4d7cb2aa172edc8713d7f8aa8978426d.ctex::
 ::res://assets/EnemySprites/::1774584681
 ::res://assets/EnemySprites/basic asset pack/::1774583702
@@ -41,10 +41,10 @@ TunnelingMole.png::CompressedTexture2D::3298795601583983291::1774583702::1774583
 Basic Vermin 1x.png::CompressedTexture2D::3906352122593502971::1774583702::1774583702::1::::<><><>0<>0<>83bcf87eae3c33a9e60d563da0e1ddfe<>res://.godot/imported/Basic Vermin 1x.png-e22caaef3ec1a0b8d077626d29defec0.ctex::
 Basic Vermin 2x.png::CompressedTexture2D::399744622203423679::1774583702::1774583702::1::::<><><>0<>0<>61b21cc3b0ccff1b5661d9016026d05b<>res://.godot/imported/Basic Vermin 2x.png-92f4b5c1e95ec23eb52f00374d05bcc4.ctex::
 Basic Vermin 4x.png::CompressedTexture2D::6048719973935122646::1774583702::1774583702::1::::<><><>0<>0<>edbde5fb4581c90746d5ca83caf84332<>res://.godot/imported/Basic Vermin 4x.png-bdbd2a17e8e7ef353150573181f1bb2a.ctex::
-::res://assets/Environment/::1774584706
-::res://assets/Environment/Background/::1774584965
-Background_City_Skyline_Atmosfere_01.png::CompressedTexture2D::2424438184195655006::1774584965::1774584965::1::::<><><>0<>0<>573ccd71808f81c4066415613c8635dc<>res://.godot/imported/Background_City_Skyline_Atmosfere_01.png-78ad16eb115ae082f881a7f2ca420609.ctex::
-parallax-forest-back-trees.png::CompressedTexture2D::2420861956606632684::1774584965::1774584965::1::::<><><>0<>0<>4e21c35d4c8603d8b07cc5185bc9cc91<>res://.godot/imported/parallax-forest-back-trees.png-82d0ca7cd9f5664b86459dc6c98339ba.ctex::
+::res://assets/Environment/::1774586381
+::res://assets/Environment/Background/::1774586381
+Background_City_Skyline_Atmosfere_01.png::CompressedTexture2D::2424438184195655006::1774586381::1774586381::1::::<><><>0<>0<>573ccd71808f81c4066415613c8635dc<>res://.godot/imported/Background_City_Skyline_Atmosfere_01.png-78ad16eb115ae082f881a7f2ca420609.ctex::
+parallax-forest-back-trees.png::CompressedTexture2D::2420861956606632684::1774586381::1774586381::1::::<><><>0<>0<>4e21c35d4c8603d8b07cc5185bc9cc91<>res://.godot/imported/parallax-forest-back-trees.png-82d0ca7cd9f5664b86459dc6c98339ba.ctex::
 ::res://assets/fonts/::1774019046
 PixelOperator8-Bold.ttf::FontFile::9154690205291948519::1773959509::1774019046::1::::<><><>0<>0<>5f7172e32cc0aa74158d66d49aaa1266<>res://.godot/imported/PixelOperator8-Bold.ttf-74faf550739674ad3170f08e646e0614.fontdata::
 PixelOperator8.ttf::FontFile::3217866226561902138::1773959509::1774019046::1::::<><><>0<>0<>b1d4b4db7e344f559788a0705f91654e<>res://.godot/imported/PixelOperator8.ttf-6f9f01766aff16f52046b880ffb8d367.fontdata::
@@ -94,22 +94,21 @@ slime_green.png::CompressedTexture2D::3406510118556333028::1773902296::177458370
 slime_purple.png::CompressedTexture2D::5600717993488766826::1773902296::1774583702::1::::<><><>0<>0<>aafecc93f95820cc13f5d6546dc1090e<>res://.godot/imported/slime_purple.png-7b29a54f74bf154424c99d139279c003.ctex::
 world_tileset.png::CompressedTexture2D::6107173484287005987::1773902296::1774583702::1::::<><><>0<>0<>243e788902c0d0fa1f68c790ee10eacf<>res://.godot/imported/world_tileset.png-ed1cecf9ff0da37e6a6daeeb09bb013c.ctex::
 ::res://Enemy/::1773758426
-::res://Map/::1774585110
-test_level.tscn::PackedScene::7035549513384774881::1774585110::0::1::::<><><>0<>0<><>::uid://ocyoc1083cuv::::res://Player/test_player.tscn
+::res://Map/::1774586381
+test_level.tscn::PackedScene::7035549513384774881::1774586381::0::1::::<><><>0<>0<><>::uid://ocyoc1083cuv::::res://Player/player.tscn
 ::res://Menu/::1773758450
-::res://Player/::1774585341
-owl_hit.png::CompressedTexture2D::57424842112758801::1774585110::1774585140::1::::<><><>0<>0<>ed6b578bac42dd146eec8fa021e7ee89<>res://.godot/imported/owl_hit.png-4d93543de73f087c81b3b4119c621837.ctex::
-player.tscn::PackedScene::988254921774339925::1774585341::0::1::::<><><>0<>0<><>::uid://jxk2qktqjuk5::::res://Player/Player_Script/test_player.gd<>uid://bsealknxkubyq::::res://assets/sprites/owl_idle.png<>uid://guylvubvvnof::::res://assets/sprites/owl_hit.png<>uid://dsng3lyt605k2::::res://assets/sprites/owl_fall.png<>uid://4w0vocv1r0h6::::res://assets/sprites/owl_jump.png<>uid://ci5inh8x5v1l0::::res://assets/sprites/owl_run.png
-::res://Player/Player_Script/::1774585341
-test_player.gd::GDScript::679836524155441258::1774585341::0::1::::<>CharacterBody2D<><>0<>0<><>::
-::res://scenes/::1774585110
+::res://Player/::1774586381
+player.tscn::PackedScene::988254921774339925::1774586381::0::1::::<><><>0<>0<><>::uid://jxk2qktqjuk5::::res://Player/Player_Script/test_player.gd<>uid://bsealknxkubyq::::res://assets/sprites/owl_idle.png<>uid://guylvubvvnof::::res://assets/sprites/owl_hit.png<>uid://dsng3lyt605k2::::res://assets/sprites/owl_fall.png<>uid://4w0vocv1r0h6::::res://assets/sprites/owl_jump.png<>uid://ci5inh8x5v1l0::::res://assets/sprites/owl_run.png
+::res://Player/Player_Script/::1774586381
+test_player.gd::GDScript::679836524155441258::1774586381::0::1::::<>CharacterBody2D<><>0<>0<><>::
+::res://scenes/::1774586381
 coin.gd::GDScript::9054737623079092167::1774584965::0::1::::<>Area2D<><>0<>0<><>::
 coin.tscn::PackedScene::4631384213854169938::1774584965::0::1::::<><><>0<>0<><>::uid://d2agg83lu74m2::::res://scenes/coin.gd<>uid://bfxtbeyfb7p0g::::res://assets/sprites/coin.png
 death_screen.tscn::PackedScene::5036214123651459493::1774584965::0::1::::<><><>0<>0<><>::uid://gtatu2ee4m6u::::res://scripts/death_screen.gd<>uid://xbhmboffhejg::::res://scripts/main_menu.gd
-game.tscn::PackedScene::3210558460310417428::1774585110::0::1::::<><><>0<>0<><>::uid://baqxiium1vtvo::::res://assets/Environment/Background/parallax-forest-back-trees.png<>uid://dfa38aa3xhuuy::::res://scenes/EnemyCharacter/EnemyV1.tscn<>uid://cqv2s4h18uqi6::::res://assets/sprites/world_tileset.png<>uid://ocyoc1083cuv::::res://Player/test_player.tscn<>uid://d30iq1mq7lcnp::::res://scenes/platform.tscn<>uid://68r8k6qparxw::::res://scenes/void.tscn<>uid://cpsgpg6xxfbat::::res://scenes/heart_bar.tscn
+game.tscn::PackedScene::3210558460310417428::1774586381::0::1::::<><><>0<>0<><>::uid://baqxiium1vtvo::::res://assets/Environment/Background/parallax-forest-back-trees.png<>uid://dfa38aa3xhuuy::::res://scenes/EnemyCharacter/EnemyV1.tscn<>uid://cqv2s4h18uqi6::::res://assets/sprites/world_tileset.png<>uid://ocyoc1083cuv::::res://Player/player.tscn<>uid://d30iq1mq7lcnp::::res://scenes/platform.tscn<>uid://68r8k6qparxw::::res://scenes/void.tscn<>uid://cpsgpg6xxfbat::::res://scenes/heart_bar.tscn
 heart_bar.gd::GDScript::8995302243533577125::1774584965::0::1::::<>CanvasLayer<><>0<>0<><>::
 heart_bar.tscn::PackedScene::5863224274499921999::1774584965::0::1::::<><><>0<>0<><>::uid://bpn58mhdm2yvy::::res://assets/pixel heart.png<>uid://d1fnkwwqr1ltt::::res://scenes/heart_bar.gd
-main_menu.tscn::PackedScene::6053563071779595488::1774584965::0::1::::<><><>0<>0<><>::uid://xbhmboffhejg::::res://scripts/main_menu.gd
+main_menu.tscn::PackedScene::6053563071779595488::1774586381::0::1::::<><><>0<>0<><>::uid://xbhmboffhejg::::res://scripts/main_menu.gd
 pause_menu.tscn::PackedScene::1377678192176669719::1774584965::0::1::::<><><>0<>0<><>::uid://d2do35b88pbgk::::res://scripts/pause.gd
 platform.tscn::PackedScene::9176674810355235753::1774584965::0::1::::<><><>0<>0<><>::uid://d00shr4svncs1::::res://assets/sprites/platforms.png<>uid://b68qhr4464r35::::res://scenes/coin.tscn
 void.tscn::PackedScene::2245070312608338584::1774584965::0::1::::<><><>0<>0<><>::uid://nk4nmnicwcvy::::res://scripts/killzone.gd
