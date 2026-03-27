@@ -1,9 +1,13 @@
 This is an adventure platformer game developed with the Godot engine.
+How to Run the game:
+1. Download the exefile
+2. Run the exefile
+
 How to Run in Godot:
 1. Download or clone the repository
 2. Open Godot Engine
-3. Import > select project
-4. Click Run Project
+3. Import > find project
+4. Open projecy.godot
 
 How to Build:
 1. Check that export templates are downloaded. Editor > Manage Export Template
