@@ -55,11 +55,6 @@ func basic_movement(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 
-func _input(event):
-	if event is InputEventKey and event.pressed:
-		if event.keycode == KEY_ESCAPE:
-			get_tree().change_scene_to_file("res://pause_menu.tscn")
-
 func take_damage(amount: int) -> void:
 	if not can_take_damage:
 		return
@@ -87,3 +82,17 @@ func take_damage(amount: int) -> void:
 func update_hearts() -> void:
 	if heart_bar:
 		heart_bar.update_hearts(current_health)
+
+@onready var pause_menu = $CanvasLayer/PauseMenu
+
+func _unhandled_input(event):
+	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
+		if pause_menu.visible:
+			# Resume
+			get_tree().paused = false
+			pause_menu.visible = false
+		else:
+			# Pause
+			get_tree().paused = true
+			#Go to pause menu if Esc key pressed
+			pause_menu.visible = true
