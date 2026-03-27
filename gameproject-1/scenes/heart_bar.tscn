@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bpn58mhdm2yvy" path="res://assets/pixel heart.png" id="1_hm6s1"]
 [ext_resource type="Script" uid="uid://d1fnkwwqr1ltt" path="res://scenes/heart_bar.gd" id="1_otjmu"]
+[ext_resource type="Texture2D" uid="uid://bfxtbeyfb7p0g" path="res://assets/sprites/coin.png" id="3_allax"]
 
 [node name="HeartBar" type="CanvasLayer" unique_id=1223501361]
 scale = Vector2(0.2, 0.2)
@@ -15,7 +16,7 @@ offset_left = 20.0
 offset_top = 20.0
 offset_right = 60.0
 offset_bottom = 60.0
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.35, 0.35)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UIRoot" unique_id=570403350]
 layout_mode = 0
@@ -36,3 +37,24 @@ texture = ExtResource("1_hm6s1")
 [node name="Heart3" type="TextureRect" parent="UIRoot/HBoxContainer" unique_id=593284398]
 layout_mode = 2
 texture = ExtResource("1_hm6s1")
+
+[node name="CoinRow" type="HBoxContainer" parent="UIRoot" unique_id=1309040339]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CoinLabel" type="Label" parent="UIRoot" unique_id=587235533]
+layout_mode = 0
+offset_left = 1342.8572
+offset_top = 1700.0
+offset_right = 1714.8572
+offset_bottom = 2586.0
+theme_override_font_sizes/font_size = 650
+text = "0"
+
+[node name="CoinIcon" type="Sprite2D" parent="UIRoot" unique_id=1594447668]
+position = Vector2(585.7143, 2171.4285)
+scale = Vector2(84.99999, 84.99999)
+texture = ExtResource("3_allax")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
