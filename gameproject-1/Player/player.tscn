@@ -7,6 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://4w0vocv1r0h6" path="res://assets/sprites/owl_jump.png" id="4_ffe6g"]
 [ext_resource type="Texture2D" uid="uid://ci5inh8x5v1l0" path="res://assets/sprites/owl_run.png" id="5_x8e5g"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhl08"]
+atlas = ExtResource("3_hsdrk")
+region = Rect2(0, 32, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_myt4k"]
 atlas = ExtResource("3_x8e5g")
 region = Rect2(32, 0, 32, 32)
@@ -89,6 +93,14 @@ region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x8e5g"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhl08")
+}],
+"loop": true,
+"name": &"owl_attack",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_myt4k")
@@ -185,19 +197,68 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtle1"]
+size = Vector2(14, 9)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w6hf4"]
-size = Vector2(6, 8)
+size = Vector2(5.25, 7)
+
+[sub_resource type="Animation" id="Animation_od3ui"]
+resource_name = "Attack"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D/Attack/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.43333334, 1.7, 1.9666667, 2.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_00tjw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D/Attack/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x3vf3"]
+_data = {
+&"Attack": SubResource("Animation_od3ui"),
+&"RESET": SubResource("Animation_00tjw")
+}
 
 [node name="Player" type="CharacterBody2D" unique_id=127306071]
-scale = Vector2(4, 4)
+scale = Vector2(2, 2)
 script = ExtResource("1_w6hf4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1586020943]
+position = Vector2(0, 4)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_x8e5g")
-animation = &"owl_land"
+animation = &"owl_attack"
 centered = false
-offset = Vector2(-16, -16)
+offset = Vector2(-16, -24)
+
+[node name="Attack" type="Area2D" parent="AnimatedSprite2D" unique_id=892979878]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Attack" unique_id=1639619152]
+position = Vector2(14, -10)
+shape = SubResource("RectangleShape2D_vtle1")
+disabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=785825353]
 shape = SubResource("RectangleShape2D_w6hf4")
@@ -206,5 +267,9 @@ shape = SubResource("RectangleShape2D_w6hf4")
 
 [node name="DashCooldownTimer" type="Timer" parent="." unique_id=311272342]
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1117205174]
+libraries/ = SubResource("AnimationLibrary_x3vf3")
+
+[connection signal="area_entered" from="AnimatedSprite2D/Attack" to="." method="_on_attack_area_entered"]
 [connection signal="timeout" from="DashDurationTimer" to="." method="_on_dash_duration_timer_timeout"]
 [connection signal="timeout" from="DashCooldownTimer" to="." method="_on_dash_cooldown_timer_timeout"]

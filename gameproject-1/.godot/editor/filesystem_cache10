@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1774563819
+::res://::1774577831
 coin.gd::GDScript::5381900105761398833::1774018909::0::1::::<>Area2D<><>0<>0<><>::
 coin.tscn::PackedScene::4631384213854169938::1774018909::0::1::::<><><>0<>0<><>::uid://d26c1qoydwbwd::::res://coin.gd<>uid://bfxtbeyfb7p0g::::res://assets/sprites/coin.png
 export_presets.cfg::TextFile::-1::1774019345::0::1::::<><><>0<>0<><>::
@@ -98,12 +98,13 @@ world_tileset.png::CompressedTexture2D::6107173484287005987::1773902296::1774019
 ::res://Map/::1774535672
 test_level.tscn::PackedScene::7035549513384774881::1774535672::0::1::::<><><>0<>0<><>::uid://ocyoc1083cuv::::res://Player/player.tscn
 ::res://Menu/::1773758450
-::res://Player/::1774535992
-player.tscn::PackedScene::988254921774339925::1774535992::0::1::::<><><>0<>0<><>::uid://jxk2qktqjuk5::::res://Player/Player_Script/test_player.gd<>uid://bsealknxkubyq::::res://assets/sprites/owl_idle.png<>uid://guylvubvvnof::::res://assets/sprites/owl_hit.png<>uid://dsng3lyt605k2::::res://assets/sprites/owl_fall.png<>uid://4w0vocv1r0h6::::res://assets/sprites/owl_jump.png<>uid://ci5inh8x5v1l0::::res://assets/sprites/owl_run.png
-::res://Player/Player_Script/::1774536160
-test_player.gd::GDScript::679836524155441258::1774536160::0::1::::<>CharacterBody2D<><>0<>0<><>::
-::res://scenes/::1774535673
-game.tscn::PackedScene::3210558460310417428::1774535673::0::1::::<><><>0<>0<><>::uid://dfa38aa3xhuuy::::res://scenes/EnemyCharacter/EnemyV1.tscn<>uid://cqv2s4h18uqi6::::res://assets/sprites/world_tileset.png<>uid://ocyoc1083cuv::::res://Player/player.tscn<>uid://d30iq1mq7lcnp::::res://scenes/platform.tscn
+::res://Player/::1774582168
+owl_hit.png::CompressedTexture2D::57424842112758801::1774582168::1774582168::1::::<><><>0<>0<>ed6b578bac42dd146eec8fa021e7ee89<>res://.godot/imported/owl_hit.png-4d93543de73f087c81b3b4119c621837.ctex::
+player.tscn::PackedScene::988254921774339925::1774580941::0::1::::<><><>0<>0<><>::uid://jxk2qktqjuk5::::res://Player/Player_Script/test_player.gd<>uid://btlet73rondm7::::res://assets/sprites/knight.png<>uid://bsealknxkubyq::::res://assets/sprites/owl_idle.png<>uid://guylvubvvnof::::res://assets/sprites/owl_hit.png<>uid://dsng3lyt605k2::::res://assets/sprites/owl_fall.png<>uid://4w0vocv1r0h6::::res://assets/sprites/owl_jump.png<>uid://ci5inh8x5v1l0::::res://assets/sprites/owl_run.png
+::res://Player/Player_Script/::1774579201
+test_player.gd::GDScript::679836524155441258::1774579201::0::1::::<>CharacterBody2D<><>0<>0<><>::
+::res://scenes/::1774577862
+game.tscn::PackedScene::3210558460310417428::1774577862::0::1::::<><><>0<>0<><>::uid://dfa38aa3xhuuy::::res://scenes/EnemyCharacter/EnemyV1.tscn<>uid://cqv2s4h18uqi6::::res://assets/sprites/world_tileset.png<>uid://ocyoc1083cuv::::res://Player/player.tscn<>uid://d30iq1mq7lcnp::::res://scenes/platform.tscn
 platform.tscn::PackedScene::9176674810355235753::1774534339::0::1::::<><><>0<>0<><>::uid://d00shr4svncs1::::res://assets/sprites/platforms.png<>uid://b68qhr4464r35::::res://coin.tscn
 ::res://scenes/EnemyCharacter/::1773975590
 EnemyV1.tscn::PackedScene::7511965277569014200::1773975590::0::1::::<><><>0<>0<><>::uid://bi6xr5hbshg2p::::res://assets/EnemySprites/basic asset pack/Basic Vermin Animations/Lava Ant/LavaAnt.png<>uid://bhlqb2w0bekmu::::res://scripts/EnemyScripts/LavaAnt.gd<>uid://dknwa0x42eftl::::res://scenes/EnemyCharacter/killzone.tscn
