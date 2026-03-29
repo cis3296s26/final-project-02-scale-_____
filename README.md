@@ -8,9 +8,9 @@ How to Run in Godot:
 1. Download or clone the repository
 2. Open Godot Engine
 3. Import > find project
-4. Open projecy.godot
+4. Open project.godot
 
-How to Build:
+How to Build an executable:
 1. Check that export templates are downloaded. Editor > Manage Export Template
 2. Project > Export
 Add preset for your operating system
