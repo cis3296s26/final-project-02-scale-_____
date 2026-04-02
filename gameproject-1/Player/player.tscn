@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://ocyoc1083cuv"]
 
-[ext_resource type="Script" uid="uid://jxk2qktqjuk5" path="res://Player/Player_Script/Player_Main.gd" id="1_w6hf4"]
-[ext_resource type="Script" uid="uid://c5tev0ac0xtid" path="res://Player/Player_Script/movement.gd" id="2_od3ui"]
+[ext_resource type="Script" path="res://Player/Player_Script/Player_Main.gd" id="1_w6hf4"]
+[ext_resource type="Script" path="res://Player/Player_Script/movement.gd" id="2_od3ui"]
 [ext_resource type="Texture2D" uid="uid://bsealknxkubyq" path="res://assets/sprites/owl_idle.png" id="3_cwyof"]
 [ext_resource type="Texture2D" uid="uid://guylvubvvnof" path="res://assets/sprites/owl_hit.png" id="3_hsdrk"]
-[ext_resource type="Script" uid="uid://rv71njgswo6o" path="res://Player/Player_Script/combat.gd" id="3_x3vf3"]
+[ext_resource type="Script" path="res://Player/Player_Script/combat.gd" id="3_x3vf3"]
 [ext_resource type="Texture2D" uid="uid://dsng3lyt605k2" path="res://assets/sprites/owl_fall.png" id="3_x8e5g"]
 [ext_resource type="Texture2D" uid="uid://4w0vocv1r0h6" path="res://assets/sprites/owl_jump.png" id="4_ffe6g"]
 [ext_resource type="Texture2D" uid="uid://ci5inh8x5v1l0" path="res://assets/sprites/owl_run.png" id="5_x8e5g"]

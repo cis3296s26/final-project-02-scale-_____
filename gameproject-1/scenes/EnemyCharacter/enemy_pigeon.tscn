@@ -43,7 +43,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfqu3"]
 size = Vector2(16, 12)
 
-[node name="LavaAnt" type="Node2D" unique_id=1148217433]
+[node name="Pidgeon" type="Node2D" unique_id=1148217433]
 script = ExtResource("1_8pyki")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=284068969]

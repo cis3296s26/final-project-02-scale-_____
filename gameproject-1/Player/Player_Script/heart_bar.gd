@@ -15,5 +15,8 @@ func update_hearts(current_health: int) -> void:
 
 func _ready():
 	visible = true
-	GlobalScript.health_changed.connect(update_hearts)
-	update_hearts(GlobalScript.current_health)
+	if GlobalScript:
+		GlobalScript.health_changed.connect(update_hearts)
+		update_hearts(GlobalScript.current_health)
+	else:
+		print("Still can't find GlobalScript - check Autoload settings!")
