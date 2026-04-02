@@ -10,6 +10,7 @@ var is_dashing = false
 @export var glide_gravity = 80
 @export var threshold = 1
 
+@export var jump_charge = 1
 @export var dash_charge = 1
 
 var current_glide_gravity = gravity_cap
@@ -23,14 +24,19 @@ var hit_the_ground = false
 func basic_movement(delta: float, player: CharacterBody2D) -> void:
 	if player.is_on_floor():
 		dash_charge = 1
+		jump_charge = 1
 		glide_timer = 0.0
 		current_glide_gravity = glide_gravity
 		
 		if Input.is_action_just_pressed("jump"):
 			player.velocity.y = jump_gravity
-		
+	
 	else:
-		if Input.is_action_pressed("jump") and player.velocity.y > 0:
+		if Input.is_action_just_pressed("jump") and jump_charge > 0:
+			jump_charge = jump_charge - 1
+			player.velocity.y = jump_gravity
+
+		elif Input.is_action_pressed("jump") and player.velocity.y > 0:
 			glide_timer += delta*1.7
 			
 			if glide_timer > threshold:
@@ -57,7 +63,7 @@ func dash_start():
 		return
 	
 	can_dash = false
-	dash_charge = 0
+	dash_charge = dash_charge - 1
 	is_dashing = true
 	dash_velocity = 2
 	$DashDurationTimer.start(0.5) 

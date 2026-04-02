@@ -9,7 +9,7 @@ func handle_combat(player: CharacterBody2D,  animated: AnimatedSprite2D) -> void
 func handle_combat_animations(animated: AnimatedSprite2D) -> void:
 	if Input.is_action_just_pressed("attack"):
 		animated.play("owl_attack")
-		$AttackCollision/CollisionShape2D.position = Vector2(25, 0)
+		$AttackCollision/CollisionShape2D.position = Vector2(9, -3)
 		$AttackCollision/CollisionShape2D.set_deferred("disabled", false)
 		isAttacking = true	
 		
