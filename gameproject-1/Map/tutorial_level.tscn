@@ -1,0 +1,184 @@
+[gd_scene format=3 uid="uid://dnjcuduxsttve"]
+
+[ext_resource type="PackedScene" uid="uid://ocyoc1083cuv" path="res://Player/player.tscn" id="1_ifix0"]
+[ext_resource type="PackedScene" uid="uid://68r8k6qparxw" path="res://scenes/void.tscn" id="2_ho5cc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifix0"]
+size = Vector2(584, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mi4a6"]
+size = Vector2(16, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ho5cc"]
+size = Vector2(584, 64)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mi4a6"]
+distance = -1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cnj7s"]
+size = Vector2(24, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n0p6s"]
+size = Vector2(440, 24)
+
+[node name="SubwayTutorial" type="Node2D" unique_id=140640481]
+
+[node name="Background" type="ColorRect" parent="." unique_id=913111935]
+offset_left = -2352.0
+offset_top = -664.0
+offset_right = 2768.0
+offset_bottom = 864.0
+metadata/_edit_lock_ = true
+
+[node name="SubwayCar" type="StaticBody2D" parent="." unique_id=1067621371]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubwayCar" unique_id=945933509]
+position = Vector2(-988, 32)
+shape = SubResource("RectangleShape2D_ifix0")
+
+[node name="ColorRect" type="ColorRect" parent="SubwayCar" unique_id=461188362]
+offset_left = -1280.0
+offset_right = -696.0
+offset_bottom = 64.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Turnstile" type="StaticBody2D" parent="." unique_id=1451665654]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Turnstile" unique_id=528566752]
+position = Vector2(-128, -20)
+shape = SubResource("RectangleShape2D_mi4a6")
+
+[node name="ColorRect" type="ColorRect" parent="Turnstile" unique_id=1443203621]
+offset_left = -136.0
+offset_top = -40.0
+offset_right = -120.0
+color = Color(0.9607843, 0.2, 0.2, 1)
+
+[node name="Platform (NorthBound)" type="StaticBody2D" parent="." unique_id=736773874]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform (NorthBound)" unique_id=1801754486]
+position = Vector2(-212, 32)
+shape = SubResource("RectangleShape2D_ho5cc")
+
+[node name="ColorRect" type="ColorRect" parent="Platform (NorthBound)" unique_id=1919359867]
+offset_left = -504.0
+offset_right = 80.0
+offset_bottom = 64.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Platform2(SouthBound)" type="StaticBody2D" parent="." unique_id=1829958434]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2(SouthBound)" unique_id=180186219]
+position = Vector2(-1740, 32)
+shape = SubResource("RectangleShape2D_ho5cc")
+
+[node name="ColorRect" type="ColorRect" parent="Platform2(SouthBound)" unique_id=1863808071]
+offset_left = -2032.0
+offset_right = -1448.0
+offset_bottom = 64.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Player" parent="." unique_id=127306071 instance=ExtResource("1_ifix0")]
+position = Vector2(-1816, -24)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1850487707]
+scale = Vector2(0.5, 0.5)
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
+
+[node name="Killzone" parent="." unique_id=1555209443 instance=ExtResource("2_ho5cc")]
+position = Vector2(-1648, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=844098901]
+position = Vector2(-336, 32)
+shape = SubResource("WorldBoundaryShape2D_mi4a6")
+
+[node name="Stairs" type="StaticBody2D" parent="." unique_id=2100381735]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stairs" unique_id=769998732]
+position = Vector2(68, -12)
+shape = SubResource("RectangleShape2D_cnj7s")
+
+[node name="ColorRect" type="ColorRect" parent="Stairs" unique_id=565451117]
+offset_left = 56.0
+offset_top = -24.0
+offset_right = 80.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Stairs7" type="StaticBody2D" parent="." unique_id=50576724]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stairs7" unique_id=240769813]
+position = Vector2(420, -156)
+shape = SubResource("RectangleShape2D_n0p6s")
+
+[node name="ColorRect" type="ColorRect" parent="Stairs7" unique_id=597343155]
+offset_left = 200.0
+offset_top = -168.0
+offset_right = 640.0
+offset_bottom = -144.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Stairs6" type="StaticBody2D" parent="." unique_id=1245513768]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stairs6" unique_id=1402017985]
+position = Vector2(188, -132)
+shape = SubResource("RectangleShape2D_cnj7s")
+
+[node name="ColorRect" type="ColorRect" parent="Stairs6" unique_id=478002673]
+offset_left = 176.0
+offset_top = -144.0
+offset_right = 200.0
+offset_bottom = -120.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Stairs5" type="StaticBody2D" parent="." unique_id=49821744]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stairs5" unique_id=105492126]
+position = Vector2(164, -108)
+shape = SubResource("RectangleShape2D_cnj7s")
+
+[node name="ColorRect" type="ColorRect" parent="Stairs5" unique_id=61031121]
+offset_left = 152.0
+offset_top = -120.0
+offset_right = 176.0
+offset_bottom = -96.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Stairs4" type="StaticBody2D" parent="." unique_id=1887841038]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stairs4" unique_id=860056864]
+position = Vector2(140, -84)
+shape = SubResource("RectangleShape2D_cnj7s")
+
+[node name="ColorRect" type="ColorRect" parent="Stairs4" unique_id=1787685395]
+offset_left = 128.0
+offset_top = -96.0
+offset_right = 152.0
+offset_bottom = -72.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Stairs3" type="StaticBody2D" parent="." unique_id=978154867]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stairs3" unique_id=325354051]
+position = Vector2(116, -60)
+shape = SubResource("RectangleShape2D_cnj7s")
+
+[node name="ColorRect" type="ColorRect" parent="Stairs3" unique_id=210546100]
+offset_left = 104.0
+offset_top = -72.0
+offset_right = 128.0
+offset_bottom = -48.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Stairs2" type="StaticBody2D" parent="." unique_id=935506188]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stairs2" unique_id=1104797286]
+position = Vector2(92, -36)
+shape = SubResource("RectangleShape2D_cnj7s")
+
+[node name="ColorRect" type="ColorRect" parent="Stairs2" unique_id=2084917622]
+offset_left = 80.0
+offset_top = -48.0
+offset_right = 104.0
+offset_bottom = -24.0
+color = Color(0.2, 0.2, 0.2, 1)

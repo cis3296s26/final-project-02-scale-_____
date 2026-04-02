@@ -1,11 +1,12 @@
+CollisionShape2D
+ColorRect
+StaticBody2D
+Area2D
+Camera2D
 CanvasLayer
 Node
-ColorRect
 Control
-CollisionShape2D
-Area2D
 Timer
-Camera2D
 RayCast2D
 AnimatedSprite2D
 CharacterBody2D
