@@ -129,4 +129,5 @@ shape = SubResource("RectangleShape2D_fqnjk")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponHitbox" unique_id=1741323824]
 position = Vector2(12, 9)
 shape = SubResource("RectangleShape2D_e5c3f")
-disabled = true
+
+[connection signal="body_entered" from="WeaponHitbox" to="." method="_on_weapon_hitbox_body_entered"]
