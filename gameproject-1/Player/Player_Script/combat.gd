@@ -1,11 +1,18 @@
 extends Node
 
+@onready var sprite = $"../AnimatedSprite2D"
+var isAttacking = false
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func handle_combat(player: CharacterBody2D,  animated: AnimatedSprite2D) -> void:
+	handle_combat_animations(animated)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func handle_combat_animations(animated: AnimatedSprite2D) -> void:
+	if Input.is_action_just_pressed("attack"):
+		animated.play("owl_attack")
+		$AttackCollision/CollisionShape2D.position = Vector2(25, 0)
+		$AttackCollision/CollisionShape2D.set_deferred("disabled", false)
+		isAttacking = true	
+		
+	elif animated.animation != "owl_attack" and isAttacking:
+		$AttackCollision/CollisionShape2D.set_deferred("disabled", true)
+		isAttacking = false

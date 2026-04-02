@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var movement = $Movement 
 @onready var combat = $Combat
 @onready var pause_menu = $CanvasLayer/PauseMenu
-@onready var heart_bar = $"../HeartBar"
+@onready var heart_bar = $HeartBar
 
 @onready var animatedSprite = $AnimatedSprite2D
 
@@ -18,12 +18,13 @@ func _ready() -> void:
 # runs at launch
 func _physics_process(delta: float) -> void:
 	movement.basic_movement(delta, self)
-	handle_animations()
-	movement.handle_scaling(self, animatedSprite)
+	handle_movement_animations()
 	handle_direction()
+	movement.handle_scaling(self, animatedSprite)
+	combat.handle_combat(self, animatedSprite)
 	move_and_slide()
 
-func handle_animations() -> void:
+func handle_movement_animations() -> void:
 	if is_on_floor():
 		if velocity.x:
 			animatedSprite.play("owl_run")
@@ -37,8 +38,10 @@ func handle_animations() -> void:
 
 func handle_direction() -> void:
 	if velocity.x < 0:
+		combat.scale.x = -1
 		animatedSprite.flip_h = true
 	elif velocity.x > 0:
+		combat.scale.x = 1
 		animatedSprite.flip_h = false
 
 func take_damage(amount: int) -> void:
