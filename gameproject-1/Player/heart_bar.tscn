@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://cpsgpg6xxfbat"]
 
-[ext_resource type="Texture2D" uid="uid://bpn58mhdm2yvy" path="res://assets/pixel heart.png" id="1_hm6s1"]
-[ext_resource type="Script" uid="uid://d1fnkwwqr1ltt" path="res://scenes/heart_bar.gd" id="1_otjmu"]
-[ext_resource type="Texture2D" uid="uid://bfxtbeyfb7p0g" path="res://assets/sprites/coin.png" id="3_allax"]
+[ext_resource type="Script" uid="uid://d1fnkwwqr1ltt" path="res://Player/Player_Script/heart_bar.gd" id="1_j2iv0"]
+[ext_resource type="Texture2D" uid="uid://bpn58mhdm2yvy" path="res://assets/pixel heart.png" id="2_y6o4o"]
+[ext_resource type="Texture2D" uid="uid://bfxtbeyfb7p0g" path="res://assets/sprites/coin.png" id="3_s4fau"]
 
 [node name="HeartBar" type="CanvasLayer" unique_id=1223501361]
 scale = Vector2(0.2, 0.2)
 transform = Transform2D(0.2, 0, 0, 0.2, 0, 0)
-script = ExtResource("1_otjmu")
+script = ExtResource("1_j2iv0")
 
 [node name="UIRoot" type="Control" parent="." unique_id=1031175774]
 layout_mode = 3
@@ -28,15 +28,15 @@ theme_override_constants/separation = 10
 
 [node name="Heart1" type="TextureRect" parent="UIRoot/HBoxContainer" unique_id=2012302803]
 layout_mode = 2
-texture = ExtResource("1_hm6s1")
+texture = ExtResource("2_y6o4o")
 
 [node name="Heart2" type="TextureRect" parent="UIRoot/HBoxContainer" unique_id=835116018]
 layout_mode = 2
-texture = ExtResource("1_hm6s1")
+texture = ExtResource("2_y6o4o")
 
 [node name="Heart3" type="TextureRect" parent="UIRoot/HBoxContainer" unique_id=593284398]
 layout_mode = 2
-texture = ExtResource("1_hm6s1")
+texture = ExtResource("2_y6o4o")
 
 [node name="CoinRow" type="HBoxContainer" parent="UIRoot" unique_id=1309040339]
 layout_mode = 0
@@ -55,6 +55,6 @@ text = "0"
 [node name="CoinIcon" type="Sprite2D" parent="UIRoot" unique_id=1594447668]
 position = Vector2(585.7143, 2171.4285)
 scale = Vector2(84.99999, 84.99999)
-texture = ExtResource("3_allax")
+texture = ExtResource("3_s4fau")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)

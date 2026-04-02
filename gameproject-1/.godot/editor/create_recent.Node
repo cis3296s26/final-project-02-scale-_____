@@ -1,5 +1,6 @@
-ColorRect
 CanvasLayer
+Node
+ColorRect
 Control
 CollisionShape2D
 Area2D
