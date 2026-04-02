@@ -120,14 +120,16 @@ position = Vector2(10, 1)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_ordgw")
 animation = &"jan_attack"
+offset = Vector2(5, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1840952677]
+position = Vector2(10, 0)
 shape = SubResource("RectangleShape2D_fqnjk")
 
 [node name="WeaponHitbox" type="Area2D" parent="." unique_id=151807680]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponHitbox" unique_id=1741323824]
-position = Vector2(12, 9)
+position = Vector2(22, 9)
 shape = SubResource("RectangleShape2D_e5c3f")
 
 [connection signal="body_entered" from="WeaponHitbox" to="." method="_on_weapon_hitbox_body_entered"]

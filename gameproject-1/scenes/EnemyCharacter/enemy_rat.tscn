@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://ok2eon83bfnk"]
+
+[ext_resource type="Script" uid="uid://dvn51gpr5yanu" path="res://scripts/EnemyScripts/enemy_rat.gd" id="1_m4f5t"]
+[ext_resource type="Texture2D" uid="uid://dlyno4d4obblw" path="res://assets/EnemySprites/EnemyRat.png" id="1_xmyx0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4f5t"]
+atlas = ExtResource("1_xmyx0")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_or20g"]
+atlas = ExtResource("1_xmyx0")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tqpk"]
+atlas = ExtResource("1_xmyx0")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwo2w"]
+atlas = ExtResource("1_xmyx0")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2nj2"]
+atlas = ExtResource("1_xmyx0")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8io8"]
+atlas = ExtResource("1_xmyx0")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akdix"]
+atlas = ExtResource("1_xmyx0")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3hmh"]
+atlas = ExtResource("1_xmyx0")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8vbso"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4f5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_or20g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tqpk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwo2w")
+}],
+"loop": true,
+"name": &"rat_attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2nj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8io8")
+}],
+"loop": true,
+"name": &"rat_idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akdix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3hmh")
+}],
+"loop": true,
+"name": &"rat_walk",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xmyx0"]
+size = Vector2(37, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4f5t"]
+size = Vector2(22, 16)
+
+[node name="enemy_rat" type="CharacterBody2D" unique_id=1374807424]
+script = ExtResource("1_m4f5t")
+
+[node name="EnemySprite2" type="AnimatedSprite2D" parent="." unique_id=214148751]
+sprite_frames = SubResource("SpriteFrames_8vbso")
+animation = &"rat_attack"
+frame_progress = 0.21743044
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1159257887]
+position = Vector2(-0.5, -2)
+shape = SubResource("RectangleShape2D_xmyx0")
+
+[node name="RatAttack" type="Area2D" parent="." unique_id=902094652]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RatAttack" unique_id=634203825]
+position = Vector2(15, -2)
+shape = SubResource("RectangleShape2D_m4f5t")
+
+[connection signal="body_entered" from="RatAttack" to="." method="_on_rat_attack_body_entered"]
