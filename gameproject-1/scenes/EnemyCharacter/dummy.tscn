@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://5pps15j2et4n"]
 
 [ext_resource type="Texture2D" uid="uid://oc50hpxo2ji3" path="res://assets/sprites/dummy.png" id="1_gibfb"]
-[ext_resource type="Script" uid="uid://bwn1j75xf171p" path="res://scenes/EnemyCharacter/dummy.gd" id="1_if1e4"]
+[ext_resource type="Script" uid="uid://bwn1j75xf171p" path="res://scripts/EnemyScripts/dummy.gd" id="1_if1e4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_if1e4"]
 atlas = ExtResource("1_gibfb")
@@ -51,7 +51,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"dummy_hit",
-"speed": 9.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -74,7 +74,9 @@ script = ExtResource("1_if1e4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1891201562]
 scale = Vector2(1.3, 1.3)
 sprite_frames = SubResource("SpriteFrames_tu84y")
-animation = &"dummy_death"
+animation = &"dummy_hit"
+frame = 4
+frame_progress = 1.0
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1191738558]
 
