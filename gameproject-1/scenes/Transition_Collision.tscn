@@ -2,15 +2,19 @@
 
 [ext_resource type="Script" uid="uid://ddsn6a5f3reux" path="res://scripts/transition_collision.gd" id="1_s1kkc"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bodhk"]
-size = Vector2(52.5, 68.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1kkc"]
 
-[node name="TransitionCollision" type="Node2D" unique_id=2075643154]
+[node name="TransitionCollision" type="Area2D" unique_id=1844202408]
 script = ExtResource("1_s1kkc")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1434282229]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=821828271]
+shape = SubResource("RectangleShape2D_s1kkc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1953345735]
-shape = SubResource("RectangleShape2D_bodhk")
+[node name="ColorRect" type="ColorRect" parent="." unique_id=246089762]
+offset_left = -20.0
+offset_top = -19.0
+offset_right = 20.0
+offset_bottom = 21.0
+color = Color(0.5139912, 0.28404352, 0.7717955, 1)
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

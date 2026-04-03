@@ -31,11 +31,10 @@ size = Vector2(664, 24)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gpvmy"]
 size = Vector2(24, 48)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_31kg2"]
-
 [node name="SubwayTutorial" type="Node2D" unique_id=140640481]
 
 [node name="Background" type="ColorRect" parent="." unique_id=913111935]
+visible = false
 offset_left = -2664.0
 offset_top = -704.0
 offset_right = 2720.0
@@ -245,7 +244,7 @@ color = Color(0.2, 0.2, 0.2, 1)
 [node name="TutorialHUD" parent="." unique_id=1687079138 instance=ExtResource("3_mi4a6")]
 
 [node name="TutorialTrigger" parent="." unique_id=703018645 instance=ExtResource("3_cnj7s")]
-position = Vector2(-2104, -168)
+position = Vector2(-2102, -168)
 zone_message = "Welcome to Cecil B. Moore. Press D/→ to move on Northbound platform
 "
 
@@ -306,20 +305,5 @@ offset_right = -872.0
 offset_bottom = 2.0
 color = Color(0.42557132, 0.42557135, 0.42557132, 1)
 
-[node name="TransitionCollision" parent="." unique_id=2075643154 instance=ExtResource("6_fem2g")]
-position = Vector2(482, -205)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1000830265]
-position = Vector2(437, -116)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=282644604]
-position = Vector2(45, -38)
-shape = SubResource("RectangleShape2D_31kg2")
-disabled = true
-
-[node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=1649811686]
-offset_left = 25.0
-offset_top = -96.0
-offset_right = 65.0
-offset_bottom = -56.0
-color = Color(0, 1, 1, 1)
+[node name="TransitionCollision" parent="." unique_id=1844202408 instance=ExtResource("6_fem2g")]
+position = Vector2(-2147, -36)

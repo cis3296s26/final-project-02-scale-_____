@@ -1,7 +1,7 @@
 ColorRect
 CollisionShape2D
-StaticBody2D
 Area2D
+StaticBody2D
 Camera2D
 CharacterBody2D
 CanvasLayer
