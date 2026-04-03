@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cpsgpg6xxfbat" path="res://Player/heart_bar.tscn" id="9_00tjw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w6hf4"]
-size = Vector2(2.75, 4)
+size = Vector2(2.75, 6.25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fhl08"]
 atlas = ExtResource("3_hsdrk")
@@ -260,13 +260,12 @@ scale = Vector2(2, 2)
 script = ExtResource("1_w6hf4")
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="." unique_id=785825353]
-position = Vector2(-0.25, 0)
+position = Vector2(-0.25, -2.25)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_w6hf4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1586020943]
 position = Vector2(0, 4)
-scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_x8e5g")
 animation = &"owl_attack"
 centered = false
