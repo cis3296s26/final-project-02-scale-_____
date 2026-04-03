@@ -10,7 +10,7 @@ var isAttacking: bool
 @onready var animatedSprite = $AnimatedSprite2D
 
 var coin_count = 0
-@onready var coin_label = get_node_or_null("../HeartBar/UIRoot/CoinLabel")
+@onready var coin_label = $Player_Bar/UIRoot/CoinLabel
 
 func _ready() -> void:
 	GlobalScript.current_health = GlobalScript.max_health
@@ -91,9 +91,13 @@ func _unhandled_input(event):
 			pause_menu.visible = true
 
 func add_coin() -> void:
+	print("coint", coin_count)
 	coin_count += 1
+	print("coint", coin_count)
 	update_coin_label()
 
 func update_coin_label() -> void:
+	print("existing1")
 	if coin_label:
+		print("existing2")
 		coin_label.text = str(coin_count)

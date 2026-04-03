@@ -18,4 +18,4 @@ func _on_new_game_pressed() -> void:
 
 func _on_play_tutorial_pressed() -> void:
 	print("Start Tutorial")
-	get_tree().change_scene_to_file("res://Map/tutorial_level.tscn");
+	get_tree().change_scene_to_file("res://scenes/tutorial_level.tscn");

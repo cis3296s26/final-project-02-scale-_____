@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://4w0vocv1r0h6" path="res://assets/sprites/owl_jump.png" id="4_ffe6g"]
 [ext_resource type="Texture2D" uid="uid://ci5inh8x5v1l0" path="res://assets/sprites/owl_run.png" id="5_x8e5g"]
 [ext_resource type="PackedScene" uid="uid://tvmfnjn35yt8" path="res://scenes/pause_menu.tscn" id="7_vtle1"]
-[ext_resource type="PackedScene" uid="uid://cpsgpg6xxfbat" path="res://Player/heart_bar.tscn" id="9_00tjw"]
+[ext_resource type="PackedScene" uid="uid://cpsgpg6xxfbat" path="res://Player/HeartBar.tscn" id="9_00tjw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w6hf4"]
 size = Vector2(2.75, 6.25)
@@ -295,7 +295,7 @@ disabled = true
 [node name="PauseMenu" parent="CanvasLayer" unique_id=358881738 instance=ExtResource("7_vtle1")]
 visible = false
 
-[node name="HeartBar" parent="." unique_id=1223501361 instance=ExtResource("9_00tjw")]
+[node name="Player_Bar" parent="." unique_id=1223501361 instance=ExtResource("9_00tjw")]
 visible = false
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="Combat" method="_on_animated_sprite_2d_animation_finished"]
