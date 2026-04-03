@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://5pps15j2et4n"]
+
+[ext_resource type="Texture2D" uid="uid://oc50hpxo2ji3" path="res://assets/sprites/dummy.png" id="1_gibfb"]
+[ext_resource type="Script" uid="uid://bwn1j75xf171p" path="res://scenes/EnemyCharacter/dummy.gd" id="1_if1e4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_if1e4"]
+atlas = ExtResource("1_gibfb")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3kf63"]
+atlas = ExtResource("1_gibfb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecvod"]
+atlas = ExtResource("1_gibfb")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kntpx"]
+atlas = ExtResource("1_gibfb")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_esip5"]
+atlas = ExtResource("1_gibfb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tu84y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_if1e4")
+}],
+"loop": false,
+"name": &"dummy_death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3kf63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ecvod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kntpx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ecvod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3kf63")
+}],
+"loop": false,
+"name": &"dummy_hit",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_esip5")
+}],
+"loop": false,
+"name": &"dummy_idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bm6kp"]
+size = Vector2(12.5, 19.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_if1e4"]
+size = Vector2(12, 19)
+
+[node name="Dummy" type="CharacterBody2D" unique_id=1253241911]
+script = ExtResource("1_if1e4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1891201562]
+scale = Vector2(1.3, 1.3)
+sprite_frames = SubResource("SpriteFrames_tu84y")
+animation = &"dummy_death"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1191738558]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=895891028]
+position = Vector2(0, -2.25)
+shape = SubResource("RectangleShape2D_bm6kp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=539710797]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_if1e4")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://ocyoc1083cuv" path="res://Player/player.tscn" id="4_iywne"]
 [ext_resource type="PackedScene" uid="uid://d30iq1mq7lcnp" path="res://scenes/platform.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://68r8k6qparxw" path="res://scenes/void.tscn" id="5_iywne"]
-[ext_resource type="PackedScene" uid="uid://cpsgpg6xxfbat" path="res://scenes/heart_bar.tscn" id="6_p57ef"]
 [ext_resource type="PackedScene" uid="uid://cuhyldks1lip8" path="res://scenes/EnemyCharacter/enemy_jan.tscn" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://b68qhr4464r35" path="res://scenes/coin.tscn" id="9_0tnpc"]
+[ext_resource type="PackedScene" uid="uid://ok2eon83bfnk" path="res://scenes/EnemyCharacter/enemy_rat.tscn" id="9_vtaks"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
 texture = ExtResource("3_lnu2h")
@@ -271,9 +271,6 @@ position = Vector2(-3, 81)
 position = Vector2(-183, 71)
 shape = SubResource("WorldBoundaryShape2D_u5sy4")
 
-[node name="HeartBar" parent="." unique_id=1223501361 instance=ExtResource("6_p57ef")]
-visible = false
-
 [node name="enemy_jan" parent="." unique_id=1325987047 instance=ExtResource("8_gee14")]
 position = Vector2(-82, -2)
 
@@ -288,5 +285,8 @@ position = Vector2(-183, -30)
 
 [node name="Coin5" parent="." unique_id=643725076 instance=ExtResource("9_0tnpc")]
 position = Vector2(-230, -178)
+
+[node name="enemy_rat" parent="." unique_id=1374807424 instance=ExtResource("9_vtaks")]
+position = Vector2(-568, -15)
 
 [connection signal="body_entered" from="LavaAnt/Area2D" to="LavaAnt" method="_on_area_2d_body_entered"]

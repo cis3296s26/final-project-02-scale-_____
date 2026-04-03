@@ -1,11 +1,12 @@
-ColorRect
+Camera2D
+CharacterBody2D
 CanvasLayer
+Node
+ColorRect
 Control
 CollisionShape2D
 Area2D
 Timer
-Camera2D
 RayCast2D
 AnimatedSprite2D
-CharacterBody2D
 Sprite2D
