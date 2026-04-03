@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://68r8k6qparxw" path="res://scenes/void.tscn" id="2_ho5cc"]
 [ext_resource type="PackedScene" uid="uid://ckdpk3d3nvds4" path="res://scenes/tutorial_trigger.tscn" id="3_cnj7s"]
 [ext_resource type="PackedScene" uid="uid://crjkxk1pisada" path="res://scenes/tutorial_hud.tscn" id="3_mi4a6"]
+[ext_resource type="PackedScene" uid="uid://djdsbrmb1pdcx" path="res://scenes/Transition_Collision.tscn" id="6_fem2g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ifix0"]
 size = Vector2(584, 64)
@@ -29,6 +30,8 @@ size = Vector2(664, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gpvmy"]
 size = Vector2(24, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_31kg2"]
 
 [node name="SubwayTutorial" type="Node2D" unique_id=140640481]
 
@@ -302,3 +305,21 @@ offset_top = -46.0
 offset_right = -872.0
 offset_bottom = 2.0
 color = Color(0.42557132, 0.42557135, 0.42557132, 1)
+
+[node name="TransitionCollision" parent="." unique_id=2075643154 instance=ExtResource("6_fem2g")]
+position = Vector2(482, -205)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1000830265]
+position = Vector2(437, -116)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=282644604]
+position = Vector2(45, -38)
+shape = SubResource("RectangleShape2D_31kg2")
+disabled = true
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=1649811686]
+offset_left = 25.0
+offset_top = -96.0
+offset_right = 65.0
+offset_bottom = -56.0
+color = Color(0, 1, 1, 1)
