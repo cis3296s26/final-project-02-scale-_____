@@ -26,9 +26,9 @@ color = Color(0.6156863, 0.13333334, 0.20784314, 1)
 layout_mode = 0
 offset_left = 16.4758
 offset_top = 12.951703
-offset_right = 109.4758
+offset_right = 108.5858
 offset_bottom = 175.9517
-scale = Vector2(0.20109887, 0.122746445)
+scale = Vector2(0.141, 0.086)
 theme = SubResource("Theme_64a5a")
 theme_override_styles/panel = SubResource("StyleBoxTexture_ep5fh")
 
@@ -37,20 +37,20 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -54.278053
-offset_top = -3.058442
-offset_right = 50.721947
-offset_bottom = 27.941559
+offset_left = -94.680725
+offset_top = -60.567883
+offset_right = 10.319275
+offset_bottom = -29.567883
 grow_horizontal = 2
 scale = Vector2(0.44694507, 1.7160852)
 text = "Skip Tutorial"
 
 [node name="PlayTutorial" type="Button" parent="ColorRect/Container" unique_id=760334976]
 layout_mode = 0
-offset_left = -8.296589
-offset_top = 82.57767
-offset_right = 96.703415
-offset_bottom = 113.57767
+offset_left = -49.087948
+offset_top = 9.821793
+offset_right = 55.912052
+offset_bottom = 40.821793
 scale = Vector2(0.44539887, 1.6449997)
 text = "Play Tutorial"
 

@@ -12,7 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(6.2066083, 4.6907554)
+scale = Vector2(3.892, 2.942)
 script = ExtResource("1_mqh5l")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=151266382]
