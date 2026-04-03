@@ -1,10 +1,9 @@
-[gd_scene format=3 uid="uid://clyojikdgv1lg"]
+[gd_scene format=3 uid="uid://fbb6uvbbshqd"]
 
-[ext_resource type="Texture2D" uid="uid://r5kr8kkp0tua" path="res://assets/train cart ok.png" id="1_hpxl2"]
-[ext_resource type="PackedScene" uid="uid://ocyoc1083cuv" path="res://Player/player.tscn" id="1_ifix0"]
-[ext_resource type="PackedScene" uid="uid://68r8k6qparxw" path="res://scenes/void.tscn" id="2_ho5cc"]
-[ext_resource type="PackedScene" uid="uid://ckdpk3d3nvds4" path="res://scenes/tutorial_trigger.tscn" id="3_cnj7s"]
-[ext_resource type="PackedScene" uid="uid://crjkxk1pisada" path="res://scenes/tutorial_hud.tscn" id="3_mi4a6"]
+[ext_resource type="PackedScene" uid="uid://ocyoc1083cuv" path="res://Player/player.tscn" id="1_om7mw"]
+[ext_resource type="PackedScene" uid="uid://68r8k6qparxw" path="res://scenes/void.tscn" id="2_o2cih"]
+[ext_resource type="PackedScene" uid="uid://crjkxk1pisada" path="res://scenes/tutorial_hud.tscn" id="3_aet67"]
+[ext_resource type="PackedScene" uid="uid://ckdpk3d3nvds4" path="res://scenes/tutorial_trigger.tscn" id="4_wp078"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ifix0"]
 size = Vector2(584, 64)
@@ -33,16 +32,12 @@ size = Vector2(24, 48)
 [node name="SubwayTutorial" type="Node2D" unique_id=140640481]
 
 [node name="Background" type="ColorRect" parent="." unique_id=913111935]
+z_index = -2
 offset_left = -2664.0
 offset_top = -704.0
 offset_right = 2720.0
 offset_bottom = 824.0
 metadata/_edit_lock_ = true
-
-[node name="TrainCartOk" type="Sprite2D" parent="Background" unique_id=1951102570]
-position = Vector2(1628.625, 657.25)
-scale = Vector2(0.36083323, 0.38387975)
-texture = ExtResource("1_hpxl2")
 
 [node name="SubwayCar" type="StaticBody2D" parent="." unique_id=1067621371]
 
@@ -132,7 +127,7 @@ offset_right = -1448.0
 offset_bottom = 64.0
 color = Color(0.2, 0.2, 0.2, 1)
 
-[node name="Player" parent="." unique_id=127306071 instance=ExtResource("1_ifix0")]
+[node name="Player" parent="." unique_id=127306071 instance=ExtResource("1_om7mw")]
 position = Vector2(-2080, -8)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1850487707]
@@ -140,7 +135,7 @@ scale = Vector2(0.5, 0.5)
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 
-[node name="Killzone" parent="." unique_id=1555209443 instance=ExtResource("2_ho5cc")]
+[node name="Killzone" parent="." unique_id=1555209443 instance=ExtResource("2_o2cih")]
 position = Vector2(-1648, 64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=844098901]
@@ -239,42 +234,42 @@ offset_right = 128.0
 offset_bottom = -48.0
 color = Color(0.2, 0.2, 0.2, 1)
 
-[node name="TutorialHUD" parent="." unique_id=1687079138 instance=ExtResource("3_mi4a6")]
+[node name="TutorialHUD" parent="." unique_id=1687079138 instance=ExtResource("3_aet67")]
 
-[node name="TutorialTrigger" parent="." unique_id=703018645 instance=ExtResource("3_cnj7s")]
+[node name="TutorialTrigger" parent="." unique_id=703018645 instance=ExtResource("4_wp078")]
 position = Vector2(-2104, -168)
 zone_message = "Welcome to Cecil B. Moore. Press D/→ to move on Northbound platform
 "
 
-[node name="TutorialTrigger9" parent="." unique_id=429275916 instance=ExtResource("3_cnj7s")]
+[node name="TutorialTrigger9" parent="." unique_id=429275916 instance=ExtResource("4_wp078")]
 position = Vector2(-136, -168)
 zone_message = "Defeated enemy. Press W/↑ and D/→ to climb up stairs"
 
-[node name="TutorialTrigger8" parent="." unique_id=1115161836 instance=ExtResource("3_cnj7s")]
+[node name="TutorialTrigger8" parent="." unique_id=1115161836 instance=ExtResource("4_wp078")]
 position = Vector2(184, -336)
 zone_message = "TUTORIAL COMPLETE: Exiting Cecil B Moore to Temple University"
 
-[node name="TutorialTrigger7" parent="." unique_id=989597076 instance=ExtResource("3_cnj7s")]
+[node name="TutorialTrigger7" parent="." unique_id=989597076 instance=ExtResource("4_wp078")]
 position = Vector2(-312, -168)
 zone_message = "Enemy3"
 
-[node name="TutorialTrigger6" parent="." unique_id=72924089 instance=ExtResource("3_cnj7s")]
-position = Vector2(-889, -166)
+[node name="TutorialTrigger6" parent="." unique_id=72924089 instance=ExtResource("4_wp078")]
+position = Vector2(-800, -168)
 zone_message = "Exited Train: (Hold W/↑) and (Press D/→)  and (Shift) to glide dash over to Platform Southbound"
 
-[node name="TutorialTrigger2" parent="." unique_id=2077545571 instance=ExtResource("3_cnj7s")]
+[node name="TutorialTrigger2" parent="." unique_id=2077545571 instance=ExtResource("4_wp078")]
 position = Vector2(-1864, -168)
 zone_message = "Press W/↑ and D/→ to jump over"
 
-[node name="TutorialTrigger3" parent="." unique_id=1886243521 instance=ExtResource("3_cnj7s")]
+[node name="TutorialTrigger3" parent="." unique_id=1886243521 instance=ExtResource("4_wp078")]
 position = Vector2(-1776, -168)
 zone_message = "Enemy1: Attack enemy press E"
 
-[node name="TutorialTrigger4" parent="." unique_id=400223410 instance=ExtResource("3_cnj7s")]
+[node name="TutorialTrigger4" parent="." unique_id=400223410 instance=ExtResource("4_wp078")]
 position = Vector2(-1224, -168)
 zone_message = "Entered Train: Get ready for Enemy2"
 
-[node name="TutorialTrigger5" parent="." unique_id=174838511 instance=ExtResource("3_cnj7s")]
+[node name="TutorialTrigger5" parent="." unique_id=174838511 instance=ExtResource("4_wp078")]
 position = Vector2(-1648, -168)
 zone_message = "Hold W/↑ and Press D/→ to glide over to SubwayCar"
 
@@ -293,12 +288,11 @@ color = Color(0.42557132, 0.42557135, 0.42557132, 1)
 [node name="SubwayCarObstacle2" type="StaticBody2D" parent="." unique_id=153416261]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SubwayCarObstacle2" unique_id=928071652]
-position = Vector2(-885, -22)
+position = Vector2(-796, -24)
 shape = SubResource("RectangleShape2D_gpvmy")
 
 [node name="ColorRect" type="ColorRect" parent="SubwayCarObstacle2" unique_id=485095252]
-offset_left = -896.0
-offset_top = -46.0
-offset_right = -872.0
-offset_bottom = 2.0
+offset_left = -808.0
+offset_top = -48.0
+offset_right = -784.0
 color = Color(0.42557132, 0.42557135, 0.42557132, 1)
