@@ -1,11 +1,10 @@
 extends CharacterBody2D
 
 
-@export var speed: float = 60.0
+@export var speed: float = 50.0
 @export var detection_range: float = 150.0
 @export var attack_range: float = 50.0
-@export var gravity: float = 200.0
-
+@export var gravity: float = 100.0
 
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var anim = $AnimatedSprite2D
@@ -15,6 +14,8 @@ extends CharacterBody2D
 	
 var state = "idle"
 var attack_timer: float = 0.0
+var damage_cooldown_current = 0.0
+var damage_cooldown_max = 0.2
 
 func _physics_process(delta):
 	if player == null:
@@ -25,6 +26,9 @@ func _physics_process(delta):
 		velocity.x = 0
 		# move_and_slide()
 		return
+	
+	if damage_cooldown_current > 0:
+		damage_cooldown_current -= delta
 	
 	var distance = global_position.distance_to(player.global_position)
 	
@@ -43,6 +47,15 @@ func _physics_process(delta):
 			chase(delta)
 		"attack":
 			attack(delta)
+	
+	for i in range(get_slide_collision_count()):
+		var collision = get_slide_collision(i)
+		var body = collision.get_collider()
+	
+		if state == "attack" and damage_cooldown_current <=0 and body.has_method("take_damage"):
+			body.take_damage(1)
+			damage_cooldown_current = damage_cooldown_max
+		
 
 func idle(delta):
 	# if not is_on_floor():
@@ -55,16 +68,7 @@ func idle(delta):
 func chase(delta):
 	var direction = sign(player.global_position.x - global_position.x)
 	anim.flip_h = player.global_position.x > global_position.x
-	
-	if anim.flip_h:
-		animhit.position.x = 0
-		
-	else:
-		animhit.position.x = 0
-	
-	if player.global_position.x < global_position.x:
-		velocity.x = 0
-	
+
 	velocity.x = direction * speed
 	apply_gravity(delta)
 	move_and_slide()
@@ -75,6 +79,7 @@ func attack(delta):
 		# Start attack
 		attack_timer = attack_duration
 		anim.play("attack")
+		global_position.y -= 15
 	else:
 		# Continue attack
 		var dir = sign(player.global_position.x - global_position.x)
@@ -92,7 +97,3 @@ func apply_gravity(delta):
 		anim.play("mid_air")
 	else:
 		velocity.y = 0  # reset vertical speed when on the floor
-
-func _player_body_attacked(body: Node2D) -> void:
-	if state == "attack" and body.has_method("take_damage"):
-		body.take_damage(1)
