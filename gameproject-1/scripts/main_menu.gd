@@ -3,7 +3,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# Disable Continue if there is no save
+	# Disable C	ontinue if there is no save
 	var has_save = false
 	# $Container/Continue.disabled = not SaveManager.has_save
 	# $Container/Continue.disabled = true
