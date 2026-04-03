@@ -14,8 +14,8 @@ func _process(delta: float) -> void:
 
 
 func _on_new_game_pressed() -> void:
-	print("Start new game")
-	get_tree().change_scene_to_file("res://scenes/game.tscn");
+	print("Prompting for Tutorial")
+	get_tree().change_scene_to_file("res://scenes/tutorial_prompt.tscn");
 
 
 func _on_continue_pressed() -> void:
