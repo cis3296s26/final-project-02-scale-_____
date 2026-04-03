@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-@export var speed: float = 50.0
+@export var speed: float = 60.0
 @export var detection_range: float = 150.0
 @export var attack_range: float = 50.0
 @export var gravity: float = 100.0
@@ -17,6 +17,10 @@ var attack_timer: float = 0.0
 var damage_cooldown_current = 0.0
 var damage_cooldown_max = 0.2
 
+var wander_timer: float = 0.0
+var wander_duration: float = 2.0
+var wander_direction: float = 0.0  # -1 = left, 0 = still, 1 = right
+
 func _physics_process(delta):
 	if player == null:
 		player = get_tree().get_first_node_in_group("player")
@@ -26,7 +30,13 @@ func _physics_process(delta):
 		velocity.x = 0
 		# move_and_slide()
 		return
-	
+
+	if get_slide_collision_count() > 0 and abs(get_slide_collision(0).get_normal().x) > 0.9:
+		velocity.x = 0
+		wander_timer = 0
+		if state == "chase":
+			state = "idle"
+
 	if damage_cooldown_current > 0:
 		damage_cooldown_current -= delta
 	
@@ -62,8 +72,25 @@ func idle(delta):
 		# velocity.y += 0
 		# anim.play("mid_air")
 	apply_gravity(delta)
-	anim.play("still")
-	# move_and_slide()
+	wander_timer -= delta
+	if wander_timer <= 0:
+		# Pick random direction
+		wander_direction = randf_range(-1, 1)  # -1 to 1
+		anim.play("walk")
+		if wander_direction < -0.33:
+			wander_direction = -1
+		elif wander_direction > 0.33:
+			wander_direction = 1
+		else:
+			anim.play("still")
+			wander_direction = 0  # stand still
+		wander_timer = wander_duration
+	# Move based on chosen direction
+	velocity.x = wander_direction * speed * 0.75 # go slower if not chasing
+	move_and_slide()
+	
+	if wander_direction != 0:
+		anim.flip_h = wander_direction > 0
 
 func chase(delta):
 	var direction = sign(player.global_position.x - global_position.x)

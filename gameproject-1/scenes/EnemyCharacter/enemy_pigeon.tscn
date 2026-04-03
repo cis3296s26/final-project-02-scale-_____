@@ -118,7 +118,7 @@ script = ExtResource("1_lbhxv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=284068969]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_vqlt5")
-animation = &"attack"
+animation = &"walk"
 offset = Vector2(0, -3)
 flip_h = true
 
