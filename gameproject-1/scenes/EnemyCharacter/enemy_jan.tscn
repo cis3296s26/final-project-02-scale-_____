@@ -111,6 +111,9 @@ size = Vector2(24, 37.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e5c3f"]
 size = Vector2(40, 12)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iqrui"]
+size = Vector2(24, 38)
+
 [node name="enemy_jan" type="CharacterBody2D" unique_id=1325987047]
 script = ExtResource("1_fqnjk")
 
@@ -131,4 +134,11 @@ shape = SubResource("RectangleShape2D_fqnjk")
 position = Vector2(22, 9)
 shape = SubResource("RectangleShape2D_e5c3f")
 
+[node name="EnemyHitbox" type="Area2D" parent="." unique_id=1554041412]
+position = Vector2(10, 0)
+
+[node name="HitboxShape" type="CollisionShape2D" parent="EnemyHitbox" unique_id=343598078]
+shape = SubResource("RectangleShape2D_iqrui")
+
 [connection signal="body_entered" from="WeaponHitbox" to="." method="_on_weapon_hitbox_body_entered"]
+[connection signal="area_entered" from="EnemyHitbox" to="." method="_on_enemy_hitbox_area_entered"]

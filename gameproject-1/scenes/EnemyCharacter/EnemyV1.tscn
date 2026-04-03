@@ -43,6 +43,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfqu3"]
 size = Vector2(16, 12)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uk1gq"]
+size = Vector2(16, 12)
+
 [node name="LavaAnt" type="Node2D" unique_id=1148217433]
 script = ExtResource("1_rfqu3")
 
@@ -60,3 +63,11 @@ target_position = Vector2(11, 0)
 
 [node name="RayCastLeft" type="RayCast2D" parent="." unique_id=1861211911]
 target_position = Vector2(-12, 0)
+
+[node name="EnemyHitbox" type="Area2D" parent="." unique_id=1265734279]
+position = Vector2(0, 2)
+
+[node name="HitboxShape" type="CollisionShape2D" parent="EnemyHitbox" unique_id=940531025]
+shape = SubResource("RectangleShape2D_uk1gq")
+
+[connection signal="area_entered" from="EnemyHitbox" to="." method="_on_enemy_hitbox_area_entered"]

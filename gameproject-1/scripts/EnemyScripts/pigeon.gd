@@ -13,6 +13,9 @@ extends CharacterBody2D
 @export var attack_duration: float = 0.3  # time the thrust lasts
 	
 var state = "idle"
+var death = false
+var max_heath = 1
+var health = 1
 var attack_timer: float = 0.0
 var damage_cooldown_current = 0.0
 var damage_cooldown_max = 0.2
@@ -124,3 +127,17 @@ func apply_gravity(delta):
 		anim.play("mid_air")
 	else:
 		velocity.y = 0  # reset vertical speed when on the floor
+
+
+func _on_enemy_hitbox_area_entered(area: Area2D) -> void:
+	if death:
+		$CollisionShape2D.set_deferred("disabled", true)
+		return
+	
+	if area.is_in_group("attack"):
+		health = health - 1
+		print("Hit! Health is now: ", health)
+		if health <= 0:
+			queue_free()
+			print("DEATH")
+			death = true

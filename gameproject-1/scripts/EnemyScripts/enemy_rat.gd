@@ -10,11 +10,15 @@ extends CharacterBody2D
 @onready var anim = $EnemySprite2
 @onready var animhit = $CollisionShape2D
 @onready var weapon_hitbox = $RatAttack
+@onready var enemy_hitbox = $EnemyHitbox
 @export var attack_thrust: float = 100.0  # forward movement during attack
 @export var attack_duration: float = 0.3  # time the thrust lasts
 	
 var state = "idle"
 var attack_timer: float = 0.3
+var death = false
+var max_heath = 1
+var health = 1
 
 func _physics_process(delta):
 	if player == null:
@@ -53,7 +57,7 @@ func chase(delta):
 	var direction = (player.global_position - global_position).normalized()
 	anim.flip_h = player.global_position.x < global_position.x
 	if player.global_position.x < global_position.x:
-		weapon_hitbox.position.x = -30
+		weapon_hitbox.position.x = -27
 	else :
 		weapon_hitbox.position.x = 0
 	
@@ -90,3 +94,17 @@ func apply_gravity(delta):
 func _on_rat_attack_body_entered(body: Node2D) -> void:
 	if state == "attack" and body.has_method("take_damage"):
 		body.take_damage(1)
+
+
+func _on_enemy_hitbox_area_entered(area: Area2D) -> void:
+	if death:
+		$CollisionShape2D.set_deferred("disabled", true)
+		return
+	
+	if area.is_in_group("attack"):
+		health = health - 1
+		print("Hit! Health is now: ", health)
+		if health <= 0:
+			queue_free()
+			print("DEATH")
+			death = true

@@ -112,6 +112,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8pyki"]
 size = Vector2(24, 24)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbhxv"]
+size = Vector2(24, 24)
+
 [node name="Pidgeon" type="CharacterBody2D" unique_id=1409194561]
 script = ExtResource("1_lbhxv")
 
@@ -125,3 +128,11 @@ flip_h = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2046308478]
 position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_8pyki")
+
+[node name="EnemyHitbox" type="Area2D" parent="." unique_id=83394509]
+position = Vector2(0, -6)
+
+[node name="HitboxShape" type="CollisionShape2D" parent="EnemyHitbox" unique_id=1727629974]
+shape = SubResource("RectangleShape2D_lbhxv")
+
+[connection signal="area_entered" from="EnemyHitbox" to="." method="_on_enemy_hitbox_area_entered"]
