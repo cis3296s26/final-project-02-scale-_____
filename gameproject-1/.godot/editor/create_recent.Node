@@ -1,9 +1,10 @@
-CollisionShape2D
+Label
 ColorRect
+CanvasLayer
+CollisionShape2D
 StaticBody2D
 Area2D
 Camera2D
-CanvasLayer
 Node
 Control
 Timer

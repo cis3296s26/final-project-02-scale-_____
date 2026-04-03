@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ocyoc1083cuv" path="res://Player/player.tscn" id="1_ifix0"]
 [ext_resource type="PackedScene" uid="uid://68r8k6qparxw" path="res://scenes/void.tscn" id="2_ho5cc"]
+[ext_resource type="PackedScene" uid="uid://se0keu1nmq1h" path="res://scenes/tutorial_hud.tscn" id="3_mi4a6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ifix0"]
 size = Vector2(584, 64)
@@ -19,7 +20,7 @@ distance = -1.0
 size = Vector2(24, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0p6s"]
-size = Vector2(440, 24)
+size = Vector2(664, 24)
 
 [node name="SubwayTutorial" type="Node2D" unique_id=140640481]
 
@@ -53,6 +54,7 @@ offset_left = -136.0
 offset_top = -40.0
 offset_right = -120.0
 color = Color(0.9607843, 0.2, 0.2, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Platform (NorthBound)" type="StaticBody2D" parent="." unique_id=736773874]
 
@@ -104,17 +106,18 @@ offset_left = 56.0
 offset_top = -24.0
 offset_right = 80.0
 color = Color(0.2, 0.2, 0.2, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Stairs7" type="StaticBody2D" parent="." unique_id=50576724]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stairs7" unique_id=240769813]
-position = Vector2(420, -156)
+position = Vector2(532, -156)
 shape = SubResource("RectangleShape2D_n0p6s")
 
 [node name="ColorRect" type="ColorRect" parent="Stairs7" unique_id=597343155]
 offset_left = 200.0
 offset_top = -168.0
-offset_right = 640.0
+offset_right = 864.0
 offset_bottom = -144.0
 color = Color(0.2, 0.2, 0.2, 1)
 
@@ -170,15 +173,4 @@ offset_right = 128.0
 offset_bottom = -48.0
 color = Color(0.2, 0.2, 0.2, 1)
 
-[node name="Stairs2" type="StaticBody2D" parent="." unique_id=935506188]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Stairs2" unique_id=1104797286]
-position = Vector2(92, -36)
-shape = SubResource("RectangleShape2D_cnj7s")
-
-[node name="ColorRect" type="ColorRect" parent="Stairs2" unique_id=2084917622]
-offset_left = 80.0
-offset_top = -48.0
-offset_right = 104.0
-offset_bottom = -24.0
-color = Color(0.2, 0.2, 0.2, 1)
+[node name="TutorialHUD" parent="." unique_id=1687079138 instance=ExtResource("3_mi4a6")]
