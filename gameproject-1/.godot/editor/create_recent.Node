@@ -1,8 +1,8 @@
-Label
-ColorRect
-CanvasLayer
 CollisionShape2D
+ColorRect
 StaticBody2D
+Label
+CanvasLayer
 Area2D
 Camera2D
 Node
