@@ -113,7 +113,6 @@ size = Vector2(40, 12)
 
 [node name="enemy_jan" type="CharacterBody2D" unique_id=1325987047]
 script = ExtResource("1_fqnjk")
-attack_range = 30.0
 
 [node name="EnemySprite1" type="AnimatedSprite2D" parent="." unique_id=1710466016]
 position = Vector2(10, 1)
