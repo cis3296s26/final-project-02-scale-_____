@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cuhyldks1lip8" path="res://scenes/EnemyCharacter/enemy_jan.tscn" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://b68qhr4464r35" path="res://scenes/coin.tscn" id="9_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://ok2eon83bfnk" path="res://scenes/EnemyCharacter/enemy_rat.tscn" id="9_vtaks"]
+[ext_resource type="PackedScene" uid="uid://qr0f0ju3brm6" path="res://scenes/EnemyCharacter/enemy_pigeon.tscn" id="10_vtaks"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
 texture = ExtResource("3_lnu2h")
@@ -288,5 +289,8 @@ position = Vector2(-230, -178)
 
 [node name="enemy_rat" parent="." unique_id=1374807424 instance=ExtResource("9_vtaks")]
 position = Vector2(-568, -15)
+
+[node name="Pidgeon" parent="." unique_id=1409194561 instance=ExtResource("10_vtaks")]
+position = Vector2(-992, -10)
 
 [connection signal="body_entered" from="LavaAnt/Area2D" to="LavaAnt" method="_on_area_2d_body_entered"]
