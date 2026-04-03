@@ -1,0 +1,297 @@
+[gd_scene format=3 uid="uid://d30ror5bdr2li"]
+
+[ext_resource type="PackedScene" uid="uid://ocyoc1083cuv" path="res://Player/player.tscn" id="1_ifix0"]
+[ext_resource type="PackedScene" uid="uid://68r8k6qparxw" path="res://scenes/void.tscn" id="2_ho5cc"]
+[ext_resource type="PackedScene" uid="uid://ckdpk3d3nvds4" path="res://scenes/tutorial_trigger.tscn" id="3_cnj7s"]
+[ext_resource type="PackedScene" uid="uid://crjkxk1pisada" path="res://scenes/tutorial_hud.tscn" id="3_mi4a6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifix0"]
+size = Vector2(584, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mi4a6"]
+size = Vector2(16, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ho5cc"]
+size = Vector2(584, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d6hr6"]
+size = Vector2(664, 64)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mi4a6"]
+distance = -1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cnj7s"]
+size = Vector2(24, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n0p6s"]
+size = Vector2(664, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gpvmy"]
+size = Vector2(24, 48)
+
+[node name="SubwayTutorial" type="Node2D" unique_id=140640481]
+
+[node name="Background" type="ColorRect" parent="." unique_id=913111935]
+offset_left = -2664.0
+offset_top = -704.0
+offset_right = 2720.0
+offset_bottom = 824.0
+metadata/_edit_lock_ = true
+
+[node name="SubwayCar" type="StaticBody2D" parent="." unique_id=1067621371]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubwayCar" unique_id=945933509]
+position = Vector2(-988, 32)
+shape = SubResource("RectangleShape2D_ifix0")
+
+[node name="ColorRect" type="ColorRect" parent="SubwayCar" unique_id=461188362]
+offset_left = -1280.0
+offset_right = -696.0
+offset_bottom = 64.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Turnstile" type="StaticBody2D" parent="." unique_id=1451665654]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Turnstile" unique_id=528566752]
+position = Vector2(-128, -20)
+shape = SubResource("RectangleShape2D_mi4a6")
+
+[node name="ColorRect" type="ColorRect" parent="Turnstile" unique_id=1443203621]
+offset_left = -136.0
+offset_top = -40.0
+offset_right = -120.0
+color = Color(0.9607843, 0.2, 0.2, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Turnstile4" type="StaticBody2D" parent="." unique_id=916537441]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Turnstile4" unique_id=1999398978]
+position = Vector2(-1640, -20)
+shape = SubResource("RectangleShape2D_mi4a6")
+
+[node name="ColorRect" type="ColorRect" parent="Turnstile4" unique_id=1798636291]
+offset_left = -1648.0
+offset_top = -40.0
+offset_right = -1632.0
+color = Color(0.9607843, 0.2, 0.2, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Turnstile3" type="StaticBody2D" parent="." unique_id=867389515]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Turnstile3" unique_id=452087876]
+position = Vector2(-280, -20)
+shape = SubResource("RectangleShape2D_mi4a6")
+
+[node name="ColorRect" type="ColorRect" parent="Turnstile3" unique_id=238588728]
+offset_left = -288.0
+offset_top = -40.0
+offset_right = -272.0
+color = Color(0.9607843, 0.2, 0.2, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Turnstile2" type="StaticBody2D" parent="." unique_id=1256432274]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Turnstile2" unique_id=306409450]
+position = Vector2(-1768, -16)
+shape = SubResource("RectangleShape2D_mi4a6")
+
+[node name="ColorRect" type="ColorRect" parent="Turnstile2" unique_id=1290361878]
+offset_left = -1776.0
+offset_top = -40.0
+offset_right = -1760.0
+color = Color(0.9607843, 0.2, 0.2, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Platform (NorthBound)" type="StaticBody2D" parent="." unique_id=736773874]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform (NorthBound)" unique_id=1801754486]
+position = Vector2(-212, 32)
+shape = SubResource("RectangleShape2D_ho5cc")
+
+[node name="ColorRect" type="ColorRect" parent="Platform (NorthBound)" unique_id=1919359867]
+offset_left = -504.0
+offset_right = 80.0
+offset_bottom = 64.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Platform2(SouthBound)" type="StaticBody2D" parent="." unique_id=1829958434]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2(SouthBound)" unique_id=6790613]
+position = Vector2(-1780, 32)
+shape = SubResource("RectangleShape2D_d6hr6")
+
+[node name="ColorRect" type="ColorRect" parent="Platform2(SouthBound)" unique_id=1863808071]
+offset_left = -2112.0
+offset_right = -1448.0
+offset_bottom = 64.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Player" parent="." unique_id=127306071 instance=ExtResource("1_ifix0")]
+position = Vector2(-2080, -8)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1850487707]
+scale = Vector2(0.5, 0.5)
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
+
+[node name="Killzone" parent="." unique_id=1555209443 instance=ExtResource("2_ho5cc")]
+position = Vector2(-1648, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=844098901]
+position = Vector2(-336, 32)
+shape = SubResource("WorldBoundaryShape2D_mi4a6")
+
+[node name="Stairs" type="StaticBody2D" parent="." unique_id=2100381735]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stairs" unique_id=769998732]
+position = Vector2(68, -12)
+shape = SubResource("RectangleShape2D_cnj7s")
+
+[node name="ColorRect" type="ColorRect" parent="Stairs" unique_id=565451117]
+offset_left = 56.0
+offset_top = -24.0
+offset_right = 80.0
+color = Color(0.2, 0.2, 0.2, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Stairs2" type="StaticBody2D" parent="." unique_id=525292870]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stairs2" unique_id=16363936]
+position = Vector2(92, -36)
+shape = SubResource("RectangleShape2D_cnj7s")
+
+[node name="ColorRect" type="ColorRect" parent="Stairs2" unique_id=2103726749]
+offset_left = 80.0
+offset_top = -48.0
+offset_right = 104.0
+offset_bottom = -24.0
+color = Color(0.2, 0.2, 0.2, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Stairs7" type="StaticBody2D" parent="." unique_id=50576724]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stairs7" unique_id=240769813]
+position = Vector2(532, -156)
+shape = SubResource("RectangleShape2D_n0p6s")
+
+[node name="ColorRect" type="ColorRect" parent="Stairs7" unique_id=597343155]
+offset_left = 200.0
+offset_top = -168.0
+offset_right = 864.0
+offset_bottom = -144.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Stairs6" type="StaticBody2D" parent="." unique_id=1245513768]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stairs6" unique_id=1402017985]
+position = Vector2(188, -132)
+shape = SubResource("RectangleShape2D_cnj7s")
+
+[node name="ColorRect" type="ColorRect" parent="Stairs6" unique_id=478002673]
+offset_left = 176.0
+offset_top = -144.0
+offset_right = 200.0
+offset_bottom = -120.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Stairs5" type="StaticBody2D" parent="." unique_id=49821744]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stairs5" unique_id=105492126]
+position = Vector2(164, -108)
+shape = SubResource("RectangleShape2D_cnj7s")
+
+[node name="ColorRect" type="ColorRect" parent="Stairs5" unique_id=61031121]
+offset_left = 152.0
+offset_top = -120.0
+offset_right = 176.0
+offset_bottom = -96.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Stairs4" type="StaticBody2D" parent="." unique_id=1887841038]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stairs4" unique_id=860056864]
+position = Vector2(140, -84)
+shape = SubResource("RectangleShape2D_cnj7s")
+
+[node name="ColorRect" type="ColorRect" parent="Stairs4" unique_id=1787685395]
+offset_left = 128.0
+offset_top = -96.0
+offset_right = 152.0
+offset_bottom = -72.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Stairs3" type="StaticBody2D" parent="." unique_id=978154867]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stairs3" unique_id=325354051]
+position = Vector2(116, -60)
+shape = SubResource("RectangleShape2D_cnj7s")
+
+[node name="ColorRect" type="ColorRect" parent="Stairs3" unique_id=210546100]
+offset_left = 104.0
+offset_top = -72.0
+offset_right = 128.0
+offset_bottom = -48.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="TutorialHUD" parent="." unique_id=1687079138 instance=ExtResource("3_mi4a6")]
+
+[node name="TutorialTrigger" parent="." unique_id=703018645 instance=ExtResource("3_cnj7s")]
+position = Vector2(-2104, -168)
+zone_message = "Welcome to Cecil B. Moore. Press D/→ to move on Northbound platform
+"
+
+[node name="TutorialTrigger9" parent="." unique_id=429275916 instance=ExtResource("3_cnj7s")]
+position = Vector2(-136, -168)
+zone_message = "Defeated enemy. Press W/↑ and D/→ to climb up stairs"
+
+[node name="TutorialTrigger8" parent="." unique_id=1115161836 instance=ExtResource("3_cnj7s")]
+position = Vector2(184, -336)
+zone_message = "TUTORIAL COMPLETE: Exiting Cecil B Moore to Temple University"
+
+[node name="TutorialTrigger7" parent="." unique_id=989597076 instance=ExtResource("3_cnj7s")]
+position = Vector2(-312, -168)
+zone_message = "Enemy3"
+
+[node name="TutorialTrigger6" parent="." unique_id=72924089 instance=ExtResource("3_cnj7s")]
+position = Vector2(-800, -168)
+zone_message = "Exited Train: (Hold W/↑) and (Press D/→)  and (Shift) to glide dash over to Platform Southbound"
+
+[node name="TutorialTrigger2" parent="." unique_id=2077545571 instance=ExtResource("3_cnj7s")]
+position = Vector2(-1864, -168)
+zone_message = "Press W/↑ and D/→ to jump over"
+
+[node name="TutorialTrigger3" parent="." unique_id=1886243521 instance=ExtResource("3_cnj7s")]
+position = Vector2(-1776, -168)
+zone_message = "Enemy1: Attack enemy press E"
+
+[node name="TutorialTrigger4" parent="." unique_id=400223410 instance=ExtResource("3_cnj7s")]
+position = Vector2(-1224, -168)
+zone_message = "Entered Train: Get ready for Enemy2"
+
+[node name="TutorialTrigger5" parent="." unique_id=174838511 instance=ExtResource("3_cnj7s")]
+position = Vector2(-1648, -168)
+zone_message = "Hold W/↑ and Press D/→ to glide over to SubwayCar"
+
+[node name="SubwayCarObstacle" type="StaticBody2D" parent="." unique_id=2002865674]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubwayCarObstacle" unique_id=1910572659]
+position = Vector2(-1188, -24)
+shape = SubResource("RectangleShape2D_gpvmy")
+
+[node name="ColorRect" type="ColorRect" parent="SubwayCarObstacle" unique_id=828931849]
+offset_left = -1200.0
+offset_top = -48.0
+offset_right = -1176.0
+color = Color(0.42557132, 0.42557135, 0.42557132, 1)
+
+[node name="SubwayCarObstacle2" type="StaticBody2D" parent="." unique_id=153416261]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubwayCarObstacle2" unique_id=928071652]
+position = Vector2(-796, -24)
+shape = SubResource("RectangleShape2D_gpvmy")
+
+[node name="ColorRect" type="ColorRect" parent="SubwayCarObstacle2" unique_id=485095252]
+offset_left = -808.0
+offset_top = -48.0
+offset_right = -784.0
+color = Color(0.42557132, 0.42557135, 0.42557132, 1)
