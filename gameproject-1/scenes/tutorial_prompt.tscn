@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://dph5mflvoq1pb"]
+
+[ext_resource type="Script" uid="uid://c1q7riuvq6xex" path="res://scripts/tutorial_prompt.gd" id="1_purf7"]
+
+[sub_resource type="Theme" id="Theme_64a5a"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ep5fh"]
+
+[node name="TutorialPrompt" type="Control" unique_id=1687517170]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_purf7")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=826640298]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(76.71858, 42.61988)
+color = Color(0.6156863, 0.13333334, 0.20784314, 1)
+
+[node name="Container" type="Panel" parent="ColorRect" unique_id=1507668518]
+layout_mode = 0
+offset_left = 16.4758
+offset_top = 12.951703
+offset_right = 109.4758
+offset_bottom = 175.9517
+scale = Vector2(0.20109887, 0.122746445)
+theme = SubResource("Theme_64a5a")
+theme_override_styles/panel = SubResource("StyleBoxTexture_ep5fh")
+
+[node name="SkipTutorial" type="Button" parent="ColorRect/Container" unique_id=1032024538]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -54.278053
+offset_top = -3.058442
+offset_right = 50.721947
+offset_bottom = 27.941559
+grow_horizontal = 2
+scale = Vector2(0.44694507, 1.7160852)
+text = "Skip Tutorial"
+
+[node name="PlayTutorial" type="Button" parent="ColorRect/Container" unique_id=760334976]
+layout_mode = 0
+offset_left = -8.296589
+offset_top = 82.57767
+offset_right = 96.703415
+offset_bottom = 113.57767
+scale = Vector2(0.44539887, 1.6449997)
+text = "Play Tutorial"
+
+[connection signal="pressed" from="ColorRect/Container/SkipTutorial" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="ColorRect/Container/PlayTutorial" to="." method="_on_play_tutorial_pressed"]
