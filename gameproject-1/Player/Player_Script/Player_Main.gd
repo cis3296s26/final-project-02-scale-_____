@@ -21,7 +21,7 @@ func _ready() -> void:
 # runs at launch
 func _physics_process(delta: float) -> void:
 	movement.basic_movement(delta, self)
-	handle_direction()
+	handle_direction(isAttacking)
 	handle_movement_animations(isAttacking)
 	movement.handle_scaling(self, animatedSprite)
 	combat.handle_combat(self, animatedSprite)
@@ -43,7 +43,11 @@ func handle_movement_animations(state: bool) -> void:
 		else:
 			animatedSprite.play("owl_fall")
 
-func handle_direction() -> void:
+func handle_direction(state: bool) -> void:
+	isAttacking = state
+	if isAttacking:
+		return
+	
 	if velocity.x < 0:
 		combat.scale.x = -1
 		animatedSprite.flip_h = true

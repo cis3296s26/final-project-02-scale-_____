@@ -13,9 +13,9 @@ func _process(delta: float) -> void:
 	
 func _on_new_game_pressed() -> void:
 	print("Skipping Tutorial")
-	get_tree().change_scene_to_file("res://scenes/game.tscn");
+	get_tree().change_scene_to_file("res://Map/game.tscn");
 
 
 func _on_play_tutorial_pressed() -> void:
 	print("Start Tutorial")
-	get_tree().change_scene_to_file("res://scenes/game.tscn");
+	get_tree().change_scene_to_file("res://Map/tutorial_level.tscn");
