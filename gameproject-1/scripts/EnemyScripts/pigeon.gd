@@ -57,16 +57,13 @@ func chase(delta):
 	anim.flip_h = player.global_position.x > global_position.x
 	
 	if anim.flip_h:
-		animhit.position.x = 20
+		animhit.position.x = 0
 		
 	else:
 		animhit.position.x = 0
 	
 	if player.global_position.x < global_position.x:
 		velocity.x = 0
-		animhit.position.x = 20
-	else :
-		animhit.position.x = 0
 	
 	velocity.x = direction * speed
 	apply_gravity(delta)
@@ -77,7 +74,7 @@ func attack(delta):
 	if attack_timer <= 0:
 		# Start attack
 		attack_timer = attack_duration
-		anim.play("takeoff")
+		anim.play("attack")
 	else:
 		# Continue attack
 		var dir = sign(player.global_position.x - global_position.x)
