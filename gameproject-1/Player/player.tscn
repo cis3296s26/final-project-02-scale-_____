@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://ocyoc1083cuv"]
 
-[ext_resource type="Script" path="res://Player/Player_Script/Player_Main.gd" id="1_w6hf4"]
-[ext_resource type="Script" path="res://Player/Player_Script/movement.gd" id="2_od3ui"]
+[ext_resource type="Script" uid="uid://jxk2qktqjuk5" path="res://Player/Player_Script/Player_Main.gd" id="1_w6hf4"]
+[ext_resource type="Script" uid="uid://c5tev0ac0xtid" path="res://Player/Player_Script/movement.gd" id="2_od3ui"]
 [ext_resource type="Texture2D" uid="uid://bsealknxkubyq" path="res://assets/sprites/owl_idle.png" id="3_cwyof"]
 [ext_resource type="Texture2D" uid="uid://guylvubvvnof" path="res://assets/sprites/owl_hit.png" id="3_hsdrk"]
-[ext_resource type="Script" path="res://Player/Player_Script/combat.gd" id="3_x3vf3"]
+[ext_resource type="Script" uid="uid://rv71njgswo6o" path="res://Player/Player_Script/combat.gd" id="3_x3vf3"]
 [ext_resource type="Texture2D" uid="uid://dsng3lyt605k2" path="res://assets/sprites/owl_fall.png" id="3_x8e5g"]
 [ext_resource type="Texture2D" uid="uid://4w0vocv1r0h6" path="res://assets/sprites/owl_jump.png" id="4_ffe6g"]
 [ext_resource type="Texture2D" uid="uid://ci5inh8x5v1l0" path="res://assets/sprites/owl_run.png" id="5_x8e5g"]
@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cpsgpg6xxfbat" path="res://Player/heart_bar.tscn" id="9_00tjw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w6hf4"]
-size = Vector2(5.25, 7)
+size = Vector2(2.75, 4)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fhl08"]
 atlas = ExtResource("3_hsdrk")
@@ -127,8 +127,23 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fhl08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhl08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhl08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhl08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhl08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhl08")
 }],
-"loop": true,
+"loop": false,
 "name": &"owl_attack",
 "speed": 5.0
 }, {
@@ -245,6 +260,8 @@ scale = Vector2(2, 2)
 script = ExtResource("1_w6hf4")
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="." unique_id=785825353]
+position = Vector2(-0.25, 0)
+scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_w6hf4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1586020943]
@@ -267,7 +284,7 @@ one_shot = true
 [node name="Combat" type="Node2D" parent="." unique_id=1605603184]
 script = ExtResource("3_x3vf3")
 
-[node name="AttackCollision" type="Area2D" parent="Combat" unique_id=1201577543]
+[node name="AttackCollision" type="Area2D" parent="Combat" unique_id=1201577543 groups=["attack"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Combat/AttackCollision" unique_id=1805384271]
 position = Vector2(7.5, -1)
@@ -282,5 +299,6 @@ visible = false
 [node name="HeartBar" parent="." unique_id=1223501361 instance=ExtResource("9_00tjw")]
 visible = false
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="Combat" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Movement/DashDurationTimer" to="Movement" method="_on_dash_duration_timer_timeout"]
 [connection signal="timeout" from="Movement/DashCooldownTimer" to="Movement" method="_on_dash_cooldown_timer_timeout"]

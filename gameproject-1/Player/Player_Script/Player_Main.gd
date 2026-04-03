@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+var isAttacking: bool
+
 @onready var movement = $Movement 
 @onready var combat = $Combat
 @onready var pause_menu = $CanvasLayer/PauseMenu
@@ -14,17 +16,22 @@ func _ready() -> void:
 	GlobalScript.current_health = GlobalScript.max_health
 	update_hearts(GlobalScript.current_health)
 	update_coin_label()
+	$Combat.attack_state_changed.connect(handle_movement_animations)
 
 # runs at launch
 func _physics_process(delta: float) -> void:
 	movement.basic_movement(delta, self)
-	handle_movement_animations()
 	handle_direction()
+	handle_movement_animations(isAttacking)
 	movement.handle_scaling(self, animatedSprite)
 	combat.handle_combat(self, animatedSprite)
 	move_and_slide()
 
-func handle_movement_animations() -> void:
+func handle_movement_animations(state: bool) -> void:
+	isAttacking = state
+	if isAttacking:
+		return
+		
 	if is_on_floor():
 		if velocity.x:
 			animatedSprite.play("owl_run")

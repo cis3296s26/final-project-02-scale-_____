@@ -91,8 +91,8 @@ func handle_scaling(player: CharacterBody2D, animated: AnimatedSprite2D):
 		target_scale_y = remap(abs(motion_previous.y), 0, 800, 0.8, 0.5)
 
 	if is_dashing:
-		target_scale_y = 0.8
-		target_scale_x = 1.2
+		target_scale_y = target_scale_y - 0.2
+		target_scale_x = target_scale_y + 0.2
 
 	animated.scale.x = lerp(animated.scale.x, target_scale_x, 0.5)
 	animated.scale.y = lerp(animated.scale.y, target_scale_y, 0.5)
