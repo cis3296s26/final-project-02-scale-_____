@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1775187894
+::res://::1775188392
 export_presets.cfg::TextFile::-1::1774620139::0::1::::<><><>0<>0<><>::
 GlobalScript.gd::GDScript::247594408924664459::1775171852::0::1::::<>Node<><>0<>0<><>::
 icon.svg::CompressedTexture2D::822653193914807282::1773416912::1773416927::1::::<><><>0<>0<>95e354c2323f1500a8f6057edb08b387<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
@@ -122,12 +122,12 @@ pause_menu.tscn::PackedScene::1377678192176669719::1774624158::0::1::::<><><>0<>
 platform.tscn::PackedScene::9176674810355235753::1774620212::0::1::::<><><>0<>0<><>::uid://d00shr4svncs1::::res://assets/sprites/platforms.png
 tutorial_prompt.tscn::PackedScene::8228388569821171367::1775187874::0::1::::<><><>0<>0<><>::uid://c1q7riuvq6xex::::res://scripts/tutorial_prompt.gd
 void.tscn::PackedScene::2245070312608338584::1774595469::0::1::::<><><>0<>0<><>::uid://nk4nmnicwcvy::::res://scripts/killzone.gd
-::res://scenes/EnemyCharacter/::1775187874
-dummy.tscn::PackedScene::2137575287030069539::1775188028::0::1::::<><><>0<>0<><>::uid://oc50hpxo2ji3::::res://assets/sprites/dummy.png<>uid://bwn1j75xf171p::::res://scenes/EnemyCharacter/dummy.gd
+::res://scenes/EnemyCharacter/::1775188349
+dummy.tscn::PackedScene::2137575287030069539::1775188229::0::1::::<><><>0<>0<><>::uid://oc50hpxo2ji3::::res://assets/sprites/dummy.png<>uid://bwn1j75xf171p::::res://scripts/EnemyScripts/dummy.gd
 EnemyV1.tscn::PackedScene::7511965277569014200::1774596365::0::1::::<><><>0<>0<><>::uid://bi6xr5hbshg2p::::res://assets/EnemySprites/basic asset pack/Basic Vermin Animations/Lava Ant/LavaAnt.png<>uid://bhlqb2w0bekmu::::res://scripts/EnemyScripts/LavaAnt.gd<>uid://dknwa0x42eftl::::res://scenes/EnemyCharacter/enemy_hitbox.tscn
 enemy_hitbox.tscn::PackedScene::7889324522071393493::1774595469::0::1::::<><><>0<>0<><>::uid://nk4nmnicwcvy::::res://scripts/killzone.gd
 enemy_jan.tscn::PackedScene::6192545909855736311::1775187871::0::1::::<><><>0<>0<><>::uid://ekyvw7dyta4m::::res://scripts/EnemyScripts/enemy_jan.gd<>uid://b8sjkiwo1f1xw::::res://assets/EnemySprites/EnemyJan.png
-enemy_pigeon.tscn::PackedScene::1159644101749399043::1775187871::0::1::::<><><>0<>0<><>::uid://bhlqb2w0bekmu::::res://scripts/EnemyScripts/LavaAnt.gd<>uid://bi6xr5hbshg2p::::res://assets/EnemySprites/basic asset pack/Basic Vermin Animations/Lava Ant/LavaAnt.png<>uid://dknwa0x42eftl::::res://scenes/EnemyCharacter/enemy_hitbox.tscn
+enemy_pigeon.tscn::PackedScene::1159644101749399043::1775188349::0::1::::<><><>0<>0<><>::uid://dl0p5x1aty7xp::::res://scripts/EnemyScripts/pigeon.gd<>uid://dlbyuepc50gk2::::res://assets/EnemySprites/pigeon.png<>uid://vh73g0qaqjs2::::res://assets/EnemySprites/pigeon_walk.png
 enemy_rat.tscn::PackedScene::1004934847399556608::1775187874::0::1::::<><><>0<>0<><>::uid://dvn51gpr5yanu::::res://scripts/EnemyScripts/enemy_rat.gd<>uid://dlyno4d4obblw::::res://assets/EnemySprites/EnemyRat.png
 ::res://scripts/::1775187872
 coin.gd::GDScript::5381900105761398833::1774595463::0::1::::<>Area2D<><>0<>0<><>::
@@ -136,9 +136,9 @@ killzone.gd::GDScript::934883403675692794::1774595463::0::1::::<>Area2D<><>0<>0<
 main_menu.gd::GDScript::1616854304289779440::1775187872::0::1::::<>Control<><>0<>0<><>::
 pause.gd::GDScript::9061455581485792194::1774595463::0::1::::<>Control<><>0<>0<><>::
 tutorial_prompt.gd::GDScript::-1::1775187872::0::1::::<>Control<><>0<>0<><>::
-::res://scripts/EnemyScripts/::1775187871
+::res://scripts/EnemyScripts/::1775188384
+dummy.gd::GDScript::3959008596633756035::1775188384::0::1::::<>CharacterBody2D<><>0<>0<><>::
 enemy_jan.gd::GDScript::302895066707695838::1775187871::0::1::::<>CharacterBody2D<><>0<>0<><>::
 enemy_rat.gd::GDScript::-1::1775187871::0::1::::<>CharacterBody2D<><>0<>0<><>::
 LavaAnt.gd::GDScript::2901425455385695780::1774595463::0::1::::<>Node2D<><>0<>0<><>::
 pigeon.gd::GDScript::-1::1775187871::0::1::::<>CharacterBody2D<><>0<>0<><>::
-dummy.gd::GDScript::3959008596633756035::1775178530::0::1::::<>CharacterBody2D<><>0<>0<><>::

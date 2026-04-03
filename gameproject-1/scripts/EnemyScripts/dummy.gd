@@ -19,7 +19,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		health = health - 1
 		print("Hit! Health is now: ", health)
 		$AnimatedSprite2D.play("dummy_hit")
-		if health <= 1:
+		if health <= 0:
 			print("DEATH")
 			death = true
 
