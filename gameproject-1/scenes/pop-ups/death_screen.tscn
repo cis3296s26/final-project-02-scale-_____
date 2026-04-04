@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cd0tyfx6uxd1n"]
 
-[ext_resource type="Script" uid="uid://gtatu2ee4m6u" path="res://scripts/death_screen.gd" id="1_mqh5l"]
-[ext_resource type="Script" uid="uid://xbhmboffhejg" path="res://scripts/main_menu.gd" id="2_dwo6e"]
+[ext_resource type="Script" uid="uid://gtatu2ee4m6u" path="res://scenes/pop-ups/pop-up scripts/death_screen.gd" id="1_mqh5l"]
+[ext_resource type="Script" uid="uid://xbhmboffhejg" path="res://scenes/pop-ups/pop-up scripts/main_menu.gd" id="2_dwo6e"]
 
 [sub_resource type="GDScript" id="GDScript_dwo6e"]
 

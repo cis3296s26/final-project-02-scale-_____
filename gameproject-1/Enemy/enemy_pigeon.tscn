@@ -1,31 +1,31 @@
 [gd_scene format=3 uid="uid://qr0f0ju3brm6"]
 
-[ext_resource type="Script" uid="uid://dl0p5x1aty7xp" path="res://scripts/EnemyScripts/pigeon.gd" id="1_lbhxv"]
-[ext_resource type="Texture2D" uid="uid://dlbyuepc50gk2" path="res://assets/EnemySprites/pigeon.png" id="2_8pyki"]
-[ext_resource type="Texture2D" uid="uid://vh73g0qaqjs2" path="res://assets/EnemySprites/pigeon_walk.png" id="3_lbhxv"]
+[ext_resource type="Script" uid="uid://dl0p5x1aty7xp" path="res://Enemy/EnemyScripts/pigeon.gd" id="1_f11qu"]
+[ext_resource type="Texture2D" uid="uid://dlbyuepc50gk2" path="res://assets/EnemySprites/pigeon.png" id="2_h70vi"]
+[ext_resource type="Texture2D" uid="uid://vh73g0qaqjs2" path="res://assets/EnemySprites/pigeon_walk.png" id="3_qwjyx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2wwu3"]
-atlas = ExtResource("2_8pyki")
+atlas = ExtResource("2_h70vi")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yg0fv"]
-atlas = ExtResource("2_8pyki")
+atlas = ExtResource("2_h70vi")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lbhxv"]
-atlas = ExtResource("2_8pyki")
+atlas = ExtResource("2_h70vi")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t44t1"]
-atlas = ExtResource("3_lbhxv")
+atlas = ExtResource("3_qwjyx")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ambg"]
-atlas = ExtResource("3_lbhxv")
+atlas = ExtResource("3_qwjyx")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cbryp"]
-atlas = ExtResource("3_lbhxv")
+atlas = ExtResource("3_qwjyx")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vqlt5"]
@@ -116,7 +116,7 @@ size = Vector2(24, 24)
 size = Vector2(24, 24)
 
 [node name="Pidgeon" type="CharacterBody2D" unique_id=1409194561]
-script = ExtResource("1_lbhxv")
+script = ExtResource("1_f11qu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=284068969]
 scale = Vector2(2, 2)

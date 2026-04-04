@@ -67,7 +67,7 @@ func take_damage(amount: int) -> void:
 	update_hearts(GlobalScript.current_health)
 
 	if GlobalScript.current_health == 0:
-		get_tree().change_scene_to_file("res://scenes/death_screen.tscn")
+		get_tree().change_scene_to_file("res://scenes/pop-ups/death_screen.tscn")
 		return
 
 	GlobalScript.can_take_damage = false

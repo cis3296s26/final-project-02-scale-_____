@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dph5mflvoq1pb"]
 
-[ext_resource type="Script" uid="uid://c1q7riuvq6xex" path="res://scripts/tutorial_prompt.gd" id="1_purf7"]
+[ext_resource type="Script" uid="uid://c1q7riuvq6xex" path="res://scenes/pop-ups/pop-up scripts/tutorial_prompt.gd" id="1_c4h83"]
 
 [sub_resource type="Theme" id="Theme_64a5a"]
 
@@ -13,7 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_purf7")
+script = ExtResource("1_c4h83")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=826640298]
 layout_mode = 0

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ok2eon83bfnk"]
 
-[ext_resource type="Script" uid="uid://dvn51gpr5yanu" path="res://scripts/EnemyScripts/enemy_rat.gd" id="1_m4f5t"]
+[ext_resource type="Script" uid="uid://dvn51gpr5yanu" path="res://Enemy/EnemyScripts/enemy_rat.gd" id="1_m4f5t"]
 [ext_resource type="Texture2D" uid="uid://dlyno4d4obblw" path="res://assets/EnemySprites/EnemyRat.png" id="1_xmyx0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m4f5t"]

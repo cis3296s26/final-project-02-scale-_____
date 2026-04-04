@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://crjkxk1pisada"]
 
-[ext_resource type="Script" path="res://scripts/tutorial_hud.gd" id="1_6ds06"]
+[ext_resource type="Script" uid="uid://durrj7uhhflgf" path="res://scenes/scene_triggers/trigger scripts/tutorial_hud.gd" id="1_6ds06"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6ds06"]
 font_size = 32

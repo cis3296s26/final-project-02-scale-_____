@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://csinkgb4vsn8k"]
 
-[ext_resource type="Script" uid="uid://xbhmboffhejg" path="res://scripts/main_menu.gd" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://xbhmboffhejg" path="res://scenes/pop-ups/pop-up scripts/main_menu.gd" id="1_06t4h"]
 
 [sub_resource type="Theme" id="Theme_06t4h"]
 

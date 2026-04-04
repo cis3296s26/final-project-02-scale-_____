@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://djdsbrmb1pdcx"]
 
-[ext_resource type="Script" uid="uid://ddsn6a5f3reux" path="res://scripts/transition_collision.gd" id="1_s1kkc"]
+[ext_resource type="Script" uid="uid://ddsn6a5f3reux" path="res://scenes/scene_triggers/trigger scripts/transition_collision.gd" id="1_s1kkc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1kkc"]
 

@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://r5kr8kkp0tua" path="res://assets/train cart ok.png" id="1_hpxl2"]
 [ext_resource type="PackedScene" uid="uid://ocyoc1083cuv" path="res://Player/player.tscn" id="1_ifix0"]
-[ext_resource type="PackedScene" uid="uid://68r8k6qparxw" path="res://scenes/void.tscn" id="2_ho5cc"]
-[ext_resource type="PackedScene" uid="uid://ckdpk3d3nvds4" path="res://scenes/tutorial_trigger.tscn" id="3_cnj7s"]
-[ext_resource type="PackedScene" uid="uid://crjkxk1pisada" path="res://scenes/tutorial_hud.tscn" id="3_mi4a6"]
-[ext_resource type="PackedScene" uid="uid://djdsbrmb1pdcx" path="res://scenes/Transition_Collision.tscn" id="6_fem2g"]
+[ext_resource type="PackedScene" uid="uid://68r8k6qparxw" path="res://scenes/scene_triggers/void.tscn" id="2_ho5cc"]
+[ext_resource type="PackedScene" uid="uid://ckdpk3d3nvds4" path="res://scenes/scene_triggers/tutorial_trigger.tscn" id="3_cnj7s"]
+[ext_resource type="PackedScene" uid="uid://crjkxk1pisada" path="res://scenes/scene_triggers/tutorial_hud.tscn" id="3_mi4a6"]
+[ext_resource type="PackedScene" uid="uid://djdsbrmb1pdcx" path="res://scenes/scene_triggers/Transition_Collision.tscn" id="6_fem2g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ifix0"]
 size = Vector2(584, 64)

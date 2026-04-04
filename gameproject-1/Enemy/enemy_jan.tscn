@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cuhyldks1lip8"]
 
-[ext_resource type="Script" uid="uid://ekyvw7dyta4m" path="res://scripts/EnemyScripts/enemy_jan.gd" id="1_fqnjk"]
+[ext_resource type="Script" uid="uid://ekyvw7dyta4m" path="res://Enemy/EnemyScripts/enemy_jan.gd" id="1_fqnjk"]
 [ext_resource type="Texture2D" uid="uid://b8sjkiwo1f1xw" path="res://assets/EnemySprites/EnemyJan.png" id="2_e5c3f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r5gqt"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://68r8k6qparxw"]
 
-[ext_resource type="Script" uid="uid://nk4nmnicwcvy" path="res://scripts/killzone.gd" id="1_ccpoa"]
+[ext_resource type="Script" uid="uid://nk4nmnicwcvy" path="res://scenes/scene_triggers/trigger scripts/killzone.gd" id="1_ccpoa"]
 
 [node name="Killzone" type="Area2D" unique_id=1555209443]
 collision_layer = 0
