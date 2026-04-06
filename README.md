@@ -1,8 +1,17 @@
 This is an adventure platformer game developed with the Godot engine.
-How to Run the game:
+How to Run the game (Windows):
 1. Download the .exe file
 2. Download the .pck file and make sure this file and .exe are together
 3. Run the exefile
+
+How to Run the game (Mac)
+1. Download the .dmg file
+2. Try to run the game by double clicking on GAMEPROJECT1
+3. On your Mac, choose Apple menu > System Settings, then click Privacy & Security in the sidebar. (You may need to scroll down.)
+4. Open Privacy & Security settings for me
+5. Go to Security, then click Open.
+6. Click Open Anyway. This button is available for about an hour after you try to open the app.
+7. Enter your login password, then click OK.
 
 How to Run in Godot:
 1. Download or clone the repository
