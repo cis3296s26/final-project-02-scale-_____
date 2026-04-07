@@ -15,12 +15,17 @@ extends CharacterBody2D
 @export var attack_duration: float = 0.3  # time the thrust lasts
 	
 var state = "idle"
-var attack_timer: float = 0.3
+var attack_timer: float = 1.0
 var death = false
 var max_heath = 1
 var health = 1
 
 func _physics_process(delta):
+	if death:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+		
 	if player == null:
 		player = get_tree().get_first_node_in_group("player")
 		
@@ -104,7 +109,20 @@ func _on_enemy_hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("attack"):
 		health = health - 1
 		print("Hit! Health is now: ", health)
+		anim.play("rat_hit")
 		if health <= 0:
-			queue_free()
+			anim.play("rat_death")
 			print("DEATH")
 			death = true
+			weapon_hitbox.queue_free()
+			enemy_hitbox.queue_free()
+			animhit.queue_free()
+
+
+func _on_enemy_sprite_2_animation_finished() -> void:
+	if anim.animation == "rat_hit":
+		if death:
+			print("Play Sprite")
+			anim.play("rat_death")
+		else:
+			anim.play("rat_idle")
