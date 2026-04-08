@@ -23,6 +23,7 @@ func _ready() -> void:
 # runs at launch
 func _physics_process(delta: float) -> void:
 	if is_knocking_back:
+		animatedSprite.play("owl_hurt")
 		velocity.y += 980 * delta 
 		move_and_slide()
 		return
@@ -85,10 +86,16 @@ func take_damage(amount: int, weapon_position: Vector2) -> void:
 
 func apply_knockback(weapon_position: Vector2):
 	is_knocking_back = true
+	knockback_animation()
 	var direction_damage = (global_position - weapon_position).normalized()
 	print(direction_damage)
 	velocity = Vector2(direction_damage.x * knockback, -200)
 	$KnockbackTimer.start(0.2)
+
+func knockback_animation():
+	var tween = create_tween().set_loops(3)
+	tween.tween_property(animatedSprite, "modulate:a", 0, 0.1)
+	tween.tween_property(animatedSprite, "modulate:a", 1, 0.1)
 
 func _on_knockback_timer_timeout() -> void:
 	is_knocking_back = false
