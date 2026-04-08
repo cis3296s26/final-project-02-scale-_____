@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@export var damage_value = 1
+
 @export var speed: float = 100.0
 @export var detection_range: float = 200.0
 @export var attack_range: float = 50.0
@@ -60,11 +62,13 @@ func idle(delta):
 
 func chase(delta):
 	var direction = (player.global_position - global_position).normalized()
-	anim.flip_h = player.global_position.x < global_position.x
+
 	if player.global_position.x < global_position.x:
-		weapon_hitbox.position.x = -27
+		$RatAttack.scale.x = -1
+		anim.flip_h = true
 	else :
-		weapon_hitbox.position.x = 0
+		$RatAttack.scale.x = 1
+		anim.flip_h = false
 	
 	velocity.x = direction.x * speed
 	apply_gravity(delta)
@@ -98,7 +102,8 @@ func apply_gravity(delta):
 
 func _on_rat_attack_body_entered(body: Node2D) -> void:
 	if state == "attack" and body.has_method("take_damage"):
-		body.take_damage(1)
+		var weapon_pos = weapon_hitbox.global_position
+		body.take_damage(damage_value, weapon_pos)
 
 
 func _on_enemy_hitbox_area_entered(area: Area2D) -> void:

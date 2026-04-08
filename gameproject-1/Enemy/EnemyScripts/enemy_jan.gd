@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@export var damage_value = 1
 
 @export var speed: float = 100.0
 @export var detection_range: float = 200.0
@@ -7,7 +8,6 @@ extends CharacterBody2D
 @export var preferred_distance: float = 40.0
 @export var distance_tolerance: float = 10.0
 @export var ideal_spot: float = 0.0
-
 
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var anim = $EnemySprite1
@@ -129,7 +129,8 @@ func apply_gravity(delta):
 
 func _on_weapon_hitbox_body_entered(body: Node2D) -> void:
 	if state == "attack" and body.has_method("take_damage"):
-		body.take_damage(1)
+		var weapon_pos = weapon_hitbox.global_position
+		body.take_damage(damage_value, weapon_pos)
 
 
 func _on_enemy_hitbox_area_entered(area: Area2D) -> void:

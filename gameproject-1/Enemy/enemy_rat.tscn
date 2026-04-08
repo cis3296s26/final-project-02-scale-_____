@@ -130,13 +130,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xmyx0"]
-size = Vector2(37, 16)
+size = Vector2(37, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m4f5t"]
-size = Vector2(18, 16)
+size = Vector2(13, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_or20g"]
-size = Vector2(37, 16)
+size = Vector2(37, 14)
 
 [node name="enemy_rat" type="CharacterBody2D" unique_id=1374807424]
 script = ExtResource("1_m4f5t")
@@ -146,20 +146,20 @@ sprite_frames = SubResource("SpriteFrames_8vbso")
 animation = &"rat_death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1159257887]
-position = Vector2(-0.5, -2)
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_xmyx0")
 
 [node name="RatAttack" type="Area2D" parent="." unique_id=902094652]
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RatAttack" unique_id=634203825]
-position = Vector2(13, -2)
+position = Vector2(18, -1)
 shape = SubResource("RectangleShape2D_m4f5t")
 
 [node name="EnemyHitbox" type="Area2D" parent="." unique_id=348438706]
-position = Vector2(-1, -2)
 
 [node name="HitboxShape" type="CollisionShape2D" parent="EnemyHitbox" unique_id=1564683568]
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_or20g")
 
 [connection signal="animation_finished" from="EnemySprite2" to="." method="_on_enemy_sprite_2_animation_finished"]

@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 var isAttacking: bool
+var is_knocking_back: bool
+var knockback = 200
 
 @onready var movement = $Movement 
 @onready var combat = $Combat
@@ -20,7 +22,12 @@ func _ready() -> void:
 
 # runs at launch
 func _physics_process(delta: float) -> void:
-	movement.basic_movement(delta, self)
+	if is_knocking_back:
+		velocity.y += 980 * delta 
+		move_and_slide()
+		return
+	
+	movement.basic_movement(delta, self, animatedSprite)
 	handle_direction(isAttacking)
 	handle_movement_animations(isAttacking)
 	movement.handle_scaling(self, animatedSprite)
@@ -55,15 +62,17 @@ func handle_direction(state: bool) -> void:
 		combat.scale.x = 1
 		animatedSprite.flip_h = false
 
-func take_damage(amount: int) -> void:
+func take_damage(amount: int, weapon_position: Vector2) -> void:
 	if not GlobalScript.can_take_damage:
 		return
-
+	
 	GlobalScript.current_health -= amount
 
 	if GlobalScript.current_health < 0:
 		GlobalScript.current_health = 0
-
+	
+	apply_knockback(weapon_position)
+	
 	update_hearts(GlobalScript.current_health)
 
 	if GlobalScript.current_health == 0:
@@ -73,6 +82,16 @@ func take_damage(amount: int) -> void:
 	GlobalScript.can_take_damage = false
 	await get_tree().create_timer(1.0).timeout
 	GlobalScript.can_take_damage = true
+
+func apply_knockback(weapon_position: Vector2):
+	is_knocking_back = true
+	var direction_damage = (global_position - weapon_position).normalized()
+	print(direction_damage)
+	velocity = Vector2(direction_damage.x * knockback, -200)
+	$KnockbackTimer.start(0.2)
+
+func _on_knockback_timer_timeout() -> void:
+	is_knocking_back = false
 
 func update_hearts(health: int) -> void:
 	if heart_bar:
