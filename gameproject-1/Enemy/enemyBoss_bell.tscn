@@ -160,10 +160,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8pyki"]
-size = Vector2(50.5, 63)
+size = Vector2(24, 63)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbhxv"]
-size = Vector2(51, 62)
+size = Vector2(24, 62)
 
 [node name="BellBoss" type="CharacterBody2D" unique_id=1409194561]
 scale = Vector2(2, 2)
@@ -173,11 +173,13 @@ script = ExtResource("1_w737a")
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_vqlt5")
 animation = &"ring"
+frame = 16
+frame_progress = 0.5294621
 offset = Vector2(0, -3)
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2046308478]
-position = Vector2(-0.25, -6)
+position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_8pyki")
 
 [node name="EnemyHitbox" type="Area2D" parent="." unique_id=83394509]

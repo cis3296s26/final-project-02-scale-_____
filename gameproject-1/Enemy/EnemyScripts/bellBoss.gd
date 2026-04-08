@@ -1,13 +1,13 @@
 extends CharacterBody2D
 
 @export var speed: float = 20.0
-@export var attack_range: float = 100.0
+@export var attack_range: float = 85.0
 @export var gravity: float = 800.0
 
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var anim = $AnimatedSprite2D
 @onready var animhit = $CollisionShape2D
-@export var attack_thrust: float = 10.0  # forward movement during attack
+@export var attack_thrust: float = 30.0  # forward movement during attack
 @export var attack_duration: float = 0.3  # time the thrust lasts
 
 var state = "chase"
@@ -47,15 +47,11 @@ func _physics_process(delta):
 		# "ring"
 			# ring(delta)
 	
-	for i in range(get_slide_collision_count()):
-		var collision = get_slide_collision(i)
-		var body = collision.get_collider()
-	
-		if state == "attack" and damage_cooldown_current <=0 and body.has_method("take_damage"):
-			if _is_player_hit_by_swing():
-				# damaged
-				body.take_damage(1)
-				damage_cooldown_current = damage_cooldown_max
+	if state == "attack" and damage_cooldown_current <=0 and player.has_method("take_damage"):
+		if _is_player_hit_by_swing():
+			# damaged
+			player.take_damage(1)
+			damage_cooldown_current = damage_cooldown_max
 
 func chase(delta):
 	var direction = sign(player.global_position.x - global_position.x)
