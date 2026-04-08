@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://ok2eon83bfnk" path="res://Enemy/enemy_rat.tscn" id="9_vtaks"]
 [ext_resource type="PackedScene" uid="uid://5pps15j2et4n" path="res://Enemy/dummy.tscn" id="10_vtaks"]
 [ext_resource type="PackedScene" uid="uid://qr0f0ju3brm6" path="res://Enemy/enemy_pigeon.tscn" id="11_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://cyjo3huqbpx0v" path="res://Enemy/enemyBoss_bell.tscn" id="12_dinhu"]
+[ext_resource type="PackedScene" uid="uid://disyjg6fei82k" path="res://Enemy/enemyBoss_minionBell.tscn" id="13_kvuet"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
 texture = ExtResource("3_lnu2h")
@@ -296,5 +298,10 @@ position = Vector2(-471, -62)
 
 [node name="Pidgeon" parent="." unique_id=1409194561 instance=ExtResource("11_kvpfn")]
 position = Vector2(-914, -9)
+
+[node name="BellBoss" parent="." unique_id=206081515 instance=ExtResource("12_dinhu")]
+position = Vector2(-1613, -45)
+
+[node name="BellBoss2" parent="." unique_id=1830939212 instance=ExtResource("13_kvuet")]
 
 [connection signal="body_entered" from="LavaAnt/Area2D" to="LavaAnt" method="_on_area_2d_body_entered"]
