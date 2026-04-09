@@ -4,6 +4,7 @@ var isAttacking: bool
 var is_knocking_back: bool
 var knockback = 200
 
+@onready var potion_label = $Player_Bar/UIRoot/PotionLabel
 @onready var movement = $Movement 
 @onready var combat = $Combat
 @onready var pause_menu = $CanvasLayer/PauseMenu
@@ -11,13 +12,17 @@ var knockback = 200
 
 @onready var animatedSprite = $AnimatedSprite2D
 
-var coin_count = 0
 @onready var coin_label = $Player_Bar/UIRoot/CoinLabel
 
 func _ready() -> void:
-	GlobalScript.current_health = GlobalScript.max_health
+	GlobalScript.health_changed.connect(update_hearts)
+	GlobalScript.coin_changed.connect(update_coin_label)
+	GlobalScript.inventory_changed.connect(update_potion_label)
+
 	update_hearts(GlobalScript.current_health)
-	update_coin_label()
+	update_coin_label(GlobalScript.coin_count)
+	update_potion_label()
+
 	$Combat.attack_state_changed.connect(handle_movement_animations)
 
 # runs at launch
@@ -105,25 +110,31 @@ func update_hearts(health: int) -> void:
 		heart_bar.update_hearts(health)
 
 func _unhandled_input(event):
-	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
-		if pause_menu.visible:
-			# Resume
-			get_tree().paused = false
-			pause_menu.visible = false
-		else:
-			# Pause
-			get_tree().paused = true
-			#Go to pause menu if Esc key pressed
-			pause_menu.visible = true
+	if event is InputEventKey and event.pressed and not event.echo:
+		if event.keycode == KEY_X:
+			use_health_potion()
+		elif event.keycode == KEY_ESCAPE:
+			if pause_menu.visible:
+				get_tree().paused = false
+				pause_menu.visible = false
+			else:
+				get_tree().paused = true
+				pause_menu.visible = true
+
+func use_health_potion() -> void:
+	if GlobalScript.current_health >= GlobalScript.max_health:
+		return
+	
+	if GlobalScript.use_health_potion():
+		GlobalScript.current_health += 1
 
 func add_coin() -> void:
-	print("coint", coin_count)
-	coin_count += 1
-	print("coint", coin_count)
-	update_coin_label()
+	GlobalScript.coin_count += 1
 
-func update_coin_label() -> void:
-	print("existing1")
+func update_coin_label(new_coin_count: int) -> void:
 	if coin_label:
-		print("existing2")
-		coin_label.text = str(coin_count)
+		coin_label.text = str(new_coin_count)
+
+func update_potion_label() -> void:
+	if potion_label:
+		potion_label.text = str(GlobalScript.get_health_potion_count())
