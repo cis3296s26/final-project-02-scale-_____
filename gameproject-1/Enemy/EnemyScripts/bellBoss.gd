@@ -12,11 +12,13 @@ extends CharacterBody2D
 
 var state = "chase"
 var death = false
-var max_heath = 30
-var health = 30
+var max_heath = 1
+var health = 1
 var attack_timer: float = 0.0
 var damage_cooldown_current = 0.0
 var damage_cooldown_max = 0.5
+var shake_timer = 0.0
+var shake_strength = 2.0
 
 func _physics_process(delta):
 	if player == null:
@@ -52,6 +54,26 @@ func _physics_process(delta):
 			# damaged
 			player.take_damage(1)
 			damage_cooldown_current = damage_cooldown_max
+	
+	if shake_timer > 0:
+		shake_timer -= delta
+		# randomly choose left or right
+		var rand = randf()
+		if rand < 0.5:
+			$AnimatedSprite2D.position.x = shake_strength
+			if rand < 0.1:
+				speed += randf() * 40
+				attack_thrust += randf() * 40
+		else:
+			$AnimatedSprite2D.position.x = -shake_strength
+			speed = 20.0
+			attack_thrust = 30.0
+	else:
+		# reset position
+		$AnimatedSprite2D.position.x = 0
+		# randomly start shaking
+		if randf() < 0.02:
+			shake_timer = randf_range(0.1, 0.5)
 
 func chase(delta):
 	var direction = sign(player.global_position.x - global_position.x)
@@ -93,8 +115,9 @@ func _on_enemy_hitbox_area_entered(area: Area2D) -> void:
 		health = health - 1
 		print("Hit! Health is now: ", health)
 		if health <= 0:
-			queue_free()
-			print("DEATH")
+			# queue_free()
+			print("BELL BOSS DEATH")
+			anim.play("death")
 			death = true
 
 func _is_player_hit_by_swing():
