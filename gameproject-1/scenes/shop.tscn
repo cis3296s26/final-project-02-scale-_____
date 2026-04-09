@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://i6t3y8yjemwc"]
+
+[ext_resource type="Script" uid="uid://dkd15cnanx4j8" path="res://scenes/shop.gd" id="1_lx5au"]
+
+[sub_resource type="Animation" id="Animation_bdmwb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -300)]
+}
+
+[sub_resource type="Animation" id="Animation_lx5au"]
+resource_name = "TransIn"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(0.13869676, 1),
+"update": 0,
+"values": [Vector2(0, -300), Vector2(0, 500)]
+}
+
+[sub_resource type="Animation" id="Animation_xfvoa"]
+resource_name = "TransOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.96666664),
+"transitions": PackedFloat32Array(0.13397183, 0.07432548),
+"update": 0,
+"values": [Vector2(0, 500), Vector2(0, 1500)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1l46r"]
+_data = {
+&"RESET": SubResource("Animation_bdmwb"),
+&"TransIn": SubResource("Animation_lx5au"),
+&"TransOut": SubResource("Animation_xfvoa")
+}
+
+[node name="Shop" type="CanvasLayer" unique_id=791231097]
+offset = Vector2(0, -300)
+transform = Transform2D(1, 0, 0, 1, 0, -300)
+script = ExtResource("1_lx5au")
+
+[node name="Anim" type="AnimationPlayer" parent="." unique_id=1122142892]
+libraries/ = SubResource("AnimationLibrary_1l46r")
+
+[node name="Panel" type="Panel" parent="." unique_id=1459270627]
+offset_left = 272.0
+offset_top = -328.0
+offset_right = 1656.0
+offset_bottom = 232.0
+
+[node name="Close" type="Button" parent="." unique_id=292432678]
+offset_left = 1576.0
+offset_top = -308.0
+offset_right = 1640.0
+offset_bottom = -252.0
+text = "X"
+
+[connection signal="pressed" from="Close" to="." method="_on_close_pressed"]
