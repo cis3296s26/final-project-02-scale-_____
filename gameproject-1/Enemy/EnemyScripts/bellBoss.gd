@@ -12,6 +12,8 @@ extends CharacterBody2D
 
 var state = "chase"
 var death = false
+var phase = 1
+
 var max_heath = 1
 var health = 1
 var attack_timer: float = 0.0
@@ -25,7 +27,10 @@ func _physics_process(delta):
 		player = get_tree().get_first_node_in_group("player")
 		
 	if player == null:
-		anim.play("still")
+		if phase = 1:
+			anim.play("still1")
+		else:
+			anim.play("still2")
 		velocity.x = 0
 		# move_and_slide()
 		return
@@ -60,12 +65,12 @@ func _physics_process(delta):
 		# randomly choose left or right
 		var rand = randf()
 		if rand < 0.5:
-			$AnimatedSprite2D.position.x = shake_strength
+			$AnimatedSprite2D.position.x = shake_strength * rand
 			if rand < 0.1:
 				speed += randf() * 40
 				attack_thrust += randf() * 40
 		else:
-			$AnimatedSprite2D.position.x = -shake_strength
+			$AnimatedSprite2D.position.x = -shake_strength * rand
 			speed = 20.0
 			attack_thrust = 30.0
 	else:
@@ -118,7 +123,7 @@ func _on_enemy_hitbox_area_entered(area: Area2D) -> void:
 			# queue_free()
 			print("BELL BOSS DEATH")
 			anim.play("death")
-			death = true
+			# death = true
 
 func _is_player_hit_by_swing():
 	var frame = $AnimatedSprite2D.frame

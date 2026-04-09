@@ -82,7 +82,7 @@ size = Vector2(9, 9.5)
 size = Vector2(9, 9.5)
 
 [node name="BellMinion" type="CharacterBody2D" unique_id=1409194561]
-scale = Vector2(2, 2)
+scale = Vector2(4, 4)
 script = ExtResource("1_jcd22")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=284068969]
