@@ -14,7 +14,8 @@ var state = "chase"
 var death = false
 var phase = 1
 
-var max_heath = 1
+var max_health_phase1 = 1
+var max_health_phase2 = 5
 var health = 1
 var attack_timer: float = 0.0
 var damage_cooldown_current = 0.0
@@ -27,7 +28,7 @@ func _physics_process(delta):
 		player = get_tree().get_first_node_in_group("player")
 		
 	if player == null:
-		if phase = 1:
+		if phase == 1:
 			anim.play("still1")
 		else:
 			anim.play("still2")
@@ -60,32 +61,36 @@ func _physics_process(delta):
 			player.take_damage(1)
 			damage_cooldown_current = damage_cooldown_max
 	
-	if shake_timer > 0:
-		shake_timer -= delta
-		# randomly choose left or right
-		var rand = randf()
-		if rand < 0.5:
-			$AnimatedSprite2D.position.x = shake_strength * rand
-			if rand < 0.1:
-				speed += randf() * 40
-				attack_thrust += randf() * 40
+	if phase == 2:
+		if shake_timer > 0:
+			shake_timer -= delta
+			# randomly choose left or right
+			var rand = randf()
+			if rand < 0.5:
+				$AnimatedSprite2D.position.x = shake_strength * rand
+				if rand < 0.1:
+					speed += randf() * 40
+					attack_thrust += randf() * 40
+			else:
+				$AnimatedSprite2D.position.x = -shake_strength * rand
+				speed = 20.0
+				attack_thrust = 30.0
 		else:
-			$AnimatedSprite2D.position.x = -shake_strength * rand
-			speed = 20.0
-			attack_thrust = 30.0
-	else:
-		# reset position
-		$AnimatedSprite2D.position.x = 0
-		# randomly start shaking
-		if randf() < 0.02:
-			shake_timer = randf_range(0.1, 0.5)
+			# reset position
+			$AnimatedSprite2D.position.x = 0
+			# randomly start shaking
+			if randf() < 0.02:
+				shake_timer = randf_range(0.1, 0.5)
 
 func chase(delta):
 	var direction = sign(player.global_position.x - global_position.x)
 	velocity.x = direction * speed
 	apply_gravity(delta)
 	move_and_slide()
-	anim.play("ring")
+	if phase == 1:
+		anim.play("ring1")
+	else:
+		anim.play("ring2")
 	# if (timer == )
 		# state = "ring"
 
@@ -121,8 +126,15 @@ func _on_enemy_hitbox_area_entered(area: Area2D) -> void:
 		print("Hit! Health is now: ", health)
 		if health <= 0:
 			# queue_free()
-			print("BELL BOSS DEATH")
-			anim.play("death")
+			if phase == 1:
+				phase = 2
+				print("BELL BOSS PHASE 2")
+				anim.play("crack_phase_transition")
+				health = max_health_phase2
+				
+			else:
+				print("BELL BOSS DEATH")
+				anim.play("death")
 			# death = true
 
 func _is_player_hit_by_swing():

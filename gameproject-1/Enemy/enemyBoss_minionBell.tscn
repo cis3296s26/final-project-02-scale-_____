@@ -76,10 +76,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8pyki"]
-size = Vector2(9, 9.5)
+size = Vector2(8, 9.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbhxv"]
-size = Vector2(9, 9.5)
+size = Vector2(8, 9.25)
 
 [node name="BellMinion" type="CharacterBody2D" unique_id=1409194561]
 scale = Vector2(4, 4)
@@ -93,14 +93,14 @@ offset = Vector2(0, -3)
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2046308478]
-position = Vector2(0.5, -2.25)
+position = Vector2(0.5, -2.375)
 shape = SubResource("RectangleShape2D_8pyki")
 
 [node name="EnemyHitbox" type="Area2D" parent="." unique_id=83394509]
 position = Vector2(0, -6)
 
 [node name="HitboxShape" type="CollisionShape2D" parent="EnemyHitbox" unique_id=1727629974]
-position = Vector2(0.5, 3.75)
+position = Vector2(0.5, 3.625)
 shape = SubResource("RectangleShape2D_lbhxv")
 
 [connection signal="area_entered" from="EnemyHitbox" to="." method="_on_enemy_hitbox_area_entered"]
