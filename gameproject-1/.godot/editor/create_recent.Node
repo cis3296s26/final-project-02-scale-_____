@@ -1,3 +1,5 @@
+TileMap
+Sprite2D
 ColorRect
 CollisionShape2D
 Area2D
@@ -10,4 +12,3 @@ Control
 Timer
 RayCast2D
 AnimatedSprite2D
-Sprite2D
