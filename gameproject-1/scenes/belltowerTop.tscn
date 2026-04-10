@@ -220,4 +220,5 @@ position = Vector2(-183, 71)
 shape = SubResource("WorldBoundaryShape2D_u5sy4")
 
 [node name="TransitionCollision" parent="." unique_id=1844202408 instance=ExtResource("7_qp6v8")]
+position = Vector2(-52, 92)
 destination_scene = "uid://b1o1b3wjkiwl8"

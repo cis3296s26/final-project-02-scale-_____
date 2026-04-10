@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ci5inh8x5v1l0" path="res://assets/sprites/owl_run.png" id="5_x8e5g"]
 [ext_resource type="PackedScene" uid="uid://tvmfnjn35yt8" path="res://scenes/pop-ups/pause_menu.tscn" id="7_vtle1"]
 [ext_resource type="PackedScene" uid="uid://cpsgpg6xxfbat" path="res://Player/HeartBar.tscn" id="9_00tjw"]
+[ext_resource type="Texture2D" uid="uid://cu4p17prjptmv" path="res://assets/sprites/owl_weapon_1.png" id="9_p5o4e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w6hf4"]
 size = Vector2(2.75, 6.25)
@@ -127,6 +128,10 @@ region = Rect2(32, 32, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_antbh"]
 atlas = ExtResource("4_ffe6g")
 region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8viyr"]
+atlas = ExtResource("9_p5o4e")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x8e5g"]
 animations = [{
@@ -258,6 +263,14 @@ animations = [{
 "loop": false,
 "name": &"owl_still",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8viyr")
+}],
+"loop": false,
+"name": &"owl_weapon_1",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x3vf3"]
@@ -275,7 +288,7 @@ shape = SubResource("RectangleShape2D_w6hf4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1586020943]
 position = Vector2(0, 4)
 sprite_frames = SubResource("SpriteFrames_x8e5g")
-animation = &"owl_glide_attack"
+animation = &"owl_weapon_1"
 centered = false
 offset = Vector2(-16, -24)
 

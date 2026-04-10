@@ -6,26 +6,39 @@ signal attack_state_changed(isAttacking: bool)
 @onready var weapon_hitbox = $AttackCollision/CollisionShape2D
 var damage_value = 1
 
+@onready var weapon_node = get_tree().root.find_child("Pencil", true, false)
+
 func handle_combat(player: CharacterBody2D,  animated: AnimatedSprite2D) -> void:
 	handle_combat_animations(player, animated)
 
 func handle_combat_animations(player: CharacterBody2D, animated: AnimatedSprite2D) -> void:
 	if Input.is_action_just_pressed("attack"):
 		if player.is_on_floor():
-			animated.play("owl_attack")
-			$AttackCollision/CollisionShape2D.position = Vector2(10, -3)
-			$AttackCollision/CollisionShape2D.set_deferred("disabled", false)
-			isAttacking = true	
-			attack_state_changed.emit(true)
+			
+			if weapon_node and weapon_node.visible:
+				animated.play("owl_weapon_1")
+				$AttackCollision/CollisionShape2D.position = Vector2(10, -3)
+				$AttackCollision/CollisionShape2D.shape.size = Vector2(20, 10)
+				$AttackCollision/CollisionShape2D.set_deferred("disabled", false)
+				isAttacking = true	
+				attack_state_changed.emit(true)
+			else: 
+				animated.play("owl_attack")
+				$AttackCollision/CollisionShape2D.position = Vector2(9, -3)
+				$AttackCollision/CollisionShape2D.shape.size = Vector2(5, 10)
+				$AttackCollision/CollisionShape2D.set_deferred("disabled", false)
+				isAttacking = true	
+				attack_state_changed.emit(true)
 		else:
 			animated.play("owl_glide_attack")
-			$AttackCollision/CollisionShape2D.position = Vector2(10, -3)
+			$AttackCollision/CollisionShape2D.position = Vector2(9, -3)
+			$AttackCollision/CollisionShape2D.shape.size = Vector2(10, 10)
 			$AttackCollision/CollisionShape2D.set_deferred("disabled", false)
 			isAttacking = true	
 			attack_state_changed.emit(true)
 
 func _on_animated_sprite_2d_animation_finished() -> void:
-	if sprite.animation == "owl_attack" or sprite.animation == "owl_glide_attack":
+	if sprite.animation == "owl_attack" or sprite.animation == "owl_glide_attack" or sprite.animation == "owl_weapon_1":
 		$AttackCollision/CollisionShape2D.set_deferred("disabled", true)
 		isAttacking = false
 		attack_state_changed.emit(false)

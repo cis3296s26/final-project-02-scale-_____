@@ -137,6 +137,7 @@ func use_health_potion() -> void:
 func add_coin() -> void:
 	GlobalScript.coin_count += 1
 
+# move these codes below to heart_bar.gd
 func update_coin_label(new_coin_count: int) -> void:
 	if coin_label:
 		coin_label.text = str(new_coin_count)
