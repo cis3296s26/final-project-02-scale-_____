@@ -65,23 +65,33 @@ text = "Continue"
 
 [node name="Options" type="Button" parent="Container" unique_id=287005373]
 layout_mode = 0
-offset_left = 38.767597
-offset_top = 111.71957
-offset_right = 131.76761
-offset_bottom = 142.71957
+offset_left = 39.156506
+offset_top = 139.13861
+offset_right = 132.15652
+offset_bottom = 170.13861
 scale = Vector2(0.24822803, 0.7298098)
 text = "Options"
 
 [node name="Quit" type="Button" parent="Container" unique_id=2105139026]
 layout_mode = 0
-offset_left = 38.767593
-offset_top = 141.57527
-offset_right = 131.7676
-offset_bottom = 172.57527
+offset_left = 39.26423
+offset_top = 167.82358
+offset_right = 132.26422
+offset_bottom = 198.82358
 scale = Vector2(0.24642202, 0.6673232)
 text = "Quit"
+
+[node name="Bell Boss Test" type="Button" parent="Container" unique_id=1969762364]
+layout_mode = 0
+offset_left = 38.83334
+offset_top = 109.95906
+offset_right = 131.83337
+offset_bottom = 140.95906
+scale = Vector2(0.24853016, 0.7843576)
+text = "Test Boss"
 
 [connection signal="pressed" from="Container/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="Container/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="Container/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Container/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Container/Bell Boss Test" to="." method="_on_bell_boss_test_pressed"]

@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://disyjg6fei82k"]
+
+[ext_resource type="Script" uid="uid://drto36o5oh30e" path="res://Enemy/EnemyScripts/bellMinion.gd" id="1_jcd22"]
+[ext_resource type="Texture2D" uid="uid://cgq6cocvurqcn" path="res://assets/EnemySprites/bell_mini.png" id="2_fmwut"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_narj4"]
+atlas = ExtResource("2_fmwut")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2alf"]
+atlas = ExtResource("2_fmwut")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yyja"]
+atlas = ExtResource("2_fmwut")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0c3s"]
+atlas = ExtResource("2_fmwut")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qrl1"]
+atlas = ExtResource("2_fmwut")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbpob"]
+atlas = ExtResource("2_fmwut")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07il4"]
+atlas = ExtResource("2_fmwut")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ceauy"]
+atlas = ExtResource("2_fmwut")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vqlt5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_narj4")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_f2alf")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_0yyja")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_l0c3s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qrl1")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_mbpob")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_07il4")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_ceauy")
+}],
+"loop": true,
+"name": &"ring",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_narj4")
+}],
+"loop": false,
+"name": &"still",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8pyki"]
+size = Vector2(8, 9.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbhxv"]
+size = Vector2(8, 9.25)
+
+[node name="BellMinion" type="CharacterBody2D" unique_id=1409194561]
+scale = Vector2(4, 4)
+script = ExtResource("1_jcd22")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=284068969]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_vqlt5")
+animation = &"ring"
+offset = Vector2(0, -3)
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2046308478]
+position = Vector2(0.5, -2.375)
+shape = SubResource("RectangleShape2D_8pyki")
+
+[node name="EnemyHitbox" type="Area2D" parent="." unique_id=83394509]
+position = Vector2(0, -6)
+
+[node name="HitboxShape" type="CollisionShape2D" parent="EnemyHitbox" unique_id=1727629974]
+position = Vector2(0.5, 3.625)
+shape = SubResource("RectangleShape2D_lbhxv")
+
+[connection signal="area_entered" from="EnemyHitbox" to="." method="_on_enemy_hitbox_area_entered"]
