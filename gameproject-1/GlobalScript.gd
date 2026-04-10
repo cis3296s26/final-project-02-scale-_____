@@ -1,13 +1,13 @@
 extends Node
 
-var max_health = 3
+var max_health = 7
 var can_take_damage = true
 
 signal health_changed(new_health: int)
 signal coin_changed(new_coin_count: int)
 signal inventory_changed
 
-var current_health: int = 3:
+var current_health: int = max_health:
 	set(value):
 		current_health = clamp(value, 0, max_health)
 		health_changed.emit(current_health)

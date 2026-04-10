@@ -39,6 +39,22 @@ texture = ExtResource("2_y1q58")
 layout_mode = 2
 texture = ExtResource("2_y1q58")
 
+[node name="Heart4" type="TextureRect" parent="UIRoot/HBoxContainer" unique_id=1865167444]
+layout_mode = 2
+texture = ExtResource("2_y1q58")
+
+[node name="Heart5" type="TextureRect" parent="UIRoot/HBoxContainer" unique_id=787045091]
+layout_mode = 2
+texture = ExtResource("2_y1q58")
+
+[node name="Heart6" type="TextureRect" parent="UIRoot/HBoxContainer" unique_id=1560228935]
+layout_mode = 2
+texture = ExtResource("2_y1q58")
+
+[node name="Heart7" type="TextureRect" parent="UIRoot/HBoxContainer" unique_id=1087275599]
+layout_mode = 2
+texture = ExtResource("2_y1q58")
+
 [node name="CoinRow" type="HBoxContainer" parent="UIRoot" unique_id=1309040339]
 layout_mode = 0
 offset_right = 40.0

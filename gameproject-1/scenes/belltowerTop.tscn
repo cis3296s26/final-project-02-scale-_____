@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cgjaw0r53b36r" path="res://assets/Environment/Background/SkyViewPixel.png" id="1_o1fnh"]
 [ext_resource type="PackedScene" uid="uid://ocyoc1083cuv" path="res://Player/player.tscn" id="4_5mkyb"]
 [ext_resource type="PackedScene" uid="uid://68r8k6qparxw" path="res://scenes/scene_triggers/void.tscn" id="5_ixl61"]
+[ext_resource type="PackedScene" uid="uid://djdsbrmb1pdcx" path="res://scenes/scene_triggers/Transition_Collision.tscn" id="7_qp6v8"]
 [ext_resource type="PackedScene" uid="uid://cyjo3huqbpx0v" path="res://Enemy/enemyBoss_bell.tscn" id="11_we8g7"]
 [ext_resource type="PackedScene" uid="uid://disyjg6fei82k" path="res://Enemy/enemyBoss_minionBell.tscn" id="12_3y58o"]
 
@@ -217,3 +218,6 @@ position = Vector2(82, 505)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1645485749]
 position = Vector2(-183, 71)
 shape = SubResource("WorldBoundaryShape2D_u5sy4")
+
+[node name="TransitionCollision" parent="." unique_id=1844202408 instance=ExtResource("7_qp6v8")]
+destination_scene = "uid://b1o1b3wjkiwl8"

@@ -15,7 +15,6 @@ var knockback = 200
 @onready var coin_label = $Player_Bar/UIRoot/CoinLabel
 
 func _ready() -> void:
-	GlobalScript.current_health = GlobalScript.max_health
 	GlobalScript.can_take_damage = true
 
 	GlobalScript.health_changed.connect(update_hearts)
@@ -86,8 +85,9 @@ func take_damage(amount: int, weapon_position: Vector2) -> void:
 	
 	update_hearts(GlobalScript.current_health)
 
-	if GlobalScript.current_health == 0:
+	if GlobalScript.current_health <= 0:
 		get_tree().change_scene_to_file("res://scenes/pop-ups/death_screen.tscn")
+		GlobalScript.current_health = GlobalScript.max_health
 		return
 
 	GlobalScript.can_take_damage = false
