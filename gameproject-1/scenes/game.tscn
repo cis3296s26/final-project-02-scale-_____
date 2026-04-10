@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://qr0f0ju3brm6" path="res://Enemy/enemy_pigeon.tscn" id="11_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://cyjo3huqbpx0v" path="res://Enemy/enemyBoss_bell.tscn" id="12_dinhu"]
 [ext_resource type="PackedScene" uid="uid://disyjg6fei82k" path="res://Enemy/enemyBoss_minionBell.tscn" id="13_kvuet"]
+[ext_resource type="Texture2D" uid="uid://l4ee0stgx0c1" path="res://assets/sprites/updated shop npc.png" id="14_ir15t"]
+[ext_resource type="PackedScene" uid="uid://i6t3y8yjemwc" path="res://Objects/shop.tscn" id="15_ca42v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
 texture = ExtResource("3_lnu2h")
@@ -222,7 +224,7 @@ size = Vector2(17, 10)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u5sy4"]
 
-[sub_resource type="GDScript" id="GDScript_dinhu"]
+[sub_resource type="GDScript" id="GDScript_rysoc"]
 script/source = "extends Area2D
 
 
@@ -242,7 +244,7 @@ func _on_body_entered(body: Node2D) -> void:
 		get_node(\"Shop/Anim\").play(\"TransIn\")
 "
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kvuet"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ssvqc"]
 
 [node name="Game" type="Node2D" unique_id=1469360423]
 
@@ -325,6 +327,20 @@ position = Vector2(-914, -9)
 position = Vector2(-1613, -45)
 
 [node name="BellBoss2" parent="." unique_id=1830939212 instance=ExtResource("13_kvuet")]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1147397055]
+position = Vector2(1123, 7)
+script = SubResource("GDScript_rysoc")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1767993539]
+position = Vector2(5, -5)
+texture = ExtResource("14_ir15t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1253853154]
+position = Vector2(5, -4)
+shape = SubResource("CapsuleShape2D_ssvqc")
+
+[node name="Shop" parent="Area2D" unique_id=791231097 instance=ExtResource("15_ca42v")]
 
 [connection signal="body_entered" from="LavaAnt/Area2D" to="LavaAnt" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

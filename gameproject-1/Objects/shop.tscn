@@ -57,6 +57,7 @@ _data = {
 }
 
 [node name="Shop" type="CanvasLayer" unique_id=791231097]
+process_mode = 3
 offset = Vector2(0, -300)
 transform = Transform2D(1, 0, 0, 1, 0, -300)
 script = ExtResource("1_lx5au")
