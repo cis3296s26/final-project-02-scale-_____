@@ -17,9 +17,9 @@ var state = "chase"
 var death = false
 var phase = 1
 
-var max_health_phase1 = 1
-var max_health_phase2 = 1
-var health = 1
+var max_health_phase1 = 5
+var max_health_phase2 = 5
+var health = 5
 var attack_timer: float = 0.0
 var damage_cooldown_current = 0.0
 var damage_cooldown_max = 0.5

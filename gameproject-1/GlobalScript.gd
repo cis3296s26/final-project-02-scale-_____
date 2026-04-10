@@ -1,6 +1,6 @@
 extends Node
 
-var max_health = 7
+var max_health = 3
 var can_take_damage = true
 
 signal health_changed(new_health: int)
