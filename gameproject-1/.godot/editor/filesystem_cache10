@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1775822287
+::res://::1775827814
 export_presets.cfg::TextFile::-1::1775232308::0::1::::<><><>0<>0<><>::
 GlobalScript.gd::GDScript::247594408924664459::1775822287::0::1::::<>Node<><>0<>0<><>::
 icon.svg::CompressedTexture2D::822653193914807282::1773416912::1775786532::1::::<><><>0<>0<>95e354c2323f1500a8f6057edb08b387<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
@@ -86,7 +86,7 @@ hurt.wav::AudioStreamWAV::5728456655277898296::1773959509::1774019047::1::::<><>
 jump.wav::AudioStreamWAV::5553597477252394833::1773959509::1774019046::1::::<><><>0<>0<>dab285f7b10381be0f9c156978c8160f<>res://.godot/imported/jump.wav-395b727cde98999423d5c020c9c3492f.sample::
 power_up.wav::AudioStreamWAV::4282735600552481238::1773959509::1774019047::1::::<><><>0<>0<>07d42270564150a321216e1acf147fe1<>res://.godot/imported/power_up.wav-8349ffe570559470036ebff4b80f7fc0.sample::
 tap.wav::AudioStreamWAV::5560549480260508210::1773959509::1774019046::1::::<><><>0<>0<>705e4a1fd768bd655a6e0f146d1602ed<>res://.godot/imported/tap.wav-78d4c5a48b21a853d89bec74f20510e7.sample::
-::res://assets/sprites/::1775823556
+::res://assets/sprites/::1775823558
 coin.png::CompressedTexture2D::2786001246281601476::1773959509::1774019046::1::::<><><>0<>0<>8253bb5c79bfe946c4e408adb6705106<>res://.godot/imported/coin.png-c8309bf0f8fb5f3a7d1e96a4eb3f02ce.ctex::
 dummy.png::CompressedTexture2D::988639112971501864::1775174536::1775174555::1::::<><><>0<>0<>5007208a9dc095e3b96561e986e70f0b<>res://.godot/imported/dummy.png-e0caa3df339ab68328c6786ae3bca540.ctex::
 fruit.png::CompressedTexture2D::8489279778303373256::1773959509::1774019046::1::::<><><>0<>0<>41cfea1ab876895baeda8b0eefaf7a56<>res://.godot/imported/fruit.png-3735163b668af10c2b35b52cba81b68a.ctex::
@@ -155,11 +155,11 @@ coin.tscn::PackedScene::4631384213854169938::1775314958::0::1::::<><><>0<>0<><>:
 platform.tscn::PackedScene::9176674810355235753::1774620212::0::1::::<><><>0<>0<><>::uid://d00shr4svncs1::::res://assets/sprites/platforms.png
 shop.gd::GDScript::7868975961498349199::1775821296::0::1::::<>CanvasLayer<><>0<>0<><>::
 shop.tscn::PackedScene::626711397213610254::1775819780::0::1::::<><><>0<>0<><>::res://Objects/shop.gd<>uid://k5pbgltepvqy::::res://assets/health potion.png
-::res://Player/::1775823217
+::res://Player/::1775823596
 HeartBar.tscn::PackedScene::5863224274499921999::1775822481::0::1::::<><><>0<>0<><>::uid://d1fnkwwqr1ltt::::res://Player/Player_Script/heart_bar.gd<>uid://bpn58mhdm2yvy::::res://assets/pixel heart.png<>uid://bfxtbeyfb7p0g::::res://assets/sprites/coin.png<>uid://cxpasxg0wwu8::::res://assets/pencil.png<>uid://k5pbgltepvqy::::res://assets/health potion.png
-player.tscn::PackedScene::988254921774339925::1775823217::0::1::::<><><>0<>0<><>::uid://jxk2qktqjuk5::::res://Player/Player_Script/Player_Main.gd<>uid://b0xnkfl2u3ha::::res://assets/sprites/owl_attack.png<>uid://nts1qpwgoolt::::res://assets/sprites/owl_hurt.png<>uid://c5tev0ac0xtid::::res://Player/Player_Script/movement.gd<>uid://bsealknxkubyq::::res://assets/sprites/owl_idle.png<>uid://rv71njgswo6o::::res://Player/Player_Script/combat.gd<>uid://dsng3lyt605k2::::res://assets/sprites/owl_fall.png<>uid://bwvua8ab5edia::::res://assets/sprites/owl_glide_hit.png<>uid://4w0vocv1r0h6::::res://assets/sprites/owl_jump.png<>uid://ci5inh8x5v1l0::::res://assets/sprites/owl_run.png<>uid://tvmfnjn35yt8::::res://scenes/pop-ups/pause_menu.tscn<>uid://cpsgpg6xxfbat::::res://Player/HeartBar.tscn<>uid://lyq8ip44qmic::::res://icon.svg
-::res://Player/Player_Script/::1775823284
-combat.gd::GDScript::1238552346096200116::1775823284::0::1::::<>Node<><>0<>0<><>::
+player.tscn::PackedScene::988254921774339925::1775823596::0::1::::<><><>0<>0<><>::uid://jxk2qktqjuk5::::res://Player/Player_Script/Player_Main.gd<>uid://b0xnkfl2u3ha::::res://assets/sprites/owl_attack.png<>uid://nts1qpwgoolt::::res://assets/sprites/owl_hurt.png<>uid://c5tev0ac0xtid::::res://Player/Player_Script/movement.gd<>uid://bsealknxkubyq::::res://assets/sprites/owl_idle.png<>uid://rv71njgswo6o::::res://Player/Player_Script/combat.gd<>uid://dsng3lyt605k2::::res://assets/sprites/owl_fall.png<>uid://bwvua8ab5edia::::res://assets/sprites/owl_glide_hit.png<>uid://4w0vocv1r0h6::::res://assets/sprites/owl_jump.png<>uid://ci5inh8x5v1l0::::res://assets/sprites/owl_run.png<>uid://tvmfnjn35yt8::::res://scenes/pop-ups/pause_menu.tscn<>uid://cpsgpg6xxfbat::::res://Player/HeartBar.tscn<>uid://cu4p17prjptmv::::res://assets/sprites/owl_weapon_1.png
+::res://Player/Player_Script/::1775823775
+combat.gd::GDScript::1238552346096200116::1775823774::0::1::::<>Node<><>0<>0<><>::
 heart_bar.gd::GDScript::8995302243533577125::1775822881::0::1::::<>CanvasLayer<><>0<>0<><>::
 movement.gd::GDScript::6918011536706337127::1775614957::0::1::::<>Node<><>0<>0<><>::
 Player_Main.gd::GDScript::679836524155441258::1775822287::0::1::::<>CharacterBody2D<><>0<>0<><>::
