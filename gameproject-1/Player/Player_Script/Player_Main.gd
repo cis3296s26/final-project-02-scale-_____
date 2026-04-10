@@ -46,8 +46,10 @@ func _physics_process(delta: float) -> void:
 func handle_movement_animations(state: bool) -> void:
 	isAttacking = state
 	if isAttacking:
+		if $AnimatedSprite2D.animation == "owl_hurt":
+			animatedSprite.play("owl_idle")
 		return
-		
+	
 	if is_on_floor():
 		if velocity.x:
 			animatedSprite.play("owl_run")
@@ -93,6 +95,7 @@ func take_damage(amount: int, weapon_position: Vector2) -> void:
 	GlobalScript.can_take_damage = true
 
 func apply_knockback(weapon_position: Vector2):
+	isAttacking = false
 	is_knocking_back = true
 	knockback_animation()
 	var direction_damage = (global_position - weapon_position).normalized()

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ekyvw7dyta4m" path="res://Enemy/EnemyScripts/enemy_jan.gd" id="1_fqnjk"]
 [ext_resource type="Texture2D" uid="uid://brkd01c07w0j8" path="res://assets/EnemySprites/EnemyJan.png" id="2_3g73f"]
+[ext_resource type="PackedScene" uid="uid://cgdabrg8koc1o" path="res://Enemy/enemy_knockback.tscn" id="3_of8wv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3g73f"]
 atlas = ExtResource("2_3g73f")
@@ -172,12 +173,17 @@ shape = SubResource("RectangleShape2D_fqnjk")
 position = Vector2(22, 9)
 shape = SubResource("RectangleShape2D_e5c3f")
 
-[node name="EnemyHitbox" type="Area2D" parent="." unique_id=1554041412]
+[node name="EnemyHitbox" type="Area2D" parent="." unique_id=1554041412 groups=["hurtbox"]]
 position = Vector2(10, 0)
 
 [node name="HitboxShape" type="CollisionShape2D" parent="EnemyHitbox" unique_id=343598078]
 shape = SubResource("RectangleShape2D_iqrui")
 
+[node name="EnemyKnockback" parent="." unique_id=594643724 instance=ExtResource("3_of8wv")]
+
+[node name="knockbackTimer" type="Timer" parent="." unique_id=1341217938]
+
 [connection signal="animation_finished" from="EnemySprite1" to="." method="_on_enemy_sprite_1_animation_finished"]
 [connection signal="body_entered" from="WeaponHitbox" to="." method="_on_weapon_hitbox_body_entered"]
 [connection signal="area_entered" from="EnemyHitbox" to="." method="_on_enemy_hitbox_area_entered"]
+[connection signal="timeout" from="knockbackTimer" to="." method="_on_knockback_timer_timeout"]

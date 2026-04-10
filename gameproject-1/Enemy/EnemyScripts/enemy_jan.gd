@@ -17,13 +17,21 @@ extends CharacterBody2D
 @export var attack_thrust: float = 0.0  # forward movement during attack
 @export var attack_duration: float = 0.3  # time the thrust lasts
 	
+@onready var knockback = $EnemyKnockback
+	
 var state = "idle"
 var attack_timer: float = 0.3
 var death = false
-var max_heath = 2
-var health = 2
+var  is_knocking_back = false
+var max_heath = 3
+var health = 3
 
 func _physics_process(delta):
+	if is_knocking_back:
+		velocity.y += 980 * delta 
+		move_and_slide()
+		return
+	
 	if death:
 		velocity = Vector2.ZERO
 		move_and_slide()
@@ -126,36 +134,11 @@ func apply_gravity(delta):
 	else:
 		velocity.y = 0  # reset vertical speed when on the floor
 
-
 func _on_weapon_hitbox_body_entered(body: Node2D) -> void:
 	if state == "attack" and body.has_method("take_damage"):
 		var weapon_pos = weapon_hitbox.global_position
 		body.take_damage(damage_value, weapon_pos)
-
-
-func _on_enemy_hitbox_area_entered(area: Area2D) -> void:
-	if death:
-		$CollisionShape2D.set_deferred("disabled", true)
-		weapon_hitbox.queue_free()
-		enemy_hitbox.queue_free()
-		animhit.queue_free()
-		weapon_hitbox.monitoring = false
-		enemy_hitbox.monitoring = false
-		return
 	
-	if area.is_in_group("attack"):
-		health = health - 1
-		print("Hit! Health is now: ", health)
-		anim.play("jan_hit")
-		if health <= 0:
-			anim.play("jan_death")
-			print("DEATH")
-			death = true
-			weapon_hitbox.queue_free()
-			enemy_hitbox.queue_free()
-			animhit.queue_free()
-
-
 func _on_enemy_sprite_1_animation_finished() -> void:
 	if anim.animation == "jan_hit":
 		if death:
@@ -163,3 +146,27 @@ func _on_enemy_sprite_1_animation_finished() -> void:
 			anim.play("jan_death")
 		else:
 			anim.play("jan_idle")
+
+func _damage(amount: int, weapon_position: Vector2) -> void:
+	health = health - amount
+	
+	if health <= 0:
+		anim.play("jan_death")
+		print("DEATH")
+		death = true
+		weapon_hitbox.queue_free()
+		enemy_hitbox.queue_free()
+		animhit.queue_free()
+		return
+	
+	is_knocking_back = true
+	knockback.apply_knockback(self, weapon_position)
+	print("Hit! Health is now: ", health)
+	anim.play("jan_hit")
+	$EnemyHitbox/HitboxShape.set_deferred("disabled", true)
+	$knockbackTimer.start(0.5)
+	
+func _on_knockback_timer_timeout() -> void:
+	if has_node("EnemyHitbox/HitboxShape"):
+		$EnemyHitbox/HitboxShape.set_deferred("disabled", false)
+	is_knocking_back = false

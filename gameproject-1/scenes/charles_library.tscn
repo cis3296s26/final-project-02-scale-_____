@@ -2941,3 +2941,8 @@ tile_set = SubResource("TileSet_a51fm")
 
 [node name="TransitionCollision" parent="." unique_id=1844202408 instance=ExtResource("6_2od2x")]
 position = Vector2(-509, -82)
+destination_scene = "uid://bl0hotwquj5em"
+
+[node name="TransitionCollision2" parent="." unique_id=446502717 instance=ExtResource("6_2od2x")]
+position = Vector2(-419, -84)
+destination_scene = "uid://d08sqp1l4ed3k"

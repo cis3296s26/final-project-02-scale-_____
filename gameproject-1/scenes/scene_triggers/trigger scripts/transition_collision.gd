@@ -1,15 +1,12 @@
 extends Node2D
 
-var current_scene
-
-func _ready() -> void:
-	current_scene = get_tree().current_scene	
-	print(current_scene)
+@export_file("*.tscn") var destination_scene: String
+@export var spawn_location_name: String = ""
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "Player"	and current_scene.name == "SubwayTutorial": 
-		get_tree().change_scene_to_file("res://scenes/charles_library.tscn")
-		
-	elif body.name == "Player"	and current_scene.name == "CharlesLibrary": 
-		get_tree().change_scene_to_file("res://scenes/game.tscn")
-		
+	if body.name == "Player":
+		if destination_scene != "":
+			print("Going to: ", destination_scene)
+			get_tree().change_scene_to_file(destination_scene)
+		else:
+			print("Error: No destination set for this door")

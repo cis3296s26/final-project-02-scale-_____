@@ -3,6 +3,8 @@ extends Node
 @onready var sprite = $"../AnimatedSprite2D"
 var isAttacking = false
 signal attack_state_changed(isAttacking: bool)
+@onready var weapon_hitbox = $AttackCollision/CollisionShape2D
+var damage_value = 1
 
 func handle_combat(player: CharacterBody2D,  animated: AnimatedSprite2D) -> void:
 	handle_combat_animations(player, animated)
@@ -27,3 +29,11 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		$AttackCollision/CollisionShape2D.set_deferred("disabled", true)
 		isAttacking = false
 		attack_state_changed.emit(false)
+
+func _on_attack_collision_area_entered(area: Area2D) -> void:
+	if area.is_in_group("hurtbox") and isAttacking == true:
+		$AttackCollision/CollisionShape2D.set_deferred("disabled", true)
+		isAttacking = false
+		attack_state_changed.emit(false)
+		var weapon_pos = weapon_hitbox.global_position
+		area.owner._damage(damage_value, weapon_pos)

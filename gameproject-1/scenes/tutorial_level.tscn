@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://clyojikdgv1lg"]
 
-[ext_resource type="Texture2D" uid="uid://r5kr8kkp0tua" path="res://assets/Environment/Subway/train cart ok.png" id="1_hpxl2"]
+[ext_resource type="Texture2D" uid="uid://nrgkr16x6ghq" path="res://assets/Environment/Subway/train cart ok.png" id="1_hpxl2"]
 [ext_resource type="PackedScene" uid="uid://ocyoc1083cuv" path="res://Player/player.tscn" id="1_ifix0"]
 [ext_resource type="PackedScene" uid="uid://68r8k6qparxw" path="res://scenes/scene_triggers/void.tscn" id="2_ho5cc"]
 [ext_resource type="PackedScene" uid="uid://ckdpk3d3nvds4" path="res://scenes/scene_triggers/tutorial_trigger.tscn" id="3_cnj7s"]
@@ -307,3 +307,4 @@ color = Color(0.42557132, 0.42557135, 0.42557132, 1)
 
 [node name="TransitionCollision" parent="." unique_id=1844202408 instance=ExtResource("6_fem2g")]
 position = Vector2(-2147, -36)
+destination_scene = "uid://b1o1b3wjkiwl8"

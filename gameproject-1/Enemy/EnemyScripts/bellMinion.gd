@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@export var damage_value = 1
 
 @export var speed: float = 60.0
 @export var detection_range: float = 150.0
@@ -66,7 +67,8 @@ func _physics_process(delta):
 		var body = collision.get_collider()
 	
 		if state == "attack" and damage_cooldown_current <=0 and body.has_method("take_damage"):
-			body.take_damage(1)
+			var weapon_pos = animhit.global_position
+			body.take_damage(damage_value, weapon_pos)
 			damage_cooldown_current = damage_cooldown_max
 		
 

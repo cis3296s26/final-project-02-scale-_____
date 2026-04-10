@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cgdabrg8koc1o"]
+
+[ext_resource type="Script" uid="uid://c107ohn0dnn0y" path="res://Enemy/EnemyScripts/enemy_knockback.gd" id="1_is6ed"]
+
+[node name="EnemyKnockback" type="Node2D" unique_id=594643724]
+script = ExtResource("1_is6ed")

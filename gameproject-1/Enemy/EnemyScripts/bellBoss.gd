@@ -12,6 +12,7 @@ extends CharacterBody2D
 @export var attack_thrust: float = 30.0  # forward movement during attack
 @export var attack_duration: float = 0.3  # time the thrust lasts
 
+@export var damage_value = 1
 var state = "chase"
 var death = false
 var phase = 1
@@ -62,8 +63,8 @@ func _physics_process(delta):
 	
 	if state == "attack" and damage_cooldown_current <=0 and player.has_method("take_damage"):
 		if _is_player_hit_by_swing():
-			# damaged
-			player.take_damage(1)
+			var weapon_pos = animhit.global_position
+			player.take_damage(damage_value, weapon_pos)
 			damage_cooldown_current = damage_cooldown_max
 	
 	if phase == 2 and state != "transitioning" and state != "death":
