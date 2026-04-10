@@ -7,10 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://ckdpk3d3nvds4" path="res://scenes/scene_triggers/tutorial_trigger.tscn" id="3_cnj7s"]
 [ext_resource type="PackedScene" uid="uid://crjkxk1pisada" path="res://scenes/scene_triggers/tutorial_hud.tscn" id="3_mi4a6"]
 [ext_resource type="PackedScene" uid="uid://djdsbrmb1pdcx" path="res://scenes/scene_triggers/Transition_Collision.tscn" id="6_fem2g"]
-[ext_resource type="Texture2D" uid="uid://cbdqe8g21vioe" path="res://assets/Environment/Subway/Tileset.png" id="8_vlwwk"]
-[ext_resource type="Texture2D" uid="uid://qbglcs3yp1ol" path="res://assets/Environment/Subway/tilemap_packed.png" id="9_w40hx"]
-[ext_resource type="Texture2D" uid="uid://7303nouvyx8g" path="res://assets/Environment/Subway/RedTube.png" id="10_vlwwk"]
-[ext_resource type="Texture2D" uid="uid://botrk1ynf5o7v" path="res://assets/Environment/Subway/GrayTube.png" id="11_qc43e"]
+[ext_resource type="Texture2D" uid="uid://c0skl61tk3y6y" path="res://assets/Environment/Subway/Tileset.png" id="8_vlwwk"]
+[ext_resource type="Texture2D" uid="uid://bh13nu8gj1562" path="res://assets/Environment/Subway/tilemap_packed.png" id="9_w40hx"]
+[ext_resource type="Texture2D" uid="uid://vl7mublkw3jl" path="res://assets/Environment/Subway/RedTube.png" id="10_vlwwk"]
+[ext_resource type="Texture2D" uid="uid://bytdv2v1wba53" path="res://assets/Environment/Subway/GrayTube.png" id="11_qc43e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ifix0"]
 size = Vector2(576, 64)
@@ -2674,7 +2674,7 @@ offset_bottom = 2.0
 color = Color(0.42557132, 0.42557135, 0.42557132, 1)
 
 [node name="TransitionCollision" parent="." unique_id=1844202408 instance=ExtResource("6_fem2g")]
-position = Vector2(-2147, -36)
+position = Vector2(295, -184)
 destination_scene = "uid://b1o1b3wjkiwl8"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1576122706]
