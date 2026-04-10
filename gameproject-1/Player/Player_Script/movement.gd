@@ -1,7 +1,7 @@
 extends Node
 
 @export var speed = 200.0
-var dash_velocity = 1.0
+var dash_velocity = 220.0
 var can_dash = true
 var is_dashing = false
 
@@ -12,6 +12,8 @@ var is_dashing = false
 
 @export var jump_charge = 1
 @export var dash_charge = 1
+var dash_direction
+var velocity
 
 var current_glide_gravity = gravity_cap
 var glide_timer = 0.0
@@ -21,7 +23,9 @@ var motion_previous = Vector2()
 
 var hit_the_ground = false
 
-func basic_movement(delta: float, player: CharacterBody2D) -> void:
+func basic_movement(delta: float, player: CharacterBody2D,  animated: AnimatedSprite2D) -> void:
+
+	
 	if player.is_on_floor():
 		dash_charge = 1
 		jump_charge = 1
@@ -49,28 +53,41 @@ func basic_movement(delta: float, player: CharacterBody2D) -> void:
 			current_glide_gravity = gravity_cap
 		player.velocity.y += current_glide_gravity * delta
 	
-	if Input.is_action_just_pressed("shift") and can_dash:
-		dash_start()
-
+	if is_dashing:
+		execute_dash_logic(player)
+		return
+	
 	var direction := Input.get_axis("left", "right")
+	
+	if Input.is_action_just_pressed("shift") and can_dash:
+		dash_start(direction, animated)
+		
 	if direction:
-		player.velocity.x = direction * (speed * dash_velocity)
+		player.velocity.x = direction * (speed)
 	else:
 		player.velocity.x = move_toward(player.velocity.x, 0, speed)
 		
-func dash_start():
+func dash_start(dir, animated):
 	if not can_dash or dash_charge < 1: 
 		return
 	
 	can_dash = false
 	dash_charge = dash_charge - 1
 	is_dashing = true
-	dash_velocity = 2
-	$DashDurationTimer.start(0.5) 
-	$DashCooldownTimer.start(0.6)
+	
+	if dir == 0:
+		dash_direction = -1 if animated.flip_h else 1
+	else:
+		dash_direction = dir
+	
+	$DashDurationTimer.start(0.2) 
+	$DashCooldownTimer.start(0.22)
+
+func execute_dash_logic( player: CharacterBody2D):
+	player.velocity = Vector2(dash_direction * dash_velocity, 0)
+	player.move_and_slide()
 
 func _on_dash_duration_timer_timeout() -> void:
-	dash_velocity = 1
 	is_dashing = false
 
 func _on_dash_cooldown_timer_timeout() -> void:

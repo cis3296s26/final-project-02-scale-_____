@@ -154,12 +154,20 @@ size = Vector2(24, 38)
 
 [node name="enemy_jan" type="CharacterBody2D" unique_id=1325987047]
 script = ExtResource("1_fqnjk")
+speed = null
+detection_range = null
+gravity = null
+preferred_distance = null
+distance_tolerance = null
+ideal_spot = null
+attack_thrust = null
+attack_duration = null
 
 [node name="EnemySprite1" type="AnimatedSprite2D" parent="." unique_id=1710466016]
 position = Vector2(10, 1)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_ordgw")
-animation = &"jan_idle"
+animation = &"jan_death"
 offset = Vector2(5, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1840952677]

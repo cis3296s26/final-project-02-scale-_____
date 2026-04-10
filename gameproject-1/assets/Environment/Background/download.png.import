@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvjp60gsg270m"
-path="res://.godot/imported/EnemyRat.png-f6d9967378cd77f6d5c608c719f5e400.ctex"
+uid="uid://dqt7fqm84rbsw"
+path="res://.godot/imported/download.png-a46c3c40d12d6a592538fbf03a61b72f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/EnemySprites/EnemyRat.png"
-dest_files=["res://.godot/imported/EnemyRat.png-f6d9967378cd77f6d5c608c719f5e400.ctex"]
+source_file="res://assets/Environment/Background/download.png"
+dest_files=["res://.godot/imported/download.png-a46c3c40d12d6a592538fbf03a61b72f.ctex"]
 
 [params]
 

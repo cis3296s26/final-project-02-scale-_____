@@ -9,6 +9,7 @@ var health = 1
 
 @onready var ray_cast_right: RayCast2D = $RayCastRight
 @onready var ray_cast_left: RayCast2D = $RayCastLeft
+@onready var enemy_hitbox = $EnemyHitbox
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 
@@ -25,7 +26,8 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.has_method("take_damage"):
-		body.take_damage(1)
+		var weapon_pos = enemy_hitbox.global_position
+		body.take_damage(1, weapon_pos)
 
 
 func _on_enemy_hitbox_area_entered(area: Area2D) -> void:

@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@export var damage_value = 1
 
 @export var speed: float = 100.0
 @export var detection_range: float = 200.0
@@ -7,7 +8,6 @@ extends CharacterBody2D
 @export var preferred_distance: float = 40.0
 @export var distance_tolerance: float = 10.0
 @export var ideal_spot: float = 0.0
-
 
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var anim = $EnemySprite1
@@ -18,12 +18,17 @@ extends CharacterBody2D
 @export var attack_duration: float = 0.3  # time the thrust lasts
 	
 var state = "idle"
-var attack_timer: float = 0.1
+var attack_timer: float = 0.3
 var death = false
-var max_heath = 3
-var health = 3
+var max_heath = 2
+var health = 2
 
 func _physics_process(delta):
+	if death:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+		
 	if player == null:
 		player = get_tree().get_first_node_in_group("player")
 		
@@ -124,18 +129,37 @@ func apply_gravity(delta):
 
 func _on_weapon_hitbox_body_entered(body: Node2D) -> void:
 	if state == "attack" and body.has_method("take_damage"):
-		body.take_damage(1)
+		var weapon_pos = weapon_hitbox.global_position
+		body.take_damage(damage_value, weapon_pos)
 
 
 func _on_enemy_hitbox_area_entered(area: Area2D) -> void:
 	if death:
 		$CollisionShape2D.set_deferred("disabled", true)
+		weapon_hitbox.queue_free()
+		enemy_hitbox.queue_free()
+		animhit.queue_free()
+		weapon_hitbox.monitoring = false
+		enemy_hitbox.monitoring = false
 		return
 	
 	if area.is_in_group("attack"):
 		health = health - 1
 		print("Hit! Health is now: ", health)
+		anim.play("jan_hit")
 		if health <= 0:
-			queue_free()
+			anim.play("jan_death")
 			print("DEATH")
 			death = true
+			weapon_hitbox.queue_free()
+			enemy_hitbox.queue_free()
+			animhit.queue_free()
+
+
+func _on_enemy_sprite_1_animation_finished() -> void:
+	if anim.animation == "jan_hit":
+		if death:
+			print("Play Sprite")
+			anim.play("jan_death")
+		else:
+			anim.play("jan_idle")

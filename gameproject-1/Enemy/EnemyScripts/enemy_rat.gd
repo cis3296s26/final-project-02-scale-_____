@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@export var damage_value = 1
+
 @export var speed: float = 100.0
 @export var detection_range: float = 200.0
 @export var attack_range: float = 50.0
@@ -15,12 +17,17 @@ extends CharacterBody2D
 @export var attack_duration: float = 0.3  # time the thrust lasts
 	
 var state = "idle"
-var attack_timer: float = 0.3
+var attack_timer: float = 1.0
 var death = false
 var max_heath = 1
 var health = 1
 
 func _physics_process(delta):
+	if death:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+		
 	if player == null:
 		player = get_tree().get_first_node_in_group("player")
 		
@@ -55,11 +62,13 @@ func idle(delta):
 
 func chase(delta):
 	var direction = (player.global_position - global_position).normalized()
-	anim.flip_h = player.global_position.x < global_position.x
+
 	if player.global_position.x < global_position.x:
-		weapon_hitbox.position.x = -27
+		$RatAttack.scale.x = -1
+		anim.flip_h = true
 	else :
-		weapon_hitbox.position.x = 0
+		$RatAttack.scale.x = 1
+		anim.flip_h = false
 	
 	velocity.x = direction.x * speed
 	apply_gravity(delta)
@@ -93,7 +102,8 @@ func apply_gravity(delta):
 
 func _on_rat_attack_body_entered(body: Node2D) -> void:
 	if state == "attack" and body.has_method("take_damage"):
-		body.take_damage(1)
+		var weapon_pos = weapon_hitbox.global_position
+		body.take_damage(damage_value, weapon_pos)
 
 
 func _on_enemy_hitbox_area_entered(area: Area2D) -> void:
@@ -104,7 +114,20 @@ func _on_enemy_hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("attack"):
 		health = health - 1
 		print("Hit! Health is now: ", health)
+		anim.play("rat_hit")
 		if health <= 0:
-			queue_free()
+			anim.play("rat_death")
 			print("DEATH")
 			death = true
+			weapon_hitbox.queue_free()
+			enemy_hitbox.queue_free()
+			animhit.queue_free()
+
+
+func _on_enemy_sprite_2_animation_finished() -> void:
+	if anim.animation == "rat_hit":
+		if death:
+			print("Play Sprite")
+			anim.play("rat_death")
+		else:
+			anim.play("rat_idle")
