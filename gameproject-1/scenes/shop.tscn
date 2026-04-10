@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://i6t3y8yjemwc"]
 
 [ext_resource type="Script" uid="uid://dkd15cnanx4j8" path="res://scenes/shop.gd" id="1_lx5au"]
+[ext_resource type="Texture2D" uid="uid://k5pbgltepvqy" path="res://assets/health potion.png" id="2_xfvoa"]
 
 [sub_resource type="Animation" id="Animation_bdmwb"]
 length = 0.001
@@ -67,7 +68,7 @@ libraries/ = SubResource("AnimationLibrary_1l46r")
 offset_left = 272.0
 offset_top = -328.0
 offset_right = 1656.0
-offset_bottom = 232.0
+offset_bottom = 300.0
 
 [node name="Close" type="Button" parent="." unique_id=292432678]
 offset_left = 1576.0
@@ -76,4 +77,68 @@ offset_right = 1640.0
 offset_bottom = -252.0
 text = "X"
 
+[node name="Control" type="Control" parent="." unique_id=1025697728]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="AnimSprite" type="Sprite2D" parent="Control" unique_id=1667147503]
+position = Vector2(952, -108)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_xfvoa")
+
+[node name="Name" type="Label" parent="Control" unique_id=831933062]
+layout_mode = 0
+offset_left = 752.0
+offset_top = -276.0
+offset_right = 1152.0
+offset_bottom = -221.0
+theme_override_font_sizes/font_size = 40
+text = "Health Potions"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Des" type="Label" parent="Control" unique_id=1824577673]
+layout_mode = 0
+offset_left = 752.0
+offset_top = 4.0
+offset_right = 1152.0
+offset_bottom = 59.0
+theme_override_font_sizes/font_size = 40
+text = "Heals you 1 missing Heart
+Cost: 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Next" type="Button" parent="Control" unique_id=889389394]
+layout_mode = 0
+offset_left = 1080.0
+offset_top = -180.0
+offset_right = 1134.0
+offset_bottom = -62.0
+theme_override_font_sizes/font_size = 80
+text = ">"
+
+[node name="Prev" type="Button" parent="Control" unique_id=1865010091]
+layout_mode = 0
+offset_left = 768.0
+offset_top = -180.0
+offset_right = 822.0
+offset_bottom = -62.0
+theme_override_font_sizes/font_size = 80
+text = "<"
+
+[node name="Buy" type="Button" parent="Control" unique_id=605998978]
+layout_mode = 0
+offset_left = 880.0
+offset_top = 196.0
+offset_right = 1024.0
+offset_bottom = 259.0
+theme_override_font_sizes/font_size = 40
+text = "Buy"
+
 [connection signal="pressed" from="Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Control/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Control/Prev" to="." method="_on_prev_pressed"]
+[connection signal="pressed" from="Control/Buy" to="." method="_on_buy_pressed"]
