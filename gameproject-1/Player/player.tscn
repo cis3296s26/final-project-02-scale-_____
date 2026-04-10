@@ -170,7 +170,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"owl_glide_attack",
-"speed": 11.5
+"speed": 14.5
 }, {
 "frames": [{
 "duration": 1.0,

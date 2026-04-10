@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1775615347
+::res://::1775742689
 export_presets.cfg::TextFile::-1::1775232308::0::1::::<><><>0<>0<><>::
 GlobalScript.gd::GDScript::247594408924664459::1775615347::0::1::::<>Node<><>0<>0<><>::
 icon.svg::CompressedTexture2D::822653193914807282::1773416912::1773416927::1::::<><><>0<>0<>95e354c2323f1500a8f6057edb08b387<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
@@ -63,14 +63,14 @@ hurt.wav::AudioStreamWAV::5728456655277898296::1773959509::1774019047::1::::<><>
 jump.wav::AudioStreamWAV::5553597477252394833::1773959509::1774019046::1::::<><><>0<>0<>dab285f7b10381be0f9c156978c8160f<>res://.godot/imported/jump.wav-395b727cde98999423d5c020c9c3492f.sample::
 power_up.wav::AudioStreamWAV::4282735600552481238::1773959509::1774019047::1::::<><><>0<>0<>07d42270564150a321216e1acf147fe1<>res://.godot/imported/power_up.wav-8349ffe570559470036ebff4b80f7fc0.sample::
 tap.wav::AudioStreamWAV::5560549480260508210::1773959509::1774019046::1::::<><><>0<>0<>705e4a1fd768bd655a6e0f146d1602ed<>res://.godot/imported/tap.wav-78d4c5a48b21a853d89bec74f20510e7.sample::
-::res://assets/sprites/::1775618309
+::res://assets/sprites/::1775743343
 coin.png::CompressedTexture2D::2786001246281601476::1773959509::1774019046::1::::<><><>0<>0<>8253bb5c79bfe946c4e408adb6705106<>res://.godot/imported/coin.png-c8309bf0f8fb5f3a7d1e96a4eb3f02ce.ctex::
 dummy.png::CompressedTexture2D::988639112971501864::1775174536::1775174555::1::::<><><>0<>0<>5007208a9dc095e3b96561e986e70f0b<>res://.godot/imported/dummy.png-e0caa3df339ab68328c6786ae3bca540.ctex::
 fruit.png::CompressedTexture2D::8489279778303373256::1773959509::1774019046::1::::<><><>0<>0<>41cfea1ab876895baeda8b0eefaf7a56<>res://.godot/imported/fruit.png-3735163b668af10c2b35b52cba81b68a.ctex::
 knight.png::CompressedTexture2D::3742995390958986796::1773959509::1774019046::1::::<><><>0<>0<>0142af80e73666e926e442c9057019bb<>res://.godot/imported/knight.png-7c67c83d34932624952797d9e971a644.ctex::
 owl_attack.png::CompressedTexture2D::123218527138132046::1775617687::1775617717::1::::<><><>0<>0<>86c060f75e8da3d91e4636a677422714<>res://.godot/imported/owl_attack.png-e3e2dd2b4347fd85d920a1801905fa50.ctex::
 owl_fall.png::CompressedTexture2D::8449913067290473727::1774583702::1774583702::1::::<><><>0<>0<>c689492b742b85e2f35d18a40c2c7880<>res://.godot/imported/owl_fall.png-833cc1afd02eba61e845cb2e01d596ea.ctex::
-owl_glide_hit.png::CompressedTexture2D::3975143249776639292::1775618281::1775618318::1::::<><><>0<>0<>101c0516628c407f6e1b8e7e5f2b2e41<>res://.godot/imported/owl_glide_hit.png-41fc4216bd5e0a285d5c3620f6e9cc17.ctex::
+owl_glide_hit.png::CompressedTexture2D::3975143249776639292::1775743314::1775743360::1::::<><><>0<>0<>101c0516628c407f6e1b8e7e5f2b2e41<>res://.godot/imported/owl_glide_hit.png-41fc4216bd5e0a285d5c3620f6e9cc17.ctex::
 owl_hit.png::CompressedTexture2D::463898602429519533::1774583702::1774583702::1::::<><><>0<>0<>d7ae6ee498b0bafffc24b8212ebd170e<>res://.godot/imported/owl_hit.png-2c50a7c02f0d070b7e47fe18ea706376.ctex::
 owl_hurt.png::CompressedTexture2D::952818345686713105::1775604245::1775604329::1::::<><><>0<>0<>bbf222c35ce29a466ad95e31219ec084<>res://.godot/imported/owl_hurt.png-cc832fffbafb91161c30deeb2efd89a8.ctex::
 owl_idle.png::CompressedTexture2D::3658097570302001956::1775171852::1775171885::1::::<><><>0<>0<>c3137f5919d3bb5c923ebbeb2d81aa57<>res://.godot/imported/owl_idle.png-84c8f4a5dfa344e09f35c5b4ccffb730.ctex::
@@ -78,8 +78,10 @@ owl_idle_v1.png::CompressedTexture2D::1364775875411427828::1775171852::177517188
 owl_jump.png::CompressedTexture2D::2082448941989515449::1774583702::1774583702::1::::<><><>0<>0<>819d65ce1ddc0607185f7d0eb8369a71<>res://.godot/imported/owl_jump.png-2ab9cfb6299e2bd04535ba1a54321eec.ctex::
 owl_run.png::CompressedTexture2D::5396792820103107231::1774583702::1774583702::1::::<><><>0<>0<>68f3a2d59a390b5b0784d17afd2ee2eb<>res://.godot/imported/owl_run.png-4f4c7c7a350d68e55efb8bf5adc5f479.ctex::
 platforms.png::CompressedTexture2D::8966698930851432894::1773959509::1774019046::1::::<><><>0<>0<>9a2d5b48fdcdbd268b619fcb397c252a<>res://.godot/imported/platforms.png-3869606db457611ed4193d705dc364e4.ctex::
+shop npc.png::CompressedTexture2D::7418398009899518953::1775742615::1775742691::1::::<><><>0<>0<>33b1ec0927bb8b180f70028cd42a0e20<>res://.godot/imported/shop npc.png-25c9726d63f89aec11d17da45b0e928a.ctex::
 slime_green.png::CompressedTexture2D::1614325635370631561::1773959509::1774019046::1::::<><><>0<>0<>7f3522efa79665a3d0bd83dd584da61b<>res://.godot/imported/slime_green.png-f6349164bf3a0f5189bb927b97af9c58.ctex::
 slime_purple.png::CompressedTexture2D::714027411279532166::1773959509::1774019046::1::::<><><>0<>0<>80b3c7259b325337bedd15a97dd279e7<>res://.godot/imported/slime_purple.png-26dc5ddef235ce6a400e78e0d532b050.ctex::
+updated shop npc.png::CompressedTexture2D::832195587795232314::1775742615::1775742691::1::::<><><>0<>0<>449635c18cac9bd30ea57b39523fb070<>res://.godot/imported/updated shop npc.png-f6fa91cfeb86e9269ee2db406d135530.ctex::
 world_tileset.png::CompressedTexture2D::5940887836741968287::1773959509::1774019046::1::::<><><>0<>0<>5e63ff936662a97e45a294218423762e<>res://.godot/imported/world_tileset.png-61a32465f33c3d9d3bfecb75b6485009.ctex::
 ::res://assets/test/::1773959569
 ::res://assets/test/brackeys_platformer_assets/::1773959569
@@ -121,16 +123,19 @@ pigeon.gd::GDScript::7983914351886137229::1775610617::0::1::::<>CharacterBody2D<
 coin.gd::GDScript::9054737623079092167::1774620212::0::1::::<>Area2D<><>0<>0<><>::
 coin.tscn::PackedScene::4631384213854169938::1775314958::0::1::::<><><>0<>0<><>::uid://d2agg83lu74m2::::res://Objects/coin.gd<>uid://bfxtbeyfb7p0g::::res://assets/sprites/coin.png
 platform.tscn::PackedScene::9176674810355235753::1774620212::0::1::::<><><>0<>0<><>::uid://d00shr4svncs1::::res://assets/sprites/platforms.png
-::res://Player/::1775618013
+::res://Player/::1775618524
 HeartBar.tscn::PackedScene::5863224274499921999::1775315583::0::1::::<><><>0<>0<><>::uid://d1fnkwwqr1ltt::::res://Player/Player_Script/heart_bar.gd<>uid://bpn58mhdm2yvy::::res://assets/pixel heart.png<>uid://bfxtbeyfb7p0g::::res://assets/sprites/coin.png
-player.tscn::PackedScene::988254921774339925::1775618013::0::1::::<><><>0<>0<><>::uid://jxk2qktqjuk5::::res://Player/Player_Script/Player_Main.gd<>uid://b0xnkfl2u3ha::::res://assets/sprites/owl_attack.png<>uid://nts1qpwgoolt::::res://assets/sprites/owl_hurt.png<>uid://c5tev0ac0xtid::::res://Player/Player_Script/movement.gd<>uid://bsealknxkubyq::::res://assets/sprites/owl_idle.png<>uid://rv71njgswo6o::::res://Player/Player_Script/combat.gd<>uid://dsng3lyt605k2::::res://assets/sprites/owl_fall.png<>uid://4w0vocv1r0h6::::res://assets/sprites/owl_jump.png<>uid://ci5inh8x5v1l0::::res://assets/sprites/owl_run.png<>uid://tvmfnjn35yt8::::res://scenes/pop-ups/pause_menu.tscn<>uid://cpsgpg6xxfbat::::res://Player/HeartBar.tscn
-::res://Player/Player_Script/::1775617864
-combat.gd::GDScript::1238552346096200116::1775617864::0::1::::<>Node<><>0<>0<><>::
+player.tscn::PackedScene::988254921774339925::1775618524::0::1::::<><><>0<>0<><>::uid://jxk2qktqjuk5::::res://Player/Player_Script/Player_Main.gd<>uid://b0xnkfl2u3ha::::res://assets/sprites/owl_attack.png<>uid://nts1qpwgoolt::::res://assets/sprites/owl_hurt.png<>uid://c5tev0ac0xtid::::res://Player/Player_Script/movement.gd<>uid://bsealknxkubyq::::res://assets/sprites/owl_idle.png<>uid://rv71njgswo6o::::res://Player/Player_Script/combat.gd<>uid://dsng3lyt605k2::::res://assets/sprites/owl_fall.png<>uid://bwvua8ab5edia::::res://assets/sprites/owl_glide_hit.png<>uid://4w0vocv1r0h6::::res://assets/sprites/owl_jump.png<>uid://ci5inh8x5v1l0::::res://assets/sprites/owl_run.png<>uid://tvmfnjn35yt8::::res://scenes/pop-ups/pause_menu.tscn<>uid://cpsgpg6xxfbat::::res://Player/HeartBar.tscn
+::res://Player/Player_Script/::1775618503
+combat.gd::GDScript::1238552346096200116::1775618503::0::1::::<>Node<><>0<>0<><>::
 heart_bar.gd::GDScript::8995302243533577125::1775172610::0::1::::<>CanvasLayer<><>0<>0<><>::
 movement.gd::GDScript::6918011536706337127::1775614957::0::1::::<>Node<><>0<>0<><>::
-Player_Main.gd::GDScript::679836524155441258::1775615365::0::1::::<>CharacterBody2D<><>0<>0<><>::
-::res://scenes/::1775314799
-game.tscn::PackedScene::3210558460310417428::1775314773::0::1::::<><><>0<>0<><>::uid://baqxiium1vtvo::::res://assets/Environment/Background/parallax-forest-back-trees.png<>uid://dfa38aa3xhuuy::::res://Enemy/EnemyV1.tscn<>uid://cqv2s4h18uqi6::::res://assets/sprites/world_tileset.png<>uid://ocyoc1083cuv::::res://Player/player.tscn<>uid://d30iq1mq7lcnp::::res://Objects/platform.tscn<>uid://68r8k6qparxw::::res://scenes/scene_triggers/void.tscn<>uid://cuhyldks1lip8::::res://Enemy/enemy_jan.tscn<>uid://b68qhr4464r35::::res://Objects/coin.tscn<>uid://ok2eon83bfnk::::res://Enemy/enemy_rat.tscn<>uid://5pps15j2et4n::::res://Enemy/dummy.tscn<>uid://qr0f0ju3brm6::::res://Enemy/enemy_pigeon.tscn
+Player_Main.gd::GDScript::679836524155441258::1775618463::0::1::::<>CharacterBody2D<><>0<>0<><>::
+::res://scenes/::1775742615
+area_2d.gd::GDScript::3268038889689483595::1775742615::0::1::::<>Area2D<><>0<>0<><>::
+game.tscn::PackedScene::3210558460310417428::1775742615::0::1::::<><><>0<>0<><>::uid://baqxiium1vtvo::::res://assets/Environment/Background/parallax-forest-back-trees.png<>uid://dfa38aa3xhuuy::::res://Enemy/EnemyV1.tscn<>uid://cqv2s4h18uqi6::::res://assets/sprites/world_tileset.png<>uid://ocyoc1083cuv::::res://Player/player.tscn<>uid://d30iq1mq7lcnp::::res://Objects/platform.tscn<>uid://68r8k6qparxw::::res://scenes/scene_triggers/void.tscn<>uid://cuhyldks1lip8::::res://Enemy/enemy_jan.tscn<>uid://b68qhr4464r35::::res://Objects/coin.tscn<>uid://ok2eon83bfnk::::res://Enemy/enemy_rat.tscn<>uid://5pps15j2et4n::::res://Enemy/dummy.tscn<>uid://qr0f0ju3brm6::::res://Enemy/enemy_pigeon.tscn<>uid://l4ee0stgx0c1::::res://assets/sprites/updated shop npc.png<>uid://i6t3y8yjemwc::::res://scenes/shop.tscn
+shop.gd::GDScript::7868975961498349199::1775742615::0::1::::<>CanvasLayer<><>0<>0<><>::
+shop.tscn::PackedScene::626711397213610254::1775742616::0::1::::<><><>0<>0<><>::uid://dkd15cnanx4j8::::res://scenes/shop.gd
 tutorial_level.tscn::PackedScene::5595330259325892940::1775314773::0::1::::<><><>0<>0<><>::uid://r5kr8kkp0tua::::res://assets/train cart ok.png<>uid://ocyoc1083cuv::::res://Player/player.tscn<>uid://68r8k6qparxw::::res://scenes/scene_triggers/void.tscn<>uid://ckdpk3d3nvds4::::res://scenes/scene_triggers/tutorial_trigger.tscn<>uid://crjkxk1pisada::::res://scenes/scene_triggers/tutorial_hud.tscn<>uid://djdsbrmb1pdcx::::res://scenes/scene_triggers/Transition_Collision.tscn
 ::res://scenes/pop-ups/::1775315429
 death_screen.tscn::PackedScene::5036214123651459493::1775314870::0::1::::<><><>0<>0<><>::uid://gtatu2ee4m6u::::res://scenes/pop-ups/pop-up scripts/death_screen.gd<>uid://xbhmboffhejg::::res://scenes/pop-ups/pop-up scripts/main_menu.gd
