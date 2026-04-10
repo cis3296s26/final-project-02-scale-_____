@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
+@export var spawn_enemy_scene: PackedScene
+
 @export var speed: float = 20.0
-@export var attack_range: float = 85.0
+@export var attack_range: float = 70.0
 @export var gravity: float = 800.0
 
 @onready var player = get_tree().get_first_node_in_group("player")
@@ -15,7 +17,7 @@ var death = false
 var phase = 1
 
 var max_health_phase1 = 1
-var max_health_phase2 = 5
+var max_health_phase2 = 1
 var health = 1
 var attack_timer: float = 0.0
 var damage_cooldown_current = 0.0
@@ -39,21 +41,24 @@ func _physics_process(delta):
 	if damage_cooldown_current > 0:
 		damage_cooldown_current -= delta
 	
-	var distance = global_position.distance_to(player.global_position)
-	
-	# Determine state
-	if distance <= attack_range:
-		state = "attack"
-	else:
-		state = "chase"
-	
+	if state != "transitioning" and state != "death":
+		var distance = global_position.distance_to(player.global_position)
+		
+		# Determine state
+		if distance <= attack_range:
+			state = "attack"
+		else:
+			state = "chase"
+
 	match state:
 		"chase":
 			chase(delta)
 		"attack":
 			attack(delta)
-		# "ring"
-			# ring(delta)
+		"transitioning":
+			transitioning()
+		"dead":
+			dead()
 	
 	if state == "attack" and damage_cooldown_current <=0 and player.has_method("take_damage"):
 		if _is_player_hit_by_swing():
@@ -61,7 +66,7 @@ func _physics_process(delta):
 			player.take_damage(1)
 			damage_cooldown_current = damage_cooldown_max
 	
-	if phase == 2:
+	if phase == 2 and state != "transitioning" and state != "death":
 		if shake_timer > 0:
 			shake_timer -= delta
 			# randomly choose left or right
@@ -73,7 +78,7 @@ func _physics_process(delta):
 					attack_thrust += randf() * 40
 			else:
 				$AnimatedSprite2D.position.x = -shake_strength * rand
-				speed = 20.0
+				speed = 40.0
 				attack_thrust = 30.0
 		else:
 			# reset position
@@ -83,18 +88,18 @@ func _physics_process(delta):
 				shake_timer = randf_range(0.1, 0.5)
 
 func chase(delta):
+	if death: return
 	var direction = sign(player.global_position.x - global_position.x)
 	velocity.x = direction * speed
 	apply_gravity(delta)
 	move_and_slide()
 	if phase == 1:
 		anim.play("ring1")
-	else:
+	elif phase == 2:
 		anim.play("ring2")
-	# if (timer == )
-		# state = "ring"
 
 func attack(delta):
+	if death: return
 	if attack_timer <= 0:
 		# Start attack
 		attack_timer = attack_duration
@@ -129,15 +134,16 @@ func _on_enemy_hitbox_area_entered(area: Area2D) -> void:
 			if phase == 1:
 				phase = 2
 				print("BELL BOSS PHASE 2")
-				anim.play("crack_phase_transition")
-				health = max_health_phase2
-				
+				state = "transitioning"
 			else:
 				print("BELL BOSS DEATH")
 				anim.play("death")
-			# death = true
+				state = "dead"
+				phase = 3
+				death = true
 
 func _is_player_hit_by_swing():
+	if death: return
 	var frame = $AnimatedSprite2D.frame
 	var dir = sign(player.global_position.x - global_position.x)
 	
@@ -149,3 +155,21 @@ func _is_player_hit_by_swing():
 		if dir == -1: return 1
 	# no hit
 	return 0
+	
+func transitioning():
+	anim.play("crack_phase_transition")
+	health = 100
+	await get_tree().process_frame  # let animation start
+	while $AnimatedSprite2D.frame < 11:
+		await get_tree().process_frame
+	if anim.animation == "crack_phase_transition":
+		health = max_health_phase2
+		phase = 2
+		state = "chase"
+
+func dead():
+	anim.play("death")
+	health = 100
+	await get_tree().process_frame  # let animation start
+	while $AnimatedSprite2D.frame < 14:
+		await get_tree().process_frame

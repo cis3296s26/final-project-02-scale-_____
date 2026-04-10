@@ -515,10 +515,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8pyki"]
-size = Vector2(24, 63)
+size = Vector2(24, 61.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbhxv"]
-size = Vector2(24, 62)
+size = Vector2(40, 61)
 
 [node name="BellBoss" type="CharacterBody2D" unique_id=1409194561]
 scale = Vector2(2, 2)
@@ -527,19 +527,18 @@ script = ExtResource("1_w737a")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=284068969]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_vqlt5")
-animation = &"death"
-frame = 14
-frame_progress = 1.0
+animation = &"crack_phase_transition"
 offset = Vector2(0, -3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2046308478]
-position = Vector2(0, -6)
+position = Vector2(0, -6.75)
 shape = SubResource("RectangleShape2D_8pyki")
 
 [node name="EnemyHitbox" type="Area2D" parent="." unique_id=83394509]
 position = Vector2(0, -6)
 
 [node name="HitboxShape" type="CollisionShape2D" parent="EnemyHitbox" unique_id=1727629974]
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_lbhxv")
 
 [connection signal="area_entered" from="EnemyHitbox" to="." method="_on_enemy_hitbox_area_entered"]
