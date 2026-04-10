@@ -7,7 +7,9 @@ func _ready() -> void:
 	print(current_scene)
 
 func _on_body_entered(body: Node2D) -> void:
-	print("1")
-	if body.name == "Player" and has_node(res://scenes/game.tscn)	: 
-		print("2")
+	if body.name == "Player"	and current_scene.name == "SubwayTutorial": 
+		get_tree().change_scene_to_file("res://scenes/charles_library.tscn")
+		
+	elif body.name == "Player"	and current_scene.name == "CharlesLibrary": 
 		get_tree().change_scene_to_file("res://scenes/game.tscn")
+		

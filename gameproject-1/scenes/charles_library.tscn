@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dylssiqd5r1vk" path="res://assets/Environment/Library/floor_tiles.png" id="3_2441l"]
 [ext_resource type="Texture2D" uid="uid://p1e22xph3kbw" path="res://assets/Environment/Library/tilemap_packed.png" id="4_pqxok"]
 [ext_resource type="Texture2D" uid="uid://oxm3018pe23v" path="res://assets/Environment/Library/libassetpack-tiled.png" id="5_2441l"]
+[ext_resource type="PackedScene" uid="uid://djdsbrmb1pdcx" path="res://scenes/scene_triggers/Transition_Collision.tscn" id="6_2od2x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2441l"]
 texture = ExtResource("4_pqxok")
@@ -2937,3 +2938,6 @@ tile_set = SubResource("TileSet_usmun")
 
 [node name="TileMapLayer4" type="TileMapLayer" parent="." unique_id=722681340]
 tile_set = SubResource("TileSet_a51fm")
+
+[node name="TransitionCollision" parent="." unique_id=1844202408 instance=ExtResource("6_2od2x")]
+position = Vector2(-509, -82)
