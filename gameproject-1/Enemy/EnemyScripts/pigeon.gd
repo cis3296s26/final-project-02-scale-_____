@@ -15,12 +15,12 @@ extends CharacterBody2D
 	
 var state = "idle"
 var death = false
-var max_heath = 1
-var health = 1
+var max_heath = 2
+var health = 2
 var attack_timer: float = 0.0
 var damage_cooldown_current = 0.0
 var damage_cooldown_max = 0.2
-
+var justDied: bool = false
 var wander_timer: float = 0.0
 var wander_duration: float = 2.0
 var wander_direction: float = 0.0  # -1 = left, 0 = still, 1 = right
@@ -28,7 +28,13 @@ var wander_direction: float = 0.0  # -1 = left, 0 = still, 1 = right
 func _physics_process(delta):
 	if player == null:
 		player = get_tree().get_first_node_in_group("player")
-		
+	
+	if death:
+		if justDied: apply_gravity(delta)
+		velocity.x = 0
+		move_and_slide()
+		return
+	
 	if player == null:
 		anim.play("still")
 		velocity.x = 0
@@ -73,6 +79,7 @@ func _physics_process(delta):
 		
 
 func idle(delta):
+	if death: return
 	# if not is_on_floor():
 		# velocity.y += 0
 		# anim.play("mid_air")
@@ -126,20 +133,21 @@ func attack(delta):
 func apply_gravity(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
-		anim.play("mid_air")
+		if !death: anim.play("mid_air")
 	else:
 		velocity.y = 0  # reset vertical speed when on the floor
+		if death:
+			$CollisionShape2D.set_deferred("disabled", true)
+			justDied = false
 
 
 func _on_enemy_hitbox_area_entered(area: Area2D) -> void:
 	if death:
-		$CollisionShape2D.set_deferred("disabled", true)
 		return
-	
-	if area.is_in_group("attack"):
-		health = health - 1
-		print("Hit! Health is now: ", health)
-		if health <= 0:
-			queue_free()
-			print("DEATH")
-			death = true
+	health = health - 1
+	if health <= 0:
+		anim.play("death")
+		justDied = true
+		print("PIGEON DEATH")
+		death = true
+		return

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dl0p5x1aty7xp" path="res://Enemy/EnemyScripts/pigeon.gd" id="1_f11qu"]
 [ext_resource type="Texture2D" uid="uid://dlbyuepc50gk2" path="res://assets/EnemySprites/pigeon.png" id="2_h70vi"]
+[ext_resource type="Texture2D" uid="uid://c6w7caf2t0vme" path="res://assets/EnemySprites/pigeon_death.png" id="3_h70vi"]
 [ext_resource type="Texture2D" uid="uid://vh73g0qaqjs2" path="res://assets/EnemySprites/pigeon_walk.png" id="3_qwjyx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2wwu3"]
@@ -14,6 +15,10 @@ region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lbhxv"]
 atlas = ExtResource("2_h70vi")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h70vi"]
+atlas = ExtResource("3_h70vi")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t44t1"]
@@ -46,6 +51,14 @@ animations = [{
 "loop": false,
 "name": &"attack",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h70vi")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -119,10 +132,10 @@ size = Vector2(24, 24)
 script = ExtResource("1_f11qu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=284068969]
+position = Vector2(0, -6)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_vqlt5")
-animation = &"walk"
-offset = Vector2(0, -3)
+animation = &"death"
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2046308478]
