@@ -5,18 +5,22 @@ extends CharacterBody2D
 @export var speed: float = 60.0
 @export var detection_range: float = 150.0
 @export var attack_range: float = 50.0
-@export var gravity: float = 100.0
+@export var gravity: float = 800.0
+@export var glide_gravity: float = 100.0 # slower fall
+@export var jump_force: float = -300.0
 
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var anim = $AnimatedSprite2D
 @onready var animhit = $CollisionShape2D
 @export var attack_thrust: float = 100.0  # forward movement during attack
 @export var attack_duration: float = 0.3  # time the thrust lasts
+@onready var knockback = $EnemyKnockback
 	
 var state = "idle"
 var death = false
 var max_heath = 2
 var health = 2
+var can_take_damage: bool = true
 var attack_timer: float = 0.0
 var damage_cooldown_current = 0.0
 var damage_cooldown_max = 0.2
@@ -24,6 +28,7 @@ var justDied: bool = false
 var wander_timer: float = 0.0
 var wander_duration: float = 2.0
 var wander_direction: float = 0.0  # -1 = left, 0 = still, 1 = right
+var is_knocking_back = false
 
 func _physics_process(delta):
 	if player == null:
@@ -35,10 +40,14 @@ func _physics_process(delta):
 		move_and_slide()
 		return
 	
-	if player == null:
-		anim.play("still")
-		velocity.x = 0
-		# move_and_slide()
+	if is_knocking_back:
+		apply_gravity(delta)
+		if is_on_floor():
+			velocity.y = 0
+		move_and_slide()
+		if is_on_floor():
+			is_knocking_back = false
+			can_take_damage = true
 		return
 
 	if get_slide_collision_count() > 0 and abs(get_slide_collision(0).get_normal().x) > 0.9:
@@ -84,6 +93,9 @@ func idle(delta):
 		# velocity.y += 0
 		# anim.play("mid_air")
 	apply_gravity(delta)
+	if !is_on_floor():
+		move_and_slide()
+		return
 	wander_timer -= delta
 	if wander_timer <= 0:
 		# Pick random direction
@@ -105,16 +117,16 @@ func idle(delta):
 		anim.flip_h = wander_direction > 0
 
 func chase(delta):
+	if is_on_floor(): anim.play("walk")
 	var direction = sign(player.global_position.x - global_position.x)
 	anim.flip_h = player.global_position.x > global_position.x
-
+	can_take_damage = true
 	velocity.x = direction * speed
 	apply_gravity(delta)
 	move_and_slide()
-	anim.play("walk")
 
 func attack(delta):
-	if attack_timer <= 0:
+	if attack_timer <= 0 and is_on_floor():
 		# Start attack
 		attack_timer = attack_duration
 		anim.play("attack")
@@ -122,7 +134,13 @@ func attack(delta):
 	else:
 		# Continue attack
 		var dir = sign(player.global_position.x - global_position.x)
+		#if velocity.y < 0:
+			# going UP → move AWAY from player
+		#	velocity.x = -dir * attack_thrust
+		#else:
+			# going DOWN → barely move (or slight toward player)
 		velocity.x = dir * attack_thrust
+		can_take_damage = true
 		apply_gravity(delta)
 		move_and_slide()
 		attack_timer -= delta
@@ -132,18 +150,23 @@ func attack(delta):
 	
 func apply_gravity(delta):
 	if not is_on_floor():
-		velocity.y += gravity * delta
-		if !death: anim.play("mid_air")
+		anim.play("mid_air")
+		if velocity.y < 0:
+			# going UP → normal gravity (so it slows quickly)
+			velocity.y += gravity * delta
+		else:
+			# going DOWN → glide
+			velocity.y += glide_gravity * delta
+		if is_on_floor(): return
 	else:
-		velocity.y = 0  # reset vertical speed when on the floor
+		velocity.y = 0
 		if death:
 			$CollisionShape2D.set_deferred("disabled", true)
 			justDied = false
 
 
 func _on_enemy_hitbox_area_entered(area: Area2D) -> void:
-	if death:
-		return
+	if death or !can_take_damage: return
 	health = health - 1
 	if health <= 0:
 		anim.play("death")
@@ -151,3 +174,15 @@ func _on_enemy_hitbox_area_entered(area: Area2D) -> void:
 		print("PIGEON DEATH")
 		death = true
 		return
+	is_knocking_back = true
+	knockback.apply_knockback(self, global_position)
+	print("Hit! Health is now: ", health)
+	anim.modulate = Color(1, 0.2, 0.2)
+	await get_tree().create_timer(0.2).timeout
+	anim.modulate = Color(1, 1, 1)
+	can_take_damage = false
+	$knockbackTimer.start(0.5)
+
+func _on_knockback_timer_timeout() -> void:
+	can_take_damage = true
+	is_knocking_back = false
