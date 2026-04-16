@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://tvmfnjn35yt8"]
 
-[ext_resource type="Script" uid="uid://d2do35b88pbgk" path="res://scenes/pop-ups/pop-up scripts/pause.gd" id="1_hdmo1"]
+[ext_resource type="Script" uid="uid://d2do35b88pbgk" path="res://Player/Player_Script/pause.gd" id="1_7fc20"]
+[ext_resource type="PackedScene" uid="uid://c3tkd2w8tyikk" path="res://Player/inv_ui.tscn" id="2_jppwi"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n87rw"]
 
@@ -19,7 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_hdmo1")
+script = ExtResource("1_7fc20")
 
 [node name="Panel" type="Panel" parent="." unique_id=534646245]
 layout_mode = 1
@@ -37,21 +38,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.6156863, 0.13333334, 0.20784314, 0.7529412)
+color = Color(0.19320542, 0.35146344, 0.5435613, 0.7529412)
+
+[node name="Inv_UI" parent="." unique_id=766622232 instance=ExtResource("2_jppwi")]
+layout_mode = 0
+offset_left = 37.999996
+offset_top = 51.999996
+offset_right = 37.999996
+offset_bottom = 51.999996
+scale = Vector2(5, 5)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1345042613]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -281.0
-offset_top = -113.0
-offset_right = 281.0
-offset_bottom = 113.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = 692.0
+offset_top = 298.0
+offset_right = 1250.0
+offset_bottom = 423.0
 theme_override_constants/separation = 15
 
 [node name="Resume" type="Button" parent="VBoxContainer" unique_id=558084604]

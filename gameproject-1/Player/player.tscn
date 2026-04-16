@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bwvua8ab5edia" path="res://assets/sprites/owl_glide_hit.png" id="4_5htga"]
 [ext_resource type="Texture2D" uid="uid://4w0vocv1r0h6" path="res://assets/sprites/owl_jump.png" id="4_ffe6g"]
 [ext_resource type="Texture2D" uid="uid://ci5inh8x5v1l0" path="res://assets/sprites/owl_run.png" id="5_x8e5g"]
-[ext_resource type="PackedScene" uid="uid://tvmfnjn35yt8" path="res://scenes/pop-ups/pause_menu.tscn" id="7_vtle1"]
+[ext_resource type="PackedScene" uid="uid://tvmfnjn35yt8" path="res://Player/pause_menu.tscn" id="7_vtle1"]
 [ext_resource type="PackedScene" uid="uid://cpsgpg6xxfbat" path="res://Player/HeartBar.tscn" id="9_00tjw"]
 [ext_resource type="Texture2D" uid="uid://cu4p17prjptmv" path="res://assets/sprites/owl_weapon_1.png" id="9_p5o4e"]
 

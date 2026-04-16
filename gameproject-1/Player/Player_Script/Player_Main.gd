@@ -29,6 +29,8 @@ func _ready() -> void:
 
 # runs at launch
 func _physics_process(delta: float) -> void:
+	$Player_Bar.show()
+	
 	if is_knocking_back:
 		animatedSprite.play("owl_hurt")
 		velocity.y += 980 * delta 
@@ -121,9 +123,11 @@ func _unhandled_input(event):
 			use_health_potion()
 		elif event.keycode == KEY_ESCAPE:
 			if pause_menu.visible:
+				$Player_Bar.hide()
 				get_tree().paused = false
 				pause_menu.visible = false
 			else:
+				$Player_Bar.hide()
 				get_tree().paused = true
 				pause_menu.visible = true
 

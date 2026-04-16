@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://tvmfnjn35yt8"]
+
+[ext_resource type="Script" uid="uid://d2do35b88pbgk" path="res://Player/Player_Script/pause.gd" id="1_7fc20"]
+[ext_resource type="PackedScene" uid="uid://c3tkd2w8tyikk" path="res://Player/inv_ui.tscn" id="2_jppwi"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n87rw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wyi4u"]
+bg_color = Color(0.13, 0.13, 0.13, 1)
+shadow_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05uyy"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="PauseMenu" type="Control" unique_id=358881738]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7fc20")
+
+[node name="Panel" type="Panel" parent="." unique_id=534646245]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_n87rw")
+
+[node name="ColorRect" type="ColorRect" parent="Panel" unique_id=2035617173]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.19320542, 0.35146344, 0.5435613, 0.7529412)
+
+[node name="Panel2" type="Panel" parent="." unique_id=680394557]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 202.0
+offset_bottom = 105.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Inv_UI" parent="Panel2" unique_id=766622232 instance=ExtResource("2_jppwi")]
+layout_mode = 0
+offset_left = -256.00003
+offset_top = -11.0
+offset_right = -256.00003
+offset_bottom = -11.0
+scale = Vector2(5, 5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel2" unique_id=1345042613]
+layout_mode = 0
+offset_left = 68.0
+offset_top = -82.0
+offset_right = 626.0
+offset_bottom = 117.0
+theme_override_constants/separation = 15
+
+[node name="Resume" type="Button" parent="Panel2/VBoxContainer" unique_id=558084604]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(18.892157, 16.258114, 10.9900255, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_wyi4u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_05uyy")
+text = "Resume"
+
+[node name="Main Menu" type="Button" parent="Panel2/VBoxContainer" unique_id=2094449159]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(18.892157, 16.258114, 10.9900255, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_wyi4u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_05uyy")
+text = "Main Menu"
+
+[connection signal="pressed" from="Panel2/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Panel2/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]

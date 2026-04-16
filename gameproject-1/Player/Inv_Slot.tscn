@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cr58betwu6ix7"]
+
+[ext_resource type="Script" uid="uid://dmh7j4fsmdruo" path="res://Player/Player_Script/inv_slot.gd" id="1_p87nd"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_suoek"]
+load_path = "res://.godot/imported/InventorySlotsSet.png-ddba8c72c292fe36812637d5908a943f.ctex"
+
+[node name="InvSlot" type="Panel" unique_id=616002814]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(24, 24)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = -26.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p87nd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=439034878]
+texture = SubResource("CompressedTexture2D_suoek")
+centered = false
+region_enabled = true
+region_rect = Rect2(225, 80, 22, 22)
+
+[node name="item_display" type="Sprite2D" parent="." unique_id=607685426]
+self_modulate = Color(1, 1, 1, 0)
