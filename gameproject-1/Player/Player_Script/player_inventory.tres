@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://dnee2fecxr4ev" path="res://Player/Player_Script/inventory_UI_item.gd" id="1_4uaj4"]
 [ext_resource type="Script" uid="uid://rmiow06shje1" path="res://Player/Player_Script/Inventory.gd" id="2_ducsb"]
 
+[sub_resource type="Resource" id="Resource_4uaj4"]
+script = ExtResource("1_4uaj4")
+metadata/_custom_type_script = "uid://dnee2fecxr4ev"
+
 [sub_resource type="Resource" id="Resource_ducsb"]
 script = ExtResource("1_4uaj4")
 metadata/_custom_type_script = "uid://dnee2fecxr4ev"
@@ -63,11 +67,7 @@ metadata/_custom_type_script = "uid://dnee2fecxr4ev"
 script = ExtResource("1_4uaj4")
 metadata/_custom_type_script = "uid://dnee2fecxr4ev"
 
-[sub_resource type="Resource" id="Resource_m6d63"]
-script = ExtResource("1_4uaj4")
-metadata/_custom_type_script = "uid://dnee2fecxr4ev"
-
 [resource]
 script = ExtResource("2_ducsb")
-items = Array[ExtResource("1_4uaj4")]([SubResource("Resource_ducsb"), SubResource("Resource_h7u4g"), SubResource("Resource_3gslv"), SubResource("Resource_3cffe"), SubResource("Resource_fknky"), SubResource("Resource_5ynyv"), SubResource("Resource_nlbnk"), SubResource("Resource_2jbjw"), SubResource("Resource_y3xls"), SubResource("Resource_eatvi"), SubResource("Resource_xdme1"), SubResource("Resource_6cvos"), SubResource("Resource_ijyxs"), SubResource("Resource_kt6wp"), SubResource("Resource_fj462"), SubResource("Resource_m6d63")])
+slots = Array[ExtResource("1_4uaj4")]([SubResource("Resource_4uaj4"), SubResource("Resource_ducsb"), SubResource("Resource_h7u4g"), SubResource("Resource_3gslv"), SubResource("Resource_3cffe"), SubResource("Resource_fknky"), SubResource("Resource_5ynyv"), SubResource("Resource_nlbnk"), SubResource("Resource_2jbjw"), SubResource("Resource_y3xls"), SubResource("Resource_eatvi"), SubResource("Resource_xdme1"), SubResource("Resource_6cvos"), SubResource("Resource_ijyxs"), SubResource("Resource_kt6wp"), SubResource("Resource_fj462")])
 metadata/_custom_type_script = "uid://rmiow06shje1"

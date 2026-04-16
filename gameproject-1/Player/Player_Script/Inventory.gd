@@ -4,16 +4,22 @@ class_name Inv
 
 signal inventory_updated
 
-@export var items: Array[InvSlot]
+@export var slots: Array[InvSlot]
 
 func insert(item: InvItem):
-	for items in items:
-		if items.item == items:
-			items.amount += 1
-			inventory_updated.emit() # Tell the UI to refresh
+	# 1. Try to STACK the item
+	for slot in slots: 
+		# ADDED CHECK: Ensure 'slot' is not Nil before checking '.item'
+		if slot != null and slot.item == item:
+			slot.amount += 1
+			inventory_updated.emit()
 			return
-		if !items.item:
-			items.item = item
-			items.amount = 1
-			inventory_updated.emit() # Tell the UI to refresh
+			
+	# 2. Find the first EMPTY slot
+	for slot in slots:
+		# ADDED CHECK: Ensure 'slot' is not Nil
+		if slot != null and !slot.item:
+			slot.item = item
+			slot.amount = 1
+			inventory_updated.emit()
 			return

@@ -331,7 +331,7 @@ position = Vector2(-1613, -45)
 [node name="BellBoss2" parent="." unique_id=1830939212 instance=ExtResource("13_kvuet")]
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1147397055]
-position = Vector2(1123, 7)
+position = Vector2(-221, -73)
 script = SubResource("GDScript_rysoc")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1767993539]

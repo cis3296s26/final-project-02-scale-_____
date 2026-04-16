@@ -14,8 +14,6 @@ var knockback = 200
 
 @onready var coin_label = $Player_Bar/UIRoot/CoinLabel
 
-@export var inv: Inv
-
 func _ready() -> void:
 	GlobalScript.can_take_damage = true
 
@@ -152,6 +150,8 @@ func update_potion_label() -> void:
 	if potion_label:
 		potion_label.text = str(GlobalScript.get_health_potion_count())
 
-func collect():
-	GlobalScript.add_item(0)
+func collect(id: int):
+	print(id)
+	GlobalScript.add_item(id)
+	
 	

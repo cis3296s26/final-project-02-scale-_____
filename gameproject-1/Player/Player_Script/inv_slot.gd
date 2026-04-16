@@ -4,7 +4,7 @@ extends Panel
 
 func update(slot: InvSlot):
 	if !slot || !slot.item:
-		print("No item found for this slot")
+		# print("No item found for this slot")
 		item_visual.visible = false
 	else:
 		var item_tex = slot.item.texture
