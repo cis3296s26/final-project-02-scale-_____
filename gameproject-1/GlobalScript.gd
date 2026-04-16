@@ -38,9 +38,18 @@ var items = {
 		"Des": "This is a No. 2 Pencil",
 		"Cost": 5,
 		"Max": 1,
-		"Type": 1, # Equipable
+		"Type": 1, # Equipable -> Combat
 		"Texture": preload("res://assets/pencil.png"),
 		"Resource": preload("res://Player/Player_Script/items/pencil.tres")
+	},
+	2: {
+		"Name": "Boots",
+		"Des": "HIGHER JUMPS!",
+		"Cost": 7,
+		"Max": 1,
+		"Type": 2, # Equipable -> Movement
+		"Texture": preload("res://assets/boots.png"),
+		"Resource": preload("res://Player/Player_Script/items/boots.tres")
 	},
 }
 
@@ -49,7 +58,6 @@ var inventory = {
 }
 
 func add_item(id: int):
-	# 1. Safety check: Does the item exist in our database?
 	if not items.has(id):
 		print("Error: Item ID ", id, " not found.")
 		return
@@ -100,10 +108,15 @@ func get_weapon() -> bool:
 	return 0
 
 func use_health_potion() -> bool:
+	if current_health >= max_health:
+		return false
+	
 	for i in inventory:
 		if inventory[i]["Name"] == "Health Potion" and inventory[i]["Count"] > 0:
 			inventory[i]["Count"] -= 1
 			var new_count = inventory[i]["Count"]
+			
+			self.current_health += 1
 			
 			var potion_res = items[0]["Resource"]
 			inventory_resource.remove_item(potion_res)

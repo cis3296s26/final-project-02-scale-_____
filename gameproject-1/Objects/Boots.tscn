@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dbnvbcltg0kf8"]
+
+[ext_resource type="Script" uid="uid://qw1h8y5j5x3u" path="res://Objects/boots.gd" id="1_0e2p4"]
+[ext_resource type="Texture2D" uid="uid://c5hwrue3rld2i" path="res://assets/boots.png" id="2_elmlk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jky1k"]
+
+[node name="Boots" type="Area2D" unique_id=1889961507]
+script = ExtResource("1_0e2p4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1079043735]
+texture = ExtResource("2_elmlk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=198890400]
+shape = SubResource("RectangleShape2D_jky1k")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

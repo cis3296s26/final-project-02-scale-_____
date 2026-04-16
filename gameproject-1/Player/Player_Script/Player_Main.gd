@@ -132,11 +132,8 @@ func _unhandled_input(event):
 				pause_menu.visible = true
 
 func use_health_potion() -> void:
-	if GlobalScript.current_health >= GlobalScript.max_health:
-		return
-	
 	if GlobalScript.use_health_potion():
-		GlobalScript.current_health += 1
+		print("Healed")
 
 func add_coin() -> void:
 	GlobalScript.coin_count += 1

@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://i6t3y8yjemwc"]
+[gd_scene format=3 uid="uid://bsq1hv8jcqyvq"]
 
-[ext_resource type="Script" path="res://Objects/shop.gd" id="1_lx5au"]
+[ext_resource type="Script" uid="uid://dkd15cnanx4j8" path="res://Objects/shop.gd" id="1_lx5au"]
 [ext_resource type="Texture2D" uid="uid://k5pbgltepvqy" path="res://assets/health potion.png" id="2_xfvoa"]
 
 [sub_resource type="Animation" id="Animation_bdmwb"]

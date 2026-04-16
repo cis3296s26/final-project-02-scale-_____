@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bsq1hv8jcqyvq" path="res://Objects/shop.tscn" id="15_ca42v"]
 [ext_resource type="PackedScene" uid="uid://djdsbrmb1pdcx" path="res://scenes/scene_triggers/Transition_Collision.tscn" id="16_ca42v"]
 [ext_resource type="PackedScene" uid="uid://c2xwbi01iw8k8" path="res://Objects/pencil.tscn" id="17_rysoc"]
+[ext_resource type="PackedScene" uid="uid://dbnvbcltg0kf8" path="res://Objects/Boots.tscn" id="18_ssvqc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
 texture = ExtResource("3_lnu2h")
@@ -349,8 +350,11 @@ position = Vector2(-165, -204)
 destination_scene = "uid://b1o1b3wjkiwl8"
 
 [node name="Pencil" parent="." unique_id=708637299 instance=ExtResource("17_rysoc")]
-position = Vector2(-279.99997, -170)
+position = Vector2(-340.00003, -67.00001)
 scale = Vector2(0.24, 0.24)
+
+[node name="Boots" parent="." unique_id=1889961507 instance=ExtResource("18_ssvqc")]
+position = Vector2(-379, -65)
 
 [connection signal="body_entered" from="LavaAnt/Area2D" to="LavaAnt" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
