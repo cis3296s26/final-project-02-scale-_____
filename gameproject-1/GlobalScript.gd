@@ -1,6 +1,6 @@
 extends Node
 
-var max_health = 3
+var max_health = 7
 var can_take_damage = true
 
 var shop_check = false
@@ -29,6 +29,7 @@ var items = {
 		"Des": "Heals you 1 missing Heart",
 		"Cost": 2,
 		"Max": 3,
+		"Type": 0, # Consumable
 		"Texture": preload("res://assets/health potion.png"),
 		"Resource": preload("res://Player/Player_Script/items/health_potion.tres")
 	},
@@ -37,6 +38,7 @@ var items = {
 		"Des": "This is a No. 2 Pencil",
 		"Cost": 5,
 		"Max": 1,
+		"Type": 1, # Equipable
 		"Texture": preload("res://assets/pencil.png"),
 		"Resource": preload("res://Player/Player_Script/items/pencil.tres")
 	},
@@ -84,7 +86,7 @@ func add_item(id: int):
 	shop_check = true
 	inventory_changed.emit()
 	
-	
+
 func get_health_potion_count() -> int:
 	for i in inventory:
 		if inventory[i]["Name"] == "Health Potion":
@@ -101,8 +103,12 @@ func use_health_potion() -> bool:
 	for i in inventory:
 		if inventory[i]["Name"] == "Health Potion" and inventory[i]["Count"] > 0:
 			inventory[i]["Count"] -= 1
+			var new_count = inventory[i]["Count"]
 			
-			if inventory[i]["Count"] <= 0:
+			var potion_res = items[0]["Resource"]
+			inventory_resource.remove_item(potion_res)
+			
+			if new_count <= 0:
 				inventory.erase(i)
 			
 			inventory_changed.emit()

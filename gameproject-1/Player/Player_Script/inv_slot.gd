@@ -1,17 +1,23 @@
 extends Panel
 
 @onready var item_visual: Sprite2D = $CenterContainer/Panel/item_display
+@onready var amount_text: Label = $CenterContainer/Panel/Label
 
 func update(slot: InvSlot):
 	if !slot || !slot.item:
-		# print("No item found for this slot")
 		item_visual.visible = false
+		amount_text.visible = false
 	else:
 		var item_tex = slot.item.texture
 		
 		if item_tex:
 			item_visual.visible = true
 			item_visual.texture = item_tex
+			amount_text.text = ""
+			
+			if slot.amount > 1:
+				amount_text.visible = true
+				amount_text.text = str(slot.amount)
 			
 			var target_size = 16.0 
 			var tex_size = item_tex.get_size()
