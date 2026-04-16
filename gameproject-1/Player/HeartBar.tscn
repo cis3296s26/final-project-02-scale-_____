@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://d1fnkwwqr1ltt" path="res://Player/Player_Script/heart_bar.gd" id="1_ls8qr"]
 [ext_resource type="Texture2D" uid="uid://bpn58mhdm2yvy" path="res://assets/pixel heart.png" id="2_y1q58"]
 [ext_resource type="Texture2D" uid="uid://bfxtbeyfb7p0g" path="res://assets/sprites/coin.png" id="3_mskk7"]
-[ext_resource type="Texture2D" uid="uid://cxpasxg0wwu8" path="res://assets/pencil.png" id="4_mskk7"]
 [ext_resource type="Texture2D" uid="uid://k5pbgltepvqy" path="res://assets/health potion.png" id="4_y1q58"]
 
 [node name="HeartBar" type="CanvasLayer" unique_id=1223501361]
@@ -77,23 +76,17 @@ texture = ExtResource("3_mskk7")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="Pencil" type="Sprite2D" parent="UIRoot" unique_id=580834907]
-visible = false
-position = Vector2(871.4286, 4042.8574)
-scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("4_mskk7")
-
 [node name="PotionIcon" type="Sprite2D" parent="UIRoot" unique_id=1374490847]
-position = Vector2(542.8572, 5914.2856)
+position = Vector2(589.4858, 3318.0574)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("4_y1q58")
 region_rect = Rect2(0, 0, 16, 16)
 
 [node name="PotionLabel" type="Label" parent="UIRoot" unique_id=1323996579]
 layout_mode = 0
-offset_left = 1257.143
-offset_top = 5528.5713
-offset_right = 1629.143
-offset_bottom = 6414.5713
+offset_left = 1303.7716
+offset_top = 2932.3428
+offset_right = 1675.7716
+offset_bottom = 3818.3428
 theme_override_font_sizes/font_size = 650
 text = "0"

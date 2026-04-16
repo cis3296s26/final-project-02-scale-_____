@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1776308434
+::res://::1776345921
 export_presets.cfg::TextFile::-1::1776262042::0::1::::<><><>0<>0<><>::
 GlobalScript.gd::GDScript::247594408924664459::1776262239::0::1::::<>Node<><>0<>0<><>::
 icon.svg::CompressedTexture2D::822653193914807282::1773416912::1775786532::1::::<><><>0<>0<>95e354c2323f1500a8f6057edb08b387<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
@@ -182,22 +182,24 @@ coin.tscn::PackedScene::4631384213854169938::1775314958::0::1::::<><><>0<>0<><>:
 platform.tscn::PackedScene::9176674810355235753::1774620212::0::1::::<><><>0<>0<><>::uid://d00shr4svncs1::::res://assets/sprites/platforms.png
 shop.gd::GDScript::7868975961498349199::1776262239::0::1::::<>CanvasLayer<><>0<>0<><>::
 shop.tscn::PackedScene::3684442209993050298::1776262239::0::1::::<><><>0<>0<><>::res://Objects/shop.gd<>res://assets/health potion.png
-::res://Player/::1776308426
+::res://Player/::1776342471
 HeartBar.tscn::PackedScene::5863224274499921999::1776262239::0::1::::<><><>0<>0<><>::uid://d1fnkwwqr1ltt::::res://Player/Player_Script/heart_bar.gd<>uid://bpn58mhdm2yvy::::res://assets/pixel heart.png<>uid://bfxtbeyfb7p0g::::res://assets/sprites/coin.png<>uid://cxpasxg0wwu8::::res://assets/pencil.png<>uid://k5pbgltepvqy::::res://assets/health potion.png
-Inv_Slot.tscn::PackedScene::6029988728881963142::1776308426::0::1::::<><><>0<>0<><>::uid://dmh7j4fsmdruo::::res://Player/Player_Script/inv_slot.gd
-inv_ui.tscn::PackedScene::6777966147529487246::1776306262::0::1::::<><><>0<>0<><>::uid://cumgykr8pn3xt::::res://assets/InventorySlotsSet.png<>uid://cr58betwu6ix7::::res://Player/Inv_Slot.tscn
-pause_menu.tscn::PackedScene::1377678192176669719::1776308424::0::1::::<><><>0<>0<><>::uid://d2do35b88pbgk::::res://Player/Player_Script/pause.gd<>uid://c3tkd2w8tyikk::::res://Player/inv_ui.tscn
-player.tscn::PackedScene::988254921774339925::1776262922::0::1::::<><><>0<>0<><>::uid://jxk2qktqjuk5::::res://Player/Player_Script/Player_Main.gd<>uid://b0xnkfl2u3ha::::res://assets/sprites/owl_attack.png<>uid://nts1qpwgoolt::::res://assets/sprites/owl_hurt.png<>uid://c5tev0ac0xtid::::res://Player/Player_Script/movement.gd<>uid://bsealknxkubyq::::res://assets/sprites/owl_idle.png<>uid://rv71njgswo6o::::res://Player/Player_Script/combat.gd<>uid://dsng3lyt605k2::::res://assets/sprites/owl_fall.png<>uid://bwvua8ab5edia::::res://assets/sprites/owl_glide_hit.png<>uid://4w0vocv1r0h6::::res://assets/sprites/owl_jump.png<>uid://ci5inh8x5v1l0::::res://assets/sprites/owl_run.png<>uid://tvmfnjn35yt8::::res://Player/pause_menu.tscn<>uid://cpsgpg6xxfbat::::res://Player/HeartBar.tscn<>uid://cu4p17prjptmv::::res://assets/sprites/owl_weapon_1.png
-::res://Player/Player_Script/::1776308277
+Inv_Slot.tscn::PackedScene::6029988728881963142::1776340469::0::1::::<><><>0<>0<><>::uid://dmh7j4fsmdruo::::res://Player/Player_Script/inv_slot.gd
+inv_ui.tscn::PackedScene::6777966147529487246::1776340566::0::1::::<><><>0<>0<><>::uid://g5xic5mxf3dr::::res://Player/Player_Script/inv_ui.gd<>uid://cumgykr8pn3xt::::res://assets/InventorySlotsSet.png<>uid://cr58betwu6ix7::::res://Player/Inv_Slot.tscn
+pause_menu.tscn::PackedScene::1377678192176669719::1776308831::0::1::::<><><>0<>0<><>::uid://d2do35b88pbgk::::res://Player/Player_Script/pause.gd<>uid://c3tkd2w8tyikk::::res://Player/inv_ui.tscn
+player.tscn::PackedScene::988254921774339925::1776342471::0::1::::<><><>0<>0<><>::uid://jxk2qktqjuk5::::res://Player/Player_Script/Player_Main.gd<>uid://b0xnkfl2u3ha::::res://assets/sprites/owl_attack.png<>uid://nts1qpwgoolt::::res://assets/sprites/owl_hurt.png<>uid://c5tev0ac0xtid::::res://Player/Player_Script/movement.gd<>uid://bsealknxkubyq::::res://assets/sprites/owl_idle.png<>uid://rv71njgswo6o::::res://Player/Player_Script/combat.gd<>uid://dsng3lyt605k2::::res://assets/sprites/owl_fall.png<>uid://bwvua8ab5edia::::res://assets/sprites/owl_glide_hit.png<>uid://4w0vocv1r0h6::::res://assets/sprites/owl_jump.png<>uid://ci5inh8x5v1l0::::res://assets/sprites/owl_run.png<>uid://tvmfnjn35yt8::::res://Player/pause_menu.tscn<>uid://cpsgpg6xxfbat::::res://Player/HeartBar.tscn<>uid://cu4p17prjptmv::::res://assets/sprites/owl_weapon_1.png
+::res://Player/Player_Script/::1776341350
 combat.gd::GDScript::1238552346096200116::1776262239::0::1::::<>Node<><>0<>0<><>::
 heart_bar.gd::GDScript::8995302243533577125::1776262239::0::1::::<>CanvasLayer<><>0<>0<><>::
-Inventory.gd::GDScript::1218494807518719550::1776305520::0::1::::Inv<>Resource<><>0<>0<><>::
+Inventory.gd::GDScript::1218494807518719550::1776340648::0::1::::Inv<>Resource<><>0<>0<><>::
 inventory_item.gd::GDScript::2289909772837147180::1776305520::0::1::::InvItem<>Resource<><>0<>0<><>::
-inv_slot.gd::GDScript::8017939366662969298::1776308276::0::1::::<>Panel<><>0<>0<><>::
+inventory_UI_item.gd::GDScript::8080265882714738121::1776340371::0::1::::InvSlot<>Resource<><>0<>0<><>::
+inv_slot.gd::GDScript::8017939366662969298::1776340751::0::1::::<>Panel<><>0<>0<><>::
+inv_ui.gd::GDScript::484475323601878015::1776339332::0::1::::<>Control<><>0<>0<><>::
 movement.gd::GDScript::6918011536706337127::1775614957::0::1::::<>Node<><>0<>0<><>::
 pause.gd::GDScript::9061455581485792194::1776306329::0::1::::<>Control<><>0<>0<><>::
-player_inventory.tres::Resource/Inv::7241860616873701487::1776305585::0::1::::<><><>0<>0<><>::uid://7viqkgjvx2p1::::res://Player/Player_Script/inventory_item.gd<>uid://rmiow06shje1::::res://Player/Player_Script/Inventory.gd
-Player_Main.gd::GDScript::679836524155441258::1776262936::0::1::::<>CharacterBody2D<><>0<>0<><>::
+player_inventory.tres::Resource/Inv::7241860616873701487::1776340566::0::1::::<><><>0<>0<><>::uid://dnee2fecxr4ev::::res://Player/Player_Script/inventory_UI_item.gd<>uid://rmiow06shje1::::res://Player/Player_Script/Inventory.gd
+Player_Main.gd::GDScript::679836524155441258::1776341350::0::1::::<>CharacterBody2D<><>0<>0<><>::
 ::res://Player/Player_Script/items/::1776305441
 pencil.tres::Resource/InvItem::8707018535545813195::1776305441::0::1::::<><><>0<>0<><>::uid://7viqkgjvx2p1::::res://Player/Player_Script/inventory_item.gd<>uid://cxpasxg0wwu8::::res://assets/pencil.png
 ::res://scenes/::1776262240

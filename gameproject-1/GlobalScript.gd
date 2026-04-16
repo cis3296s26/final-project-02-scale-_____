@@ -37,10 +37,12 @@ var items = {
 var inventory = {
 	0: {
 		"Name": "Health Potion",
-		"Des": "Heals you 1 missing Heart",
 		"Count": 1 
 	},
 }
+
+func add_item(id: int):
+	pass
 
 func get_health_potion_count() -> int:
 	for i in inventory:
