@@ -83,12 +83,12 @@ text = "Quit"
 
 [node name="Bell Boss Test" type="Button" parent="Container" unique_id=1969762364]
 layout_mode = 0
-offset_left = 36.24804
-offset_top = 109.95906
-offset_right = 155.24805
-offset_bottom = 140.95906
+offset_left = 39.31809
+offset_top = 109.79421
+offset_right = 132.28912
+offset_bottom = 140.79422
 scale = Vector2(0.24853016, 0.7843576)
-text = "Belltower Test"
+text = "Belltower"
 
 [connection signal="pressed" from="Container/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="Container/Continue" to="." method="_on_continue_pressed"]

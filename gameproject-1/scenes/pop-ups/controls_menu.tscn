@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://bfglsrt1sumas"]
+
+[ext_resource type="Script" uid="uid://dayhy4qcg22h5" path="res://scenes/pop-ups/controls_menu.gd" id="1_ffm3k"]
+
+[node name="ControlsMenu" type="Control" unique_id=410902155]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ffm3k")
+
+[node name="Panel" type="Panel" parent="." unique_id=863083780]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 16.0
+anchor_top = 9.0
+anchor_right = 16.0
+anchor_bottom = 9.0
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel" unique_id=69646961]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 40.0
+offset_right = 234.0
+offset_bottom = 89.0
+theme_override_font_sizes/font_size = 35
+text = "Controls"
+
+[node name="LeftButton" type="Button" parent="Panel" unique_id=522912190]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 112.0
+offset_right = 272.0
+offset_bottom = 169.0
+theme_override_font_sizes/font_size = 20
+text = "Left
+"
+
+[node name="RightButton" type="Button" parent="Panel" unique_id=616741640]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 184.0
+offset_right = 272.0
+offset_bottom = 241.0
+theme_override_font_sizes/font_size = 20
+text = "Right"
+
+[node name="JumpButton" type="Button" parent="Panel" unique_id=702269128]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 256.0
+offset_right = 272.0
+offset_bottom = 313.0
+theme_override_font_sizes/font_size = 20
+text = "Jump"
+
+[node name="ShiftButton" type="Button" parent="Panel" unique_id=1842462724]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 328.0
+offset_right = 272.0
+offset_bottom = 385.0
+theme_override_font_sizes/font_size = 20
+text = "Shift"
+
+[node name="AttackButton" type="Button" parent="Panel" unique_id=937098729]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 400.0
+offset_right = 272.0
+offset_bottom = 457.0
+theme_override_font_sizes/font_size = 20
+text = "Attack"
+
+[node name="DropButton" type="Button" parent="Panel" unique_id=1107430425]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 472.0
+offset_right = 272.0
+offset_bottom = 529.0
+theme_override_font_sizes/font_size = 20
+text = "Drop
+"
+
+[node name="ResetButton" type="Button" parent="Panel" unique_id=1011610819]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 544.0
+offset_right = 272.0
+offset_bottom = 601.0
+theme_override_font_sizes/font_size = 20
+text = "Reset Defaults
+"
+
+[node name="BackButton" type="Button" parent="Panel" unique_id=636639078]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 616.0
+offset_right = 272.0
+offset_bottom = 673.0
+theme_override_font_sizes/font_size = 20
+text = "Back"
