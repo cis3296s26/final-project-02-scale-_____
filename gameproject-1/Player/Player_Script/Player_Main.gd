@@ -14,9 +14,16 @@ var knockback = 200
 
 @onready var coin_label = $Player_Bar/UIRoot/CoinLabel
 
-func _ready() -> void:
-	GlobalScript.can_take_damage = true
+@export var inv: Inv
 
+func _ready() -> void:
+	inv = GlobalScript.inventory_resource
+	reapply_equip_effects()
+	GlobalScript.inventory_changed.emit()
+	
+	
+	GlobalScript.can_take_damage = true
+	
 	GlobalScript.health_changed.connect(update_hearts)
 	GlobalScript.coin_changed.connect(update_coin_label)
 	GlobalScript.inventory_changed.connect(update_potion_label)
@@ -161,4 +168,17 @@ func collect(id: int):
 	print(id)
 	GlobalScript.add_item(id)
 	
-	
+func reapply_equip_effects():
+	for i in GlobalScript.inventory:
+		var data = GlobalScript.inventory[i]
+		if data.get("IsEquipped", false):
+			var type = data.get("Type", -1)
+			var item_name = data.get("Name", "")
+			print("Re-applying effect for: ", item_name)
+			apply_stat_bonus(type, item_name)
+
+func apply_stat_bonus(type: int, item_name: String):
+	if type == 1:
+		GlobalScript.request_combat_equip_effect.emit(type, item_name)
+	elif type == 2:
+		GlobalScript.request_movement_equip_effect.emit(type, item_name)

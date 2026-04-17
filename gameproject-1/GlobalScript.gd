@@ -21,6 +21,8 @@ signal remove_movement_equip_effect(type: int, item_name: String)
 
 var current_level_path: String = ""
 
+var equipped_items = {}
+
 var current_health: int = max_health:
 	set(value):
 		current_health = clamp(value, 0, max_health)

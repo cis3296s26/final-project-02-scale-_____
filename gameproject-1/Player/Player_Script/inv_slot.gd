@@ -7,6 +7,10 @@ var current_state = false
 @onready var item_visual: Sprite2D = $CenterContainer/Panel/item_display
 @onready var amount_text: Label = $CenterContainer/Panel/Label
 
+func _ready():
+	if slot and slot.item:
+		update(slot)
+
 func update(new_slot: InvSlot):
 	slot = new_slot
 	
