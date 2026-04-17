@@ -8,7 +8,7 @@ extends CharacterBody2D
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var anim = $BossSprite2
 
-# Attack scenes (you must create these)
+# Attack scenes
 @export var eclipse_beam: PackedScene
 @export var vs_projectile: PackedScene
 @export var intel_exp: PackedScene
@@ -68,7 +68,6 @@ func start_beam_attack():
 	get_parent().add_child(orb)
 	orb.global_position = global_position + Vector2(0, -40)
 
-	# Tell orb where player is (optional)
 	if orb.has_method("set_target"):
 		orb.set_target(player)
 
@@ -115,19 +114,12 @@ func start_explosion_attack():
 	
 	end_attack()
 
-
-# =========================
-# END ATTACK
-# =========================
 func end_attack():
 	is_attacking = false
 	attack_timer = attack_cooldown
 	anim.play("laptop_idle")
 
 
-# =========================
-# DAMAGE HANDLING
-# =========================
 func _on_enemy_hitbox_area_entered(area: Area2D) -> void:
 	if death:
 		return

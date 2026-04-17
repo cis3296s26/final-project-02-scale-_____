@@ -1,14 +1,14 @@
 extends Node2D
 
 @onready var anim: AnimatedSprite2D = $BeamSprite
-@onready var hitbox: Area2D = $BeamAttack   # Long collision shape matching beam
+@onready var hitbox: Area2D = $BeamAttack  
 
 var target: Node2D = null
 var locked_direction: Vector2 = Vector2.RIGHT
 
 @export var damage_value: int = 1
 
-# Timing (tweak to match animations)
+# Timing
 @export var charge_time: float = 0.7
 @export var point_time: float = 0.3
 @export var beam_time: float = 1.0
@@ -31,10 +31,6 @@ func start_sequence():
 	await finish_phase()
 	queue_free()
 
-
-# =========================
-# CHARGE (tracks player)
-# =========================
 func charge_phase():
 	anim.play("eclipse_charge")
 
@@ -47,9 +43,6 @@ func charge_phase():
 		await get_tree().process_frame
 
 
-# =========================
-# POINT (locks direction)
-# =========================
 func point_phase():
 	anim.play("eclipse_point")
 
@@ -59,31 +52,19 @@ func point_phase():
 	await get_tree().create_timer(point_time).timeout
 
 
-# =========================
-# BEAM (fires)
-# =========================
 func beam_phase():
 	anim.play("eclipse_beam")
 
-	# Enable damage
 	hitbox.monitoring = true
 
 	await get_tree().create_timer(beam_time).timeout
 
 	hitbox.monitoring = false
 
-
-# =========================
-# FINISH (power down)
-# =========================
 func finish_phase():
 	anim.play("eclipse_finish")
 	await get_tree().create_timer(finish_time).timeout
 
-
-# =========================
-# DAMAGE
-# =========================
 func _on_beam_attack_body_entered(body):
 	if body.has_method("take_damage"):
 		body.take_damage(damage_value, global_position)

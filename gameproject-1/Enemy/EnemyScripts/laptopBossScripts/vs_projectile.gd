@@ -18,40 +18,27 @@ var timer = 0.0
 func _ready():
 	start_spawn()
 
-
-# =========================
-# SET TARGET
-# =========================
 func set_target(p):
 	target = p
 
-
-# =========================
-# SPAWN STATE
-# =========================
 func start_spawn():
 	anim.play("vs_spawn")
 
 	collision.set_deferred("disabled", true)
 
-	# small delay instead of await animation_finished (more reliable)
+	# small delay
 	await get_tree().create_timer(0.2).timeout
 
 	collision.set_deferred("disabled", false)
 
 	start_active()
 
-
-# =========================
-# ACTIVE STATE
-# =========================
 func start_active():
 	anim.play("vs_active")
 
 	is_active = true
 	timer = 0.0
 
-	# initial velocity so it never "sticks"
 	if target:
 		var dir = (target.global_position - global_position).normalized()
 		velocity = dir * speed
@@ -76,10 +63,6 @@ func _physics_process(delta):
 	if timer >= lifetime:
 		start_finish()
 
-
-# =========================
-# FINISH STATE (SAFE)
-# =========================
 func start_finish():
 	if is_finished:
 		return
@@ -87,18 +70,12 @@ func start_finish():
 	is_finished = true
 	is_active = false
 
-	# stop collisions immediately
 	collision.set_deferred("disabled", true)
 
-	# stop movement instantly
 	velocity = Vector2.ZERO
 
 	anim.play("vs_finish")
 
-
-# =========================
-# HIT PLAYER
-# =========================
 func _on_body_entered(body):
 	if is_finished or not is_active:
 		return

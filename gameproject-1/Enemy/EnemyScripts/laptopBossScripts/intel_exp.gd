@@ -13,30 +13,17 @@ var exploded = false
 func _ready():
 	start_explosion()
 
-
-# =========================
-# MAIN SEQUENCE
-# =========================
 func start_explosion():
 	await charge_phase()
 	await explosion_phase()
 	queue_free()
 
-
-# =========================
-# CHARGE (warning)
-# =========================
 func charge_phase():
 	anim.play("intelExp_charge")
 	collision.disabled = true
 	
-	# Optional: flicker / warning time
 	await get_tree().create_timer(charge_time).timeout
 
-
-# =========================
-# EXPLOSION
-# =========================
 func explosion_phase():
 	if exploded:
 		return
