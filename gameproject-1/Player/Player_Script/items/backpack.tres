@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://n8qbj4ppbv2t"]
+
+[ext_resource type="Script" uid="uid://7viqkgjvx2p1" path="res://Player/Player_Script/inventory_item.gd" id="1_awcim"]
+[ext_resource type="Texture2D" uid="uid://q7vo6mcofhvd" path="res://assets/backpack.png" id="2_nvbvy"]
+
+[resource]
+script = ExtResource("1_awcim")
+name = "backpack"
+texture = ExtResource("2_nvbvy")
+metadata/_custom_type_script = "uid://7viqkgjvx2p1"

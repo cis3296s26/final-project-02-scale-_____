@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://dhqc7cpm50t6p"]
+
+[ext_resource type="Script" uid="uid://7viqkgjvx2p1" path="res://Player/Player_Script/inventory_item.gd" id="1_8gpj0"]
+[ext_resource type="Texture2D" uid="uid://c5hwrue3rld2i" path="res://assets/boots.png" id="2_06h50"]
+
+[resource]
+script = ExtResource("1_8gpj0")
+name = "jump_boots"
+texture = ExtResource("2_06h50")
+metadata/_custom_type_script = "uid://7viqkgjvx2p1"

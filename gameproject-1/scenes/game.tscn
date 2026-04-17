@@ -350,8 +350,8 @@ position = Vector2(-165, -204)
 destination_scene = "uid://b1o1b3wjkiwl8"
 
 [node name="Pencil" parent="." unique_id=708637299 instance=ExtResource("17_rysoc")]
-position = Vector2(-340.00003, -67.00001)
-scale = Vector2(0.24, 0.24)
+position = Vector2(-345, -65)
+scale = Vector2(0.2, 0.2)
 
 [node name="Boots" parent="." unique_id=1889961507 instance=ExtResource("18_ssvqc")]
 position = Vector2(-379, -65)

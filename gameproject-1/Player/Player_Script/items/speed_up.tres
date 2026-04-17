@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://04mmbuw7utoh"]
+
+[ext_resource type="Script" uid="uid://7viqkgjvx2p1" path="res://Player/Player_Script/inventory_item.gd" id="1_8tchp"]
+[ext_resource type="Texture2D" uid="uid://bnvij4yqa7a6s" path="res://assets/speed_up.png" id="2_k7oo5"]
+
+[resource]
+script = ExtResource("1_8tchp")
+name = "speed_up"
+texture = ExtResource("2_k7oo5")
+metadata/_custom_type_script = "uid://7viqkgjvx2p1"

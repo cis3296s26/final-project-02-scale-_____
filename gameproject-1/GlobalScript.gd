@@ -40,18 +40,45 @@ var items = {
 		"Des": "This is a No. 2 Pencil",
 		"Cost": 5,
 		"Max": 1,
-		"Type": 1, # Equipable -> Combat
+		"Type": 1, # Equipable -> Weapon
 		"Texture": preload("res://assets/pencil.png"),
 		"Resource": preload("res://Player/Player_Script/items/pencil.tres")
 	},
 	2: {
-		"Name": "Boots",
-		"Des": "HIGHER JUMPS!",
-		"Cost": 7,
+		"Name": "Jump_Boots",
+		"Des": "TWICE THE JUMPS!",
+		"Cost": 10,
 		"Max": 1,
 		"Type": 2, # Equipable -> Movement
 		"Texture": preload("res://assets/boots.png"),
-		"Resource": preload("res://Player/Player_Script/items/boots.tres")
+		"Resource": preload("res://Player/Player_Script/items/jump_boots.tres")
+	},
+	3: {
+		"Name": "Dash_Boots",
+		"Des": "GO FURTHER WITH EVERY PRESS!",
+		"Cost": 7,
+		"Max": 1,
+		"Type": 2, # Equipable -> Movement
+		"Texture": preload("res://assets/dash_boots.png"),
+		"Resource": preload("res://Player/Player_Script/items/dash_boots.tres")
+	},
+	4: {
+		"Name": "Backpack",
+		"Des": "Hit them hard with misc. books",
+		"Cost": 12,
+		"Max": 1,
+		"Type": 2, # Equipable -> Movement
+		"Texture": preload("res://assets/backpack.png"),
+		"Resource": preload("res://Player/Player_Script/items/backpack.tres")
+	},
+	5: {
+		"Name": "Damage_Up",
+		"Des": "Increase Damage",
+		"Cost": 4,
+		"Max": 1,
+		"Type": 2, # Equipable -> Movement
+		"Texture": preload("res://assets/damage_up.png"),
+		"Resource": preload("res://Player/Player_Script/items/damage_up.tres")
 	},
 }
 
