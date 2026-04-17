@@ -1,10 +1,10 @@
 [gd_scene format=4 uid="uid://b1o1b3wjkiwl8"]
 
 [ext_resource type="PackedScene" uid="uid://ocyoc1083cuv" path="res://Player/player.tscn" id="1_j1eqn"]
-[ext_resource type="Texture2D" uid="uid://e2xlh8enn8lg" path="res://assets/Environment/Library/wall_tiles.png" id="2_pqxok"]
-[ext_resource type="Texture2D" uid="uid://dylssiqd5r1vk" path="res://assets/Environment/Library/floor_tiles.png" id="3_2441l"]
-[ext_resource type="Texture2D" uid="uid://p1e22xph3kbw" path="res://assets/Environment/Library/tilemap_packed.png" id="4_pqxok"]
-[ext_resource type="Texture2D" uid="uid://oxm3018pe23v" path="res://assets/Environment/Library/libassetpack-tiled.png" id="5_2441l"]
+[ext_resource type="Texture2D" uid="uid://rnm31wq0o2ki" path="res://assets/Environment/Library/wall_tiles.png" id="2_pqxok"]
+[ext_resource type="Texture2D" uid="uid://clqmhteynh5p" path="res://assets/Environment/Library/floor_tiles.png" id="3_2441l"]
+[ext_resource type="Texture2D" uid="uid://b7bytvpydop86" path="res://assets/Environment/Library/tilemap_packed.png" id="4_pqxok"]
+[ext_resource type="Texture2D" uid="uid://ckwcvlii4kdoo" path="res://assets/Environment/Library/libassetpack-tiled.png" id="5_2441l"]
 [ext_resource type="PackedScene" uid="uid://djdsbrmb1pdcx" path="res://scenes/scene_triggers/Transition_Collision.tscn" id="6_2od2x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2441l"]
@@ -2950,3 +2950,7 @@ destination_scene = "uid://bl0hotwquj5em"
 [node name="TransitionCollision2" parent="." unique_id=446502717 instance=ExtResource("6_2od2x")]
 position = Vector2(-419, -84)
 destination_scene = "uid://d08sqp1l4ed3k"
+
+[node name="TransitionCollision3" parent="." unique_id=890209823 instance=ExtResource("6_2od2x")]
+position = Vector2(-342, -85)
+destination_scene = "uid://gip3vl7djw76"
