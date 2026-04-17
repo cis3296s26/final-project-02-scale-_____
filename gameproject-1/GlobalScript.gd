@@ -1,6 +1,6 @@
 extends Node
 
-var max_health = 7
+var max_health = 4
 var can_take_damage = true
 
 var shop_check = false
@@ -28,6 +28,14 @@ var coin_count: int = 999:
 	set(value):
 		coin_count = max(value, 0)
 		coin_changed.emit(coin_count)
+
+func reset_game():
+	inventory.clear() 
+	for slot in inventory_resource.slots:
+		slot.item = null
+		slot.amount = 0
+	inventory_changed.emit()
+	current_health = max_health
 
 var items = {
 	0: {
@@ -150,6 +158,8 @@ func add_item(id: int):
 
 func get_health_potion_count() -> int:
 	for i in inventory:
+		if inventory[i] == null:
+			continue 
 		if inventory[i]["Name"] == "Health Potion":
 			return inventory[i]["Count"]
 	return 0

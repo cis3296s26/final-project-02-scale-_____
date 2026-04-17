@@ -25,12 +25,12 @@ func update(new_slot: InvSlot):
 			var tex_size = item_tex.get_size()
 			item_visual.scale = Vector2(target_size / tex_size.x, target_size / tex_size.y)
 			
-			for i in GlobalScript.inventory:
-				if GlobalScript.inventory[i]["Name"].to_lower() == slot.item.name.to_lower():
-					pass
-			
 			var is_equipped = false
 			for i in GlobalScript.inventory:
+				if GlobalScript.inventory[i] == null:
+					continue
+				if not GlobalScript.inventory[i].has("Name"):
+					continue
 				if GlobalScript.inventory[i]["Name"].to_lower() == slot.item.name.to_lower():
 					is_equipped = GlobalScript.inventory[i]["IsEquipped"]
 					type = GlobalScript.inventory[i]["Type"]
