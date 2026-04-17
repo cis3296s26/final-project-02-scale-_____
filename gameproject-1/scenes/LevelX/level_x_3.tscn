@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://clqmhteynh5p" path="res://assets/Environment/Library/floor_tiles.png" id="5_28cbx"]
 [ext_resource type="Texture2D" uid="uid://rnm31wq0o2ki" path="res://assets/Environment/Library/wall_tiles.png" id="6_kmuxo"]
 [ext_resource type="Texture2D" uid="uid://qbglcs3yp1ol" path="res://assets/Environment/Subway/tilemap_packed.png" id="7_kcb1v"]
+[ext_resource type="PackedScene" uid="uid://bvnr1ms4x38" path="res://Enemy/enemyBoss_laptop/laptopBoss.tscn" id="8_kmuxo"]
+[ext_resource type="PackedScene" uid="uid://d30iq1mq7lcnp" path="res://Objects/platform.tscn" id="9_kcb1v"]
+[ext_resource type="PackedScene" uid="uid://djdsbrmb1pdcx" path="res://scenes/scene_triggers/Transition_Collision.tscn" id="10_nhrd3"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_aqom3"]
 
@@ -1864,15 +1867,48 @@ sources/3 = SubResource("TileSetAtlasSource_0h1jh")
 sources/4 = SubResource("TileSetAtlasSource_k608d")
 sources/5 = SubResource("TileSetAtlasSource_lu3rn")
 
+[sub_resource type="Animation" id="Animation_nhrd3"]
+resource_name = "2-3 slide"
+length = 5.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.19999999, 4.8, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-336, 180), Vector2(-336, 180), Vector2(-48, 180), Vector2(-48, 180)]
+}
+
+[sub_resource type="Animation" id="Animation_0h1jh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-336, 180)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k608d"]
+_data = {
+&"2-3 slide": SubResource("Animation_nhrd3"),
+&"RESET": SubResource("Animation_0h1jh")
+}
+
 [node name="LevelX3" type="Node2D" unique_id=1335516518]
 
 [node name="Player" parent="." unique_id=127306071 instance=ExtResource("2_g2sfh")]
-position = Vector2(-400, 200)
-
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=695192293]
-position = Vector2(0, 3.25)
-zoom = Vector2(4, 4)
-position_smoothing_enabled = true
+position = Vector2(-400, 325)
 
 [node name="Killzone" parent="." unique_id=1555209443 instance=ExtResource("3_3fd11")]
 position = Vector2(1, 404)
@@ -1891,3 +1927,24 @@ texture = ExtResource("4_28cbx")
 tile_set = SubResource("TileSet_y3tkl")
 format = 2
 layer_0/tile_data = PackedInt32Array(1441763, 1310725, 3, 1441764, 1179653, 2, 1441765, 1179653, 2, 1441766, 1179653, 2, 1441767, 1179653, 2, 1441768, 1179653, 2, 1441769, 1179653, 2, 1441770, 1179653, 2, 1441771, 1179653, 2, 1441772, 1179653, 2, 1441773, 1179653, 2, 1441774, 1179653, 2, 1441775, 1179653, 2, 1441776, 1179653, 2, 1441777, 1179653, 2, 1441778, 1179653, 2, 1441779, 1179653, 2, 1441780, 1179653, 2, 1441781, 1179653, 2, 1441782, 1179653, 2, 1441783, 1179653, 2, 1441784, 1179653, 2, 1441785, 1179653, 2, 1441786, 1179653, 2, 1441787, 1179653, 2, 1441788, 1179653, 2, 1441789, 1179653, 2, 1441790, 1179653, 2, 1441791, 1179653, 2, 1376256, 1179653, 2, 1376257, 1179653, 2, 1376258, 1179653, 2, 1376259, 1179653, 2, 1376260, 1376261, 3, 1376227, 1245189, 3, 1310691, 1245189, 3, 1245155, 1245189, 3, 1114083, 1441797, 2, 983011, 1245189, 3, 917475, 1245189, 3, 851939, 1245189, 3, 786403, 1441797, 2, 720867, 1245189, 3, 655331, 1245189, 3, 589795, 1245189, 3, 524259, 1245189, 3, 458723, 1441797, 2, 393187, 1245189, 3, 327651, 1245189, 3, 262115, 1245189, 3, 196579, 1245189, 3, 131043, 1245189, 3, 65507, 1245189, 3, -29, 1245189, 3, -65565, 1245189, 3, 1048547, 1245189, 3, 1114084, 1179653, 2, 1114085, 1179653, 2, 1114086, 1179653, 2, 1114087, 1179653, 2, 1114088, 1245189, 2, 1179619, 1245189, 3, 786404, 1179653, 2, 786405, 1179653, 2, 786406, 1179653, 2, 786407, 1179653, 2, 786408, 1245189, 2, 458724, 1179653, 2, 458725, 1179653, 2, 458726, 1179653, 2, 458727, 1179653, 2, 458728, 1245189, 2, 458751, 1114117, 2, 786431, 1114117, 2, 1114111, 1114117, 2, 393216, 1179653, 2, 720896, 1179653, 2, 1048576, 1179653, 2, 393217, 1179653, 2, 720897, 1179653, 2, 1048577, 1179653, 2, 393218, 1179653, 2, 720898, 1179653, 2, 1048578, 1179653, 2, 393219, 1179653, 2, 720899, 1179653, 2, 1048579, 1179653, 2, -131068, 1245189, 3, -65532, 1245189, 3, 4, 1245189, 3, 65540, 1245189, 3, 131076, 1245189, 3, 196612, 1245189, 3, 262148, 1245189, 3, 327684, 1245189, 3, 393220, 1441797, 3, 458756, 1245189, 3, 524292, 1245189, 3, 589828, 1245189, 3, 655364, 1245189, 3, 720900, 1441797, 3, 786436, 1245189, 3, 851972, 1245189, 3, 917508, 1245189, 3, 983044, 1245189, 3, 1048580, 1441797, 3, 1114116, 1245189, 3, 1179652, 1245189, 3, 1245188, 1245189, 3, 1310724, 1245189, 3)
+
+[node name="laptop_boss" parent="." unique_id=10832283 instance=ExtResource("8_kmuxo")]
+position = Vector2(-197, 156)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=695192293]
+position = Vector2(-191, 200)
+scale = Vector2(2, 2)
+zoom = Vector2(2.3, 2.3)
+position_smoothing_enabled = true
+
+[node name="Platform" parent="." unique_id=780571686 instance=ExtResource("9_kcb1v")]
+position = Vector2(-336, 180)
+scale = Vector2(2, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform" unique_id=471520880]
+libraries/ = SubResource("AnimationLibrary_k608d")
+autoplay = &"2-3 slide"
+
+[node name="TransitionCollision" parent="." unique_id=1844202408 instance=ExtResource("10_nhrd3")]
+position = Vector2(28, 311)
+destination_scene = "uid://b1o1b3wjkiwl8"

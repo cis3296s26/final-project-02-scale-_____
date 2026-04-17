@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://bx4o8ahdlg3vm"]
+
+[ext_resource type="Texture2D" uid="uid://d3j8jugen25qx" path="res://assets/EnemySprites/laptopBoss/IntelExp (1).png" id="1_h1u3r"]
+[ext_resource type="Script" uid="uid://dmunskag6887j" path="res://Enemy/EnemyScripts/laptopBossScripts/intel_exp.gd" id="1_tpixx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kbpo7"]
+size = Vector2(112, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpixx"]
+atlas = ExtResource("1_h1u3r")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbpo7"]
+atlas = ExtResource("1_h1u3r")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nueur"]
+atlas = ExtResource("1_h1u3r")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cxka"]
+atlas = ExtResource("1_h1u3r")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fka2s"]
+atlas = ExtResource("1_h1u3r")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcdst"]
+atlas = ExtResource("1_h1u3r")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_401xe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpixx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kbpo7")
+}],
+"loop": true,
+"name": &"intelExp_active",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nueur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5cxka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fka2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcdst")
+}],
+"loop": true,
+"name": &"intelExp_charge",
+"speed": 5.0
+}]
+
+[node name="intelExp" type="Area2D" unique_id=986147190]
+script = ExtResource("1_tpixx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=808364125]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_kbpo7")
+
+[node name="ExplosionSprite" type="AnimatedSprite2D" parent="." unique_id=701390868]
+show_behind_parent = true
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_401xe")
+animation = &"intelExp_active"
+frame = 1
+frame_progress = 0.60480756
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

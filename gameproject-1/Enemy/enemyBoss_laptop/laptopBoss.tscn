@@ -1,0 +1,152 @@
+[gd_scene format=3 uid="uid://bvnr1ms4x38"]
+
+[ext_resource type="Script" uid="uid://dl5mocd06v8eu" path="res://Enemy/EnemyScripts/laptopBossScripts/laptop_boss.gd" id="1_trhpd"]
+[ext_resource type="Texture2D" uid="uid://bqytrvkbysel4" path="res://assets/EnemySprites/laptopBoss/laptopBoss.png" id="1_ua5n2"]
+[ext_resource type="PackedScene" uid="uid://c3kvjfff7yxf2" path="res://Enemy/enemyBoss_laptop/eclipse_beam.tscn" id="2_rl5uk"]
+[ext_resource type="PackedScene" uid="uid://c5osanypqj3d5" path="res://Enemy/enemyBoss_laptop/vs_projectile.tscn" id="3_5yfaq"]
+[ext_resource type="PackedScene" uid="uid://bx4o8ahdlg3vm" path="res://Enemy/enemyBoss_laptop/intel_exp.tscn" id="4_5yfaq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trhpd"]
+atlas = ExtResource("1_ua5n2")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5atx"]
+atlas = ExtResource("1_ua5n2")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rl5uk"]
+atlas = ExtResource("1_ua5n2")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5yfaq"]
+atlas = ExtResource("1_ua5n2")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iowdn"]
+atlas = ExtResource("1_ua5n2")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjdu4"]
+atlas = ExtResource("1_ua5n2")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vuudd"]
+atlas = ExtResource("1_ua5n2")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scnq5"]
+atlas = ExtResource("1_ua5n2")
+region = Rect2(64, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c25mj"]
+atlas = ExtResource("1_ua5n2")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7mu0"]
+atlas = ExtResource("1_ua5n2")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tm27o"]
+atlas = ExtResource("1_ua5n2")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kh54"]
+atlas = ExtResource("1_ua5n2")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8f0jo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trhpd")
+}],
+"loop": true,
+"name": &"laptop_beam",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5atx")
+}],
+"loop": true,
+"name": &"laptop_burst",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rl5uk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5yfaq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iowdn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjdu4")
+}],
+"loop": true,
+"name": &"laptop_death",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vuudd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_scnq5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c25mj")
+}],
+"loop": true,
+"name": &"laptop_hit",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7mu0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tm27o")
+}],
+"loop": true,
+"name": &"laptop_idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7kh54")
+}],
+"loop": true,
+"name": &"laptop_track",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s0au5"]
+size = Vector2(52, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5atx"]
+size = Vector2(52, 35)
+
+[node name="laptop_boss" type="CharacterBody2D" unique_id=10832283]
+collision_layer = 2
+script = ExtResource("1_trhpd")
+eclipse_beam = ExtResource("2_rl5uk")
+vs_projectile = ExtResource("3_5yfaq")
+intel_exp = ExtResource("4_5yfaq")
+
+[node name="BossSprite2" type="AnimatedSprite2D" parent="." unique_id=353406012]
+sprite_frames = SubResource("SpriteFrames_8f0jo")
+animation = &"laptop_burst"
+frame_progress = 0.26103595
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=452537945]
+shape = SubResource("RectangleShape2D_s0au5")
+
+[node name="EnemyHitbox" type="Area2D" parent="." unique_id=390883702]
+
+[node name="HitboxShape" type="CollisionShape2D" parent="EnemyHitbox" unique_id=217431832]
+shape = SubResource("RectangleShape2D_v5atx")
+
+[connection signal="area_entered" from="EnemyHitbox" to="." method="_on_enemy_hitbox_area_entered"]
