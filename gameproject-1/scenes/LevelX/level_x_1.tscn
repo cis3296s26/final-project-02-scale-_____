@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://ok2eon83bfnk" path="res://Enemy/enemy_rat.tscn" id="12_1my4e"]
 [ext_resource type="PackedScene" uid="uid://b68qhr4464r35" path="res://Objects/coin.tscn" id="13_h0rjy"]
 [ext_resource type="Texture2D" uid="uid://civg3ci48ko5w" path="res://assets/Environment/Background/TuttleLobby.png" id="14_h0rjy"]
+[ext_resource type="PackedScene" uid="uid://djdsbrmb1pdcx" path="res://scenes/scene_triggers/Transition_Collision.tscn" id="15_66874"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_66874"]
 texture = ExtResource("2_aqom3")
@@ -2106,3 +2107,7 @@ position = Vector2(1370, 266)
 
 [node name="enemy_rat7" parent="." unique_id=1795479493 instance=ExtResource("12_1my4e")]
 position = Vector2(1262, 267)
+
+[node name="TransitionCollision" parent="." unique_id=1844202408 instance=ExtResource("15_66874")]
+position = Vector2(1525, 70)
+destination_scene = "uid://c8y14hmeath8b"

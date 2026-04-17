@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://c5osanypqj3d5"]
+
+[ext_resource type="Script" uid="uid://c0kiq7j3rwk56" path="res://Enemy/EnemyScripts/laptopBossScripts/vs_projectile.gd" id="1_mm8qr"]
+[ext_resource type="Texture2D" uid="uid://dpdrlq1enk860" path="res://assets/EnemySprites/laptopBoss/VSprojectile.png" id="1_ntfas"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogpe2"]
+size = Vector2(9, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mm8qr"]
+atlas = ExtResource("1_ntfas")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wktdc"]
+atlas = ExtResource("1_ntfas")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecgjw"]
+atlas = ExtResource("1_ntfas")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75ux0"]
+atlas = ExtResource("1_ntfas")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82cra"]
+atlas = ExtResource("1_ntfas")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67kwg"]
+atlas = ExtResource("1_ntfas")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkvfh"]
+atlas = ExtResource("1_ntfas")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e72ok"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mm8qr")
+}],
+"loop": true,
+"name": &"vs_active",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wktdc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ecgjw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75ux0")
+}],
+"loop": false,
+"name": &"vs_finish",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82cra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67kwg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nkvfh")
+}],
+"loop": false,
+"name": &"vs_spawn",
+"speed": 5.0
+}]
+
+[node name="vs_projectile" type="Area2D" unique_id=299645930]
+collision_layer = 4
+script = ExtResource("1_mm8qr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1070248689]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_ogpe2")
+
+[node name="ProjectileSprite" type="AnimatedSprite2D" parent="." unique_id=838327552]
+sprite_frames = SubResource("SpriteFrames_e72ok")
+animation = &"vs_spawn"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="ProjectileSprite" to="." method="_on_projectile_sprite_animation_finished"]

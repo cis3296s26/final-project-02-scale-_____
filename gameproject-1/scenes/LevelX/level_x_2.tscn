@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://ok2eon83bfnk" path="res://Enemy/enemy_rat.tscn" id="12_0hmgm"]
 [ext_resource type="PackedScene" uid="uid://qr0f0ju3brm6" path="res://Enemy/enemy_pigeon.tscn" id="13_32d6e"]
 [ext_resource type="PackedScene" uid="uid://cuhyldks1lip8" path="res://Enemy/enemy_jan.tscn" id="14_32d6e"]
+[ext_resource type="PackedScene" uid="uid://b68qhr4464r35" path="res://Objects/coin.tscn" id="15_uu148"]
+[ext_resource type="PackedScene" uid="uid://djdsbrmb1pdcx" path="res://scenes/scene_triggers/Transition_Collision.tscn" id="16_8rh7y"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_aqom3"]
 
@@ -1961,5 +1963,24 @@ position = Vector2(658, 258)
 
 [node name="Pidgeon2" parent="." unique_id=1824816534 instance=ExtResource("13_32d6e")]
 position = Vector2(456, 199)
+
+[node name="Coin" parent="." unique_id=1142894061 instance=ExtResource("15_uu148")]
+position = Vector2(176, 189)
+
+[node name="Coin2" parent="." unique_id=694578267 instance=ExtResource("15_uu148")]
+position = Vector2(552, 175)
+
+[node name="Coin3" parent="." unique_id=2145134065 instance=ExtResource("15_uu148")]
+position = Vector2(616, 147)
+
+[node name="Coin4" parent="." unique_id=1862600844 instance=ExtResource("15_uu148")]
+position = Vector2(679, 112)
+
+[node name="Coin5" parent="." unique_id=150761973 instance=ExtResource("15_uu148")]
+position = Vector2(728, 34)
+
+[node name="TransitionCollision" parent="." unique_id=1844202408 instance=ExtResource("16_8rh7y")]
+position = Vector2(784, 182)
+destination_scene = "uid://cetdcwi633q3e"
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
