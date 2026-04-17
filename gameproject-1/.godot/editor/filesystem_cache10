@@ -1,7 +1,7 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1776431523
+::res://::1776432824
 export_presets.cfg::TextFile::-1::1776262042::0::1::::<><><>0<>0<><>::
-GlobalScript.gd::GDScript::247594408924664459::1776399194::0::1::::<>Node<><>0<>0<><>::
+GlobalScript.gd::GDScript::247594408924664459::1776432824::0::1::::<>Node<><>0<>0<><>::
 icon.svg::CompressedTexture2D::822653193914807282::1773416912::1775786532::1::::<><><>0<>0<>95e354c2323f1500a8f6057edb08b387<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 level_2.tscn::PackedScene::5633229171030084073::1776262246::0::1::::<><><>0<>0<><>::uid://ocyoc1083cuv::::res://Player/player.tscn<>uid://dqmi5qjlq3ohh::::res://assets/Environment/Background/pixel (1) copy.png<>uid://wnglhvlhew1p::::res://assets/Environment/Background/pixel (2).png<>uid://u3mchwburvfj::::res://assets/Tiles/Sidescroller Shooter - Central City/Assets/Tiles.png<>uid://bwciki4j0l5dw::::res://assets/Tiles/Sidescroller Shooter - Central City/Assets/Buildings.png<>uid://dm2nf1om6452j::::res://assets/Tiles/Sidescroller Shooter - Central City/Assets/Props-01.png<>uid://bcxlpndbrjrry::::res://assets/Environment/Background/pixel.png<>uid://r5kr8kkp0tua::::res://assets/train cart ok.png
 ::res://assets/::1776396302
@@ -118,7 +118,7 @@ hurt.wav::AudioStreamWAV::5728456655277898296::1773959509::1774019047::1::::<><>
 jump.wav::AudioStreamWAV::5553597477252394833::1773959509::1774019046::1::::<><><>0<>0<>dab285f7b10381be0f9c156978c8160f<>res://.godot/imported/jump.wav-395b727cde98999423d5c020c9c3492f.sample::
 power_up.wav::AudioStreamWAV::4282735600552481238::1773959509::1774019047::1::::<><><>0<>0<>07d42270564150a321216e1acf147fe1<>res://.godot/imported/power_up.wav-8349ffe570559470036ebff4b80f7fc0.sample::
 tap.wav::AudioStreamWAV::5560549480260508210::1773959509::1774019046::1::::<><><>0<>0<>705e4a1fd768bd655a6e0f146d1602ed<>res://.godot/imported/tap.wav-78d4c5a48b21a853d89bec74f20510e7.sample::
-::res://assets/sprites/::1776262247
+::res://assets/sprites/::1776437800
 coin.png::CompressedTexture2D::2786001246281601476::1773959509::1774019046::1::::<><><>0<>0<>8253bb5c79bfe946c4e408adb6705106<>res://.godot/imported/coin.png-c8309bf0f8fb5f3a7d1e96a4eb3f02ce.ctex::
 dummy.png::CompressedTexture2D::988639112971501864::1775174536::1775174555::1::::<><><>0<>0<>5007208a9dc095e3b96561e986e70f0b<>res://.godot/imported/dummy.png-e0caa3df339ab68328c6786ae3bca540.ctex::
 fruit.png::CompressedTexture2D::8489279778303373256::1773959509::1774019046::1::::<><><>0<>0<>41cfea1ab876895baeda8b0eefaf7a56<>res://.godot/imported/fruit.png-3735163b668af10c2b35b52cba81b68a.ctex::
@@ -133,6 +133,7 @@ owl_idle_v1.png::CompressedTexture2D::1364775875411427828::1775171852::177517188
 owl_jump.png::CompressedTexture2D::2082448941989515449::1774583702::1774583702::1::::<><><>0<>0<>819d65ce1ddc0607185f7d0eb8369a71<>res://.godot/imported/owl_jump.png-2ab9cfb6299e2bd04535ba1a54321eec.ctex::
 owl_run.png::CompressedTexture2D::5396792820103107231::1774583702::1774583702::1::::<><><>0<>0<>68f3a2d59a390b5b0784d17afd2ee2eb<>res://.godot/imported/owl_run.png-4f4c7c7a350d68e55efb8bf5adc5f479.ctex::
 owl_weapon_1.png::CompressedTexture2D::6237444085251919585::1776262240::1776262247::1::::<><><>0<>0<>f922fe53baad725122a87bbb22b42416<>res://.godot/imported/owl_weapon_1.png-8a5a4bb3d5100792eed56e67ae824a19.ctex::
+owl_weapon_2.png::CompressedTexture2D::8724023559075811382::1776437726::1776438397::1::::<><><>0<>0<>7c36cba682ba9c9a23cc12fac8731e08<>res://.godot/imported/owl_weapon_2.png-265d41a08df4566bb97a44e2b3ce87f1.ctex::
 platforms.png::CompressedTexture2D::8966698930851432894::1773959509::1774019046::1::::<><><>0<>0<>9a2d5b48fdcdbd268b619fcb397c252a<>res://.godot/imported/platforms.png-3869606db457611ed4193d705dc364e4.ctex::
 shop npc.png::CompressedTexture2D::7418398009899518953::1775829988::1775829996::1::::<><><>0<>0<>33b1ec0927bb8b180f70028cd42a0e20<>res://.godot/imported/shop npc.png-25c9726d63f89aec11d17da45b0e928a.ctex::
 slime_green.png::CompressedTexture2D::1614325635370631561::1773959509::1774019046::1::::<><><>0<>0<>7f3522efa79665a3d0bd83dd584da61b<>res://.godot/imported/slime_green.png-f6349164bf3a0f5189bb927b97af9c58.ctex::
@@ -220,23 +221,23 @@ potion.gd::GDScript::6967493093309803065::1776387986::0::1::::<>Area2D<><>0<>0<>
 potion.tscn::PackedScene::60420688760114434::1776388207::0::1::::<><><>0<>0<><>::uid://c6jduf3n4y02p::::res://Objects/potion.gd<>uid://k5pbgltepvqy::::res://assets/health potion.png
 shop.gd::GDScript::7868975961498349199::1776387655::0::1::::<>CanvasLayer<><>0<>0<><>::
 shop.tscn::PackedScene::3684442209993050298::1776387845::0::1::::<><><>0<>0<><>::uid://dkd15cnanx4j8::::res://Objects/shop.gd<>uid://k5pbgltepvqy::::res://assets/health potion.png
-::res://Player/::1776431498
+::res://Player/::1776434262
 HeartBar.tscn::PackedScene::5863224274499921999::1776347611::0::1::::<><><>0<>0<><>::uid://d1fnkwwqr1ltt::::res://Player/Player_Script/heart_bar.gd<>uid://bpn58mhdm2yvy::::res://assets/pixel heart.png<>uid://bfxtbeyfb7p0g::::res://assets/sprites/coin.png<>uid://k5pbgltepvqy::::res://assets/health potion.png
 Inv_Slot.tscn::PackedScene::6029988728881963142::1776376895::0::1::::<><><>0<>0<><>::uid://dmh7j4fsmdruo::::res://Player/Player_Script/inv_slot.gd
 inv_ui.tscn::PackedScene::6777966147529487246::1776340566::0::1::::<><><>0<>0<><>::uid://g5xic5mxf3dr::::res://Player/Player_Script/inv_ui.gd<>uid://cumgykr8pn3xt::::res://assets/InventorySlotsSet.png<>uid://cr58betwu6ix7::::res://Player/Inv_Slot.tscn
-pause_menu.tscn::PackedScene::1377678192176669719::1776431498::0::1::::<><><>0<>0<><>::uid://d2do35b88pbgk::::res://Player/Player_Script/pause.gd<>uid://c3tkd2w8tyikk::::res://Player/inv_ui.tscn
-player.tscn::PackedScene::988254921774339925::1776397284::0::1::::<><><>0<>0<><>::uid://jxk2qktqjuk5::::res://Player/Player_Script/Player_Main.gd<>uid://b0xnkfl2u3ha::::res://assets/sprites/owl_attack.png<>uid://nts1qpwgoolt::::res://assets/sprites/owl_hurt.png<>uid://c5tev0ac0xtid::::res://Player/Player_Script/movement.gd<>uid://bsealknxkubyq::::res://assets/sprites/owl_idle.png<>uid://rv71njgswo6o::::res://Player/Player_Script/combat.gd<>uid://dsng3lyt605k2::::res://assets/sprites/owl_fall.png<>uid://bwvua8ab5edia::::res://assets/sprites/owl_glide_hit.png<>uid://4w0vocv1r0h6::::res://assets/sprites/owl_jump.png<>uid://ci5inh8x5v1l0::::res://assets/sprites/owl_run.png<>uid://tvmfnjn35yt8::::res://Player/pause_menu.tscn<>uid://cpsgpg6xxfbat::::res://Player/HeartBar.tscn<>uid://cu4p17prjptmv::::res://assets/sprites/owl_weapon_1.png
-::res://Player/Player_Script/::1776431498
-combat.gd::GDScript::1238552346096200116::1776389418::0::1::::<>Node<><>0<>0<><>::
+pause_menu.tscn::PackedScene::1377678192176669719::1776434142::0::1::::<><><>0<>0<><>::uid://d2do35b88pbgk::::res://Player/Player_Script/pause.gd<>uid://c3tkd2w8tyikk::::res://Player/inv_ui.tscn
+player.tscn::PackedScene::988254921774339925::1776434262::0::1::::<><><>0<>0<><>::uid://jxk2qktqjuk5::::res://Player/Player_Script/Player_Main.gd<>uid://b0xnkfl2u3ha::::res://assets/sprites/owl_attack.png<>uid://nts1qpwgoolt::::res://assets/sprites/owl_hurt.png<>uid://c5tev0ac0xtid::::res://Player/Player_Script/movement.gd<>uid://bsealknxkubyq::::res://assets/sprites/owl_idle.png<>uid://rv71njgswo6o::::res://Player/Player_Script/combat.gd<>uid://dsng3lyt605k2::::res://assets/sprites/owl_fall.png<>uid://bwvua8ab5edia::::res://assets/sprites/owl_glide_hit.png<>uid://4w0vocv1r0h6::::res://assets/sprites/owl_jump.png<>uid://ci5inh8x5v1l0::::res://assets/sprites/owl_run.png<>uid://tvmfnjn35yt8::::res://Player/pause_menu.tscn<>uid://cpsgpg6xxfbat::::res://Player/HeartBar.tscn<>uid://cu4p17prjptmv::::res://assets/sprites/owl_weapon_1.png
+::res://Player/Player_Script/::1776434238
+combat.gd::GDScript::1238552346096200116::1776434238::0::1::::<>Node<><>0<>0<><>::
 heart_bar.gd::GDScript::8995302243533577125::1776348498::0::1::::<>CanvasLayer<><>0<>0<><>::
 Inventory.gd::GDScript::1218494807518719550::1776381224::0::1::::Inv<>Resource<><>0<>0<><>::
 inventory_item.gd::GDScript::2289909772837147180::1776365455::0::1::::InvItem<>Resource<><>0<>0<><>::
 inventory_UI_item.gd::GDScript::8080265882714738121::1776371999::0::1::::InvSlot<>Resource<><>0<>0<><>::
-inv_slot.gd::GDScript::8017939366662969298::1776398287::0::1::::<>Panel<><>0<>0<><>::
+inv_slot.gd::GDScript::8017939366662969298::1776433207::0::1::::<>Panel<><>0<>0<><>::
 inv_ui.gd::GDScript::484475323601878015::1776381224::0::1::::<>Control<><>0<>0<><>::
-movement.gd::GDScript::6918011536706337127::1776394895::0::1::::<>Node<><>0<>0<><>::
+movement.gd::GDScript::6918011536706337127::1776433308::0::1::::<>Node<><>0<>0<><>::
 pause.gd::GDScript::9061455581485792194::1776431498::0::1::::<>Control<><>0<>0<><>::
-player_inventory.tres::Resource/Inv::7241860616873701487::1776397284::0::1::::<><><>0<>0<><>::uid://dnee2fecxr4ev::::res://Player/Player_Script/inventory_UI_item.gd<>uid://rmiow06shje1::::res://Player/Player_Script/Inventory.gd
+player_inventory.tres::Resource/Inv::7241860616873701487::1776431840::0::1::::<><><>0<>0<><>::uid://dnee2fecxr4ev::::res://Player/Player_Script/inventory_UI_item.gd<>uid://rmiow06shje1::::res://Player/Player_Script/Inventory.gd
 Player_Main.gd::GDScript::679836524155441258::1776399027::0::1::::<>CharacterBody2D<><>0<>0<><>::
 ::res://Player/Player_Script/items/::1776394701
 backpack.tres::Resource/InvItem::981553209067682197::1776386842::0::1::::<><><>0<>0<><>::uid://7viqkgjvx2p1::::res://Player/Player_Script/inventory_item.gd<>uid://q7vo6mcofhvd::::res://assets/backpack.png
