@@ -2,6 +2,8 @@ extends Control
 
 const SAVE_PATH = "user://keybinds.cfg"
 
+@onready var panel = $Panel
+@onready var title_label = $Panel/Label
 @onready var left_button = $Panel/LeftButton
 @onready var right_button = $Panel/RightButton
 @onready var jump_button = $Panel/JumpButton
@@ -19,24 +21,8 @@ func _ready():
 	process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 
 	load_keybinds()
+	_setup_layout()
 	update_buttons()
-
-	if left_button.pressed.is_connected(_on_left_pressed):
-		left_button.pressed.disconnect(_on_left_pressed)
-	if right_button.pressed.is_connected(_on_right_pressed):
-		right_button.pressed.disconnect(_on_right_pressed)
-	if jump_button.pressed.is_connected(_on_jump_pressed):
-		jump_button.pressed.disconnect(_on_jump_pressed)
-	if shift_button.pressed.is_connected(_on_shift_pressed):
-		shift_button.pressed.disconnect(_on_shift_pressed)
-	if attack_button.pressed.is_connected(_on_attack_pressed):
-		attack_button.pressed.disconnect(_on_attack_pressed)
-	if drop_button.pressed.is_connected(_on_drop_pressed):
-		drop_button.pressed.disconnect(_on_drop_pressed)
-	if reset_button.pressed.is_connected(_on_reset_pressed):
-		reset_button.pressed.disconnect(_on_reset_pressed)
-	if back_button.pressed.is_connected(_on_back_pressed):
-		back_button.pressed.disconnect(_on_back_pressed)
 
 	left_button.pressed.connect(_on_left_pressed)
 	right_button.pressed.connect(_on_right_pressed)
@@ -47,14 +33,45 @@ func _ready():
 	reset_button.pressed.connect(_on_reset_pressed)
 	back_button.pressed.connect(_on_back_pressed)
 
-	_make_panel_smaller()
+func _setup_layout():
+	# make this menu fill the screen
+	set_anchors_preset(Control.PRESET_FULL_RECT)
+	offset_left = 0
+	offset_top = 0
+	offset_right = 0
+	offset_bottom = 0
 
-func _make_panel_smaller():
-	var panel = $Panel
+	# make the panel a centered menu box
 	panel.set_anchors_preset(Control.PRESET_CENTER)
-	panel.custom_minimum_size = Vector2(320, 420)
-	panel.size = Vector2(320, 420)
+	panel.size = Vector2(300, 440)
 	panel.position = (get_viewport_rect().size - panel.size) / 2.0
+
+	# title
+	title_label.position = Vector2(85, 20)
+	title_label.size = Vector2(130, 30)
+
+	# buttons
+	var button_width = 200
+	var button_height = 42
+	var start_x = 50
+	var start_y = 70
+	var gap = 14
+
+	var buttons = [
+		left_button,
+		right_button,
+		jump_button,
+		shift_button,
+		attack_button,
+		drop_button,
+		reset_button,
+		back_button
+	]
+
+	for i in range(buttons.size()):
+		var btn = buttons[i]
+		btn.position = Vector2(start_x, start_y + i * (button_height + gap))
+		btn.size = Vector2(button_width, button_height)
 
 func _on_left_pressed():
 	_on_remap_pressed("left")
@@ -117,6 +134,8 @@ func update_buttons():
 	shift_button.text = "Shift: " + get_action_text("shift")
 	attack_button.text = "Attack: " + get_action_text("attack")
 	drop_button.text = "Drop: " + get_action_text("drop")
+	reset_button.text = "Reset Defaults"
+	back_button.text = "Back"
 
 func get_action_text(action_name: String) -> String:
 	var events = InputMap.action_get_events(action_name)
