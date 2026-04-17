@@ -10,7 +10,9 @@ var is_dashing = false
 @export var glide_gravity = 80
 @export var threshold = 1
 
-@export var jump_charge = 1
+var max_jump_charge = 1
+
+@export var jump_charge = max_jump_charge
 @export var dash_charge = 1
 var dash_direction
 var velocity
@@ -18,17 +20,41 @@ var velocity
 var current_glide_gravity = gravity_cap
 var glide_timer = 0.0
 
+var glide_mod = 1.7
+
 var motion = Vector2()
 var motion_previous = Vector2()
 
 var hit_the_ground = false
 
-func basic_movement(delta: float, player: CharacterBody2D,  animated: AnimatedSprite2D) -> void:
+func _ready():
+	GlobalScript.request_movement_equip_effect.connect(_on_equip_requested)
+	GlobalScript.remove_movement_equip_effect.connect(_on_equip_remove)
 
-	
+func _on_equip_requested(type: int, item_name: String):
+	if item_name.to_lower() == "jump_boots":
+		max_jump_charge = 2
+	elif item_name.to_lower() == "dash_boots":
+		dash_velocity = 320.0
+	elif item_name.to_lower() == "speed_up":
+		speed = 250.0
+	elif item_name.to_lower() == "glide_up":
+		glide_mod = 0.5
+
+func _on_equip_remove(type: int, item_name: String):
+	if item_name.to_lower() == "jump_boots":
+		max_jump_charge = 1
+	elif item_name.to_lower() == "dash_boots":
+		dash_velocity = 220.0
+	elif item_name.to_lower() == "speed_up":
+		speed = 200.0
+	elif item_name.to_lower() == "glide_up":
+		glide_mod = 1.7
+
+func basic_movement(delta: float, player: CharacterBody2D,  animated: AnimatedSprite2D) -> void:	
 	if player.is_on_floor():
 		dash_charge = 1
-		jump_charge = 1
+		jump_charge = max_jump_charge
 		glide_timer = 0.0
 		current_glide_gravity = glide_gravity
 		
@@ -41,7 +67,7 @@ func basic_movement(delta: float, player: CharacterBody2D,  animated: AnimatedSp
 			player.velocity.y = jump_gravity
 
 		elif Input.is_action_pressed("jump") and player.velocity.y > 0:
-			glide_timer += delta*1.7
+			glide_timer += delta * glide_mod
 			
 			if glide_timer > threshold:
 				current_glide_gravity *= 7

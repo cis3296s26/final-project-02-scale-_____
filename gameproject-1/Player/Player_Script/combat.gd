@@ -9,7 +9,7 @@ var damage_value = 1
 @onready var weapon_node = get_tree().root.find_child("Pencil", true, false)
 
 func _ready():
-	GlobalScript.request_equip_effect.connect(_on_equip_requested)
+	GlobalScript.request_combat_equip_effect.connect(_on_equip_requested)
 
 func _on_equip_requested(type: int, item_name: String):
 	pass

@@ -9,7 +9,11 @@ signal health_changed(new_health: int)
 signal coin_changed(new_coin_count: int)
 signal inventory_changed
 
-signal request_equip_effect(type: int, item_name: String)
+signal request_combat_equip_effect(type: int, item_name: String)
+signal request_movement_equip_effect(type: int, item_name: String)
+
+signal remove_combat_equip_effect(type: int, item_name: String)
+signal remove_movement_equip_effect(type: int, item_name: String)
 
 @export var item: ItemList
 
@@ -63,22 +67,40 @@ var items = {
 		"Resource": preload("res://Player/Player_Script/items/dash_boots.tres")
 	},
 	4: {
+		"Name": "Glide_Up",
+		"Des": "Stay in the air for longer",
+		"Cost": 2,
+		"Max": 1,
+		"Type": 2, # Equipable -> Movement
+		"Texture": preload("res://assets/glide_up.png"),
+		"Resource": preload("res://Player/Player_Script/items/glide_up.tres")
+	},
+	5: {
 		"Name": "Backpack",
 		"Des": "Hit them hard with misc. books",
 		"Cost": 12,
 		"Max": 1,
-		"Type": 2, # Equipable -> Movement
+		"Type": 1, # Equipable -> Combat
 		"Texture": preload("res://assets/backpack.png"),
 		"Resource": preload("res://Player/Player_Script/items/backpack.tres")
 	},
-	5: {
+	6: {
 		"Name": "Damage_Up",
 		"Des": "Increase Damage",
 		"Cost": 4,
 		"Max": 1,
-		"Type": 2, # Equipable -> Movement
+		"Type": 1, # Equipable -> Combat
 		"Texture": preload("res://assets/damage_up.png"),
 		"Resource": preload("res://Player/Player_Script/items/damage_up.tres")
+	},
+	7: {
+		"Name": "Speed_Up",
+		"Des": "Increase Speed",
+		"Cost": 4,
+		"Max": 1,
+		"Type": 2, # Equipable -> Movement
+		"Texture": preload("res://assets/speed_up.png"),
+		"Resource": preload("res://Player/Player_Script/items/speed_up.tres")
 	},
 }
 

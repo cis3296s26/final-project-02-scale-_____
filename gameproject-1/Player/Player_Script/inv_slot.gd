@@ -2,6 +2,7 @@ extends Panel
 
 var slot: InvSlot
 var type: int
+var current_state = false
 
 @onready var item_visual: Sprite2D = $CenterContainer/Panel/item_display
 @onready var amount_text: Label = $CenterContainer/Panel/Label
@@ -64,7 +65,7 @@ func on_slot_clicked():
 				else:
 					GlobalScript.inventory[i]["IsEquipped"] = false
 				
-				var current_state = GlobalScript.inventory[i]["IsEquipped"]
+				current_state = GlobalScript.inventory[i]["IsEquipped"]
 				
 				print("state: ", current_state)
 				
@@ -80,14 +81,22 @@ func on_slot_clicked():
 			GlobalScript.use_health_potion()
 			update(slot)
 		
-		if type > 0:
+		if type > 0 and current_state:
 			equip_effect(type, item_name)
+		else:
+			remove_equip_effect(type, item_name)
 
 func equip_effect(type: int, item_name: String):
 	if type == 1:
-		GlobalScript.request_equip_effect.emit(type, item_name)
+		GlobalScript.request_combat_equip_effect.emit(type, item_name)
 	elif type == 2:
-		pass
+		GlobalScript.request_movement_equip_effect.emit(type, item_name)
+
+func remove_equip_effect(type: int, item_name: String):
+	if type == 1:
+		GlobalScript.remove_combat_equip_effect.emit(type, item_name)
+	elif type == 2:
+		GlobalScript.remove_movement_equip_effect.emit(type, item_name)
 
 func _on_mouse_entered() -> void:
 	modulate = Color(1.5, 1.5, 1.5)
