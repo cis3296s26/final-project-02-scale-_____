@@ -2,6 +2,7 @@ extends Panel
 
 var slot: InvSlot
 var type: int
+var type2: int
 var current_state = false
 
 @onready var item_visual: Sprite2D = $CenterContainer/Panel/item_display
@@ -62,6 +63,7 @@ func on_slot_clicked():
 		
 		type = -1
 		var item_name
+		var item_name2
 		for i in GlobalScript.inventory:
 			if GlobalScript.inventory[i]["Name"].to_lower() == slot.item.name.to_lower():
 				if !GlobalScript.inventory[i]["IsEquipped"]:
@@ -70,11 +72,18 @@ func on_slot_clicked():
 					GlobalScript.inventory[i]["IsEquipped"] = false
 				
 				current_state = GlobalScript.inventory[i]["IsEquipped"]
-				
 				print("state: ", current_state)
-				
 				type = GlobalScript.inventory[i]["Type"]
 				item_name = GlobalScript.inventory[i]["Name"]
+				
+				for f in GlobalScript.inventory:
+					if GlobalScript.inventory[f]["Name"].to_lower() != slot.item.name.to_lower():
+						if GlobalScript.inventory[i]["Type"] ==  GlobalScript.inventory[f]["Type"]:
+							if GlobalScript.inventory[f]["IsEquipped"]:
+								GlobalScript.inventory[f]["IsEquipped"] = false
+								type2 = GlobalScript.inventory[f]["Type"]
+								item_name2 = GlobalScript.inventory[f]["Name"]
+								remove_equip_effect(type2, item_name2)
 				
 				GlobalScript.inventory_changed.emit()
 				break
@@ -84,22 +93,22 @@ func on_slot_clicked():
 		if type == 0:
 			GlobalScript.use_health_potion()
 			update(slot)
-		
+			
 		if type > 0 and current_state:
 			equip_effect(type, item_name)
-		else:
+		elif type > 0 and !current_state:
 			remove_equip_effect(type, item_name)
 
 func equip_effect(type: int, item_name: String):
-	if type == 1:
+	if type == 1 or type == 3:
 		GlobalScript.request_combat_equip_effect.emit(type, item_name)
-	elif type == 2:
+	elif type == 2 or type == 4 or type == 5:
 		GlobalScript.request_movement_equip_effect.emit(type, item_name)
 
 func remove_equip_effect(type: int, item_name: String):
-	if type == 1:
+	if type == 1 or type == 3:
 		GlobalScript.remove_combat_equip_effect.emit(type, item_name)
-	elif type == 2:
+	elif type == 2 or type == 4 or type == 5:
 		GlobalScript.remove_movement_equip_effect.emit(type, item_name)
 
 func _on_mouse_entered() -> void:

@@ -34,10 +34,11 @@ func _ready():
 func _on_equip_requested(type: int, item_name: String):
 	if item_name.to_lower() == "jump_boots":
 		max_jump_charge = 2
+		speed = 200.0
 	elif item_name.to_lower() == "dash_boots":
 		dash_velocity = 320.0
 	elif item_name.to_lower() == "speed_up":
-		speed = 250.0
+		speed += 40.0
 	elif item_name.to_lower() == "glide_up":
 		glide_mod = 0.5
 
@@ -47,7 +48,7 @@ func _on_equip_remove(type: int, item_name: String):
 	elif item_name.to_lower() == "dash_boots":
 		dash_velocity = 220.0
 	elif item_name.to_lower() == "speed_up":
-		speed = 200.0
+		speed -= 40.0
 	elif item_name.to_lower() == "glide_up":
 		glide_mod = 1.7
 

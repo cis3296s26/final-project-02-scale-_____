@@ -85,7 +85,7 @@ var items = {
 		"Des": "Stay in the air for longer",
 		"Cost": 2,
 		"Max": 1,
-		"Type": 2, # Equipable -> Movement
+		"Type": 5, # Equipable -> Movement
 		"Texture": preload("res://assets/glide_up.png"),
 		"Resource": preload("res://Player/Player_Script/items/glide_up.tres")
 	},
@@ -103,7 +103,7 @@ var items = {
 		"Des": "Increase Damage",
 		"Cost": 4,
 		"Max": 1,
-		"Type": 1, # Equipable -> Combat
+		"Type": 3, # Equipable -> Combat stat
 		"Texture": preload("res://assets/damage_up.png"),
 		"Resource": preload("res://Player/Player_Script/items/damage_up.tres")
 	},
@@ -112,7 +112,7 @@ var items = {
 		"Des": "Increase Speed",
 		"Cost": 4,
 		"Max": 1,
-		"Type": 2, # Equipable -> Movement
+		"Type": 4, # Equipable -> Movement
 		"Texture": preload("res://assets/speed_up.png"),
 		"Resource": preload("res://Player/Player_Script/items/speed_up.tres")
 	},
