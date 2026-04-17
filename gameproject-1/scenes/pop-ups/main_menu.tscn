@@ -29,10 +29,8 @@ color = Color(0.6156863, 0.13333334, 0.20784314, 1)
 
 [node name="Container" type="Panel" parent="." unique_id=2144341206]
 layout_mode = 0
-offset_left = 250.93556
-offset_top = 154.9648
-offset_right = 1530.9355
-offset_bottom = 874.9648
+offset_right = 1280.0
+offset_bottom = 720.0
 scale = Vector2(7.765, 2.5)
 theme = SubResource("Theme_06t4h")
 theme_override_styles/panel = SubResource("StyleBoxTexture_l6cm7")
@@ -85,12 +83,12 @@ text = "Quit"
 
 [node name="Bell Boss Test" type="Button" parent="Container" unique_id=1969762364]
 layout_mode = 0
-offset_left = 38.83334
+offset_left = 36.24804
 offset_top = 109.95906
-offset_right = 131.83337
+offset_right = 155.24805
 offset_bottom = 140.95906
 scale = Vector2(0.24853016, 0.7843576)
-text = "Test Boss"
+text = "Belltower Test"
 
 [connection signal="pressed" from="Container/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="Container/Continue" to="." method="_on_continue_pressed"]

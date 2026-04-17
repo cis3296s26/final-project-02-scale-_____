@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://kmkusuntllkj"]
+
+[ext_resource type="Texture2D" uid="uid://yd2n6ajlw53d" path="res://assets/Environment/Background/templeFinal.jpg" id="1_dwqd2"]
+[ext_resource type="Script" uid="uid://dbqvwq8u7ua5r" path="res://scenes/pop-ups/pop-up scripts/end_screen.gd" id="1_jo86m"]
+[ext_resource type="Texture2D" uid="uid://pwxkjmqmp3sv" path="res://assets/Environment/Background/owl_grad.png" id="2_jo86m"]
+[ext_resource type="Script" uid="uid://xbhmboffhejg" path="res://scenes/pop-ups/pop-up scripts/main_menu.gd" id="3_pqki5"]
+
+[node name="EndScreen" type="Control" unique_id=1672939841]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -784.6249
+offset_bottom = -339.3066
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.892, 2.942)
+script = ExtResource("1_jo86m")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=184898641]
+position = Vector2(247.68756, 192.72604)
+scale = Vector2(0.30928826, 0.48918444)
+texture = ExtResource("1_dwqd2")
+
+[node name="Owl" type="Sprite2D" parent="." unique_id=984433779]
+position = Vector2(257.96506, 302.85522)
+scale = Vector2(6.46061, 8.826853)
+texture = ExtResource("2_jo86m")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1300174372]
+light_mask = 7
+visibility_layer = 7
+layout_mode = 0
+offset_left = 170.863
+offset_top = -80.0
+offset_right = 339.92773
+offset_bottom = 290.0
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1671619707]
+layout_mode = 2
+text = "YOU GRADUATED.
+CONGRADULATIONS!
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Main Menu" type="Button" parent="VBoxContainer" unique_id=488765729]
+layout_mode = 2
+text = "Main Menu"
+script = ExtResource("3_pqki5")
+
+[connection signal="pressed" from="VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
