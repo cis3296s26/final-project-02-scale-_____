@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://c3tkd2w8tyikk"]
 
+[ext_resource type="Script" uid="uid://g5xic5mxf3dr" path="res://Player/Player_Script/inv_ui.gd" id="1_06yyl"]
 [ext_resource type="Texture2D" uid="uid://cumgykr8pn3xt" path="res://assets/InventorySlotsSet.png" id="1_p0v1q"]
 [ext_resource type="PackedScene" uid="uid://cr58betwu6ix7" path="res://Player/Inv_Slot.tscn" id="2_ta10a"]
 
 [node name="Inv_UI" type="Control" unique_id=766622232]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_06yyl")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=319024881]
 layout_mode = 1
@@ -14,14 +16,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -99.0
-offset_top = -49.0
-offset_right = 59.75
-offset_bottom = 58.0
+offset_left = -56.0
+offset_top = -56.0
+offset_right = 56.0
+offset_bottom = 56.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_p0v1q")
-region_rect = Rect2(225, 80, 22, 22)
+region_rect = Rect2(253, 1, 73, 73)
 
 [node name="GridContainer" type="GridContainer" parent="NinePatchRect" unique_id=267877648]
 layout_mode = 1
@@ -30,13 +32,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -68.0
-offset_top = -40.25
-offset_right = 68.0
-offset_bottom = 40.25
+offset_left = -50.25
+offset_top = -50.0
+offset_right = 50.25
+offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
-columns = 5
+columns = 4
 
 [node name="InvSlot1" parent="NinePatchRect/GridContainer" unique_id=616002814 instance=ExtResource("2_ta10a")]
 layout_mode = 2
@@ -81,4 +83,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="InvSlot15" parent="NinePatchRect/GridContainer" unique_id=1536977947 instance=ExtResource("2_ta10a")]
+layout_mode = 2
+
+[node name="InvSlot16" parent="NinePatchRect/GridContainer" unique_id=2019130997 instance=ExtResource("2_ta10a")]
 layout_mode = 2

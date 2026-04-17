@@ -40,24 +40,10 @@ func _on_buy_pressed() -> void:
 	var hasItem = false
 	var checkout = false
 	if GlobalScript.coin_count >= GlobalScript.items[currItem]["Cost"]:
-		for i in GlobalScript.inventory:
-			if GlobalScript.inventory[i]["Name"] == GlobalScript.items[currItem]["Name"]:
-				if GlobalScript.inventory[i]["Count"] == GlobalScript.items[currItem]["Max"]:
-					hasItem = true
-					break
-				else:
-					GlobalScript.inventory[i]["Count"] += 1
-					checkout = true
-					hasItem = true
+		print(currItem)
+		GlobalScript.add_item(currItem)
+		checkout = GlobalScript.shop_check
 		
-		if hasItem == false:
-			checkout = true
-			var tempDic = GlobalScript.items[currItem].duplicate(true)
-			tempDic["Count"] = 1
-			GlobalScript.inventory[GlobalScript.inventory.size()] = tempDic
-			
 	if checkout:
 		GlobalScript.coin_count -= GlobalScript.items[currItem]["Cost"]
 		GlobalScript.inventory_changed.emit()
-	
-	print(GlobalScript.inventory)

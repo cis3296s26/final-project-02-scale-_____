@@ -7,16 +7,16 @@ load_path = "res://.godot/imported/InventorySlotsSet.png-ddba8c72c292fe36812637d
 
 [node name="InvSlot" type="Panel" unique_id=616002814]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(24, 24)
+custom_minimum_size = Vector2(22, 22)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.0
-offset_right = -26.0
-offset_bottom = -26.0
+offset_left = -11.0
+offset_top = -11.0
+offset_right = 11.0
+offset_bottom = 11.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_p87nd")
@@ -27,5 +27,36 @@ centered = false
 region_enabled = true
 region_rect = Rect2(225, 80, 22, 22)
 
-[node name="item_display" type="Sprite2D" parent="." unique_id=607685426]
-self_modulate = Color(1, 1, 1, 0)
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1388296830]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.0
+offset_top = -11.0
+offset_right = 11.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CenterContainer" unique_id=363061776]
+layout_mode = 2
+
+[node name="item_display" type="Sprite2D" parent="CenterContainer/Panel" unique_id=607685426]
+
+[node name="Label" type="Label" parent="CenterContainer/Panel" unique_id=892801325]
+custom_minimum_size = Vector2(19, 23)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 19.0
+offset_bottom = 22.0
+scale = Vector2(0.6, 0.6)
+text = "99"
+horizontal_alignment = 2
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

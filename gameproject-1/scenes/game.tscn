@@ -14,8 +14,10 @@
 [ext_resource type="PackedScene" uid="uid://cyjo3huqbpx0v" path="res://Enemy/enemyBoss_bell.tscn" id="12_dinhu"]
 [ext_resource type="PackedScene" uid="uid://disyjg6fei82k" path="res://Enemy/enemyBoss_minionBell.tscn" id="13_kvuet"]
 [ext_resource type="Texture2D" uid="uid://l4ee0stgx0c1" path="res://assets/sprites/updated shop npc.png" id="14_ir15t"]
-[ext_resource type="PackedScene" uid="uid://i6t3y8yjemwc" path="res://Objects/shop.tscn" id="15_ca42v"]
+[ext_resource type="PackedScene" uid="uid://bsq1hv8jcqyvq" path="res://Objects/shop.tscn" id="15_ca42v"]
 [ext_resource type="PackedScene" uid="uid://djdsbrmb1pdcx" path="res://scenes/scene_triggers/Transition_Collision.tscn" id="16_ca42v"]
+[ext_resource type="PackedScene" uid="uid://c2xwbi01iw8k8" path="res://Objects/pencil.tscn" id="17_rysoc"]
+[ext_resource type="PackedScene" uid="uid://dbnvbcltg0kf8" path="res://Objects/Boots.tscn" id="18_ssvqc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
 texture = ExtResource("3_lnu2h")
@@ -330,7 +332,7 @@ position = Vector2(-1613, -45)
 [node name="BellBoss2" parent="." unique_id=1830939212 instance=ExtResource("13_kvuet")]
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1147397055]
-position = Vector2(1123, 7)
+position = Vector2(-221, -73)
 script = SubResource("GDScript_rysoc")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1767993539]
@@ -346,6 +348,13 @@ shape = SubResource("CapsuleShape2D_ssvqc")
 [node name="TransitionCollision" parent="." unique_id=1844202408 instance=ExtResource("16_ca42v")]
 position = Vector2(-165, -204)
 destination_scene = "uid://b1o1b3wjkiwl8"
+
+[node name="Pencil" parent="." unique_id=708637299 instance=ExtResource("17_rysoc")]
+position = Vector2(-340.00003, -67.00001)
+scale = Vector2(0.24, 0.24)
+
+[node name="Boots" parent="." unique_id=1889961507 instance=ExtResource("18_ssvqc")]
+position = Vector2(-379, -65)
 
 [connection signal="body_entered" from="LavaAnt/Area2D" to="LavaAnt" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
