@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://tvmfnjn35yt8" path="res://Player/pause_menu.tscn" id="7_vtle1"]
 [ext_resource type="PackedScene" uid="uid://cpsgpg6xxfbat" path="res://Player/HeartBar.tscn" id="9_00tjw"]
 [ext_resource type="Texture2D" uid="uid://cu4p17prjptmv" path="res://assets/sprites/owl_weapon_1.png" id="9_p5o4e"]
+[ext_resource type="Texture2D" uid="uid://dwj8nm2ch13lq" path="res://assets/sprites/owl_weapon_2.png" id="10_gu6f8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w6hf4"]
 size = Vector2(2.75, 6.25)
@@ -132,6 +133,38 @@ region = Rect2(0, 32, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_8viyr"]
 atlas = ExtResource("9_p5o4e")
 region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sm0op"]
+atlas = ExtResource("10_gu6f8")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76lrf"]
+atlas = ExtResource("10_gu6f8")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efx54"]
+atlas = ExtResource("10_gu6f8")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_755ss"]
+atlas = ExtResource("10_gu6f8")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbimk"]
+atlas = ExtResource("10_gu6f8")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0h3t"]
+atlas = ExtResource("10_gu6f8")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4o1l"]
+atlas = ExtResource("10_gu6f8")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2n6q"]
+atlas = ExtResource("10_gu6f8")
+region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x8e5g"]
 animations = [{
@@ -271,6 +304,35 @@ animations = [{
 "loop": false,
 "name": &"owl_weapon_1",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sm0op")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76lrf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efx54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_755ss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bbimk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0h3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4o1l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2n6q")
+}],
+"loop": false,
+"name": &"owl_weapon_2",
+"speed": 8.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x3vf3"]
@@ -288,7 +350,7 @@ shape = SubResource("RectangleShape2D_w6hf4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1586020943]
 position = Vector2(0, 4)
 sprite_frames = SubResource("SpriteFrames_x8e5g")
-animation = &"owl_weapon_1"
+animation = &"owl_weapon_2"
 centered = false
 offset = Vector2(-16, -24)
 
@@ -311,6 +373,8 @@ position = Vector2(14.5, -3)
 shape = SubResource("RectangleShape2D_x3vf3")
 disabled = true
 
+[node name="Timer" type="Timer" parent="Combat" unique_id=910257126]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1294178394]
 
 [node name="PauseMenu" parent="CanvasLayer" unique_id=358881738 instance=ExtResource("7_vtle1")]
@@ -325,4 +389,5 @@ visible = false
 [connection signal="timeout" from="Movement/DashDurationTimer" to="Movement" method="_on_dash_duration_timer_timeout"]
 [connection signal="timeout" from="Movement/DashCooldownTimer" to="Movement" method="_on_dash_cooldown_timer_timeout"]
 [connection signal="area_entered" from="Combat/AttackCollision" to="Combat" method="_on_attack_collision_area_entered"]
+[connection signal="timeout" from="Combat/Timer" to="Combat" method="_on_delayed_timeout"]
 [connection signal="timeout" from="KnockbackTimer" to="." method="_on_knockback_timer_timeout"]

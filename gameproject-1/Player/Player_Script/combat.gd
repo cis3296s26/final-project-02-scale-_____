@@ -18,7 +18,6 @@ func _ready():
 func _on_equip_requested(type: int, item_name: String):
 	if item_name.to_lower() == "pencil":
 		weapon_flag = 1
-		damage_value += 1
 		print("enable1: ",weapon_flag)
 	elif item_name.to_lower() == "backpack":
 		weapon_flag = 2
@@ -52,6 +51,7 @@ func handle_combat_animations(player: CharacterBody2D, animated: AnimatedSprite2
 				$AttackCollision/CollisionShape2D.position = Vector2(9, -3)
 				$AttackCollision/CollisionShape2D.shape.size = Vector2(5, 10)
 				$AttackCollision/CollisionShape2D.set_deferred("disabled", false)
+				print(damage_value)
 				isAttacking = true	
 				attack_state_changed.emit(true)
 			elif weapon_flag == 1:
@@ -59,20 +59,27 @@ func handle_combat_animations(player: CharacterBody2D, animated: AnimatedSprite2
 				$AttackCollision/CollisionShape2D.position = Vector2(14, -3)
 				$AttackCollision/CollisionShape2D.shape.size = Vector2(20, 10)
 				$AttackCollision/CollisionShape2D.set_deferred("disabled", false)
+				print(damage_value)
 				isAttacking = true	
 				attack_state_changed.emit(true)
 			elif weapon_flag == 2:
-				pass
+				animated.play("owl_weapon_2")
+				$AttackCollision/CollisionShape2D.position = Vector2(9, -3)
+				$AttackCollision/CollisionShape2D.shape.size = Vector2(5, 10)
+				$Timer.start(0.5)
+				isAttacking = true	
+				attack_state_changed.emit(true)
 		else:
 			animated.play("owl_glide_attack")
 			$AttackCollision/CollisionShape2D.position = Vector2(9, -3)
 			$AttackCollision/CollisionShape2D.shape.size = Vector2(10, 10)
 			$AttackCollision/CollisionShape2D.set_deferred("disabled", false)
+			print(damage_value)
 			isAttacking = true	
 			attack_state_changed.emit(true)
 
 func _on_animated_sprite_2d_animation_finished() -> void:
-	if sprite.animation == "owl_attack" or sprite.animation == "owl_glide_attack" or sprite.animation == "owl_weapon_1":
+	if sprite.animation == "owl_attack" or sprite.animation == "owl_glide_attack" or sprite.animation == "owl_weapon_1" or sprite.animation == "owl_weapon_2":
 		$AttackCollision/CollisionShape2D.set_deferred("disabled", true)
 		isAttacking = false
 		attack_state_changed.emit(false)
@@ -84,3 +91,7 @@ func _on_attack_collision_area_entered(area: Area2D) -> void:
 		attack_state_changed.emit(false)
 		var weapon_pos = weapon_hitbox.global_position
 		area.owner._damage(damage_value, weapon_pos)
+
+func _on_delayed_timeout() -> void:
+	$AttackCollision/CollisionShape2D.set_deferred("disabled", false)
+	print(damage_value)
