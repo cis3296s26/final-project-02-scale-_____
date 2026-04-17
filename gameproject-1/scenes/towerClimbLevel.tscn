@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://d1bvtbwghxhmy"]
 
+[ext_resource type="Script" uid="uid://1irko3ehrbee" path="res://scenes/tower_climb_level.gd" id="1_db4ux"]
 [ext_resource type="Texture2D" uid="uid://ouyb7udc2f4h" path="res://assets/Environment/Background/towerClimb.png" id="1_htm8m"]
 [ext_resource type="Texture2D" uid="uid://cqv2s4h18uqi6" path="res://assets/sprites/world_tileset.png" id="2_jqbhw"]
 [ext_resource type="PackedScene" uid="uid://ocyoc1083cuv" path="res://Player/player.tscn" id="3_db4ux"]
@@ -177,6 +178,7 @@ sources/0 = SubResource("TileSetAtlasSource_lbhrr")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u5sy4"]
 
 [node name="Game" type="Node2D" unique_id=1469360423]
+script = ExtResource("1_db4ux")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=34394928]
 offset_left = -295.0

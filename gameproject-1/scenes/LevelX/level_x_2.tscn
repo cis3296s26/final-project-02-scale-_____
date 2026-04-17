@@ -1,16 +1,17 @@
 [gd_scene format=3 uid="uid://c8y14hmeath8b"]
 
+[ext_resource type="Script" uid="uid://dxc6hc6jdbven" path="res://scenes/LevelX/level_x_2.gd" id="1_784ck"]
 [ext_resource type="Texture2D" uid="uid://cqv2s4h18uqi6" path="res://assets/sprites/world_tileset.png" id="1_dr18y"]
 [ext_resource type="PackedScene" uid="uid://ocyoc1083cuv" path="res://Player/player.tscn" id="2_4n4xg"]
 [ext_resource type="PackedScene" uid="uid://68r8k6qparxw" path="res://scenes/scene_triggers/void.tscn" id="3_h7vqc"]
 [ext_resource type="Texture2D" uid="uid://clqmhteynh5p" path="res://assets/Environment/Library/floor_tiles.png" id="5_ficdd"]
 [ext_resource type="Texture2D" uid="uid://rnm31wq0o2ki" path="res://assets/Environment/Library/wall_tiles.png" id="6_rt447"]
 [ext_resource type="Texture2D" uid="uid://qbglcs3yp1ol" path="res://assets/Environment/Subway/tilemap_packed.png" id="7_dqxa2"]
-[ext_resource type="Texture2D" uid="uid://ijetkryrfmh1" path="res://assets/Environment/Background/TuttleElev.png" id="7_rt447"]
-[ext_resource type="Texture2D" uid="uid://bknlxv0c61t4x" path="res://assets/Environment/Background/TuttleWall.png" id="8_dqxa2"]
-[ext_resource type="Texture2D" uid="uid://0xqrx4kbsvr0" path="res://assets/Environment/Background/TuttleCfront.png" id="9_7mkxx"]
+[ext_resource type="Texture2D" uid="uid://bchn0q61vke2l" path="res://assets/Environment/Background/TuttleElev.png" id="7_rt447"]
+[ext_resource type="Texture2D" uid="uid://se7mfgvfeyrf" path="res://assets/Environment/Background/TuttleWall.png" id="8_dqxa2"]
+[ext_resource type="Texture2D" uid="uid://bcutd630vmiaj" path="res://assets/Environment/Background/TuttleCfront.png" id="9_7mkxx"]
 [ext_resource type="Texture2D" uid="uid://l4ee0stgx0c1" path="res://assets/sprites/updated shop npc.png" id="10_7mkxx"]
-[ext_resource type="PackedScene" uid="uid://i6t3y8yjemwc" path="res://Objects/shop.tscn" id="11_s0mae"]
+[ext_resource type="PackedScene" uid="uid://bsq1hv8jcqyvq" path="res://Objects/shop.tscn" id="11_s0mae"]
 [ext_resource type="PackedScene" uid="uid://ok2eon83bfnk" path="res://Enemy/enemy_rat.tscn" id="12_0hmgm"]
 [ext_resource type="PackedScene" uid="uid://qr0f0ju3brm6" path="res://Enemy/enemy_pigeon.tscn" id="13_32d6e"]
 [ext_resource type="PackedScene" uid="uid://cuhyldks1lip8" path="res://Enemy/enemy_jan.tscn" id="14_32d6e"]
@@ -1896,6 +1897,7 @@ func _on_body_entered(body: Node2D) -> void:
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_32d6e"]
 
 [node name="LevelX2" type="Node2D" unique_id=1335516518]
+script = ExtResource("1_784ck")
 
 [node name="Player" parent="." unique_id=127306071 instance=ExtResource("2_4n4xg")]
 position = Vector2(-313, 187)

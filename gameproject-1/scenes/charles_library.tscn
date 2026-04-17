@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://b1o1b3wjkiwl8"]
 
+[ext_resource type="Script" uid="uid://bx6sv6p4thogq" path="res://scenes/charles_library.gd" id="1_a51fm"]
 [ext_resource type="PackedScene" uid="uid://ocyoc1083cuv" path="res://Player/player.tscn" id="1_j1eqn"]
 [ext_resource type="Texture2D" uid="uid://rnm31wq0o2ki" path="res://assets/Environment/Library/wall_tiles.png" id="2_pqxok"]
 [ext_resource type="Texture2D" uid="uid://clqmhteynh5p" path="res://assets/Environment/Library/floor_tiles.png" id="3_2441l"]
@@ -2915,6 +2916,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_2od2x")
 
 [node name="CharlesLibrary" type="Node2D" unique_id=887000280]
+script = ExtResource("1_a51fm")
 
 [node name="Player" parent="." unique_id=127306071 instance=ExtResource("1_j1eqn")]
 position = Vector2(-576, -8)

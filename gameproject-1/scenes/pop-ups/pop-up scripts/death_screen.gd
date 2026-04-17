@@ -13,4 +13,5 @@ func _on_main_menu_pressed() -> void:
 func _on_respawn_pressed() -> void:
 	print("Respawning...")
 	GlobalScript.reset_game()
-	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	if GlobalScript.current_level_path != "":
+		get_tree().change_scene_to_file(GlobalScript.current_level_path)

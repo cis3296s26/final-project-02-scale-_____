@@ -19,6 +19,8 @@ signal remove_movement_equip_effect(type: int, item_name: String)
 
 @export var inventory_resource: Inv = preload("res://Player/Player_Script/player_inventory.tres")
 
+var current_level_path: String = ""
+
 var current_health: int = max_health:
 	set(value):
 		current_health = clamp(value, 0, max_health)

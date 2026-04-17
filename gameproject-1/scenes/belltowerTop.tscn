@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d08sqp1l4ed3k"]
 
 [ext_resource type="Texture2D" uid="uid://cqv2s4h18uqi6" path="res://assets/sprites/world_tileset.png" id="1_mhpld"]
+[ext_resource type="Script" uid="uid://8q17yoorinv7" path="res://scenes/belltower_top.gd" id="1_nrh45"]
 [ext_resource type="Texture2D" uid="uid://cgjaw0r53b36r" path="res://assets/Environment/Background/SkyViewPixel.png" id="1_o1fnh"]
 [ext_resource type="PackedScene" uid="uid://ocyoc1083cuv" path="res://Player/player.tscn" id="4_5mkyb"]
 [ext_resource type="PackedScene" uid="uid://68r8k6qparxw" path="res://scenes/scene_triggers/void.tscn" id="5_ixl61"]
@@ -174,6 +175,7 @@ sources/0 = SubResource("TileSetAtlasSource_lbhrr")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u5sy4"]
 
 [node name="Game" type="Node2D" unique_id=1469360423]
+script = ExtResource("1_nrh45")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=34394928]
 offset_left = -295.0

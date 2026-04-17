@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://cetdcwi633q3e"]
 
+[ext_resource type="Script" uid="uid://cigj1hch0oluo" path="res://scenes/LevelX/level_x_3.gd" id="1_0h1jh"]
 [ext_resource type="Texture2D" uid="uid://cqv2s4h18uqi6" path="res://assets/sprites/world_tileset.png" id="1_xwf1r"]
 [ext_resource type="PackedScene" uid="uid://ocyoc1083cuv" path="res://Player/player.tscn" id="2_g2sfh"]
 [ext_resource type="PackedScene" uid="uid://68r8k6qparxw" path="res://scenes/scene_triggers/void.tscn" id="3_3fd11"]
-[ext_resource type="Texture2D" uid="uid://dqt7fqm84rbsw" path="res://assets/Environment/Background/Tuttle305a.png" id="4_28cbx"]
+[ext_resource type="Texture2D" uid="uid://cecsr5saidchb" path="res://assets/Environment/Background/Tuttle305a.png" id="4_28cbx"]
 [ext_resource type="Texture2D" uid="uid://clqmhteynh5p" path="res://assets/Environment/Library/floor_tiles.png" id="5_28cbx"]
 [ext_resource type="Texture2D" uid="uid://rnm31wq0o2ki" path="res://assets/Environment/Library/wall_tiles.png" id="6_kmuxo"]
 [ext_resource type="Texture2D" uid="uid://qbglcs3yp1ol" path="res://assets/Environment/Subway/tilemap_packed.png" id="7_kcb1v"]
@@ -1906,6 +1907,7 @@ _data = {
 }
 
 [node name="LevelX3" type="Node2D" unique_id=1335516518]
+script = ExtResource("1_0h1jh")
 
 [node name="Player" parent="." unique_id=127306071 instance=ExtResource("2_g2sfh")]
 position = Vector2(-400, 325)
