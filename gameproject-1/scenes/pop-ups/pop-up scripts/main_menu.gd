@@ -31,4 +31,4 @@ func _on_options_pressed() -> void:
 
 func _on_bell_boss_test_pressed() -> void:
 	print("Testing boss")
-	get_tree().change_scene_to_file("res://scenes/belltowerTop.tscn")
+	get_tree().change_scene_to_file("res://scenes/towerClimbLevel.tscn")
