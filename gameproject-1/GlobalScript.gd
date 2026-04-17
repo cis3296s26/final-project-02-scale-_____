@@ -1,5 +1,6 @@
 extends Node
 
+var set_coin = 999
 var max_health = 4
 var can_take_damage = true
 
@@ -28,7 +29,7 @@ var current_health: int = max_health:
 		current_health = clamp(value, 0, max_health)
 		health_changed.emit(current_health)
 
-var coin_count: int = 999:
+var coin_count: int = set_coin:
 	set(value):
 		coin_count = max(value, 0)
 		coin_changed.emit(coin_count)
@@ -40,6 +41,7 @@ func reset_game():
 		slot.amount = 0
 	inventory_changed.emit()
 	current_health = max_health
+	coin_count = set_coin
 
 var items = {
 	0: {
