@@ -74,7 +74,7 @@ func handle_direction(state: bool) -> void:
 		combat.scale.x = 1
 		animatedSprite.flip_h = false
 
-func take_damage(amount: int, weapon_position: Vector2) -> void:
+func take_damage(amount: int, weapon_position: Vector2, bossPhase: int = 0) -> void:
 	if not GlobalScript.can_take_damage:
 		return
 	
@@ -83,7 +83,14 @@ func take_damage(amount: int, weapon_position: Vector2) -> void:
 	if GlobalScript.current_health < 0:
 		GlobalScript.current_health = 0
 	
-	apply_knockback(weapon_position)
+	var current_knockback = knockback
+	if bossPhase != 0 and bossPhase < 3:
+		# 0 = regular enemy attacks, 1 = bellBoss phase 1, 2 = bellBoss phase 2
+		if bossPhase == 1:
+			current_knockback = 800
+		else:
+			current_knockback = 1500
+	apply_knockback(weapon_position, current_knockback)
 	
 	update_hearts(GlobalScript.current_health)
 
@@ -96,13 +103,16 @@ func take_damage(amount: int, weapon_position: Vector2) -> void:
 	await get_tree().create_timer(1.0).timeout
 	GlobalScript.can_take_damage = true
 
-func apply_knockback(weapon_position: Vector2):
+func apply_knockback(weapon_position: Vector2, knockbackVal): # given_velocity: int = 0):
 	isAttacking = false
 	is_knocking_back = true
 	knockback_animation()
 	var direction_damage = (global_position - weapon_position).normalized()
 	print(direction_damage)
-	velocity = Vector2(direction_damage.x * knockback, -200)
+	velocity = Vector2(direction_damage.x * knockbackVal, -200)
+	#if (given_velocity != 0):
+		# for bell drop CODE NOT WORKING YET + MECHANICS NOT DETERMINED YET
+	# 	velocity.x *= 100
 	$KnockbackTimer.start(0.2)
 
 func knockback_animation():
