@@ -2,7 +2,6 @@ This is an adventure platformer game developed with the Godot engine.
 
 How to Run the game (Windows):
 1. Download the .exe file
-2. Download the .pck file and make sure this file and .exe are together
 3. Run the exefile
 
 How to Run the game (Mac)
