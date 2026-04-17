@@ -9,6 +9,8 @@ signal health_changed(new_health: int)
 signal coin_changed(new_coin_count: int)
 signal inventory_changed
 
+signal request_equip_effect(type: int, item_name: String)
+
 @export var item: ItemList
 
 @export var inventory_resource: Inv = preload("res://Player/Player_Script/player_inventory.tres")
@@ -86,7 +88,9 @@ func add_item(id: int):
 	inventory[new_index] = {
 		"Name": item_data["Name"],
 		"Count": 1,
-		"ID": id
+		"ID": id,
+		"Type": item_data["Type"],
+		"IsEquipped": false
 	}
 	
 	inventory_resource.insert(item_resource)
