@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bwciki4j0l5dw" path="res://assets/Tiles/Sidescroller Shooter - Central City/Assets/Buildings.png" id="4_n7ypv"]
 [ext_resource type="Texture2D" uid="uid://dm2nf1om6452j" path="res://assets/Tiles/Sidescroller Shooter - Central City/Assets/Props-01.png" id="5_0s5r2"]
 [ext_resource type="Texture2D" uid="uid://bcxlpndbrjrry" path="res://assets/Environment/Background/pixel.png" id="6_0s5r2"]
+[ext_resource type="PackedScene" uid="uid://djdsbrmb1pdcx" path="res://scenes/scene_triggers/Transition_Collision.tscn" id="8_6cvei"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1y8me"]
 texture = ExtResource("3_xdadj")
@@ -523,6 +524,10 @@ position = Vector2(-584, -16)
 [node name="enemy_rat2" parent="." unique_id=1374807424 instance=ExtResource("1_ne2mo")]
 light_mask = 7
 position = Vector2(-1152, -8)
+
+[node name="TransitionCollision5" parent="." unique_id=1844202408 instance=ExtResource("8_6cvei")]
+position = Vector2(-1448, -48)
+destination_scene = "uid://d1bvtbwghxhmy"
 
 [node name="Player" parent="." unique_id=127306071 instance=ExtResource("2_1y8me")]
 visibility_layer = 3

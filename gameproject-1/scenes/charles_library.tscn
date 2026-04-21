@@ -2964,3 +2964,7 @@ destination_scene = "uid://c8y14hmeath8b"
 [node name="TransitionCollision5" parent="." unique_id=1254842626 instance=ExtResource("6_2od2x")]
 position = Vector2(-250, -85)
 destination_scene = "uid://cetdcwi633q3e"
+
+[node name="TransitionCollision6" parent="." unique_id=484304178 instance=ExtResource("6_2od2x")]
+position = Vector2(-200, -88)
+destination_scene = "uid://dwbcckv7isy27"
