@@ -18,7 +18,7 @@ var attack_timer = 0.0
 var is_attacking = false
 
 var death = false
-var health = 20
+var health = 10
 
 
 func _physics_process(delta):
