@@ -7,7 +7,7 @@ var target: Node2D = null
 var velocity: Vector2 = Vector2.ZERO
 
 @export var speed: float = 75.0
-@export var lifetime: float = 3.0
+@export var lifetime: float = 2.5
 @export var damage_value: int = 1
 
 var is_active = false
