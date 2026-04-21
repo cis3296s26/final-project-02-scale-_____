@@ -1,7 +1,7 @@
 extends Node
 
-var set_coin = 999
-var max_health = 4
+var set_coin = 5
+var max_health = 5
 var can_take_damage = true
 
 var shop_check = false
