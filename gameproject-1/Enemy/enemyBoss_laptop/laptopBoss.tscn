@@ -14,6 +14,14 @@ region = Rect2(128, 0, 64, 64)
 atlas = ExtResource("1_ua5n2")
 region = Rect2(64, 64, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_8f0jo"]
+atlas = ExtResource("1_ua5n2")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0au5"]
+atlas = ExtResource("1_ua5n2")
+region = Rect2(64, 64, 64, 64)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_rl5uk"]
 atlas = ExtResource("1_ua5n2")
 region = Rect2(128, 64, 64, 64)
@@ -54,23 +62,37 @@ region = Rect2(64, 0, 64, 64)
 atlas = ExtResource("1_ua5n2")
 region = Rect2(0, 64, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2unp"]
+atlas = ExtResource("1_ua5n2")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdr4k"]
+atlas = ExtResource("1_ua5n2")
+region = Rect2(0, 64, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_8f0jo"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_trhpd")
 }],
-"loop": true,
+"loop": false,
 "name": &"laptop_beam",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_v5atx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8f0jo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0au5")
 }],
-"loop": true,
+"loop": false,
 "name": &"laptop_burst",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -85,9 +107,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sjdu4")
 }],
-"loop": true,
+"loop": false,
 "name": &"laptop_death",
-"speed": 3.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -99,7 +121,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_c25mj")
 }],
-"loop": true,
+"loop": false,
 "name": &"laptop_hit",
 "speed": 6.0
 }, {
@@ -117,10 +139,16 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7kh54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q2unp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdr4k")
 }],
-"loop": true,
+"loop": false,
 "name": &"laptop_track",
-"speed": 5.0
+"speed": 1.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s0au5"]
@@ -138,8 +166,7 @@ intel_exp = ExtResource("4_5yfaq")
 
 [node name="BossSprite2" type="AnimatedSprite2D" parent="." unique_id=353406012]
 sprite_frames = SubResource("SpriteFrames_8f0jo")
-animation = &"laptop_burst"
-frame_progress = 0.26103595
+animation = &"laptop_track"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=452537945]
 shape = SubResource("RectangleShape2D_s0au5")
