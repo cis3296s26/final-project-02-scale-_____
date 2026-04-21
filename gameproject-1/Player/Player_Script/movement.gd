@@ -60,14 +60,17 @@ func basic_movement(delta: float, player: CharacterBody2D,  animated: AnimatedSp
 		current_glide_gravity = glide_gravity
 		
 		if Input.is_action_just_pressed("jump"):
+			$jump.play()
 			player.velocity.y = jump_gravity
 	
 	else:
 		if Input.is_action_just_pressed("jump") and jump_charge > 0:
+			$jump.play()
 			jump_charge = jump_charge - 1
 			player.velocity.y = jump_gravity
 
 		elif Input.is_action_pressed("jump") and player.velocity.y > 0:
+			$glide.play()
 			glide_timer += delta * glide_mod
 			
 			if glide_timer > threshold:
@@ -87,6 +90,7 @@ func basic_movement(delta: float, player: CharacterBody2D,  animated: AnimatedSp
 	var direction := Input.get_axis("left", "right")
 	
 	if Input.is_action_just_pressed("shift") and can_dash:
+		$dash.play()
 		dash_start(direction, animated)
 		
 	if direction:
@@ -97,6 +101,7 @@ func basic_movement(delta: float, player: CharacterBody2D,  animated: AnimatedSp
 func dash_start(dir, animated):
 	if not can_dash or dash_charge < 1: 
 		return
+	
 	
 	can_dash = false
 	dash_charge = dash_charge - 1

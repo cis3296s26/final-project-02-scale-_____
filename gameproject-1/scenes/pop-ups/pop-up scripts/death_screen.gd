@@ -4,6 +4,7 @@ func _ready():
 	visible = true
 
 func show_screen():
+	$death.play()
 	visible = true
 	get_tree().paused = true
 

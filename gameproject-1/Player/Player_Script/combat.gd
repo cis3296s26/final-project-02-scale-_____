@@ -48,6 +48,7 @@ func handle_combat_animations(player: CharacterBody2D, animated: AnimatedSprite2
 		if player.is_on_floor():
 			if weapon_flag == 0:
 				animated.play("owl_attack")
+				$attack.play()
 				$AttackCollision/CollisionShape2D.position = Vector2(9, -3)
 				$AttackCollision/CollisionShape2D.shape.size = Vector2(5, 10)
 				$AttackCollision/CollisionShape2D.set_deferred("disabled", false)
@@ -56,6 +57,7 @@ func handle_combat_animations(player: CharacterBody2D, animated: AnimatedSprite2
 				attack_state_changed.emit(true)
 			elif weapon_flag == 1:
 				animated.play("owl_weapon_1")
+				$attack.play()
 				$AttackCollision/CollisionShape2D.position = Vector2(14, -3)
 				$AttackCollision/CollisionShape2D.shape.size = Vector2(20, 10)
 				$AttackCollision/CollisionShape2D.set_deferred("disabled", false)
@@ -70,6 +72,7 @@ func handle_combat_animations(player: CharacterBody2D, animated: AnimatedSprite2
 				attack_state_changed.emit(true)
 				
 				animated.play("owl_weapon_2")
+				$attack.play()
 				$AttackCollision/CollisionShape2D.position = Vector2(9, -3)
 				$AttackCollision/CollisionShape2D.shape.size = Vector2(5, 10)
 				

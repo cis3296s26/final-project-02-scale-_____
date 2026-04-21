@@ -40,6 +40,7 @@ func _physics_process(delta: float) -> void:
 	
 	if is_knocking_back:
 		animatedSprite.play("owl_hurt")
+		$hurt.play()
 		velocity.y += 980 * delta 
 		move_and_slide()
 		return
@@ -60,6 +61,7 @@ func handle_movement_animations(state: bool) -> void:
 	
 	if is_on_floor():
 		if velocity.x:
+			$walk.play()
 			animatedSprite.play("owl_run")
 		else:
 			animatedSprite.play("owl_idle")

@@ -13,7 +13,12 @@
 [ext_resource type="PackedScene" uid="uid://tvmfnjn35yt8" path="res://Player/pause_menu.tscn" id="7_vtle1"]
 [ext_resource type="PackedScene" uid="uid://cpsgpg6xxfbat" path="res://Player/HeartBar.tscn" id="9_00tjw"]
 [ext_resource type="Texture2D" uid="uid://cu4p17prjptmv" path="res://assets/sprites/owl_weapon_1.png" id="9_p5o4e"]
-[ext_resource type="Texture2D" uid="uid://dmsp6ta18uild" path="res://assets/sprites/owl_weapon_2.png" id="10_gu6f8"]
+[ext_resource type="Texture2D" uid="uid://dwj8nm2ch13lq" path="res://assets/sprites/owl_weapon_2.png" id="10_gu6f8"]
+[ext_resource type="AudioStream" uid="uid://cleg66s2fepf2" path="res://assets/sounds/jump.wav" id="12_dkpta"]
+[ext_resource type="AudioStream" uid="uid://cmdbc856mvous" path="res://assets/sounds/universfield-swoosh-029-487885.mp3" id="13_pisgm"]
+[ext_resource type="AudioStream" uid="uid://vsyc07mg76ku" path="res://assets/sounds/freesound_crunchpixstudio-attack-sound-1-384908.mp3" id="15_pisgm"]
+[ext_resource type="AudioStream" uid="uid://dvehnmr2x54df" path="res://assets/sounds/joentnt-walk-on-dirt-3-291983.mp3" id="18_o28un"]
+[ext_resource type="AudioStream" uid="uid://d3bl8hgtv75fq" path="res://assets/sounds/explosion.wav" id="19_o28un"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w6hf4"]
 size = Vector2(2.75, 6.25)
@@ -137,18 +142,6 @@ region = Rect2(0, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_sm0op"]
 atlas = ExtResource("10_gu6f8")
 region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_76lrf"]
-atlas = ExtResource("10_gu6f8")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_efx54"]
-atlas = ExtResource("10_gu6f8")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_755ss"]
-atlas = ExtResource("10_gu6f8")
-region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bbimk"]
 atlas = ExtResource("10_gu6f8")
@@ -310,15 +303,6 @@ animations = [{
 "texture": SubResource("AtlasTexture_sm0op")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_76lrf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_efx54")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_755ss")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_bbimk")
 }, {
 "duration": 1.0,
@@ -351,6 +335,8 @@ shape = SubResource("RectangleShape2D_w6hf4")
 position = Vector2(0, 4)
 sprite_frames = SubResource("SpriteFrames_x8e5g")
 animation = &"owl_weapon_2"
+frame = 4
+frame_progress = 1.0
 centered = false
 offset = Vector2(-16, -24)
 
@@ -363,6 +349,16 @@ one_shot = true
 [node name="DashCooldownTimer" type="Timer" parent="Movement" unique_id=311272342]
 one_shot = true
 
+[node name="jump" type="AudioStreamPlayer2D" parent="Movement" unique_id=302339681]
+scale = Vector2(2, 2)
+stream = ExtResource("12_dkpta")
+
+[node name="glide" type="AudioStreamPlayer2D" parent="Movement" unique_id=42203104]
+stream = ExtResource("13_pisgm")
+
+[node name="dash" type="AudioStreamPlayer2D" parent="Movement" unique_id=51927069]
+stream = ExtResource("13_pisgm")
+
 [node name="Combat" type="Node2D" parent="." unique_id=1605603184]
 script = ExtResource("3_x3vf3")
 
@@ -373,6 +369,9 @@ position = Vector2(14.5, -3)
 shape = SubResource("RectangleShape2D_x3vf3")
 disabled = true
 
+[node name="attack" type="AudioStreamPlayer2D" parent="Combat" unique_id=1989618459]
+stream = ExtResource("15_pisgm")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1294178394]
 
 [node name="PauseMenu" parent="CanvasLayer" unique_id=358881738 instance=ExtResource("7_vtle1")]
@@ -382,6 +381,12 @@ visible = false
 visible = false
 
 [node name="KnockbackTimer" type="Timer" parent="." unique_id=2070120304]
+
+[node name="walk" type="AudioStreamPlayer2D" parent="." unique_id=2102660812]
+stream = ExtResource("18_o28un")
+
+[node name="hurt" type="AudioStreamPlayer2D" parent="." unique_id=1300794877]
+stream = ExtResource("19_o28un")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="Combat" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Movement/DashDurationTimer" to="Movement" method="_on_dash_duration_timer_timeout"]
