@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://tvmfnjn35yt8" path="res://Player/pause_menu.tscn" id="7_vtle1"]
 [ext_resource type="PackedScene" uid="uid://cpsgpg6xxfbat" path="res://Player/HeartBar.tscn" id="9_00tjw"]
 [ext_resource type="Texture2D" uid="uid://cu4p17prjptmv" path="res://assets/sprites/owl_weapon_1.png" id="9_p5o4e"]
-[ext_resource type="Texture2D" uid="uid://dwj8nm2ch13lq" path="res://assets/sprites/owl_weapon_2.png" id="10_gu6f8"]
+[ext_resource type="Texture2D" uid="uid://dmsp6ta18uild" path="res://assets/sprites/owl_weapon_2.png" id="10_gu6f8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w6hf4"]
 size = Vector2(2.75, 6.25)
