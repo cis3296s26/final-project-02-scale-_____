@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dm2nf1om6452j" path="res://assets/Tiles/Sidescroller Shooter - Central City/Assets/Props-01.png" id="5_0s5r2"]
 [ext_resource type="Texture2D" uid="uid://bcxlpndbrjrry" path="res://assets/Environment/Background/pixel.png" id="6_0s5r2"]
 [ext_resource type="PackedScene" uid="uid://djdsbrmb1pdcx" path="res://scenes/scene_triggers/Transition_Collision.tscn" id="8_6cvei"]
+[ext_resource type="AudioStream" uid="uid://dnctw568hcofc" path="res://assets/music/broad_street.mp3" id="10_que50"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1y8me"]
 texture = ExtResource("3_xdadj")
@@ -537,3 +538,7 @@ position = Vector2(-1, -47)
 position = Vector2(0.5, -31)
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=858908535]
+stream = ExtResource("10_que50")
+autoplay = true
