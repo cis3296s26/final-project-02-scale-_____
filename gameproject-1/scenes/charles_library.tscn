@@ -2973,3 +2973,4 @@ destination_scene = "uid://dwbcckv7isy27"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=739974481]
 stream = ExtResource("8_egj8l")
 autoplay = true
+parameters/looping = true

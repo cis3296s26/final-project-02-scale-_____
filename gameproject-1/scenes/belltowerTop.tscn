@@ -217,3 +217,4 @@ shape = SubResource("WorldBoundaryShape2D_u5sy4")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=610853859]
 stream = ExtResource("7_qp6v8")
 autoplay = true
+parameters/looping = true

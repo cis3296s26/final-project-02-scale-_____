@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://c2xwbi01iw8k8" path="res://Objects/pencil.tscn" id="17_rysoc"]
 [ext_resource type="PackedScene" uid="uid://dbnvbcltg0kf8" path="res://Objects/Boots.tscn" id="18_ssvqc"]
 [ext_resource type="PackedScene" uid="uid://4jecvgqha7k" path="res://Objects/potion.tscn" id="19_264po"]
+[ext_resource type="AudioStream" uid="uid://v1nntg7egyp0" path="res://assets/music/subway.mp3" id="21_5newe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
 texture = ExtResource("3_lnu2h")
@@ -361,6 +362,11 @@ position = Vector2(-379, -65)
 
 [node name="Potion" parent="." unique_id=626058947 instance=ExtResource("19_264po")]
 position = Vector2(-316, -70)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=304201672]
+stream = ExtResource("21_5newe")
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="LavaAnt/Area2D" to="LavaAnt" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

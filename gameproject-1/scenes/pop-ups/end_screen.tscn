@@ -54,5 +54,6 @@ script = ExtResource("3_pqki5")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1846834893]
 stream = ExtResource("5_pqki5")
 autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
