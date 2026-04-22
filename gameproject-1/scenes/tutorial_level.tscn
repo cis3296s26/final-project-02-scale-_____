@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bdxo5fnnkpb0b" path="res://assets/Environment/Subway/controls_tilemap_packed.png" id="17_gnurf"]
 [ext_resource type="PackedScene" uid="uid://ok2eon83bfnk" path="res://Enemy/enemy_rat.tscn" id="18_6lba3"]
 [ext_resource type="PackedScene" uid="uid://qr0f0ju3brm6" path="res://Enemy/enemy_pigeon.tscn" id="19_2h3h0"]
+[ext_resource type="AudioStream" uid="uid://v1nntg7egyp0" path="res://assets/music/subway.mp3" id="21_6jlns"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lhmm1"]
 texture = ExtResource("17_gnurf")
@@ -4414,3 +4415,7 @@ position = Vector2(-232, -8)
 
 [node name="enemy_rat4" parent="." unique_id=905060053 instance=ExtResource("18_6lba3")]
 position = Vector2(-184, -8)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1567643655]
+stream = ExtResource("21_6jlns")
+autoplay = true

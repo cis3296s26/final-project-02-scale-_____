@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b7bytvpydop86" path="res://assets/Environment/Library/tilemap_packed.png" id="4_pqxok"]
 [ext_resource type="Texture2D" uid="uid://ckwcvlii4kdoo" path="res://assets/Environment/Library/libassetpack-tiled.png" id="5_2441l"]
 [ext_resource type="PackedScene" uid="uid://djdsbrmb1pdcx" path="res://scenes/scene_triggers/Transition_Collision.tscn" id="6_2od2x"]
+[ext_resource type="AudioStream" uid="uid://bnctyk62mmdvy" path="res://assets/music/charles_library.mp3" id="8_egj8l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2441l"]
 texture = ExtResource("4_pqxok")
@@ -2968,3 +2969,7 @@ destination_scene = "uid://cetdcwi633q3e"
 [node name="TransitionCollision6" parent="." unique_id=484304178 instance=ExtResource("6_2od2x")]
 position = Vector2(-200, -88)
 destination_scene = "uid://dwbcckv7isy27"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=739974481]
+stream = ExtResource("8_egj8l")
+autoplay = true

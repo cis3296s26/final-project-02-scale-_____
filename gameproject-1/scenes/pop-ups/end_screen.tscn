@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dbqvwq8u7ua5r" path="res://scenes/pop-ups/pop-up scripts/end_screen.gd" id="1_jo86m"]
 [ext_resource type="Texture2D" uid="uid://pwxkjmqmp3sv" path="res://assets/Environment/Background/owl_grad.png" id="2_jo86m"]
 [ext_resource type="Script" uid="uid://xbhmboffhejg" path="res://scenes/pop-ups/pop-up scripts/main_menu.gd" id="3_pqki5"]
+[ext_resource type="AudioStream" uid="uid://c2w4fi4t7aq7d" path="res://assets/music/end_gradsong.mp3" id="5_pqki5"]
 
 [node name="EndScreen" type="Control" unique_id=1672939841]
 layout_mode = 3
@@ -49,5 +50,9 @@ vertical_alignment = 1
 layout_mode = 2
 text = "Main Menu"
 script = ExtResource("3_pqki5")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1846834893]
+stream = ExtResource("5_pqki5")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
