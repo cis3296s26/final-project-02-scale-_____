@@ -58,6 +58,7 @@ text = "Play Tutorial"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1046860924]
 stream = ExtResource("2_vid13")
 autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="ColorRect/Container/SkipTutorial" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="ColorRect/Container/PlayTutorial" to="." method="_on_play_tutorial_pressed"]

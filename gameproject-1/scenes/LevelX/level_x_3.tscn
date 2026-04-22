@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bvnr1ms4x38" path="res://Enemy/enemyBoss_laptop/laptopBoss.tscn" id="8_kmuxo"]
 [ext_resource type="PackedScene" uid="uid://d30iq1mq7lcnp" path="res://Objects/platform.tscn" id="9_kcb1v"]
 [ext_resource type="PackedScene" uid="uid://djdsbrmb1pdcx" path="res://scenes/scene_triggers/Transition_Collision.tscn" id="10_nhrd3"]
-[ext_resource type="AudioStream" uid="uid://buaw56ll7xnoi" path="res://assets/music/tuttleman_boss.mp3" id="12_k608d"]
+[ext_resource type="AudioStream" uid="uid://cgx30hflwbf68" path="res://assets/music/tuttleman_boss.mp3" id="12_k608d"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_aqom3"]
 
@@ -1955,3 +1955,4 @@ destination_scene = "uid://b1o1b3wjkiwl8"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=551005468]
 stream = ExtResource("12_k608d")
 autoplay = true
+parameters/looping = true

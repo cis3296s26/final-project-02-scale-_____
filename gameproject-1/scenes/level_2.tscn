@@ -542,3 +542,4 @@ position_smoothing_enabled = true
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=858908535]
 stream = ExtResource("10_que50")
 autoplay = true
+parameters/looping = true

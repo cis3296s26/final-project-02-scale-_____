@@ -263,3 +263,4 @@ position = Vector2(179, 411)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2082002001]
 stream = ExtResource("10_udkh7")
 autoplay = true
+parameters/looping = true

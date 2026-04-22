@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://b68qhr4464r35" path="res://Objects/coin.tscn" id="13_h0rjy"]
 [ext_resource type="Texture2D" uid="uid://b4wmbmkubikwx" path="res://assets/Environment/Background/TuttleLobby.png" id="14_h0rjy"]
 [ext_resource type="PackedScene" uid="uid://djdsbrmb1pdcx" path="res://scenes/scene_triggers/Transition_Collision.tscn" id="15_66874"]
-[ext_resource type="AudioStream" uid="uid://cbpntppdtkwlv" path="res://assets/music/tuttleman.mp3" id="17_bmd8c"]
+[ext_resource type="AudioStream" uid="uid://djc0hmhpytyur" path="res://assets/music/tuttleman.mp3" id="17_bmd8c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_66874"]
 texture = ExtResource("2_aqom3")
@@ -2118,3 +2118,4 @@ destination_scene = "uid://c8y14hmeath8b"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1869940791]
 stream = ExtResource("17_bmd8c")
 autoplay = true
+parameters/looping = true

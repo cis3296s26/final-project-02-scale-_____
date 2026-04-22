@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cuhyldks1lip8" path="res://Enemy/enemy_jan.tscn" id="14_32d6e"]
 [ext_resource type="PackedScene" uid="uid://b68qhr4464r35" path="res://Objects/coin.tscn" id="15_uu148"]
 [ext_resource type="PackedScene" uid="uid://djdsbrmb1pdcx" path="res://scenes/scene_triggers/Transition_Collision.tscn" id="16_8rh7y"]
-[ext_resource type="AudioStream" uid="uid://cbpntppdtkwlv" path="res://assets/music/tuttleman.mp3" id="18_5ens1"]
+[ext_resource type="AudioStream" uid="uid://djc0hmhpytyur" path="res://assets/music/tuttleman.mp3" id="18_5ens1"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_aqom3"]
 
@@ -1989,5 +1989,6 @@ destination_scene = "uid://cetdcwi633q3e"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=333366786]
 stream = ExtResource("18_5ens1")
 autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
