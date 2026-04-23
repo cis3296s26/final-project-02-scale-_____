@@ -166,7 +166,7 @@ intel_exp = ExtResource("4_5yfaq")
 
 [node name="BossSprite2" type="AnimatedSprite2D" parent="." unique_id=353406012]
 sprite_frames = SubResource("SpriteFrames_8f0jo")
-animation = &"laptop_track"
+animation = &"laptop_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=452537945]
 shape = SubResource("RectangleShape2D_s0au5")

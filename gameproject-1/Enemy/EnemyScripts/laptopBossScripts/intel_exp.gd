@@ -3,8 +3,8 @@ extends Area2D
 @onready var anim: AnimatedSprite2D = $ExplosionSprite
 @onready var collision: CollisionShape2D = $CollisionShape2D
 
-@export var damage_value: int = 3
-@export var charge_time: float = 0.6
+@export var damage_value: int = 1
+@export var charge_time: float = 0.5
 @export var active_time: float = 0.2
 
 var exploded = false

@@ -20,6 +20,7 @@ var is_attacking = false
 var death = false
 var health = 10
 
+signal died
 
 func _physics_process(delta):
 	if death:
@@ -117,6 +118,8 @@ func start_explosion_attack():
 func end_attack():
 	is_attacking = false
 	attack_timer = attack_cooldown
+	if death:
+		return
 	anim.play("laptop_idle")
 
 
@@ -132,4 +135,5 @@ func _on_enemy_hitbox_area_entered(area: Area2D) -> void:
 			death = true
 			anim.play("laptop_death")
 			await anim.animation_finished
+			emit_signal("died")
 			queue_free()
