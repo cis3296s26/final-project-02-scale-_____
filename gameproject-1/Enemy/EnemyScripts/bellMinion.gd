@@ -4,13 +4,13 @@ extends CharacterBody2D
 
 @export var speed: float = 60.0
 @export var detection_range: float = 150.0
-@export var attack_range: float = 50.0
+@export var attack_range: float = 30.0
 @export var gravity: float = 800.0
 
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var anim = $AnimatedSprite2D
 @onready var animhit = $CollisionShape2D
-@export var attack_thrust: float = 100.0  # forward movement during attack
+@export var attack_thrust: float = 80.0  # forward movement during attack
 @export var attack_duration: float = 0.3  # time the thrust lasts
 
 var state = "idle"
@@ -45,7 +45,6 @@ func _physics_process(delta):
 		damage_cooldown_current -= delta
 	
 	var distance = global_position.distance_to(player.global_position)
-	
 	# Determine state
 	if distance <= attack_range:
 		state = "attack"
@@ -100,8 +99,13 @@ func idle(delta):
 func chase(delta):
 	var direction = sign(player.global_position.x - global_position.x)
 	anim.flip_h = player.global_position.x > global_position.x
+	
+	var distance = global_position.distance_to(player.global_position)
+	if distance > 20:
+		velocity.x = direction * speed
+	else:
+		velocity.x = 0
 
-	velocity.x = direction * speed
 	apply_gravity(delta)
 	move_and_slide()
 	anim.play("ring")
@@ -114,7 +118,10 @@ func attack(delta):
 	else:
 		# Continue attack
 		var dir = sign(player.global_position.x - global_position.x)
+		# var distance = global_position.distance_to(player.global_position)
+		# if distance > 20:
 		velocity.x = dir * attack_thrust
+		# velocity.x = 0
 		apply_gravity(delta)
 		move_and_slide()
 		attack_timer -= delta
