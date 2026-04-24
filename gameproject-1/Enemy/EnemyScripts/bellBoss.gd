@@ -17,9 +17,9 @@ var state = "chase"
 var death = false
 var phase = 1
 
-var max_health_phase1 = 5
-var max_health_phase2 = 8
-var health = 5
+var max_health_phase1 = 4
+var max_health_phase2 = 7
+var health = 4
 var attack_timer: float = 0.0
 var attackType:bool = false # false for swing, true for drop
 var dropDamage = 1
@@ -187,7 +187,7 @@ func _on_enemy_hitbox_area_entered(area: Area2D) -> void:
 				death = true
 				dead()
 		else:
-			if phase == 1 and health % 2 == 1 or phase == 2:
+			if phase == 1 and health == 2 or phase == 2:
 				var enemy = spawn_enemy_scene.instantiate()
 				enemy.global_position = global_position + Vector2(randf_range(-40, 40), 0)
 				get_parent().add_child(enemy)
