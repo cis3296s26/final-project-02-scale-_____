@@ -27,6 +27,7 @@ Add preset for your operating system
 4. Click export project
 5. Run the file
 
+------------------------------------------------------------------------------------------
   Testing Method: Manual
   
   Tested movements: Used WASD or arrows to move and space to jump
@@ -56,7 +57,7 @@ Add preset for your operating system
   Tested knockback for players and enemies: If the player attacks an enemy, the hit knocks the enemy back.  When an enemy hits the player, it knocks them back.
   
   Tested more maps: The player can walk on the different maps that the transition brings them to
-
+------------------------------------------------------------------------------------------
 
 Follow this project board to know the latest status of the project: https://github.com/orgs/cis3296s26/projects/36  
 UML
