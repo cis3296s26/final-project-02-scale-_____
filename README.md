@@ -30,4 +30,5 @@ Add preset for your operating system
 Follow this project board to know the latest status of the project: https://github.com/orgs/cis3296s26/projects/36  
 
 UML
-<img width="1528" height="1494" alt="image" src="https://github.com/user-attachments/assets/fd9fed80-48bc-457a-a2a9-2a08c3705863" />
+<img width="1681" height="1984" alt="Untitled Diagram drawio (5)" src="https://github.com/user-attachments/assets/a2024144-ce7c-48de-8996-50c962a699fb" />
+
