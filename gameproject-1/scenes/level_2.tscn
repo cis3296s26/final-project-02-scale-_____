@@ -522,11 +522,39 @@ scale = Vector2(0.5592338, 0.5725135)
 
 [node name="enemy_rat" parent="." unique_id=1614125924 instance=ExtResource("1_ne2mo")]
 light_mask = 7
+position = Vector2(-558, -6)
+
+[node name="enemy_rat" parent="enemy_rat" unique_id=1374807424 instance=ExtResource("1_ne2mo")]
+light_mask = 7
+position = Vector2(-97, -202)
+
+[node name="enemy_rat" parent="enemy_rat/enemy_rat" unique_id=690747421 instance=ExtResource("1_ne2mo")]
+light_mask = 7
 position = Vector2(-584, -16)
 
-[node name="enemy_rat2" parent="." unique_id=1374807424 instance=ExtResource("1_ne2mo")]
+[node name="enemy_rat" parent="enemy_rat/enemy_rat/enemy_rat" unique_id=1031569386 instance=ExtResource("1_ne2mo")]
 light_mask = 7
-position = Vector2(-712, -9)
+position = Vector2(1270, -16)
+
+[node name="enemy_rat" parent="enemy_rat/enemy_rat/enemy_rat/enemy_rat" unique_id=1087801466 instance=ExtResource("1_ne2mo")]
+light_mask = 7
+position = Vector2(-584, -16)
+
+[node name="enemy_rat" parent="enemy_rat/enemy_rat/enemy_rat/enemy_rat/enemy_rat" unique_id=1093741504 instance=ExtResource("1_ne2mo")]
+light_mask = 7
+position = Vector2(-584, -16)
+
+[node name="enemy_rat" parent="enemy_rat/enemy_rat/enemy_rat/enemy_rat/enemy_rat/enemy_rat" unique_id=1372646014 instance=ExtResource("1_ne2mo")]
+light_mask = 7
+position = Vector2(928, 47)
+
+[node name="enemy_rat" parent="enemy_rat/enemy_rat/enemy_rat/enemy_rat/enemy_rat/enemy_rat/enemy_rat" unique_id=909161400 instance=ExtResource("1_ne2mo")]
+light_mask = 7
+position = Vector2(-584, -16)
+
+[node name="enemy_rat2" parent="." unique_id=789745223 instance=ExtResource("1_ne2mo")]
+light_mask = 7
+position = Vector2(-687, -1)
 
 [node name="TransitionCollision5" parent="." unique_id=1844202408 instance=ExtResource("8_6cvei")]
 position = Vector2(-1448, -48)
@@ -554,3 +582,7 @@ position = Vector2(-1021, -27)
 
 [node name="Pidgeon2" parent="." unique_id=897482405 instance=ExtResource("11_hey2k")]
 position = Vector2(-302, 5)
+
+[node name="RatBig2" parent="." unique_id=492224804 instance=ExtResource("12_172wr")]
+position = Vector2(270, -127)
+scale = Vector2(4, 4)

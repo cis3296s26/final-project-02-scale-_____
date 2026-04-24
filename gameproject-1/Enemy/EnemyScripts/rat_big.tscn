@@ -134,7 +134,7 @@ script = ExtResource("1_17sld")
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_wbqny")
 animation = &"walk"
-frame_progress = 0.7546561
+frame_progress = 0.39444894
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=550843328]
 position = Vector2(0, 2)
@@ -160,6 +160,7 @@ shape = SubResource("RectangleShape2D_p4wuu")
 position = Vector2(1, 1.5)
 shape = SubResource("RectangleShape2D_fpp1u")
 
+[connection signal="timeout" from="knockbackTimer" to="." method="_on_knockback_timer_timeout"]
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_entered" from="attack" to="." method="_on_attack_body_entered"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

@@ -4557,7 +4557,7 @@ shape = SubResource("CapsuleShape2D_ib3ac")
 [node name="Shop" parent="Area2D" unique_id=791231097 instance=ExtResource("21_aavg4")]
 visible = false
 
-[node name="Spawn" type="Marker2D" parent="." unique_id=2025809239 groups=["spawn"]]
+[node name="Spawn" type="Marker2D" parent="." unique_id=2025809239]
 position = Vector2(476, -357)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
