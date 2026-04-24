@@ -5,8 +5,6 @@
 
 [sub_resource type="Theme" id="Theme_64a5a"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ep5fh"]
-
 [node name="TutorialPrompt" type="Control" unique_id=1687517170]
 layout_mode = 3
 anchors_preset = 15
@@ -17,48 +15,40 @@ grow_vertical = 2
 script = ExtResource("1_c4h83")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=826640298]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(76.71858, 42.61988)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.6156863, 0.13333334, 0.20784314, 1)
 
-[node name="Container" type="Panel" parent="ColorRect" unique_id=1507668518]
-layout_mode = 0
-offset_left = 16.4758
-offset_top = 12.951703
-offset_right = 108.5858
-offset_bottom = 175.9517
-scale = Vector2(0.141, 0.086)
-theme = SubResource("Theme_64a5a")
-theme_override_styles/panel = SubResource("StyleBoxTexture_ep5fh")
-
-[node name="SkipTutorial" type="Button" parent="ColorRect/Container" unique_id=1032024538]
+[node name="Container" type="CenterContainer" parent="ColorRect" unique_id=313378744]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -94.680725
-offset_top = -60.567883
-offset_right = 10.319275
-offset_bottom = -29.567883
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
-scale = Vector2(0.44694507, 1.7160852)
-text = "Skip Tutorial"
+grow_vertical = 2
+theme = SubResource("Theme_64a5a")
 
-[node name="PlayTutorial" type="Button" parent="ColorRect/Container" unique_id=760334976]
-layout_mode = 0
-offset_left = -49.087948
-offset_top = 9.821793
-offset_right = 55.912052
-offset_bottom = 40.821793
-scale = Vector2(0.44539887, 1.6449997)
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/Container" unique_id=926612672]
+layout_mode = 2
+
+[node name="PlayTutorial" type="Button" parent="ColorRect/Container/VBoxContainer" unique_id=760334976]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
 text = "Play Tutorial"
+
+[node name="SkipTutorial" type="Button" parent="ColorRect/Container/VBoxContainer" unique_id=1032024538]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Skip Tutorial"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1046860924]
 stream = ExtResource("2_vid13")
 autoplay = true
 parameters/looping = true
 
-[connection signal="pressed" from="ColorRect/Container/SkipTutorial" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="ColorRect/Container/PlayTutorial" to="." method="_on_play_tutorial_pressed"]
+[connection signal="pressed" from="ColorRect/Container/VBoxContainer/PlayTutorial" to="." method="_on_play_tutorial_pressed"]
+[connection signal="pressed" from="ColorRect/Container/VBoxContainer/SkipTutorial" to="." method="_on_new_game_pressed"]
