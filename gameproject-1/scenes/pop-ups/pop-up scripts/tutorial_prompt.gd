@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 	
 func _on_new_game_pressed() -> void:
 	print("Skipping Tutorial")
-	get_tree().change_scene_to_file("res://scenes/game.tscn");
+	get_tree().change_scene_to_file("res://scenes/level_2.tscn");
 
 
 func _on_play_tutorial_pressed() -> void:
