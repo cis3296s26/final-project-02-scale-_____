@@ -6,7 +6,7 @@ extends Node2D
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		GlobalScript.inventory_resource = body.inv
-		
+		GlobalScript.levelcom += 1
 		if destination_scene != "":
 			print("Going to: ", destination_scene)
 			get_tree().change_scene_to_file(destination_scene)

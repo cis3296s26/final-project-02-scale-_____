@@ -4,7 +4,7 @@ extends Node
 var isAttacking = false
 signal attack_state_changed(isAttacking: bool)
 @onready var weapon_hitbox = $AttackCollision/CollisionShape2D
-var damage_value = 1
+var damage_value = 999
 var old_damage
 
 var weapon_flag = 0
@@ -86,6 +86,7 @@ func handle_combat_animations(player: CharacterBody2D, animated: AnimatedSprite2
 				attack_state_changed.emit(false)
 		else:
 			animated.play("owl_glide_attack")
+			$attack.play()
 			$AttackCollision/CollisionShape2D.position = Vector2(9, -3)
 			$AttackCollision/CollisionShape2D.shape.size = Vector2(10, 10)
 			$AttackCollision/CollisionShape2D.set_deferred("disabled", false)

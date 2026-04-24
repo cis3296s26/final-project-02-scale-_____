@@ -16,6 +16,8 @@ var max_jump_charge = 1
 @export var dash_charge = 1
 var dash_direction
 var velocity
+var coyoteTime = 1
+var coyoteCounter = 0
 
 var current_glide_gravity = gravity_cap
 var glide_timer = 0.0
@@ -54,6 +56,7 @@ func _on_equip_remove(type: int, item_name: String):
 
 func basic_movement(delta: float, player: CharacterBody2D,  animated: AnimatedSprite2D) -> void:	
 	if player.is_on_floor():
+		coyoteCounter = coyoteTime
 		dash_charge = 1
 		jump_charge = max_jump_charge
 		glide_timer = 0.0
@@ -64,7 +67,11 @@ func basic_movement(delta: float, player: CharacterBody2D,  animated: AnimatedSp
 			player.velocity.y = jump_gravity
 	
 	else:
-		if Input.is_action_just_pressed("jump") and jump_charge > 0:
+		coyoteCounter = delta - coyoteCounter
+		if Input.is_action_just_pressed("jump") and coyoteCounter > 0:
+			$jump.play()
+			player.velocity.y = jump_gravity
+		elif Input.is_action_just_pressed("jump") and jump_charge > 0:
 			$jump.play()
 			jump_charge = jump_charge - 1
 			player.velocity.y = jump_gravity

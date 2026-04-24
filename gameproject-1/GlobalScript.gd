@@ -6,6 +6,10 @@ var can_take_damage = true
 
 var shop_check = false
 
+var levelcheck = 0
+
+var levelcom: int = levelcheck
+
 signal health_changed(new_health: int)
 signal coin_changed(new_coin_count: int)
 signal inventory_changed

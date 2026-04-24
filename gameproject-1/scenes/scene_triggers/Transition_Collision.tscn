@@ -1,20 +1,71 @@
 [gd_scene format=3 uid="uid://djdsbrmb1pdcx"]
 
 [ext_resource type="Script" uid="uid://ddsn6a5f3reux" path="res://scenes/scene_triggers/trigger scripts/transition_collision.gd" id="1_s1kkc"]
+[ext_resource type="Texture2D" uid="uid://mkwqxrujs3fh" path="res://assets/Dimensional_Portal.png" id="2_hbsgp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1kkc"]
+size = Vector2(42, 91)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqu58"]
+atlas = ExtResource("2_hbsgp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aouo7"]
+atlas = ExtResource("2_hbsgp")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8oei"]
+atlas = ExtResource("2_hbsgp")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlnog"]
+atlas = ExtResource("2_hbsgp")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2x4t"]
+atlas = ExtResource("2_hbsgp")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qr4ol"]
+atlas = ExtResource("2_hbsgp")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rivps"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqu58")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aouo7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8oei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jlnog")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2x4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qr4ol")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="TransitionCollision" type="Area2D" unique_id=1844202408]
 script = ExtResource("1_s1kkc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=821828271]
+position = Vector2(3, 0.5)
 shape = SubResource("RectangleShape2D_s1kkc")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=246089762]
-offset_left = -20.0
-offset_top = -19.0
-offset_right = 20.0
-offset_bottom = 21.0
-color = Color(0.5139912, 0.28404352, 0.7717955, 1)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1816640662]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_rivps")
+autoplay = "default"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
