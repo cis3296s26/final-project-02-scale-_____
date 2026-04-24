@@ -352,12 +352,15 @@ one_shot = true
 [node name="jump" type="AudioStreamPlayer2D" parent="Movement" unique_id=302339681]
 scale = Vector2(2, 2)
 stream = ExtResource("12_dkpta")
+volume_db = 8.0
 
 [node name="glide" type="AudioStreamPlayer2D" parent="Movement" unique_id=42203104]
 stream = ExtResource("13_pisgm")
+volume_db = 8.0
 
 [node name="dash" type="AudioStreamPlayer2D" parent="Movement" unique_id=51927069]
 stream = ExtResource("13_pisgm")
+volume_db = 8.0
 
 [node name="Combat" type="Node2D" parent="." unique_id=1605603184]
 script = ExtResource("3_x3vf3")
@@ -371,6 +374,7 @@ disabled = true
 
 [node name="attack" type="AudioStreamPlayer2D" parent="Combat" unique_id=1989618459]
 stream = ExtResource("15_pisgm")
+volume_db = 8.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1294178394]
 
@@ -384,9 +388,11 @@ visible = false
 
 [node name="walk" type="AudioStreamPlayer2D" parent="." unique_id=2102660812]
 stream = ExtResource("18_o28un")
+volume_db = 8.0
 
 [node name="hurt" type="AudioStreamPlayer2D" parent="." unique_id=1300794877]
 stream = ExtResource("19_o28un")
+volume_db = 8.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="Combat" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Movement/DashDurationTimer" to="Movement" method="_on_dash_duration_timer_timeout"]
