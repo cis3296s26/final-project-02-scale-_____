@@ -16,7 +16,7 @@ var max_jump_charge = 1
 @export var dash_charge = 1
 var dash_direction
 var velocity
-var coyoteTime = 1
+var coyoteTime = 0.2
 var coyoteCounter = 0
 
 var current_glide_gravity = gravity_cap
@@ -67,7 +67,7 @@ func basic_movement(delta: float, player: CharacterBody2D,  animated: AnimatedSp
 			player.velocity.y = jump_gravity
 	
 	else:
-		coyoteCounter = delta - coyoteCounter
+		coyoteCounter -= delta
 		if Input.is_action_just_pressed("jump") and coyoteCounter > 0:
 			$jump.play()
 			player.velocity.y = jump_gravity

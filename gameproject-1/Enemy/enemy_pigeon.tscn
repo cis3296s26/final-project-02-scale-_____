@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dl0p5x1aty7xp" path="res://Enemy/EnemyScripts/pigeon.gd" id="1_f11qu"]
 [ext_resource type="Texture2D" uid="uid://dlbyuepc50gk2" path="res://assets/EnemySprites/pigeon.png" id="2_h70vi"]
-[ext_resource type="Texture2D" uid="uid://c6w7caf2t0vme" path="res://assets/EnemySprites/pigeon_death.png" id="3_h70vi"]
+[ext_resource type="Texture2D" uid="uid://cj0mbmiynmg07" path="res://assets/EnemySprites/pigeon_death.png" id="3_h70vi"]
 [ext_resource type="Texture2D" uid="uid://vh73g0qaqjs2" path="res://assets/EnemySprites/pigeon_walk.png" id="3_qwjyx"]
 [ext_resource type="PackedScene" uid="uid://cgdabrg8koc1o" path="res://Enemy/enemy_knockback.tscn" id="5_qwjyx"]
 

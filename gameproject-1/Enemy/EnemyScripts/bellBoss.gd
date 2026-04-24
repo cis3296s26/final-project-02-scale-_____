@@ -158,13 +158,27 @@ func apply_gravity(delta):
 		velocity.y = 0  # reset vertical speed when on the floor
 
 func _on_enemy_hitbox_area_entered(area: Area2D) -> void:
+	var attacker = area.owner
+	
+	if attacker == null:
+		attacker = area
+	
+	var found_damage = 0
+	for child in attacker.get_children():
+		if "damage_value" in child:
+			found_damage = child.damage_value
+			break
+	
+	if found_damage == 0 and "damage_value" in attacker:
+		found_damage = attacker.damage_value
+	
 	if death and not end_triggered:
 		end_triggered = true
 		get_tree().change_scene_to_file("res://scenes/pop-ups/end_screen.tscn")
 		# $CollisionShape2D.set_deferred("disabled", true)
 		return
 	if area.is_in_group("attack"):
-		health = health - 1
+		health -= found_damage
 		print("Hit! Health is now: ", health)
 		anim.modulate = Color(1, 0.1, 0.2)
 		if !death: await get_tree().create_timer(0.2).timeout

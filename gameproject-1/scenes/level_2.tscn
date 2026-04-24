@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://djdsbrmb1pdcx" path="res://scenes/scene_triggers/Transition_Collision.tscn" id="8_6cvei"]
 [ext_resource type="AudioStream" uid="uid://dnctw568hcofc" path="res://assets/music/broad_street.mp3" id="10_que50"]
 [ext_resource type="PackedScene" uid="uid://qr0f0ju3brm6" path="res://Enemy/enemy_pigeon.tscn" id="11_hey2k"]
+[ext_resource type="PackedScene" uid="uid://dd5qufoy74u2m" path="res://Enemy/EnemyScripts/rat_big.tscn" id="12_172wr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1y8me"]
 texture = ExtResource("3_xdadj")
@@ -525,7 +526,7 @@ position = Vector2(-584, -16)
 
 [node name="enemy_rat2" parent="." unique_id=1374807424 instance=ExtResource("1_ne2mo")]
 light_mask = 7
-position = Vector2(-1152, -8)
+position = Vector2(-712, -9)
 
 [node name="TransitionCollision5" parent="." unique_id=1844202408 instance=ExtResource("8_6cvei")]
 position = Vector2(-1448, -48)
@@ -546,7 +547,10 @@ autoplay = true
 parameters/looping = true
 
 [node name="Pidgeon" parent="." unique_id=1409194561 instance=ExtResource("11_hey2k")]
-position = Vector2(-947, 3)
+position = Vector2(-814, 0)
+
+[node name="RatBig" parent="." unique_id=113549290 instance=ExtResource("12_172wr")]
+position = Vector2(-1021, -27)
 
 [node name="Pidgeon2" parent="." unique_id=897482405 instance=ExtResource("11_hey2k")]
 position = Vector2(-302, 5)

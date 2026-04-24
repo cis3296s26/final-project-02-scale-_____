@@ -4,7 +4,7 @@ extends Node
 var isAttacking = false
 signal attack_state_changed(isAttacking: bool)
 @onready var weapon_hitbox = $AttackCollision/CollisionShape2D
-var damage_value = 999
+var damage_value = 1
 var old_damage
 
 var weapon_flag = 0

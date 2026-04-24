@@ -124,11 +124,25 @@ func end_attack():
 
 
 func _on_enemy_hitbox_area_entered(area: Area2D) -> void:
+	var attacker = area.owner
+	
+	if attacker == null:
+		attacker = area
+	
+	var found_damage = 0
+	for child in attacker.get_children():
+		if "damage_value" in child:
+			found_damage = child.damage_value
+			break
+	
+	if found_damage == 0 and "damage_value" in attacker:
+		found_damage = attacker.damage_value
+	
 	if death:
 		return
 
 	if area.is_in_group("attack"):
-		health -= 1
+		health -= found_damage
 		anim.play("laptop_hit")
 
 		if health <= 0:
