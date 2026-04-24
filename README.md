@@ -57,8 +57,10 @@ Tested knockback for players and enemies: If the player attacks an enemy, the hi
 
 Tested more maps: The player can walk on the different maps that the transition brings them to
 
-Follow this project board to know the latest status of the project: https://github.com/orgs/cis3296s26/projects/36  
 
+
+
+Follow this project board to know the latest status of the project: https://github.com/orgs/cis3296s26/projects/36  
 UML
 <img width="1681" height="1984" alt="Untitled Diagram drawio (5)" src="https://github.com/user-attachments/assets/a2024144-ce7c-48de-8996-50c962a699fb" />
 
