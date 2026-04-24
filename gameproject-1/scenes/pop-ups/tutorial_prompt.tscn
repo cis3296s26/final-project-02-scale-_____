@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dph5mflvoq1pb"]
 
 [ext_resource type="Script" uid="uid://c1q7riuvq6xex" path="res://scenes/pop-ups/pop-up scripts/tutorial_prompt.gd" id="1_c4h83"]
+[ext_resource type="AudioStream" uid="uid://cgb5agyq3r3kt" path="res://assets/music/main_menu.mp3" id="2_vid13"]
 
 [sub_resource type="Theme" id="Theme_64a5a"]
 
@@ -53,6 +54,11 @@ offset_right = 55.912052
 offset_bottom = 40.821793
 scale = Vector2(0.44539887, 1.6449997)
 text = "Play Tutorial"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1046860924]
+stream = ExtResource("2_vid13")
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="ColorRect/Container/SkipTutorial" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="ColorRect/Container/PlayTutorial" to="." method="_on_play_tutorial_pressed"]

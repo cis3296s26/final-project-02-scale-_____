@@ -16,7 +16,7 @@ func _on_body_entered(body: Node2D) -> void:
 	var max_allowed = GlobalScript.items[item_id]["Max"]
 	
 	var current_count = 0
-	var item_name = "Boots"
+	var item_name = "Jump_Boots"
 	for i in GlobalScript.inventory:
 		if GlobalScript.inventory[i]["Name"].to_lower() == item_name.to_lower():
 			current_count = GlobalScript.inventory[i]["Count"]

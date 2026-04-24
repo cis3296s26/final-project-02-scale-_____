@@ -14,9 +14,16 @@ var knockback = 200
 
 @onready var coin_label = $Player_Bar/UIRoot/CoinLabel
 
-func _ready() -> void:
-	GlobalScript.can_take_damage = true
+@export var inv: Inv
 
+func _ready() -> void:
+	inv = GlobalScript.inventory_resource
+	reapply_equip_effects()
+	GlobalScript.inventory_changed.emit()
+	
+	
+	GlobalScript.can_take_damage = true
+	
 	GlobalScript.health_changed.connect(update_hearts)
 	GlobalScript.coin_changed.connect(update_coin_label)
 	GlobalScript.inventory_changed.connect(update_potion_label)
@@ -33,6 +40,7 @@ func _physics_process(delta: float) -> void:
 	
 	if is_knocking_back:
 		animatedSprite.play("owl_hurt")
+		$hurt.play()
 		velocity.y += 980 * delta 
 		move_and_slide()
 		return
@@ -53,6 +61,7 @@ func handle_movement_animations(state: bool) -> void:
 	
 	if is_on_floor():
 		if velocity.x:
+			$walk.play()
 			animatedSprite.play("owl_run")
 		else:
 			animatedSprite.play("owl_idle")
@@ -74,7 +83,7 @@ func handle_direction(state: bool) -> void:
 		combat.scale.x = 1
 		animatedSprite.flip_h = false
 
-func take_damage(amount: int, weapon_position: Vector2) -> void:
+func take_damage(amount: int, weapon_position: Vector2, bossPhase: int = 0) -> void:
 	if not GlobalScript.can_take_damage:
 		return
 	
@@ -83,7 +92,14 @@ func take_damage(amount: int, weapon_position: Vector2) -> void:
 	if GlobalScript.current_health < 0:
 		GlobalScript.current_health = 0
 	
-	apply_knockback(weapon_position)
+	var current_knockback = knockback
+	if bossPhase != 0 and bossPhase < 3:
+		# 0 = regular enemy attacks, 1 = bellBoss phase 1, 2 = bellBoss phase 2
+		if bossPhase == 1:
+			current_knockback = 800
+		else:
+			current_knockback = 1500
+	apply_knockback(weapon_position, current_knockback)
 	
 	update_hearts(GlobalScript.current_health)
 
@@ -96,13 +112,16 @@ func take_damage(amount: int, weapon_position: Vector2) -> void:
 	await get_tree().create_timer(1.0).timeout
 	GlobalScript.can_take_damage = true
 
-func apply_knockback(weapon_position: Vector2):
+func apply_knockback(weapon_position: Vector2, knockbackVal): # given_velocity: int = 0):
 	isAttacking = false
 	is_knocking_back = true
 	knockback_animation()
 	var direction_damage = (global_position - weapon_position).normalized()
 	print(direction_damage)
-	velocity = Vector2(direction_damage.x * knockback, -200)
+	velocity = Vector2(direction_damage.x * knockbackVal, -200)
+	#if (given_velocity != 0):
+		# for bell drop CODE NOT WORKING YET + MECHANICS NOT DETERMINED YET
+	# 	velocity.x *= 100
 	$KnockbackTimer.start(0.2)
 
 func knockback_animation():
@@ -151,4 +170,17 @@ func collect(id: int):
 	print(id)
 	GlobalScript.add_item(id)
 	
-	
+func reapply_equip_effects():
+	for i in GlobalScript.inventory:
+		var data = GlobalScript.inventory[i]
+		if data.get("IsEquipped", false):
+			var type = data.get("Type", -1)
+			var item_name = data.get("Name", "")
+			print("Re-applying effect for: ", item_name)
+			apply_stat_bonus(type, item_name)
+
+func apply_stat_bonus(type: int, item_name: String):
+	if type == 1:
+		GlobalScript.request_combat_equip_effect.emit(type, item_name)
+	elif type == 2:
+		GlobalScript.request_movement_equip_effect.emit(type, item_name)

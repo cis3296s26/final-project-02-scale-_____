@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://clyojikdgv1lg"]
 
+[ext_resource type="Script" uid="uid://cwoe8ewxs62gm" path="res://scenes/tutorial_level.gd" id="1_2h3h0"]
 [ext_resource type="Texture2D" uid="uid://dwonbkx1m1ps8" path="res://assets/Environment/Subway/train cart ok.png" id="1_hpxl2"]
 [ext_resource type="PackedScene" uid="uid://ocyoc1083cuv" path="res://Player/player.tscn" id="1_ifix0"]
 [ext_resource type="PackedScene" uid="uid://68r8k6qparxw" path="res://scenes/scene_triggers/void.tscn" id="2_ho5cc"]
@@ -12,13 +13,14 @@
 [ext_resource type="Texture2D" uid="uid://qbglcs3yp1ol" path="res://assets/Environment/Subway/tilemap_packed.png" id="9_w40hx"]
 [ext_resource type="Texture2D" uid="uid://7303nouvyx8g" path="res://assets/Environment/Subway/RedTube.png" id="10_vlwwk"]
 [ext_resource type="Texture2D" uid="uid://botrk1ynf5o7v" path="res://assets/Environment/Subway/GrayTube.png" id="11_qc43e"]
-[ext_resource type="Texture2D" uid="uid://dyq6vjry6m4jr" path="res://assets/Environment/Subway/ObjectP1.png" id="12_jjf0l"]
+[ext_resource type="Texture2D" uid="uid://c5lyd5l3isavk" path="res://assets/Environment/Subway/ObjectP1.png" id="12_jjf0l"]
 [ext_resource type="Texture2D" uid="uid://bwpxp5ey04d0n" path="res://assets/Environment/Subway/SubwayExitSign.png" id="13_q0em4"]
 [ext_resource type="Texture2D" uid="uid://cfy6an31qtgw0" path="res://assets/Environment/Subway/SubwayEntranceSign1.png" id="14_0phbf"]
 [ext_resource type="Texture2D" uid="uid://cdu1d3x2kpdhq" path="res://assets/Environment/Subway/SeptaFare1.png" id="15_gnurf"]
 [ext_resource type="Texture2D" uid="uid://bdxo5fnnkpb0b" path="res://assets/Environment/Subway/controls_tilemap_packed.png" id="17_gnurf"]
 [ext_resource type="PackedScene" uid="uid://ok2eon83bfnk" path="res://Enemy/enemy_rat.tscn" id="18_6lba3"]
 [ext_resource type="PackedScene" uid="uid://qr0f0ju3brm6" path="res://Enemy/enemy_pigeon.tscn" id="19_2h3h0"]
+[ext_resource type="AudioStream" uid="uid://v1nntg7egyp0" path="res://assets/music/subway.mp3" id="21_6jlns"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lhmm1"]
 texture = ExtResource("17_gnurf")
@@ -4167,6 +4169,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_q0em4")
 
 [node name="SubwayTutorial" type="Node2D" unique_id=140640481]
+script = ExtResource("1_2h3h0")
 
 [node name="Background" type="ColorRect" parent="." unique_id=913111935]
 offset_left = -2663.0
@@ -4412,3 +4415,8 @@ position = Vector2(-232, -8)
 
 [node name="enemy_rat4" parent="." unique_id=905060053 instance=ExtResource("18_6lba3")]
 position = Vector2(-184, -8)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1567643655]
+stream = ExtResource("21_6jlns")
+autoplay = true
+parameters/looping = true

@@ -1,6 +1,7 @@
 extends Node
 
-var max_health = 7
+var set_coin = 5
+var max_health = 5
 var can_take_damage = true
 
 var shop_check = false
@@ -9,21 +10,38 @@ signal health_changed(new_health: int)
 signal coin_changed(new_coin_count: int)
 signal inventory_changed
 
-signal request_equip_effect(type: int, item_name: String)
+signal request_combat_equip_effect(type: int, item_name: String)
+signal request_movement_equip_effect(type: int, item_name: String)
+
+signal remove_combat_equip_effect(type: int, item_name: String)
+signal remove_movement_equip_effect(type: int, item_name: String)
 
 @export var item: ItemList
 
 @export var inventory_resource: Inv = preload("res://Player/Player_Script/player_inventory.tres")
+
+var current_level_path: String = ""
+
+var equipped_items = {}
 
 var current_health: int = max_health:
 	set(value):
 		current_health = clamp(value, 0, max_health)
 		health_changed.emit(current_health)
 
-var coin_count: int = 999:
+var coin_count: int = set_coin:
 	set(value):
 		coin_count = max(value, 0)
 		coin_changed.emit(coin_count)
+
+func reset_game():
+	inventory.clear() 
+	for slot in inventory_resource.slots:
+		slot.item = null
+		slot.amount = 0
+	inventory_changed.emit()
+	current_health = max_health
+	coin_count = set_coin
 
 var items = {
 	0: {
@@ -40,18 +58,63 @@ var items = {
 		"Des": "This is a No. 2 Pencil",
 		"Cost": 5,
 		"Max": 1,
-		"Type": 1, # Equipable -> Combat
+		"Type": 1, # Equipable -> Weapon
 		"Texture": preload("res://assets/pencil.png"),
 		"Resource": preload("res://Player/Player_Script/items/pencil.tres")
 	},
 	2: {
-		"Name": "Boots",
-		"Des": "HIGHER JUMPS!",
-		"Cost": 7,
+		"Name": "Jump_Boots",
+		"Des": "TWICE THE JUMPS!",
+		"Cost": 10,
 		"Max": 1,
 		"Type": 2, # Equipable -> Movement
 		"Texture": preload("res://assets/boots.png"),
-		"Resource": preload("res://Player/Player_Script/items/boots.tres")
+		"Resource": preload("res://Player/Player_Script/items/jump_boots.tres")
+	},
+	3: {
+		"Name": "Dash_Boots",
+		"Des": "GO FURTHER WITH EVERY PRESS!",
+		"Cost": 7,
+		"Max": 1,
+		"Type": 2, # Equipable -> Movement
+		"Texture": preload("res://assets/dash_boots.png"),
+		"Resource": preload("res://Player/Player_Script/items/dash_boots.tres")
+	},
+	4: {
+		"Name": "Glide_Up",
+		"Des": "Stay in the air for longer",
+		"Cost": 2,
+		"Max": 1,
+		"Type": 5, # Equipable -> Movement
+		"Texture": preload("res://assets/glide_up.png"),
+		"Resource": preload("res://Player/Player_Script/items/glide_up.tres")
+	},
+	5: {
+		"Name": "Backpack",
+		"Des": "Hit them hard with misc. books",
+		"Cost": 12,
+		"Max": 1,
+		"Type": 1, # Equipable -> Combat
+		"Texture": preload("res://assets/backpack.png"),
+		"Resource": preload("res://Player/Player_Script/items/backpack.tres")
+	},
+	6: {
+		"Name": "Damage_Up",
+		"Des": "Increase Damage",
+		"Cost": 4,
+		"Max": 1,
+		"Type": 3, # Equipable -> Combat stat
+		"Texture": preload("res://assets/damage_up.png"),
+		"Resource": preload("res://Player/Player_Script/items/damage_up.tres")
+	},
+	7: {
+		"Name": "Speed_Up",
+		"Des": "Increase Speed",
+		"Cost": 4,
+		"Max": 1,
+		"Type": 4, # Equipable -> Movement
+		"Texture": preload("res://assets/speed_up.png"),
+		"Resource": preload("res://Player/Player_Script/items/speed_up.tres")
 	},
 }
 
@@ -101,6 +164,8 @@ func add_item(id: int):
 
 func get_health_potion_count() -> int:
 	for i in inventory:
+		if inventory[i] == null:
+			continue 
 		if inventory[i]["Name"] == "Health Potion":
 			return inventory[i]["Count"]
 	return 0

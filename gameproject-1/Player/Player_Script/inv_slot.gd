@@ -2,9 +2,15 @@ extends Panel
 
 var slot: InvSlot
 var type: int
+var type2: int
+var current_state = false
 
 @onready var item_visual: Sprite2D = $CenterContainer/Panel/item_display
 @onready var amount_text: Label = $CenterContainer/Panel/Label
+
+func _ready():
+	if slot and slot.item:
+		update(slot)
 
 func update(new_slot: InvSlot):
 	slot = new_slot
@@ -24,12 +30,12 @@ func update(new_slot: InvSlot):
 			var tex_size = item_tex.get_size()
 			item_visual.scale = Vector2(target_size / tex_size.x, target_size / tex_size.y)
 			
-			for i in GlobalScript.inventory:
-				if GlobalScript.inventory[i]["Name"].to_lower() == slot.item.name.to_lower():
-					pass
-			
 			var is_equipped = false
 			for i in GlobalScript.inventory:
+				if GlobalScript.inventory[i] == null:
+					continue
+				if not GlobalScript.inventory[i].has("Name"):
+					continue
 				if GlobalScript.inventory[i]["Name"].to_lower() == slot.item.name.to_lower():
 					is_equipped = GlobalScript.inventory[i]["IsEquipped"]
 					type = GlobalScript.inventory[i]["Type"]
@@ -57,6 +63,7 @@ func on_slot_clicked():
 		
 		type = -1
 		var item_name
+		var item_name2
 		for i in GlobalScript.inventory:
 			if GlobalScript.inventory[i]["Name"].to_lower() == slot.item.name.to_lower():
 				if !GlobalScript.inventory[i]["IsEquipped"]:
@@ -64,12 +71,19 @@ func on_slot_clicked():
 				else:
 					GlobalScript.inventory[i]["IsEquipped"] = false
 				
-				var current_state = GlobalScript.inventory[i]["IsEquipped"]
-				
+				current_state = GlobalScript.inventory[i]["IsEquipped"]
 				print("state: ", current_state)
-				
 				type = GlobalScript.inventory[i]["Type"]
 				item_name = GlobalScript.inventory[i]["Name"]
+				
+				for f in GlobalScript.inventory:
+					if GlobalScript.inventory[f]["Name"].to_lower() != slot.item.name.to_lower():
+						if GlobalScript.inventory[i]["Type"] ==  GlobalScript.inventory[f]["Type"]:
+							if GlobalScript.inventory[f]["IsEquipped"]:
+								GlobalScript.inventory[f]["IsEquipped"] = false
+								type2 = GlobalScript.inventory[f]["Type"]
+								item_name2 = GlobalScript.inventory[f]["Name"]
+								remove_equip_effect(type2, item_name2)
 				
 				GlobalScript.inventory_changed.emit()
 				break
@@ -79,15 +93,23 @@ func on_slot_clicked():
 		if type == 0:
 			GlobalScript.use_health_potion()
 			update(slot)
-		
-		if type > 0:
+			
+		if type > 0 and current_state:
 			equip_effect(type, item_name)
+		elif type > 0 and !current_state:
+			remove_equip_effect(type, item_name)
 
 func equip_effect(type: int, item_name: String):
-	if type == 1:
-		GlobalScript.request_equip_effect.emit(type, item_name)
-	elif type == 2:
-		pass
+	if type == 1 or type == 3:
+		GlobalScript.request_combat_equip_effect.emit(type, item_name)
+	elif type == 2 or type == 4 or type == 5:
+		GlobalScript.request_movement_equip_effect.emit(type, item_name)
+
+func remove_equip_effect(type: int, item_name: String):
+	if type == 1 or type == 3:
+		GlobalScript.remove_combat_equip_effect.emit(type, item_name)
+	elif type == 2 or type == 4 or type == 5:
+		GlobalScript.remove_movement_equip_effect.emit(type, item_name)
 
 func _on_mouse_entered() -> void:
 	modulate = Color(1.5, 1.5, 1.5)
