@@ -1,0 +1,152 @@
+[gd_scene format=3 uid="uid://c3kvjfff7yxf2"]
+
+[ext_resource type="Script" uid="uid://8i8jih7bshvv" path="res://Enemy/EnemyScripts/laptopBossScripts/eclipse_beam.gd" id="1_ghqu7"]
+[ext_resource type="Texture2D" uid="uid://bkscxfyv4nmgi" path="res://assets/EnemySprites/laptopBoss/EclipseBeam.png" id="1_le1rw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghqu7"]
+atlas = ExtResource("1_le1rw")
+region = Rect2(0, 160, 550, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_moww4"]
+atlas = ExtResource("1_le1rw")
+region = Rect2(0, 192, 550, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plckk"]
+atlas = ExtResource("1_le1rw")
+region = Rect2(0, 224, 550, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7pi5"]
+atlas = ExtResource("1_le1rw")
+region = Rect2(0, 256, 550, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsgwm"]
+atlas = ExtResource("1_le1rw")
+region = Rect2(0, 288, 550, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hd3e1"]
+atlas = ExtResource("1_le1rw")
+region = Rect2(0, 320, 550, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8iik4"]
+atlas = ExtResource("1_le1rw")
+region = Rect2(0, 352, 550, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thaml"]
+atlas = ExtResource("1_le1rw")
+region = Rect2(0, 384, 550, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufftm"]
+atlas = ExtResource("1_le1rw")
+region = Rect2(0, 0, 550, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2pux"]
+atlas = ExtResource("1_le1rw")
+region = Rect2(0, 32, 550, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y118a"]
+atlas = ExtResource("1_le1rw")
+region = Rect2(0, 64, 550, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7krqd"]
+atlas = ExtResource("1_le1rw")
+region = Rect2(0, 96, 550, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lprsa"]
+atlas = ExtResource("1_le1rw")
+region = Rect2(0, 416, 550, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_konk7"]
+atlas = ExtResource("1_le1rw")
+region = Rect2(0, 448, 550, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dqkd"]
+atlas = ExtResource("1_le1rw")
+region = Rect2(0, 128, 550, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y8t0j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghqu7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_moww4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plckk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7pi5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsgwm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hd3e1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8iik4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thaml")
+}],
+"loop": true,
+"name": &"eclipse_beam",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufftm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2pux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y118a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7krqd")
+}],
+"loop": false,
+"name": &"eclipse_charge",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lprsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_konk7")
+}],
+"loop": false,
+"name": &"eclipse_finish",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dqkd")
+}],
+"loop": true,
+"name": &"eclipse_point",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_le1rw"]
+size = Vector2(504, 13)
+
+[node name="eclipseBeam" type="Node2D" unique_id=2053620403]
+script = ExtResource("1_ghqu7")
+
+[node name="BeamSprite" type="AnimatedSprite2D" parent="." unique_id=1525425533]
+position = Vector2(259, 0)
+sprite_frames = SubResource("SpriteFrames_y8t0j")
+animation = &"eclipse_beam"
+flip_h = true
+
+[node name="BeamAttack" type="Area2D" parent="." unique_id=163414459]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BeamAttack" unique_id=1937873525]
+position = Vector2(247, 0)
+shape = SubResource("RectangleShape2D_le1rw")
+
+[connection signal="body_entered" from="BeamAttack" to="." method="_on_beam_attack_body_entered"]

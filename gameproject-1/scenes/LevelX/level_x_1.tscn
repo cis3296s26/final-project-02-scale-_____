@@ -1,19 +1,22 @@
 [gd_scene format=3 uid="uid://gip3vl7djw76"]
 
-[ext_resource type="Texture2D" uid="uid://pe063v6u5dg4" path="res://assets/Environment/Background/TuttleFront.jpg" id="1_dxnqt"]
+[ext_resource type="Texture2D" uid="uid://4y04q4ftp4n8" path="res://assets/Environment/Background/TuttleFront.jpg" id="1_dxnqt"]
+[ext_resource type="Script" uid="uid://fstqkhsdv34i" path="res://scenes/LevelX/level_x_1.gd" id="1_t5to1"]
 [ext_resource type="Texture2D" uid="uid://cqv2s4h18uqi6" path="res://assets/sprites/world_tileset.png" id="2_aqom3"]
 [ext_resource type="PackedScene" uid="uid://ocyoc1083cuv" path="res://Player/player.tscn" id="3_561ib"]
 [ext_resource type="Texture2D" uid="uid://clqmhteynh5p" path="res://assets/Environment/Library/floor_tiles.png" id="3_faybw"]
 [ext_resource type="Texture2D" uid="uid://rnm31wq0o2ki" path="res://assets/Environment/Library/wall_tiles.png" id="4_47l4s"]
 [ext_resource type="PackedScene" uid="uid://68r8k6qparxw" path="res://scenes/scene_triggers/void.tscn" id="4_aqom3"]
 [ext_resource type="Texture2D" uid="uid://qbglcs3yp1ol" path="res://assets/Environment/Subway/tilemap_packed.png" id="5_47l4s"]
-[ext_resource type="Texture2D" uid="uid://cd1euynbom3or" path="res://assets/Environment/Background/TuttleDoors.png" id="7_bvwh4"]
+[ext_resource type="Texture2D" uid="uid://bovmcyag5557b" path="res://assets/Environment/Background/TuttleDoors.png" id="7_bvwh4"]
 [ext_resource type="PackedScene" uid="uid://qr0f0ju3brm6" path="res://Enemy/enemy_pigeon.tscn" id="9_bvwh4"]
 [ext_resource type="PackedScene" uid="uid://d30iq1mq7lcnp" path="res://Objects/platform.tscn" id="10_pdx1q"]
 [ext_resource type="PackedScene" uid="uid://cuhyldks1lip8" path="res://Enemy/enemy_jan.tscn" id="11_sibn5"]
 [ext_resource type="PackedScene" uid="uid://ok2eon83bfnk" path="res://Enemy/enemy_rat.tscn" id="12_1my4e"]
 [ext_resource type="PackedScene" uid="uid://b68qhr4464r35" path="res://Objects/coin.tscn" id="13_h0rjy"]
-[ext_resource type="Texture2D" uid="uid://civg3ci48ko5w" path="res://assets/Environment/Background/TuttleLobby.png" id="14_h0rjy"]
+[ext_resource type="Texture2D" uid="uid://b4wmbmkubikwx" path="res://assets/Environment/Background/TuttleLobby.png" id="14_h0rjy"]
+[ext_resource type="PackedScene" uid="uid://djdsbrmb1pdcx" path="res://scenes/scene_triggers/Transition_Collision.tscn" id="15_66874"]
+[ext_resource type="AudioStream" uid="uid://djc0hmhpytyur" path="res://assets/music/tuttleman.mp3" id="17_bmd8c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_66874"]
 texture = ExtResource("2_aqom3")
@@ -1972,6 +1975,7 @@ _data = {
 }
 
 [node name="LevelX1" type="Node2D" unique_id=1335516518]
+script = ExtResource("1_t5to1")
 
 [node name="TuttleCopy" type="Sprite2D" parent="." unique_id=925110610]
 show_behind_parent = true
@@ -2106,3 +2110,12 @@ position = Vector2(1370, 266)
 
 [node name="enemy_rat7" parent="." unique_id=1795479493 instance=ExtResource("12_1my4e")]
 position = Vector2(1262, 267)
+
+[node name="TransitionCollision" parent="." unique_id=1844202408 instance=ExtResource("15_66874")]
+position = Vector2(1525, 70)
+destination_scene = "uid://c8y14hmeath8b"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1869940791]
+stream = ExtResource("17_bmd8c")
+autoplay = true
+parameters/looping = true

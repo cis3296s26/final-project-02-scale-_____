@@ -5,14 +5,40 @@ var isAttacking = false
 signal attack_state_changed(isAttacking: bool)
 @onready var weapon_hitbox = $AttackCollision/CollisionShape2D
 var damage_value = 1
+var old_damage
+
+var weapon_flag = 0
 
 @onready var weapon_node = get_tree().root.find_child("Pencil", true, false)
 
 func _ready():
-	GlobalScript.request_equip_effect.connect(_on_equip_requested)
+	GlobalScript.request_combat_equip_effect.connect(_on_equip_requested)
+	GlobalScript.remove_combat_equip_effect.connect(_on_equip_remove)
 
 func _on_equip_requested(type: int, item_name: String):
-	pass
+	if item_name.to_lower() == "pencil":
+		weapon_flag = 1
+		print("enable1: ",weapon_flag)
+	elif item_name.to_lower() == "backpack":
+		weapon_flag = 2
+		damage_value += 2
+		print("enable2: ",weapon_flag)
+	elif item_name.to_lower() == "damage_up":
+		damage_value += 1
+		print("Damage Value: ", damage_value)
+
+func _on_equip_remove(type: int, item_name: String):
+	if item_name.to_lower() == "pencil":
+		weapon_flag = 0
+		damage_value -= 1
+		print("disable1: ",weapon_flag)
+	elif item_name.to_lower() == "backpack":
+		weapon_flag = 0
+		damage_value -= 2
+		print("disable2: ",weapon_flag)
+	elif item_name.to_lower() == "damage_up":
+		damage_value -= 1
+		print("Damage Value: ", damage_value)
 
 func handle_combat(player: CharacterBody2D,  animated: AnimatedSprite2D) -> void:
 	handle_combat_animations(player, animated)
@@ -20,22 +46,55 @@ func handle_combat(player: CharacterBody2D,  animated: AnimatedSprite2D) -> void
 func handle_combat_animations(player: CharacterBody2D, animated: AnimatedSprite2D) -> void:
 	if Input.is_action_just_pressed("attack"):
 		if player.is_on_floor():
-			animated.play("owl_attack")
-			$AttackCollision/CollisionShape2D.position = Vector2(9, -3)
-			$AttackCollision/CollisionShape2D.shape.size = Vector2(5, 10)
-			$AttackCollision/CollisionShape2D.set_deferred("disabled", false)
-			isAttacking = true	
-			attack_state_changed.emit(true)
+			if weapon_flag == 0:
+				animated.play("owl_attack")
+				$attack.play()
+				$AttackCollision/CollisionShape2D.position = Vector2(9, -3)
+				$AttackCollision/CollisionShape2D.shape.size = Vector2(5, 10)
+				$AttackCollision/CollisionShape2D.set_deferred("disabled", false)
+				print(damage_value)
+				isAttacking = true	
+				attack_state_changed.emit(true)
+			elif weapon_flag == 1:
+				animated.play("owl_weapon_1")
+				$attack.play()
+				$AttackCollision/CollisionShape2D.position = Vector2(14, -3)
+				$AttackCollision/CollisionShape2D.shape.size = Vector2(20, 10)
+				$AttackCollision/CollisionShape2D.set_deferred("disabled", false)
+				print(damage_value)
+				isAttacking = true	
+				attack_state_changed.emit(true)
+			elif weapon_flag == 2:
+				if isAttacking:
+					return
+				
+				isAttacking = true	
+				attack_state_changed.emit(true)
+				
+				animated.play("owl_weapon_2")
+				$attack.play()
+				$AttackCollision/CollisionShape2D.position = Vector2(9, -3)
+				$AttackCollision/CollisionShape2D.shape.size = Vector2(5, 10)
+				
+				await get_tree().create_timer(0.7).timeout
+				$AttackCollision/CollisionShape2D.set_deferred("disabled", false)
+				
+				await get_tree().create_timer(0.3).timeout
+				$AttackCollision/CollisionShape2D.set_deferred("disabled", true)
+				
+				isAttacking = false
+				attack_state_changed.emit(false)
 		else:
 			animated.play("owl_glide_attack")
 			$AttackCollision/CollisionShape2D.position = Vector2(9, -3)
 			$AttackCollision/CollisionShape2D.shape.size = Vector2(10, 10)
 			$AttackCollision/CollisionShape2D.set_deferred("disabled", false)
+			print(damage_value)
 			isAttacking = true	
 			attack_state_changed.emit(true)
 
 func _on_animated_sprite_2d_animation_finished() -> void:
-	if sprite.animation == "owl_attack" or sprite.animation == "owl_glide_attack" or sprite.animation == "owl_weapon_1":
+	if sprite.animation == "owl_attack" or sprite.animation == "owl_glide_attack" or sprite.animation == "owl_weapon_1" :
 		$AttackCollision/CollisionShape2D.set_deferred("disabled", true)
 		isAttacking = false
 		attack_state_changed.emit(false)

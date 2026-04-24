@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://csinkgb4vsn8k"]
 
 [ext_resource type="Script" uid="uid://xbhmboffhejg" path="res://scenes/pop-ups/pop-up scripts/main_menu.gd" id="1_06t4h"]
+[ext_resource type="AudioStream" uid="uid://cgb5agyq3r3kt" path="res://assets/music/main_menu.mp3" id="2_vfcfv"]
 
 [sub_resource type="Theme" id="Theme_06t4h"]
 
@@ -29,10 +30,8 @@ color = Color(0.6156863, 0.13333334, 0.20784314, 1)
 
 [node name="Container" type="Panel" parent="." unique_id=2144341206]
 layout_mode = 0
-offset_left = 250.93556
-offset_top = 154.9648
-offset_right = 1530.9355
-offset_bottom = 874.9648
+offset_right = 1280.0
+offset_bottom = 720.0
 scale = Vector2(7.765, 2.5)
 theme = SubResource("Theme_06t4h")
 theme_override_styles/panel = SubResource("StyleBoxTexture_l6cm7")
@@ -85,12 +84,17 @@ text = "Quit"
 
 [node name="Bell Boss Test" type="Button" parent="Container" unique_id=1969762364]
 layout_mode = 0
-offset_left = 38.83334
-offset_top = 109.95906
-offset_right = 131.83337
-offset_bottom = 140.95906
+offset_left = 39.31809
+offset_top = 109.79421
+offset_right = 132.28912
+offset_bottom = 140.79422
 scale = Vector2(0.24853016, 0.7843576)
-text = "Test Boss"
+text = "Belltower"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=247840371]
+stream = ExtResource("2_vfcfv")
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="Container/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="Container/Continue" to="." method="_on_continue_pressed"]
