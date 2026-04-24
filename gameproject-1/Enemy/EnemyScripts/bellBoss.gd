@@ -16,6 +16,7 @@ extends CharacterBody2D
 var state = "chase"
 var death = false
 var phase = 1
+var end_triggered = false
 
 var max_health_phase1 = 4
 var max_health_phase2 = 7
@@ -157,8 +158,10 @@ func apply_gravity(delta):
 		velocity.y = 0  # reset vertical speed when on the floor
 
 func _on_enemy_hitbox_area_entered(area: Area2D) -> void:
-	if death:
+	if death and not end_triggered:
+		end_triggered = true
 		get_tree().change_scene_to_file("res://scenes/pop-ups/end_screen.tscn")
+		# $CollisionShape2D.set_deferred("disabled", true)
 		return
 	if area.is_in_group("attack"):
 		health = health - 1
@@ -173,27 +176,28 @@ func _on_enemy_hitbox_area_entered(area: Area2D) -> void:
 				print("BELL BOSS PHASE 2")
 				state = "transitioning"
 				for i in range(4):
-					var enemy = spawn_enemy_scene.instantiate()
-					enemy.global_position = global_position + Vector2(randf_range(-40, 40), 0)
-					get_parent().add_child(enemy)
-					enemy.get_node("CollisionShape2D").disabled = true
-					await get_tree().create_timer(0.2).timeout
-					if is_instance_valid(enemy): enemy.get_node("CollisionShape2D").disabled = false
+					_minion_spawn()
 			else:
 				print("BELL BOSS DEATH")
 				state = "dead"
 				phase = 3
-				$CollisionShape2D.set_deferred("disabled", true)
 				death = true
 				dead()
 		else:
 			if phase == 1 and health == 2 or phase == 2:
-				var enemy = spawn_enemy_scene.instantiate()
-				enemy.global_position = global_position + Vector2(randf_range(-40, 40), 0)
-				get_parent().add_child(enemy)
-				enemy.get_node("CollisionShape2D").disabled = true
-				await get_tree().create_timer(0.2).timeout
-				if is_instance_valid(enemy): enemy.get_node("CollisionShape2D").disabled = false
+				_minion_spawn()
+
+func _minion_spawn():
+	var enemy = spawn_enemy_scene.instantiate()
+
+	var direction = sign(player.global_position.x - global_position.x)
+
+	# if player is to the right of boss -> spawn left, and vice versa
+	var spawn_offset = -direction * 20
+
+	enemy.global_position = global_position + Vector2(spawn_offset, 0)
+	
+	get_parent().add_child(enemy)
 
 func _is_player_hit_by_swing():
 	if death or attackType: return
