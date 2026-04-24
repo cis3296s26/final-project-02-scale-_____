@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://gtatu2ee4m6u" path="res://scenes/pop-ups/pop-up scripts/death_screen.gd" id="1_mqh5l"]
 [ext_resource type="Script" uid="uid://xbhmboffhejg" path="res://scenes/pop-ups/pop-up scripts/main_menu.gd" id="2_dwo6e"]
+[ext_resource type="Texture2D" uid="uid://cakt8hm5i8a88" path="res://assets/Environment/Background/wp8266372-pixel-city-wallpapers.jpg" id="2_juakr"]
+[ext_resource type="FontFile" uid="uid://bl3010lenjkus" path="res://assets/fonts/PixelOperator8.ttf" id="2_qjpss"]
 [ext_resource type="AudioStream" uid="uid://csmg3kxj7yr6g" path="res://assets/test/brackeys_platformer_assets/sounds/explosion.wav" id="3_t4fms"]
 
 [sub_resource type="GDScript" id="GDScript_dwo6e"]
@@ -14,6 +16,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mqh5l")
+
+[node name="Background" type="TextureRect" parent="." unique_id=2041375267]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_juakr")
+expand_mode = 2
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=151266382]
 layout_mode = 1
@@ -40,20 +52,24 @@ alignment = 1
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1671619707]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qjpss")
+theme_override_font_sizes/font_size = 22
 text = "YOU DIED"
 horizontal_alignment = 1
 
 [node name="Respawn" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1639437795]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
-text = "Respawn"
+theme_override_fonts/font = ExtResource("2_qjpss")
+text = "RESPAWN"
 icon_alignment = 1
 script = SubResource("GDScript_dwo6e")
 
 [node name="Main Menu" type="Button" parent="CenterContainer/VBoxContainer" unique_id=488765729]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
-text = "Main Menu"
+theme_override_fonts/font = ExtResource("2_qjpss")
+text = "MAIN MENU"
 script = ExtResource("2_dwo6e")
 
 [node name="death" type="AudioStreamPlayer2D" parent="." unique_id=47483539]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dkd15cnanx4j8" path="res://Objects/shop.gd" id="1_lx5au"]
 [ext_resource type="Texture2D" uid="uid://k5pbgltepvqy" path="res://assets/health potion.png" id="2_xfvoa"]
+[ext_resource type="FontFile" uid="uid://bl3010lenjkus" path="res://assets/fonts/PixelOperator8.ttf" id="3_e167n"]
 
 [sub_resource type="Animation" id="Animation_bdmwb"]
 length = 0.001
@@ -93,6 +94,7 @@ offset_left = 752.0
 offset_top = -276.0
 offset_right = 1152.0
 offset_bottom = -221.0
+theme_override_fonts/font = ExtResource("3_e167n")
 theme_override_font_sizes/font_size = 40
 text = "Health Potions"
 horizontal_alignment = 1
@@ -101,11 +103,12 @@ autowrap_mode = 3
 
 [node name="Des" type="Label" parent="Control" unique_id=1824577673]
 layout_mode = 0
-offset_left = 752.0
-offset_top = 4.0
-offset_right = 1152.0
-offset_bottom = 59.0
-theme_override_font_sizes/font_size = 40
+offset_left = 690.0
+offset_top = 27.0
+offset_right = 1212.0
+offset_bottom = 126.0
+theme_override_fonts/font = ExtResource("3_e167n")
+theme_override_font_sizes/font_size = 30
 text = "Heals you 1 missing Heart
 Cost: 2"
 horizontal_alignment = 1
@@ -114,28 +117,32 @@ autowrap_mode = 3
 
 [node name="Next" type="Button" parent="Control" unique_id=889389394]
 layout_mode = 0
-offset_left = 1080.0
-offset_top = -180.0
-offset_right = 1134.0
-offset_bottom = -62.0
+offset_left = 1071.0
+offset_top = -163.0
+offset_right = 1129.0
+offset_bottom = -45.0
+theme_override_fonts/font = ExtResource("3_e167n")
 theme_override_font_sizes/font_size = 80
 text = ">"
 
 [node name="Prev" type="Button" parent="Control" unique_id=1865010091]
 layout_mode = 0
-offset_left = 768.0
-offset_top = -180.0
-offset_right = 822.0
-offset_bottom = -62.0
+offset_left = 766.0
+offset_top = -162.0
+offset_right = 824.0
+offset_bottom = -44.0
+theme_override_fonts/font = ExtResource("3_e167n")
 theme_override_font_sizes/font_size = 80
 text = "<"
 
 [node name="Buy" type="Button" parent="Control" unique_id=605998978]
+custom_minimum_size = Vector2(200, 100)
 layout_mode = 0
-offset_left = 880.0
-offset_top = 196.0
-offset_right = 1024.0
-offset_bottom = 259.0
+offset_left = 857.0
+offset_top = 168.0
+offset_right = 1057.0
+offset_bottom = 268.0
+theme_override_fonts/font = ExtResource("3_e167n")
 theme_override_font_sizes/font_size = 40
 text = "Buy"
 

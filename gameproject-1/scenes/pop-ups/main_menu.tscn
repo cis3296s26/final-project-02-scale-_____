@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://csinkgb4vsn8k"]
 
 [ext_resource type="Script" uid="uid://xbhmboffhejg" path="res://scenes/pop-ups/pop-up scripts/main_menu.gd" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://cakt8hm5i8a88" path="res://assets/Environment/Background/wp8266372-pixel-city-wallpapers.jpg" id="2_0v8sm"]
 [ext_resource type="AudioStream" uid="uid://cgb5agyq3r3kt" path="res://assets/music/main_menu.mp3" id="2_vfcfv"]
+[ext_resource type="FontFile" uid="uid://bl3010lenjkus" path="res://assets/fonts/PixelOperator8.ttf" id="3_khv2i"]
 
 [sub_resource type="Theme" id="Theme_06t4h"]
 
@@ -18,7 +20,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_06t4h")
 
+[node name="Background" type="TextureRect" parent="." unique_id=754393471]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0v8sm")
+expand_mode = 2
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1889036628]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -42,27 +55,37 @@ alignment = 1
 
 [node name="Title" type="Label" parent="Container/VBoxContainer" unique_id=1912752119]
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.60784316)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("3_khv2i")
+theme_override_font_sizes/font_size = 20
 text = "Scale:____"
 horizontal_alignment = 1
 
 [node name="NewGame" type="Button" parent="Container/VBoxContainer" unique_id=1828048319]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_khv2i")
 text = "New Game"
 
 [node name="Continue" type="Button" parent="Container/VBoxContainer" unique_id=1827562518]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_khv2i")
 text = "Continue"
 
 [node name="Options" type="Button" parent="Container/VBoxContainer" unique_id=287005373]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_khv2i")
 text = "Options"
 
 [node name="Quit" type="Button" parent="Container/VBoxContainer" unique_id=2105139026]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_khv2i")
 text = "Quit"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=247840371]
