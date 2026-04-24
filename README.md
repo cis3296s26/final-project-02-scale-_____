@@ -19,11 +19,6 @@ How to Run in Godot:
 3. Import > find project
 4. Open project.godot
 
-How to test the game:
-1. WASD or ARROWS for movement (included control changing)
-2. Attack enemy
-
-
 How to Build an executable:
 1. Check that export templates are downloaded. Editor > Manage Export Template
 2. Project > Export
