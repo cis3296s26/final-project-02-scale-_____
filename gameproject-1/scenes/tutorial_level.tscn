@@ -4288,7 +4288,7 @@ offset_bottom = 64.0
 color = Color(0.2, 0.2, 0.2, 1)
 
 [node name="Player" parent="." unique_id=127306071 instance=ExtResource("1_ifix0")]
-position = Vector2(-2360, -152)
+position = Vector2(-2552, -152)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1850487707]
 scale = Vector2(0.5, 0.5)
