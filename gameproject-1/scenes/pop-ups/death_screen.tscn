@@ -13,38 +13,45 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(3.892, 2.942)
 script = ExtResource("1_mqh5l")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=151266382]
 layout_mode = 1
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(12.723643, 9.42447)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.15686275, 0, 0, 0.7058824)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1300174372]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1980023376]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1300174372]
 light_mask = 7
 visibility_layer = 7
-layout_mode = 0
-offset_left = 195.9202
-offset_top = 129.61665
-offset_right = 291.9202
-offset_bottom = 222.61667
+layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=1671619707]
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1671619707]
 layout_mode = 2
 text = "YOU DIED"
 horizontal_alignment = 1
 
-[node name="Respawn" type="Button" parent="VBoxContainer" unique_id=1639437795]
+[node name="Respawn" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1639437795]
+custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 text = "Respawn"
 icon_alignment = 1
 script = SubResource("GDScript_dwo6e")
 
-[node name="Main Menu" type="Button" parent="VBoxContainer" unique_id=488765729]
+[node name="Main Menu" type="Button" parent="CenterContainer/VBoxContainer" unique_id=488765729]
+custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 text = "Main Menu"
 script = ExtResource("2_dwo6e")
@@ -52,6 +59,6 @@ script = ExtResource("2_dwo6e")
 [node name="death" type="AudioStreamPlayer2D" parent="." unique_id=47483539]
 stream = ExtResource("3_t4fms")
 
-[connection signal="pressed" from="VBoxContainer/Respawn" to="." method="_on_respawn_pressed"]
-[connection signal="pressed" from="VBoxContainer/Respawn" to="VBoxContainer/Respawn" method="_on_pressed"]
-[connection signal="pressed" from="VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Respawn" to="." method="_on_respawn_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Respawn" to="CenterContainer/VBoxContainer/Respawn" method="_on_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]

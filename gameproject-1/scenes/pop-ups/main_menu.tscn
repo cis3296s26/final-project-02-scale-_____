@@ -5,8 +5,6 @@
 
 [sub_resource type="Theme" id="Theme_06t4h"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l6cm7"]
-
 [node name="MainMenu" type="Control" unique_id=2104954581]
 layout_mode = 3
 anchors_preset = 15
@@ -18,86 +16,61 @@ offset_right = -1.0
 offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(2.391052, 2.4263575)
 script = ExtResource("1_06t4h")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1889036628]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(32.141502, 17.841785)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.6156863, 0.13333334, 0.20784314, 1)
 
-[node name="Container" type="Panel" parent="." unique_id=2144341206]
-layout_mode = 0
-offset_right = 1280.0
-offset_bottom = 720.0
-scale = Vector2(7.765, 2.5)
+[node name="Container" type="CenterContainer" parent="." unique_id=850802940]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = SubResource("Theme_06t4h")
-theme_override_styles/panel = SubResource("StyleBoxTexture_l6cm7")
 
-[node name="Title" type="Label" parent="Container" unique_id=1912752119]
-layout_mode = 0
-offset_left = 27.13732
-offset_top = 0.25118637
-offset_right = 120.13732
-offset_bottom = 23.251186
-scale = Vector2(0.45715266, 1.5125561)
+[node name="VBoxContainer" type="VBoxContainer" parent="Container" unique_id=546639064]
+layout_mode = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="Container/VBoxContainer" unique_id=1912752119]
+layout_mode = 2
 text = "Scale:____"
 horizontal_alignment = 1
 
-[node name="NewGame" type="Button" parent="Container" unique_id=1828048319]
-layout_mode = 0
-offset_left = 38.767593
-offset_top = 52.008198
-offset_right = 131.76761
-offset_bottom = 83.008194
-scale = Vector2(0.24853016, 0.7843576)
+[node name="NewGame" type="Button" parent="Container/VBoxContainer" unique_id=1828048319]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
 text = "New Game"
 
-[node name="Continue" type="Button" parent="Container" unique_id=1827562518]
-layout_mode = 0
-offset_left = 38.767597
-offset_top = 81.863884
-offset_right = 131.76761
-offset_bottom = 112.863884
-scale = Vector2(0.24920829, 0.7828693)
+[node name="Continue" type="Button" parent="Container/VBoxContainer" unique_id=1827562518]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
 text = "Continue"
 
-[node name="Options" type="Button" parent="Container" unique_id=287005373]
-layout_mode = 0
-offset_left = 39.156506
-offset_top = 139.13861
-offset_right = 132.15652
-offset_bottom = 170.13861
-scale = Vector2(0.24822803, 0.7298098)
+[node name="Options" type="Button" parent="Container/VBoxContainer" unique_id=287005373]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
 text = "Options"
 
-[node name="Quit" type="Button" parent="Container" unique_id=2105139026]
-layout_mode = 0
-offset_left = 39.26423
-offset_top = 167.82358
-offset_right = 132.26422
-offset_bottom = 198.82358
-scale = Vector2(0.24642202, 0.6673232)
+[node name="Quit" type="Button" parent="Container/VBoxContainer" unique_id=2105139026]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
 text = "Quit"
-
-[node name="Bell Boss Test" type="Button" parent="Container" unique_id=1969762364]
-layout_mode = 0
-offset_left = 39.31809
-offset_top = 109.79421
-offset_right = 132.28912
-offset_bottom = 140.79422
-scale = Vector2(0.24853016, 0.7843576)
-text = "Belltower"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=247840371]
 stream = ExtResource("2_vfcfv")
 autoplay = true
 parameters/looping = true
 
-[connection signal="pressed" from="Container/NewGame" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="Container/Continue" to="." method="_on_continue_pressed"]
-[connection signal="pressed" from="Container/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="Container/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Container/Bell Boss Test" to="." method="_on_bell_boss_test_pressed"]
+[connection signal="pressed" from="Container/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Container/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Container/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Container/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
