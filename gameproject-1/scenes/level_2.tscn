@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dwbcckv7isy27"]
 
+[ext_resource type="Script" uid="uid://eaqtxjhe70mt" path="res://scenes/level_2.gd" id="1_g2hoc"]
 [ext_resource type="PackedScene" uid="uid://ok2eon83bfnk" path="res://Enemy/enemy_rat.tscn" id="1_ne2mo"]
 [ext_resource type="PackedScene" uid="uid://ocyoc1083cuv" path="res://Player/player.tscn" id="2_1y8me"]
 [ext_resource type="Texture2D" uid="uid://dqmi5qjlq3ohh" path="res://assets/Environment/Background/pixel (1) copy.png" id="2_7dov7"]
@@ -479,6 +480,7 @@ texture = ExtResource("5_0s5r2")
 sources/0 = SubResource("TileSetAtlasSource_ehv2h")
 
 [node name="BroadStreet1" type="Node2D" unique_id=641755232]
+script = ExtResource("1_g2hoc")
 
 [node name="MorganHall" type="Sprite2D" parent="." unique_id=1437797862]
 position = Vector2(99.000015, -321.00003)
